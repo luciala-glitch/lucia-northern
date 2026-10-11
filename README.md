@@ -21,6 +21,15 @@ PBL (%) = distance(CEJ, bone crest) / distance(CEJ, root tip) × 100
 - **Moderate:** PBL from 15% (inclusive) to 33% (exclusive)
 - **Severe:** PBL of 33% or higher
 
+## Download and open
+
+Clone the project and enter its folder:
+
+```bash
+git clone https://github.com/luciala-glitch/pbl-calculator.git
+cd pbl-calculator
+```
+
 ## Install
 
 From this project folder, install the dependencies:
@@ -40,6 +49,9 @@ pytest
 ```bash
 streamlit run app.py
 ```
+
+Streamlit will open the app in a browser. If it does not open automatically,
+visit `http://localhost:8501`.
 
 Use the sidebar sliders to move each point. The PBL percentage,
 classification, and tooth schematic update immediately.
