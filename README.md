@@ -1,57 +1,71 @@
 # Periodontal Bone Loss Calculator
 
-This small Python project calculates periodontal bone loss (PBL) from three 2D
-points on one side of a tooth: the CEJ (or crown margin), bone crest, and root
-tip. It uses Euclidean distance, so it also works for tilted teeth.
+This repository contains both internship deliverables in separate folders so
+they can be reviewed from one GitHub link.
 
-The bone crest must be on the root side of the CEJ and must not project beyond
-the root tip. The calculator shows an error for either invalid arrangement.
-Because the percentage uses Euclidean distance, placing the bone crest far away
-from the tooth's long axis can make the result larger than expected.
+| Version | Folder | What it does |
+| --- | --- | --- |
+| Week 1 | [`week1/`](week1/) | Calculates PBL from sliders for one tooth surface. |
+| Week 2 | [`week2/`](week2/) | Places six landmarks on a real X-ray, reports mesial/distal PBL, stages from the worse surface, and records repeatability measurements. |
 
-## Formula
+## Quick start
 
-```text
-PBL (%) = distance(CEJ, bone crest) / distance(CEJ, root tip) × 100
-```
-
-## Classification
-
-- **Mild:** PBL below 15%
-- **Moderate:** PBL from 15% (inclusive) to 33% (exclusive)
-- **Severe:** PBL of 33% or higher
-
-## Download and open
-
-Clone the project and enter its folder:
+Python 3.10 or newer is required.
 
 ```bash
 git clone https://github.com/luciala-glitch/pbl-calculator.git
 cd pbl-calculator
+python3 -m venv .venv
+source .venv/bin/activate
 ```
 
-## Install
+On Windows, activate the environment with:
 
-From this project folder, install the dependencies:
+```powershell
+.venv\Scripts\activate
+```
+
+### Run Week 1
 
 ```bash
-pip install -r requirements.txt
+python -m pip install -r week1/requirements.txt
+python -m pytest -q week1
+python -m streamlit run week1/app.py
 ```
 
-## Run the tests
+### Run Week 2
 
 ```bash
-pytest
+python -m pip install -r week2/requirements.txt
+python -m pytest -q week2
+python -m streamlit run week2/app.py
 ```
 
-## Start the app
+Streamlit normally opens the app automatically. Otherwise visit
+<http://localhost:8501>. Stop the server with `Ctrl+C` before switching
+between versions.
+
+## Open in VS Code
+
+From the cloned repository:
 
 ```bash
-streamlit run app.py
+code .
 ```
 
-Streamlit will open the app in a browser. If it does not open automatically,
-visit `http://localhost:8501`.
+If the `code` command is unavailable, open VS Code, choose **File → Open
+Folder…**, and select the cloned `pbl-calculator` folder.
 
-Use the sidebar sliders to move each point. The PBL percentage,
-classification, and tooth schematic update immediately.
+Each week's folder has its own detailed README. Week 2 includes four small
+CC0 sample X-rays, or a reviewer can upload a JPG, PNG, or TIFF image in the
+app. No millimetre calibration is required because PBL is calculated as a
+ratio.
+
+## Repository history
+
+- `main`: the current repository with both Week 1 and Week 2 folders;
+- `week2`: the Week 2 development branch; and
+- `week1` tag: the original Week 1 submission snapshot.
+
+This project is an educational measurement tool and is not a diagnostic
+device.
