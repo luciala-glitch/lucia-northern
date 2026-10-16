@@ -2,7 +2,7 @@
 
 import pytest
 
-from repeatability import (
+from week2.repeatability import (
     POINT_NAMES,
     make_measurement_row,
     read_measurements,

@@ -4,7 +4,7 @@ import math
 
 import pytest
 
-from pbl_calculator import (
+from week2.pbl_calculator import (
     calculate_pbl,
     calculate_tooth_pbl,
     classify_pbl,

@@ -4,7 +4,7 @@ import math
 
 import pytest
 
-from pbl_calculator import calculate_pbl, classify_pbl, distance
+from week1.pbl_calculator import calculate_pbl, classify_pbl, distance
 
 
 def test_healthy_tooth_has_zero_percent_pbl():
