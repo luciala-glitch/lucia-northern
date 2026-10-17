@@ -154,6 +154,13 @@ use_enhancement = st.sidebar.toggle(
         else "OpenCV CLAHE: clip limit 2.0, 8 × 8 tile grid."
     ),
 )
+blind_reading = st.sidebar.toggle(
+    "Blind reading mode",
+    help=(
+        "Hide the calculated PBL, stage, saved readings, and agreement while "
+        "placing landmarks. Readings can still be saved."
+    ),
+)
 
 if "zoom_percent" not in st.session_state:
     st.session_state.zoom_percent = 100
@@ -280,20 +287,26 @@ with results_column:
         except ValueError as error:
             st.error(str(error))
         else:
-            st.metric("Mesial PBL", f"{result.mesial_pbl:.1f}%")
-            st.metric("Distal PBL", f"{result.distal_pbl:.1f}%")
-            st.metric(
-                "Tooth stage",
-                result.stage,
-                help=(
-                    "Worst surface: "
-                    f"{result.worst_side} ({result.worst_pbl:.1f}%)"
-                ),
-            )
-            st.write(
-                f"Worse surface: **{result.worst_side}** "
-                f"at **{result.worst_pbl:.1f}%**"
-            )
+            if blind_reading:
+                st.info(
+                    "Blind reading mode is active. PBL and stage are calculated "
+                    "for saving but hidden until the mode is turned off."
+                )
+            else:
+                st.metric("Mesial PBL", f"{result.mesial_pbl:.1f}%")
+                st.metric("Distal PBL", f"{result.distal_pbl:.1f}%")
+                st.metric(
+                    "Tooth stage",
+                    result.stage,
+                    help=(
+                        "Worst surface: "
+                        f"{result.worst_side} ({result.worst_pbl:.1f}%)"
+                    ),
+                )
+                st.write(
+                    f"Worse surface: **{result.worst_side}** "
+                    f"at **{result.worst_pbl:.1f}%**"
+                )
 
 st.divider()
 st.subheader("Reading record")
@@ -342,17 +355,23 @@ with saved_column:
         round2_done = st.checkbox(
             "Complete Round 2 and review results", key="round2_done"
         )
-    blind = round_name == "Round 2" and not round2_done
+    blind = blind_reading or (round_name == "Round 2" and not round2_done)
 
     if blind:
         done = sum(
-            r["round"] == "Round 2" and r["observer"] == observer.strip()
+            r["round"] == round_name and r["observer"] == observer.strip()
             for r in rows
         )
-        st.info(
-            f"Blinded Round 2: earlier readings remain hidden. "
-            f"{done} assessments saved in this session."
-        )
+        if blind_reading:
+            st.info(
+                "Blind reading mode: calculated results, earlier readings, and "
+                f"agreement are hidden. {done} assessments saved in {round_name}."
+            )
+        else:
+            st.info(
+                f"Blinded Round 2: earlier readings remain hidden. "
+                f"{done} assessments saved in this session."
+            )
     elif rows:
         st.dataframe(
             rows,

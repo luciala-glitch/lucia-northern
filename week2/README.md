@@ -22,6 +22,8 @@ the [`week1`](https://github.com/luciala-glitch/pbl-calculator/tree/week1) tag.
 - CSV capture of all point coordinates (in original image pixels) and results
   for two measurement rounds;
 - a general reading record for single assessments or blinded repeat readings;
+- optional **Blind reading mode** hides the current PBL, stage, prior readings,
+  and agreement analysis while still allowing the reading to be saved;
 - blind Round 2: earlier readings and the summary stay hidden until the reader
   completes the session;
 - intra-reader agreement with worst/mesial/distal PBL change, stage agreement,
@@ -72,7 +74,9 @@ Streamlit normally opens the app automatically; otherwise visit
 2. Optionally enable **Contrast enhancement (CLAHE)**.
 3. Click the three mesial points followed by the three distal points, using the
    on-screen order. Use **Undo** or **Reset** to correct a placement.
-4. Read the mesial PBL, distal PBL, worse surface, and tooth stage.
+4. Read the mesial PBL, distal PBL, worse surface, and tooth stage. For an
+   independent reading, enable **Blind reading mode** before placing points;
+   turn it off only when ready to review the calculated result.
 5. Enter a reader and tooth ID, choose **Round 1**, and save the reading. A
    Round 1 record can also be used as a standalone assessment.
 6. For an intra-reader study, repeat the same image/tooth IDs as **Round 2**
