@@ -81,9 +81,10 @@ Streamlit normally opens the app automatically; otherwise visit
    Round 1 record can also be used as a standalone assessment.
 6. For an intra-reader study, repeat the same image/tooth IDs as **Round 2**
    without viewing the earlier readings.
-7. Select **Complete Round 2 and review results** to reveal the agreement
-   analysis, then download the completed CSV if needed. The submitted study
-   results are recorded in
+7. Select **Complete Round 2 and reveal results**. This automatically turns
+   off Blind reading mode and displays the current result, saved readings, and
+   agreement analysis. Download the completed CSV if needed. The submitted
+   study results are recorded in
    `week2/REPEATABILITY.md`.
 
 ## Calculation and input policy

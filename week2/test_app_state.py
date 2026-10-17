@@ -14,22 +14,26 @@ def test_round2_summary_stays_revealed_after_another_interaction(monkeypatch):
     monkeypatch.syspath_prepend(str(week2_dir))
 
     app = AppTest.from_file(str(week2_dir / "app.py")).run(timeout=10)
+    _element_with_label(app.toggle, "Blind reading mode").set_value(True).run(
+        timeout=10
+    )
     _element_with_label(app.selectbox, "Reading session").select(
         "Round 2"
     ).run(timeout=10)
     _element_with_label(
-        app.checkbox, "Complete Round 2 and review results"
+        app.checkbox, "Complete Round 2 and reveal results"
     ).check().run(timeout=10)
 
+    assert not _element_with_label(app.toggle, "Blind reading mode").value
     assert _element_with_label(
-        app.checkbox, "Complete Round 2 and review results"
+        app.checkbox, "Complete Round 2 and reveal results"
     ).value
     assert _element_with_label(app.metric, "Paired teeth").value == "10"
 
     _element_with_label(app.button, "＋").click().run(timeout=10)
 
     assert _element_with_label(
-        app.checkbox, "Complete Round 2 and review results"
+        app.checkbox, "Complete Round 2 and reveal results"
     ).value
     assert _element_with_label(app.metric, "Paired teeth").value == "10"
 

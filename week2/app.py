@@ -95,6 +95,12 @@ def change_zoom(amount: int | None = None) -> None:
         st.session_state.zoom_percent = min(200, max(50, current + amount))
 
 
+def complete_round_two() -> None:
+    """Reveal the completed reading session and its agreement results."""
+    if st.session_state.get("round2_done"):
+        st.session_state.blind_reading = False
+
+
 def load_selected_image() -> tuple[Image.Image, str] | tuple[None, None]:
     """Load either the bundled Kaggle image or a user-uploaded X-ray."""
     source = st.sidebar.radio(
@@ -156,9 +162,11 @@ use_enhancement = st.sidebar.toggle(
 )
 blind_reading = st.sidebar.toggle(
     "Blind reading mode",
+    key="blind_reading",
     help=(
         "Hide the calculated PBL, stage, saved readings, and agreement while "
-        "placing landmarks. Readings can still be saved."
+        "placing landmarks. Readings can still be saved. Completing Round 2 "
+        "turns this mode off and reveals the results."
     ),
 )
 
@@ -353,8 +361,12 @@ with saved_column:
     round2_done = False
     if round_name == "Round 2":
         round2_done = st.checkbox(
-            "Complete Round 2 and review results", key="round2_done"
+            "Complete Round 2 and reveal results",
+            key="round2_done",
+            on_change=complete_round_two,
         )
+        if round2_done:
+            st.success("Round 2 is complete. Results are now visible for review.")
     blind = blind_reading or (round_name == "Round 2" and not round2_done)
 
     if blind:
