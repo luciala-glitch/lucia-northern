@@ -1,23 +1,20 @@
 # Repeatability study
 
-Lucia measured the same 10 teeth twice, keeping observer, image name, and tooth
-ID identical so the app could pair the records. The app recorded all six
+I measured the same 10 teeth twice, keeping reader, image name, and tooth ID
+identical so the app could pair the records. The app recorded all six
 landmarks, both side-specific PBL values, the worse side, worst PBL, and stage.
 
-The **Intra-reader agreement** section reports:
+## Summary
 
-- mean and maximum absolute change in worst-side PBL percentage points;
-- mean signed difference (Round 2 minus Round 1), difference standard
-  deviation, and exploratory 95% limits of agreement;
-- within-reader repeatability coefficient (`2.77 × within-subject SD`);
-- the number of teeth whose stage changed and stage agreement percentage; and
-- the average pixel shift for each of the six landmarks, including which
-  landmark moved the most.
+Across 10 paired teeth, worst-side PBL changed by a mean of 3.6 percentage
+points (bias −1.0 percentage point, indicating little average directional
+difference in this sample), and all teeth kept the same stage. CEJ landmarks
+were the most stable at about 7 pixels; root apices were less stable, with
+M-Tip showing the largest average shift at 11.6 pixels. Because the repeat was
+same-day, these results should be treated as a workflow demonstration rather
+than a final repeatability estimate.
 
-The bias, limits of agreement, and repeatability coefficient follow
-[Bland and Altman's measurement-error guidance](https://www.bmj.com/content/312/7047/1654).
-
-## Results note
+## Results
 
 Status: Complete. Both rounds contain the same 10 image and tooth IDs.
 
@@ -36,37 +33,38 @@ Status: Complete. Both rounds contain the same 10 image and tooth IDs.
 - Teeth whose worse side changed: **3**
 - Landmark with the largest average shift: **M-Tip** (**11.6 pixels**)
 
+The bias, limits of agreement, and repeatability coefficient follow
+[Bland and Altman's measurement-error guidance](https://www.bmj.com/content/312/7047/1654).
+
 Observer note: The mesial root tip was the least repeatable landmark. Root
 apices were harder to place consistently where the panoramic image was blurred
 or overlapped by nearby anatomy.
 
-Study limitation: Both rounds were completed on the same day (16 October,
-local time). Round 2 began about 3 minutes after Round 1 ended, and 9 of the 10
-teeth were re-measured 12–34 minutes after their first reading. During Round 2
-the app hid all Round 1 records, but the current tooth's calculated PBL was
-still shown. Memory of the first session may therefore have improved apparent
-agreement. These results should be described as a same-day workflow
-demonstration, not a fully independent intra-observer repeatability estimate.
+## Limitations
 
-All 10 sampled teeth were classified as Stage III/IV in both rounds, with
-worst-side PBL values from 38.3% to 60.0%. Therefore, 100% stage agreement in
-this small convenience sample does not show how well the reader would agree
-for teeth close to a staging boundary. The limits of agreement and
-repeatability coefficient are exploratory because there are only 10 paired,
-same-day measurements.
+- **Same-day repeat:** Round 2 began about 3 minutes after Round 1; 9 of the 10
+  teeth were re-read 12–34 minutes later. Round 1 records were hidden, but the
+  current PBL was visible, so memory may have improved apparent agreement. This
+  is a same-day workflow demonstration, not a fully independent
+  intra-observer repeatability estimate.
+- **No near-boundary teeth:** All teeth were Stage III/IV, with worst-side PBL
+  values from 38.3% to 60.0%, so 100% stage agreement does not test boundary
+  cases.
+- **Small sample:** The limits of agreement and repeatability coefficient are
+  exploratory (`n = 10`).
+- **Panoramic images:** Blur, anatomical overlap, and geometric distortion can
+  limit landmark precision compared with dedicated intraoral/periapical
+  imaging. This is not a clinical validation study.
+- **Timestamp:** The final CSV timestamp is October 17 in UTC but October 16 in
+  the local America/Indiana/Indianapolis time zone.
 
-The source images are panoramic radiographs. Blur, anatomical overlap, and
-geometric distortion can reduce landmark precision compared with dedicated
-intraoral/periapical imaging, so these results should not be treated as a
-clinical validation study.
+## What I changed as a result
 
-The final CSV timestamp is after midnight in UTC but still October 16 in the
-local America/Indiana/Indianapolis time zone.
+- Round 2 now starts in blind mode automatically and hides the current result.
+- Re-saved readings are appended as versions instead of overwriting earlier
+  records.
+- New rows record the CLAHE state and app version.
+- Next step: repeat Round 2 several days later using the new blind mode.
 
-## Future workflow option
-
-For a clearly single-rooted tooth, an optional shared-apex mode could collect
-one root-tip point for both surfaces (five clicks total). The submitted app
-keeps separate mesial and distal root-tip points because the assignment asks
-for three points on both surfaces and that workflow also supports multi-rooted
-teeth.
+An optional shared-apex mode for confirmed single-rooted teeth remains a future
+workflow idea; the submitted app retains the assignment's six-point workflow.
