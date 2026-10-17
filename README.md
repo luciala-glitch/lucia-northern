@@ -56,6 +56,9 @@ code .
 If the `code` command is unavailable, open VS Code, choose **File → Open
 Folder…**, and select the cloned `pbl-calculator` folder.
 
+In VS Code, run **Python: Select Interpreter** from the Command Palette and
+choose the interpreter inside `.venv` before running tests or the apps.
+
 Each week's folder has its own detailed README. Week 2 includes four small
 CC0 sample X-rays, or a reviewer can upload a JPG, PNG, or TIFF image in the
 app. No millimetre calibration is required because PBL is calculated as a

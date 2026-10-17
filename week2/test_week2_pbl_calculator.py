@@ -75,6 +75,12 @@ def test_bone_crest_past_root_tip_has_clear_error():
         calculate_pbl((0, 4), (0, -10), (0, -6))
 
 
+@pytest.mark.parametrize("bone_crest", [(5, 9), (20, 9)])
+def test_off_axis_crest_cannot_exceed_root_length(bone_crest):
+    with pytest.raises(ValueError, match="farther from the CEJ"):
+        calculate_pbl((0, 0), bone_crest, (0, 10))
+
+
 def test_bone_crest_at_root_tip_is_100_percent():
     pbl = calculate_pbl((2.7, -7.9), (-1.6, 9.6), (-1.6, 9.6))
     assert pbl == pytest.approx(100.0)

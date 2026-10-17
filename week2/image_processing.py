@@ -4,17 +4,43 @@ import cv2
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
-# Ansh's enhance_dataset.py, if it's been dropped into the project folder.
-# TODO: check the function name once his code is merged
+# Optional integration with Ansh's enhancer when it is available.
 try:
     from enhance_dataset import apply_clahe as ansh_clahe
 except ImportError:
     ansh_clahe = None
 
 
+def grayscale_8bit(image: Image.Image) -> Image.Image:
+    """Convert an image to 8-bit grayscale without clipping 16-bit X-rays."""
+    if image.mode == "L":
+        return image.copy()
+
+    if image.mode in {"I", "F"} or image.mode.startswith("I;16"):
+        pixels = np.asarray(image, dtype=np.float64)
+        finite = np.isfinite(pixels)
+        if not finite.any():
+            return Image.fromarray(np.zeros(pixels.shape, dtype=np.uint8))
+
+        minimum = float(pixels[finite].min())
+        maximum = float(pixels[finite].max())
+        if maximum == minimum:
+            scaled = np.zeros(pixels.shape, dtype=np.uint8)
+        else:
+            safe_pixels = np.where(finite, pixels, minimum)
+            scaled = np.clip(
+                (safe_pixels - minimum) * 255.0 / (maximum - minimum),
+                0,
+                255,
+            ).astype(np.uint8)
+        return Image.fromarray(scaled)
+
+    return image.convert("L")
+
+
 def fit_for_display(image: Image.Image, max_width: int = 1100) -> Image.Image:
     """Return a proportionally resized copy suitable for point placement."""
-    image = image.convert("L")
+    image = grayscale_8bit(image)
     if image.width <= max_width:
         return image
     height = round(image.height * max_width / image.width)
@@ -27,7 +53,7 @@ def enhance_contrast(
     tile_grid_size: tuple[int, int] = (8, 8),
 ) -> Image.Image:
     """CLAHE. Uses Ansh's version when available, otherwise OpenCV directly."""
-    grayscale = np.asarray(image.convert("L"))
+    grayscale = np.asarray(grayscale_8bit(image))
     if ansh_clahe is not None:
         return Image.fromarray(ansh_clahe(grayscale))
     clahe = cv2.createCLAHE(

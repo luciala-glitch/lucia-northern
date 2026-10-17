@@ -49,9 +49,9 @@ def calculate_pbl(cej: Point, bone_crest: Point, root_tip: Point) -> float:
 
     The percentage is the CEJ-to-crest distance divided by root length. A
     crest on the crown side of the CEJ is treated as no radiographic loss and
-    returns 0%. A crest whose projection is past the root tip is rejected,
-    because that placement is anatomically invalid and is usually a click
-    error.
+    returns 0%. A crest whose projection is past the root tip, or whose direct
+    distance from the CEJ is longer than the root, is rejected because that
+    placement is anatomically invalid and is usually a click error.
     """
     cej_x, cej_y = _check_point(cej)
     crest_x, crest_y = _check_point(bone_crest)
@@ -78,6 +78,10 @@ def calculate_pbl(cej: Point, bone_crest: Point, root_tip: Point) -> float:
 
     bone_loss_distance = math.hypot(crest_x_from_cej, crest_y_from_cej)
     root_length = math.sqrt(root_length_squared)
+    if bone_loss_distance > root_length:
+        raise ValueError(
+            "Bone crest cannot be farther from the CEJ than the root tip"
+        )
     return bone_loss_distance / root_length * 100
 
 

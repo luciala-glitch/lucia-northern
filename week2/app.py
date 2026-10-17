@@ -291,7 +291,7 @@ form_column, saved_column = st.columns((1, 2), gap="large")
 with form_column:
     observer = st.text_input("Observer", value="Lucia")
     round_name = st.selectbox("Measurement round", ("Round 1", "Round 2"))
-    tooth_id = st.text_input("Tooth ID", placeholder="e.g. 11 or image1-tooth3")
+    tooth_id = st.text_input("Tooth ID", placeholder="e.g. img1-T1")
     if st.button(
         "Save measurement", type="primary", disabled=result is None,
         width="stretch",
@@ -318,11 +318,17 @@ with form_column:
 
 rows = read_measurements(MEASUREMENTS_PATH)
 
-# Round 2 has to be done blind, so keep the saved data off screen until the
-# observer says they're finished.
-blind = round_name == "Round 2" and not st.session_state.get("round2_done")
-
 with saved_column:
+    # Keep this widget mounted for the whole of Round 2. If it is only drawn
+    # while blind mode is active, Streamlit removes its state on the next
+    # interaction and hides the revealed summary again.
+    round2_done = False
+    if round_name == "Round 2":
+        round2_done = st.checkbox(
+            "I've finished Round 2 — show results", key="round2_done"
+        )
+    blind = round_name == "Round 2" and not round2_done
+
     if blind:
         done = sum(
             r["round"] == "Round 2" and r["observer"] == observer.strip()
@@ -332,7 +338,6 @@ with saved_column:
             f"Blind mode: saved data is hidden during Round 2. "
             f"{done} Round 2 teeth saved so far."
         )
-        st.checkbox("I've finished Round 2 — show results", key="round2_done")
     elif rows:
         st.dataframe(rows, hide_index=True, width="stretch")
     else:

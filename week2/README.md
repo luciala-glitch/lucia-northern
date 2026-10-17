@@ -41,6 +41,9 @@ code .
 If `code` is unavailable, open VS Code, choose **File → Open Folder…**, and
 select the `pbl-calculator` folder.
 
+In VS Code, run **Python: Select Interpreter** from the Command Palette and
+choose the interpreter inside `.venv`.
+
 ## Install and run
 
 In the VS Code terminal:
@@ -53,13 +56,9 @@ python -m pytest -q week2
 python -m streamlit run week2/app.py
 ```
 
-On this Mac, the installed Python 3.13 interpreter is at
-`/opt/anaconda3/bin/python3.13`. If `python3 --version` shows Python 3.9, create
-the environment with this command instead:
-
-```bash
-/opt/anaconda3/bin/python3.13 -m venv .venv
-```
+If `python3 --version` is below 3.10, install a current Python release from
+[python.org](https://www.python.org/downloads/) and recreate `.venv` with that
+interpreter.
 
 On Windows, activate the environment with `.venv\Scripts\activate`.
 Streamlit normally opens the app automatically; otherwise visit
@@ -67,8 +66,8 @@ Streamlit normally opens the app automatically; otherwise visit
 
 ## Measurement workflow
 
-1. Choose a bundled Kaggle image or upload an X-ray. Any `.jpg`/`.png` placed
-   in `week2/sample_xrays/` shows up in the demo list.
+1. Choose a bundled Kaggle image or upload a JPG, PNG, or TIFF X-ray. Any
+   `.jpg`/`.png` placed in `week2/sample_xrays/` shows up in the demo list.
 2. Optionally enable **Contrast enhancement (CLAHE)**.
 3. Click the three mesial points followed by the three distal points, using the
    on-screen order. Use **Undo** or **Reset** to correct a placement.
@@ -76,7 +75,8 @@ Streamlit normally opens the app automatically; otherwise visit
 5. Enter an observer and tooth ID, choose **Round 1**, and save the row.
 6. Measure 10 teeth across several images. A few days later, repeat those same
    image/tooth IDs as **Round 2** without looking at Round 1.
-7. Download `measurements.csv` and copy the app's repeatability summary into
+7. Tick **I've finished Round 2** to reveal the comparison, then download the
+   completed CSV if needed. The submitted results are recorded in
    `week2/REPEATABILITY.md`.
 
 ## Calculation and input policy
@@ -91,6 +91,8 @@ PBL (%) = distance(CEJ, bone crest) / distance(CEJ, root tip) × 100
 - Bone crest on the crown side of the CEJ: reported as **0%**.
 - Bone crest projected past the root tip: **flagged as invalid** rather than
   capped, because it most likely represents a misplaced click.
+- Bone crest farther from the CEJ than the root tip, including a severely
+  off-axis click: **flagged as invalid** so PBL cannot exceed 100%.
 
 The worse of mesial and distal PBL determines the radiographic stage: Stage I
 is below 15%, Stage II is 15% to below 33%, and 33% or more is reported as
@@ -103,7 +105,8 @@ Pixel coordinates need no millimetre calibration because PBL is a ratio.
 
 The included images (1, 10, 26, 42 from `Teeth Segmentation JSON/d2/img/`) are from
 [Humans in the Loop's Teeth Segmentation on dental X-ray images](https://www.kaggle.com/datasets/humansintheloop/teeth-segmentation-on-dental-x-ray-images),
-released under CC0. The project does not include the full 5.7 GB dataset.
+released under CC0. The project includes only the four demo images, not the
+full dataset.
 
 ## Repeatability deliverable
 
