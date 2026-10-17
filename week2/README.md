@@ -128,6 +128,11 @@ Pixel coordinates need no millimetre calibration because PBL is a ratio.
   single-rooted tooth. The six-point workflow remains the default because it
   supports separate surfaces and multi-rooted teeth and matches the assignment.
 
+Method references: the [2018 AAP/EFP staging framework](https://doi.org/10.1002/JPER.18-0006),
+[normal radiographic CEJ-to-crest reference values](https://pubmed.ncbi.nlm.nih.gov/1941497/),
+[Bland–Altman measurement-error guidance](https://www.bmj.com/content/312/7047/1654),
+and a [panoramic versus intraoral comparison](https://pmc.ncbi.nlm.nih.gov/articles/PMC12746162/).
+
 ## Dataset credit
 
 The included images (1, 10, 26, 42 from `Teeth Segmentation JSON/d2/img/`) are from
@@ -141,7 +146,10 @@ full dataset.
 2 rounds). New saves include whether CLAHE was enabled, the app commit/version,
 and a superseded-record timestamp. Re-saving the same reader/session/image/tooth
 now appends an auditable version instead of deleting the earlier row; summaries
-use the newest version. The app also provides a CSV download button.
+use the newest version. The historical 20 rows are marked `unknown` for CLAHE
+and app version because those fields were not recorded at measurement time; the
+values were not guessed retrospectively. The app also provides a CSV download
+button.
 `week2/REPEATABILITY.md` reports the observed PBL changes, agreement metrics,
 landmark shifts, and the limitation that this demonstration used a same-day
 repeat rather than the requested multi-day interval.

@@ -14,6 +14,9 @@ The **Intra-reader agreement** section reports:
 - the average pixel shift for each of the six landmarks, including which
   landmark moved the most.
 
+The bias, limits of agreement, and repeatability coefficient follow
+[Bland and Altman's measurement-error guidance](https://www.bmj.com/content/312/7047/1654).
+
 ## Results note
 
 Status: Complete. Both rounds contain the same 10 image and tooth IDs.
