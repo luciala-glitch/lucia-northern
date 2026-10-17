@@ -45,7 +45,7 @@ def make_measurement_row(
     if missing:
         raise ValueError(f"Missing measurement points: {', '.join(missing)}")
     if not observer.strip():
-        raise ValueError("Observer name is required")
+        raise ValueError("Reader name is required")
     if not tooth_id.strip():
         raise ValueError("Tooth ID is required")
 
@@ -81,7 +81,7 @@ def read_measurements(path: Path) -> list[dict[str, str]]:
 def save_measurement(path: Path, row: Mapping[str, str]) -> None:
     """Insert or replace a measurement and write a stable CSV file.
 
-    Observer, round, image, and tooth identify a record. Re-measuring the same
+    Reader, round, image, and tooth identify a record. Re-measuring the same
     item in the same round replaces the prior row instead of creating an
     accidental duplicate.
     """

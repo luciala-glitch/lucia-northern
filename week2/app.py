@@ -43,6 +43,20 @@ POINT_INSTRUCTIONS = {
     "distal_bone_crest": "Click the distal bone crest",
     "distal_root_tip": "Click the distal root tip",
 }
+READING_COLUMN_CONFIG = {
+    "timestamp_utc": "Timestamp (UTC)",
+    "observer": "Reader",
+    "round": "Reading session",
+    "image_id": "Image ID",
+    "image_width": "Image width",
+    "image_height": "Image height",
+    "tooth_id": "Tooth ID",
+    "mesial_pbl": "Mesial PBL",
+    "distal_pbl": "Distal PBL",
+    "worst_side": "Worse side",
+    "worst_pbl": "Worst PBL",
+    "stage": "Stage",
+}
 
 
 def reset_points() -> None:
@@ -282,18 +296,19 @@ with results_column:
             )
 
 st.divider()
-st.subheader("Save a repeatability measurement")
+st.subheader("Reading record")
 st.write(
-    "Measure the same 10 teeth in Round 1, then repeat them after a few days "
-    "in Round 2 without viewing the first measurements."
+    "Save the current tooth assessment as a reading record. Use Round 1 for "
+    "an initial reading; add a blinded Round 2 with the same image and tooth "
+    "ID when assessing intra-reader repeatability."
 )
 form_column, saved_column = st.columns((1, 2), gap="large")
 with form_column:
-    observer = st.text_input("Observer", value="Lucia")
-    round_name = st.selectbox("Measurement round", ("Round 1", "Round 2"))
+    observer = st.text_input("Reader", value="Lucia")
+    round_name = st.selectbox("Reading session", ("Round 1", "Round 2"))
     tooth_id = st.text_input("Tooth ID", placeholder="e.g. img1-T1")
     if st.button(
-        "Save measurement", type="primary", disabled=result is None,
+        "Save reading", type="primary", disabled=result is None,
         width="stretch",
     ):
         try:
@@ -314,7 +329,7 @@ with form_column:
         except ValueError as error:
             st.error(str(error))
         else:
-            st.success("Measurement saved to measurements.csv")
+            st.success("Reading saved to measurements.csv")
 
 rows = read_measurements(MEASUREMENTS_PATH)
 
@@ -325,7 +340,7 @@ with saved_column:
     round2_done = False
     if round_name == "Round 2":
         round2_done = st.checkbox(
-            "I've finished Round 2 — show results", key="round2_done"
+            "Complete Round 2 and review results", key="round2_done"
         )
     blind = round_name == "Round 2" and not round2_done
 
@@ -335,11 +350,16 @@ with saved_column:
             for r in rows
         )
         st.info(
-            f"Blind mode: saved data is hidden during Round 2. "
-            f"{done} Round 2 teeth saved so far."
+            f"Blinded Round 2: earlier readings remain hidden. "
+            f"{done} assessments saved in this session."
         )
     elif rows:
-        st.dataframe(rows, hide_index=True, width="stretch")
+        st.dataframe(
+            rows,
+            column_config=READING_COLUMN_CONFIG,
+            hide_index=True,
+            width="stretch",
+        )
     else:
         st.info("No measurements saved yet.")
     if not blind and MEASUREMENTS_PATH.exists():
@@ -352,11 +372,11 @@ with saved_column:
         )
 
 if not blind:
-    st.subheader("Repeatability summary")
+    st.subheader("Intra-reader agreement")
     summary = summarize_repeatability(rows)
     if summary["pair_count"] == 0:
         st.info(
-            "Complete matching Round 1 and Round 2 records to see the comparison."
+            "Save matching Round 1 and Round 2 readings to compare agreement."
         )
     else:
         cols = st.columns(4)
@@ -393,7 +413,16 @@ if not blind:
             ],
             hide_index=True,
         )
-        st.dataframe(summary["pairs"], hide_index=True, width="stretch")
+        st.dataframe(
+            summary["pairs"],
+            column_config={
+                "observer": "Reader",
+                "image_id": "Image ID",
+                "tooth_id": "Tooth ID",
+            },
+            hide_index=True,
+            width="stretch",
+        )
 
 with st.expander("Input rules and staging limits"):
     st.markdown(

@@ -21,9 +21,10 @@ the [`week1`](https://github.com/luciala-glitch/pbl-calculator/tree/week1) tag.
 - clear handling of zero root length, crest above CEJ, and crest past root tip;
 - CSV capture of all point coordinates (in original image pixels) and results
   for two measurement rounds;
-- blind Round 2: saved data and the summary stay hidden until you tick
-  "I've finished Round 2";
-- repeatability summary with worst/mesial/distal PBL change, stage agreement,
+- a general reading record for single assessments or blinded repeat readings;
+- blind Round 2: earlier readings and the summary stay hidden until the reader
+  completes the session;
+- intra-reader agreement with worst/mesial/distal PBL change, stage agreement,
   and the average pixel shift of each landmark; and
 - pytest coverage for calculations, invalid inputs, worse-side staging, and
   repeatability analysis.
@@ -72,11 +73,13 @@ Streamlit normally opens the app automatically; otherwise visit
 3. Click the three mesial points followed by the three distal points, using the
    on-screen order. Use **Undo** or **Reset** to correct a placement.
 4. Read the mesial PBL, distal PBL, worse surface, and tooth stage.
-5. Enter an observer and tooth ID, choose **Round 1**, and save the row.
-6. Measure 10 teeth across several images. A few days later, repeat those same
-   image/tooth IDs as **Round 2** without looking at Round 1.
-7. Tick **I've finished Round 2** to reveal the comparison, then download the
-   completed CSV if needed. The submitted results are recorded in
+5. Enter a reader and tooth ID, choose **Round 1**, and save the reading. A
+   Round 1 record can also be used as a standalone assessment.
+6. For an intra-reader study, repeat the same image/tooth IDs as **Round 2**
+   without viewing the earlier readings.
+7. Select **Complete Round 2 and review results** to reveal the agreement
+   analysis, then download the completed CSV if needed. The submitted study
+   results are recorded in
    `week2/REPEATABILITY.md`.
 
 ## Calculation and input policy
