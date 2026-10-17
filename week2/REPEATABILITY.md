@@ -26,15 +26,25 @@ Repeatability section reports:
 
 ## Results note
 
-Status: Round 1 and Round 2 have not yet been collected. Results are not
-invented.
+Status: Complete. Lucia measured the same 10 teeth in both rounds using the
+same image and tooth IDs.
 
-- Teeth paired: **TBD / 10**
-- Mean absolute worst-side PBL change: **TBD percentage points**
-- Maximum absolute worst-side PBL change: **TBD percentage points**
-- Stage agreement: **TBD%** (**TBD / 10** teeth)
-- Teeth whose stage changed: **TBD**
-- Landmark with the largest average shift: **TBD** (**TBD pixels**)
+- Teeth paired: **10 / 10**
+- Mean absolute worst-side PBL change: **3.6 percentage points**
+- Maximum absolute worst-side PBL change: **11.2 percentage points**
+- Mean absolute mesial PBL change: **3.3 percentage points**
+- Mean absolute distal PBL change: **2.6 percentage points**
+- Stage agreement: **100%** (**10 / 10** teeth)
+- Teeth whose stage changed: **0**
+- Teeth whose worse side changed: **3**
+- Landmark with the largest average shift: **M-Tip** (**11.6 pixels**)
 
-Observer note: **TBD — after Round 2, add one or two sentences describing
-which landmark was hardest to place consistently and why.**
+Observer note: The mesial root tip was the least repeatable landmark. Root
+apices were harder to place consistently where the panoramic image was blurred
+or overlapped by nearby anatomy.
+
+Study limitation: Both rounds were completed on the same day rather than a few
+days apart. Round 2 used the app's blind mode, but the short interval may still
+allow memory of the first session to improve apparent agreement. These results
+should therefore be described as a same-day workflow demonstration, not a
+fully independent intra-observer repeatability estimate.

@@ -1,1 +1,21 @@
 timestamp_utc,observer,round,image_id,image_width,image_height,tooth_id,mesial_cej_x,mesial_cej_y,mesial_bone_crest_x,mesial_bone_crest_y,mesial_root_tip_x,mesial_root_tip_y,distal_cej_x,distal_cej_y,distal_bone_crest_x,distal_bone_crest_y,distal_root_tip_x,distal_root_tip_y,mesial_pbl,distal_pbl,worst_side,worst_pbl,stage
+2026-10-16T19:46:16+00:00,Lucia,Round 1,kaggle_dental_xray_1.jpg,2041,1024,img1-T1,796,597,759,694,718,816,722,584,707,688,685,803,44.657,47.310,Distal,47.310,Stage III/IV
+2026-10-16T19:48:06+00:00,Lucia,Round 1,kaggle_dental_xray_1.jpg,2041,1024,img1-T2,857,629,824,712,796,790,794,616,796,700,766,800,51.879,45.145,Mesial,51.879,Stage III/IV
+2026-10-16T19:49:40+00:00,Lucia,Round 1,kaggle_dental_xray_1.jpg,2041,1024,img1-T3,933,638,905,722,846,833,865,635,855,720,824,818,41.467,45.637,Distal,45.637,Stage III/IV
+2026-10-16T19:59:08+00:00,Lucia,Round 1,kaggle_dental_xray_10.jpg,2041,1024,img10-T1,638,423,646,325,659,206,549,403,562,302,571,213,45.101,53.241,Distal,53.241,Stage III/IV
+2026-10-16T20:10:40+00:00,Lucia,Round 1,kaggle_dental_xray_10.jpg,2041,1024,img10-T2,759,451,753,340,770,234,649,438,661,356,700,254,51.161,43.403,Mesial,51.161,Stage III/IV
+2026-10-16T20:11:40+00:00,Lucia,Round 1,kaggle_dental_xray_10.jpg,2041,1024,img10-T3,818,434,811,315,783,212,731,421,744,325,750,225,53.041,49.196,Mesial,53.041,Stage III/IV
+2026-10-16T20:13:49+00:00,Lucia,Round 1,kaggle_dental_xray_26.jpg,2041,1024,img26-T1,829,508,829,412,805,256,753,499,753,408,781,263,37.924,38.291,Distal,38.291,Stage III/IV
+2026-10-16T20:14:40+00:00,Lucia,Round 1,kaggle_dental_xray_26.jpg,2041,1024,img26-T2,904,523,909,423,896,302,833,510,844,410,878,301,45.276,47.057,Distal,47.057,Stage III/IV
+2026-10-16T20:15:23+00:00,Lucia,Round 1,kaggle_dental_xray_26.jpg,2041,1024,img26-T3,1000,538,993,414,976,289,909,523,918,429,950,293,49.648,40.419,Mesial,49.648,Stage III/IV
+2026-10-16T20:16:38+00:00,Lucia,Round 1,kaggle_dental_xray_42.jpg,2041,1024,img42-T1,527,494,505,386,477,289,438,495,440,384,458,295,52.234,55.234,Distal,55.234,Stage III/IV
+2026-10-16T20:19:50+00:00,Lucia,Round 2,kaggle_dental_xray_1.jpg,2041,1024,img1-T1,800,601,770,675,718,785,722,584,707,681,690,787,39.639,47.761,Distal,47.761,Stage III/IV
+2026-10-16T20:20:35+00:00,Lucia,Round 2,kaggle_dental_xray_1.jpg,2041,1024,img1-T2,859,631,835,696,802,792,796,610,796,690,770,805,40.569,40.666,Distal,40.666,Stage III/IV
+2026-10-16T20:21:26+00:00,Lucia,Round 2,kaggle_dental_xray_1.jpg,2041,1024,img1-T3,933,635,909,718,846,822,863,629,857,707,822,822,41.892,39.649,Mesial,41.892,Stage III/IV
+2026-10-16T20:23:06+00:00,Lucia,Round 2,kaggle_dental_xray_10.jpg,2041,1024,img10-T1,640,417,636,327,661,212,551,404,570,310,579,215,43.717,50.193,Distal,50.193,Stage III/IV
+2026-10-16T20:23:58+00:00,Lucia,Round 2,kaggle_dental_xray_10.jpg,2041,1024,img10-T2,735,462,753,325,748,213,661,447,659,358,705,245,55.417,43.061,Mesial,55.417,Stage III/IV
+2026-10-16T20:24:52+00:00,Lucia,Round 2,kaggle_dental_xray_10.jpg,2041,1024,img10-T3,813,438,811,319,790,221,738,410,759,323,763,217,54.541,45.988,Mesial,54.541,Stage III/IV
+2026-10-16T20:25:59+00:00,Lucia,Round 2,kaggle_dental_xray_26.jpg,2041,1024,img26-T1,829,508,828,408,802,258,751,494,759,404,785,256,39.771,37.583,Mesial,39.771,Stage III/IV
+2026-10-16T20:27:29+00:00,Lucia,Round 2,kaggle_dental_xray_26.jpg,2041,1024,img26-T2,911,525,907,425,894,302,841,518,848,414,881,302,44.749,47.450,Distal,47.450,Stage III/IV
+2026-10-16T20:28:12+00:00,Lucia,Round 2,kaggle_dental_xray_26.jpg,2041,1024,img26-T3,996,538,996,425,972,286,911,529,922,427,956,295,44.639,43.054,Mesial,44.639,Stage III/IV
+2026-10-17T02:18:48+00:00,Lucia,Round 2,kaggle_dental_xray_42.jpg,2041,1024,img42-T1,525,501,510,397,484,295,440,495,432,384,453,310,50.027,60.008,Distal,60.008,Stage III/IV

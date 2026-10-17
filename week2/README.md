@@ -107,10 +107,10 @@ released under CC0. The project does not include the full 5.7 GB dataset.
 
 ## Repeatability deliverable
 
-`week2/measurements.csv` is a header-only template until the observer records
-the 20 observations (10 teeth × 2 rounds). The app writes each saved row to
-that file and also provides a download button. `week2/REPEATABILITY.md`
-explains exactly which summary values to report. Results are intentionally not
-fabricated: Round 2 must be performed after the requested waiting interval.
+`week2/measurements.csv` contains the completed 20 observations (10 teeth ×
+2 rounds). The app writes each saved row to that file and also provides a
+download button. `week2/REPEATABILITY.md` reports the observed PBL changes,
+stage agreement, landmark shifts, and the limitation that this demonstration
+used a same-day repeat rather than the requested multi-day interval.
 
 This project is an educational measurement tool, not a diagnostic device.
