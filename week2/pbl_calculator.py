@@ -96,7 +96,8 @@ def classify_pbl(pbl_percentage: float) -> str:
 
     if pbl_percentage < 15:
         return "Mild"
-    if pbl_percentage < 33:
+    # The AAP/EFP Stage II boundary is the coronal third of the root.
+    if pbl_percentage < 100 / 3:
         return "Moderate"
     return "Severe"
 

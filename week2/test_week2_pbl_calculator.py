@@ -37,7 +37,8 @@ def test_tilted_tooth_uses_euclidean_distance():
         (14.9, "Mild"),
         (15.0, "Moderate"),
         (32.9, "Moderate"),
-        (33.0, "Severe"),
+        (33.0, "Moderate"),
+        (33.34, "Severe"),
         (100.0, "Severe"),
     ],
 )
@@ -121,7 +122,7 @@ def test_equal_sides_report_mesial():
 @pytest.mark.parametrize(
     "pbl, stage",
     [(0, "Stage I"), (14.99, "Stage I"), (15, "Stage II"),
-     (32.99, "Stage II"), (33, "Stage III/IV")],
+     (33, "Stage II"), (33.34, "Stage III/IV")],
 )
 def test_stage_boundaries(pbl, stage):
     assert stage_pbl(pbl) == stage

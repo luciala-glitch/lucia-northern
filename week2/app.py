@@ -2,7 +2,9 @@
 
 from functools import partial
 from io import BytesIO
+import os
 from pathlib import Path
+import subprocess
 
 from PIL import Image
 import streamlit as st
@@ -26,7 +28,31 @@ from repeatability import (
 
 PROJECT_DIR = Path(__file__).resolve().parent
 SAMPLE_DIR = PROJECT_DIR / "sample_xrays"
-MEASUREMENTS_PATH = PROJECT_DIR / "measurements.csv"
+MEASUREMENTS_PATH = Path(
+    os.environ.get("PBL_MEASUREMENTS_PATH", PROJECT_DIR / "measurements.csv")
+)
+
+
+def resolve_app_version() -> str:
+    """Return an explicit build value or the current short Git commit."""
+    configured = os.environ.get("PBL_APP_VERSION")
+    if configured:
+        return configured
+    try:
+        completed = subprocess.run(
+            ("git", "rev-parse", "--short", "HEAD"),
+            cwd=PROJECT_DIR,
+            check=True,
+            capture_output=True,
+            text=True,
+            timeout=1,
+        )
+    except (OSError, subprocess.SubprocessError):
+        return "unknown"
+    return completed.stdout.strip() or "unknown"
+
+
+APP_VERSION = resolve_app_version()
 POINT_LABELS = {
     "mesial_cej": "M-CEJ",
     "mesial_bone_crest": "M-Crest",
@@ -51,6 +77,9 @@ READING_COLUMN_CONFIG = {
     "image_width": "Image width",
     "image_height": "Image height",
     "tooth_id": "Tooth ID",
+    "clahe_enabled": "CLAHE",
+    "app_version": "App version",
+    "supersedes_timestamp_utc": "Supersedes (UTC)",
     "mesial_pbl": "Mesial PBL",
     "distal_pbl": "Distal PBL",
     "worst_side": "Worse side",
@@ -95,10 +124,20 @@ def change_zoom(amount: int | None = None) -> None:
         st.session_state.zoom_percent = min(200, max(50, current + amount))
 
 
-def complete_round_two() -> None:
-    """Reveal the completed reading session and its agreement results."""
-    if st.session_state.get("round2_done"):
-        st.session_state.blind_reading = False
+def change_reading_session() -> None:
+    """Start an unfinished Round 2 in blind mode automatically."""
+    if (
+        st.session_state.get("reading_session") == "Round 2"
+        and not st.session_state.get("round2_complete", False)
+    ):
+        st.session_state.blind_reading = True
+
+
+def update_round_two_completion() -> None:
+    """Persist completion even while the Round 2 checkbox is unmounted."""
+    complete = st.session_state.get("round2_done_widget", False)
+    st.session_state.round2_complete = complete
+    st.session_state.blind_reading = not complete
 
 
 def load_selected_image() -> tuple[Image.Image, str] | tuple[None, None]:
@@ -326,7 +365,12 @@ st.write(
 form_column, saved_column = st.columns((1, 2), gap="large")
 with form_column:
     observer = st.text_input("Reader", value="Lucia")
-    round_name = st.selectbox("Reading session", ("Round 1", "Round 2"))
+    round_name = st.selectbox(
+        "Reading session",
+        ("Round 1", "Round 2"),
+        key="reading_session",
+        on_change=change_reading_session,
+    )
     tooth_id = st.text_input("Tooth ID", placeholder="e.g. img1-T1")
     if st.button(
         "Save reading", type="primary", disabled=result is None,
@@ -345,6 +389,8 @@ with form_column:
                 worst_side=result.worst_side,
                 worst_pbl=result.worst_pbl,
                 stage=result.stage,
+                clahe_enabled=use_enhancement,
+                app_version=APP_VERSION,
             )
             save_measurement(MEASUREMENTS_PATH, row)
         except ValueError as error:
@@ -360,20 +406,25 @@ with saved_column:
     # interaction and hides the revealed summary again.
     round2_done = False
     if round_name == "Round 2":
+        if "round2_done_widget" not in st.session_state:
+            st.session_state.round2_done_widget = st.session_state.get(
+                "round2_complete", False
+            )
         round2_done = st.checkbox(
             "Complete Round 2 and reveal results",
-            key="round2_done",
-            on_change=complete_round_two,
+            key="round2_done_widget",
+            on_change=update_round_two_completion,
         )
         if round2_done:
             st.success("Round 2 is complete. Results are now visible for review.")
     blind = blind_reading or (round_name == "Round 2" and not round2_done)
 
     if blind:
-        done = sum(
-            r["round"] == round_name and r["observer"] == observer.strip()
+        done = len({
+            (r["image_id"], r["tooth_id"])
             for r in rows
-        )
+            if r["round"] == round_name and r["observer"] == observer.strip()
+        })
         if blind_reading:
             st.info(
                 "Blind reading mode: calculated results, earlier readings, and "
@@ -436,6 +487,22 @@ if not blind:
         cols[2].metric("Stage changed", summary["stage_change_count"])
         cols[3].metric("Worse side flipped", summary["worst_side_change_count"])
 
+        cols = st.columns(4)
+        cols[0].metric(
+            "Mean bias (R2 − R1)",
+            f"{summary['mean_signed_pbl_change']:.1f} pp",
+        )
+        cols[1].metric("95% LoA lower", f"{summary['loa_lower']:.1f} pp")
+        cols[2].metric("95% LoA upper", f"{summary['loa_upper']:.1f} pp")
+        cols[3].metric(
+            "Repeatability coefficient",
+            f"{summary['repeatability_coefficient']:.1f} pp",
+            help=(
+                "Exploratory estimate: 2.77 × within-subject SD. Interpret "
+                "cautiously for this small, same-day sample."
+            ),
+        )
+
         st.write("**Average landmark shift between rounds** (original pixels)")
         st.dataframe(
             [
@@ -461,7 +528,10 @@ with st.expander("Input rules and staging limits"):
         - A CEJ and root tip at the same pixel produce a clear zero-root-length error.
         - A bone crest on the crown side of the CEJ is reported as 0% PBL.
         - A bone crest projected past the root tip is flagged as an invalid placement.
-        - Stage I is <15%, Stage II is 15–<33%, and ≥33% is shown as Stage III/IV.
+        - A bone crest farther from the CEJ than the root tip is flagged as invalid,
+          including a severely off-axis placement.
+        - Stage I is <15%, Stage II is 15–<33.3%, and ≥33.3% is shown as
+          Stage III/IV, following the coronal-third boundary.
           PBL alone cannot distinguish Stage III from Stage IV; that requires
           complexity and tooth-loss information.
         """

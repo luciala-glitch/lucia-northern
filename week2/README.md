@@ -19,15 +19,16 @@ the [`week1`](https://github.com/luciala-glitch/pbl-calculator/tree/week1) tag.
   `enhance_dataset.py` if it's in the project folder, otherwise OpenCV directly
   (`clipLimit=2.0`, `8 × 8` tiles);
 - clear handling of zero root length, crest above CEJ, and crest past root tip;
-- CSV capture of all point coordinates (in original image pixels) and results
-  for two measurement rounds;
+- CSV capture of all point coordinates (in original image pixels), image
+  processing state, app version, and results for two measurement rounds;
 - a general reading record for single assessments or blinded repeat readings;
 - optional **Blind reading mode** hides the current PBL, stage, prior readings,
   and agreement analysis while still allowing the reading to be saved;
-- blind Round 2: earlier readings and the summary stay hidden until the reader
-  completes the session;
+- Round 2 automatically starts in blind mode; earlier readings, the current
+  result, and the summary stay hidden until the reader completes the session;
 - intra-reader agreement with worst/mesial/distal PBL change, stage agreement,
-  and the average pixel shift of each landmark; and
+  average pixel shift of each landmark, mean bias, 95% limits of agreement,
+  and a repeatability coefficient; and
 - pytest coverage for calculations, invalid inputs, worse-side staging, and
   repeatability analysis.
 
@@ -75,15 +76,17 @@ Streamlit normally opens the app automatically; otherwise visit
 3. Click the three mesial points followed by the three distal points, using the
    on-screen order. Use **Undo** or **Reset** to correct a placement.
 4. Read the mesial PBL, distal PBL, worse surface, and tooth stage. For an
-   independent reading, enable **Blind reading mode** before placing points;
-   turn it off only when ready to review the calculated result.
+   independent reading outside the two-round workflow, enable **Blind reading
+   mode** before placing points and turn it off only when ready to review.
 5. Enter a reader and tooth ID, choose **Round 1**, and save the reading. A
    Round 1 record can also be used as a standalone assessment.
-6. For an intra-reader study, repeat the same image/tooth IDs as **Round 2**
-   without viewing the earlier readings.
+6. For an intra-reader study, select **Round 2** and repeat the same image/tooth
+   IDs. Selecting Round 2 automatically enables blind mode so the current
+   result and earlier readings are hidden.
 7. Select **Complete Round 2 and reveal results**. This automatically turns
    off Blind reading mode and displays the current result, saved readings, and
-   agreement analysis. Download the completed CSV if needed. The submitted
+   agreement analysis. Completion remains set if you switch sessions and come
+   back. Download the completed CSV if needed. The submitted
    study results are recorded in
    `week2/REPEATABILITY.md`.
 
@@ -103,11 +106,27 @@ PBL (%) = distance(CEJ, bone crest) / distance(CEJ, root tip) × 100
   off-axis click: **flagged as invalid** so PBL cannot exceed 100%.
 
 The worse of mesial and distal PBL determines the radiographic stage: Stage I
-is below 15%, Stage II is 15% to below 33%, and 33% or more is reported as
-Stage III/IV. PBL alone cannot distinguish Stage III from Stage IV; that needs
-complexity and tooth-loss information.
+is below 15%, Stage II is 15% to below one third of the root (33.3%), and one
+third or more is reported as Stage III/IV. The calculator uses the exact
+one-third boundary internally and rounds only the displayed value. PBL alone
+cannot distinguish Stage III from Stage IV; that needs complexity and
+tooth-loss information.
 
 Pixel coordinates need no millimetre calibration because PBL is a ratio.
+
+## Measurement limitations
+
+- The formula uses the full CEJ-to-crest distance and does not subtract the
+  normal physiological CEJ-to-alveolar-crest space. Because the app has no
+  millimetre calibration, early bone loss can be overestimated.
+- The bundled examples are panoramic radiographs, which may contain blur,
+  overlap, and geometric distortion. Intraoral/periapical imaging is generally
+  better suited to confirmatory measurements requiring high precision.
+- This is a point-placement and workflow demonstration, not a clinical
+  diagnostic or validation tool.
+- A future optional shared-apex mode could reduce one click for a confirmed
+  single-rooted tooth. The six-point workflow remains the default because it
+  supports separate surfaces and multi-rooted teeth and matches the assignment.
 
 ## Dataset credit
 
@@ -119,9 +138,12 @@ full dataset.
 ## Repeatability deliverable
 
 `week2/measurements.csv` contains the completed 20 observations (10 teeth ×
-2 rounds). The app writes each saved row to that file and also provides a
-download button. `week2/REPEATABILITY.md` reports the observed PBL changes,
-stage agreement, landmark shifts, and the limitation that this demonstration
-used a same-day repeat rather than the requested multi-day interval.
+2 rounds). New saves include whether CLAHE was enabled, the app commit/version,
+and a superseded-record timestamp. Re-saving the same reader/session/image/tooth
+now appends an auditable version instead of deleting the earlier row; summaries
+use the newest version. The app also provides a CSV download button.
+`week2/REPEATABILITY.md` reports the observed PBL changes, agreement metrics,
+landmark shifts, and the limitation that this demonstration used a same-day
+repeat rather than the requested multi-day interval.
 
 This project is an educational measurement tool, not a diagnostic device.

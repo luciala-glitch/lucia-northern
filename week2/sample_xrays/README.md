@@ -13,3 +13,8 @@ file name is the original image number.
 | `kaggle_dental_xray_42.jpg` | several isolated teeth with visible roots and bone loss |
 
 The full dataset is not included.
+
+These are panoramic radiographs and are included for workflow demonstration.
+Panoramic blur, overlap, and geometric distortion can limit point-placement
+precision; they should not be treated as a substitute for confirmatory
+intraoral/periapical imaging or as a clinically validated reference set.
