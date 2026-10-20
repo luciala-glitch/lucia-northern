@@ -87,6 +87,24 @@ def test_bone_crest_at_root_tip_is_100_percent():
     assert pbl == pytest.approx(100.0)
 
 
+def test_reversed_root_tip_has_clear_error_instead_of_zero():
+    # Mesial root tip clicked on the crown side of the CEJ.
+    with pytest.raises(ValueError, match="opposite directions"):
+        calculate_tooth_pbl(
+            (0, 100), (0, 70), (0, 200),
+            (10, 100), (10, 80), (10, 0),
+        )
+
+
+def test_crest_above_cej_still_reads_zero_when_axes_agree():
+    result = calculate_tooth_pbl(
+        (0, 100), (0, 105), (0, 0),
+        (10, 100), (10, 80), (10, 0),
+    )
+    assert result.mesial_pbl == pytest.approx(0.0)
+    assert result.distal_pbl == pytest.approx(20.0)
+
+
 def test_tooth_uses_worse_distal_side_for_stage():
     result = calculate_tooth_pbl(
         (0, 100), (0, 90), (0, 0),

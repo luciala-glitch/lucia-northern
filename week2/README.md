@@ -104,6 +104,12 @@ PBL (%) = distance(CEJ, bone crest) / distance(CEJ, root tip) × 100
   capped, because it most likely represents a misplaced click.
 - Bone crest farther from the CEJ than the root tip, including a severely
   off-axis click: **flagged as invalid** so PBL cannot exceed 100%.
+- Mesial and distal root axes (CEJ → root tip) pointing in opposite
+  directions: **flagged as invalid**, because one root tip was most likely
+  clicked on the crown side. Without this check, the reversed axis would make
+  a real crest look like it is above the CEJ and silently read as 0%. If both
+  root tips are reversed together, the axes still agree and this check cannot
+  detect it.
 
 The worse of mesial and distal PBL determines the radiographic stage: Stage I
 is below 15%, Stage II is 15% to below one third of the root (33.3%), and one

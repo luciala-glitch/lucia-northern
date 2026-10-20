@@ -133,6 +133,22 @@ def calculate_tooth_pbl(
         distal_cej, distal_bone_crest, distal_root_tip
     )
 
+    # A root tip clicked on the crown side flips that surface's axis, which
+    # would otherwise turn a real crest into a silent "above the CEJ" 0%.
+    mesial_cej_x, mesial_cej_y = _check_point(mesial_cej)
+    mesial_tip_x, mesial_tip_y = _check_point(mesial_root_tip)
+    distal_cej_x, distal_cej_y = _check_point(distal_cej)
+    distal_tip_x, distal_tip_y = _check_point(distal_root_tip)
+    axis_agreement = (
+        (mesial_tip_x - mesial_cej_x) * (distal_tip_x - distal_cej_x)
+        + (mesial_tip_y - mesial_cej_y) * (distal_tip_y - distal_cej_y)
+    )
+    if axis_agreement <= 0:
+        raise ValueError(
+            "Mesial and distal root axes point in opposite directions; "
+            "check the root tip placement"
+        )
+
     if mesial_pbl >= distal_pbl:
         worst_pbl = mesial_pbl
         worst_side = "Mesial"

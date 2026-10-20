@@ -530,6 +530,8 @@ with st.expander("Input rules and staging limits"):
         - A bone crest projected past the root tip is flagged as an invalid placement.
         - A bone crest farther from the CEJ than the root tip is flagged as invalid,
           including a severely off-axis placement.
+        - Mesial and distal root axes pointing in opposite directions are flagged
+          as a likely reversed root-tip click instead of reading as 0%.
         - Stage I is <15%, Stage II is 15–<33.3%, and ≥33.3% is shown as
           Stage III/IV, following the coronal-third boundary.
           PBL alone cannot distinguish Stage III from Stage IV; that requires
