@@ -1,0 +1,690 @@
+{
+  "study_id": "afb9efae0e0f4389907765ba6adc2cdd",
+  "records": 90,
+  "registered_teeth": [
+    {
+      "study": "afb9efae0e0f4389907765ba6adc2cdd",
+      "id": 1,
+      "image": "kaggle_dental_xray_1.jpg",
+      "x": 1406,
+      "y": 642,
+      "confirmed": 1
+    },
+    {
+      "study": "afb9efae0e0f4389907765ba6adc2cdd",
+      "id": 2,
+      "image": "kaggle_dental_xray_1.jpg",
+      "x": 1263,
+      "y": 665,
+      "confirmed": 1
+    },
+    {
+      "study": "afb9efae0e0f4389907765ba6adc2cdd",
+      "id": 3,
+      "image": "kaggle_dental_xray_1.jpg",
+      "x": 1171,
+      "y": 660,
+      "confirmed": 1
+    },
+    {
+      "study": "afb9efae0e0f4389907765ba6adc2cdd",
+      "id": 4,
+      "image": "kaggle_dental_xray_1.jpg",
+      "x": 901,
+      "y": 656,
+      "confirmed": 1
+    },
+    {
+      "study": "afb9efae0e0f4389907765ba6adc2cdd",
+      "id": 5,
+      "image": "kaggle_dental_xray_1.jpg",
+      "x": 833,
+      "y": 651,
+      "confirmed": 1
+    },
+    {
+      "study": "afb9efae0e0f4389907765ba6adc2cdd",
+      "id": 6,
+      "image": "kaggle_dental_xray_1.jpg",
+      "x": 757,
+      "y": 615,
+      "confirmed": 1
+    },
+    {
+      "study": "afb9efae0e0f4389907765ba6adc2cdd",
+      "id": 7,
+      "image": "kaggle_dental_xray_1.jpg",
+      "x": 487,
+      "y": 575,
+      "confirmed": 1
+    },
+    {
+      "study": "afb9efae0e0f4389907765ba6adc2cdd",
+      "id": 8,
+      "image": "kaggle_dental_xray_1.jpg",
+      "x": 1578,
+      "y": 524,
+      "confirmed": 1
+    },
+    {
+      "study": "afb9efae0e0f4389907765ba6adc2cdd",
+      "id": 9,
+      "image": "kaggle_dental_xray_1.jpg",
+      "x": 1482,
+      "y": 533,
+      "confirmed": 1
+    },
+    {
+      "study": "afb9efae0e0f4389907765ba6adc2cdd",
+      "id": 10,
+      "image": "kaggle_dental_xray_1.jpg",
+      "x": 1220,
+      "y": 569,
+      "confirmed": 1
+    },
+    {
+      "study": "afb9efae0e0f4389907765ba6adc2cdd",
+      "id": 11,
+      "image": "kaggle_dental_xray_1.jpg",
+      "x": 1151,
+      "y": 566,
+      "confirmed": 1
+    },
+    {
+      "study": "afb9efae0e0f4389907765ba6adc2cdd",
+      "id": 12,
+      "image": "kaggle_dental_xray_1.jpg",
+      "x": 925,
+      "y": 569,
+      "confirmed": 1
+    },
+    {
+      "study": "afb9efae0e0f4389907765ba6adc2cdd",
+      "id": 13,
+      "image": "kaggle_dental_xray_1.jpg",
+      "x": 858,
+      "y": 560,
+      "confirmed": 1
+    },
+    {
+      "study": "afb9efae0e0f4389907765ba6adc2cdd",
+      "id": 14,
+      "image": "kaggle_dental_xray_1.jpg",
+      "x": 693,
+      "y": 508,
+      "confirmed": 1
+    },
+    {
+      "study": "afb9efae0e0f4389907765ba6adc2cdd",
+      "id": 15,
+      "image": "kaggle_dental_xray_1.jpg",
+      "x": 596,
+      "y": 501,
+      "confirmed": 1
+    }
+  ],
+  "settings": {
+    "mode": "research",
+    "target": 15,
+    "conditions": [
+      "raw",
+      "he",
+      "clahe"
+    ],
+    "rounds": 2
+  },
+  "counts": {
+    "raw_round_1": 15,
+    "raw_round_2": 15,
+    "he_round_1": 15,
+    "he_round_2": 15,
+    "clahe_round_1": 15,
+    "clahe_round_2": 15
+  },
+  "image_sha256": {
+    "kaggle_dental_xray_1.jpg": "98d6809037a4337758598e686c222e8058ae7d88f9ed98615627a7fa1b2fa229"
+  },
+  "amendments": [],
+  "record_times": [
+    {
+      "tooth_id": 1,
+      "condition": "clahe",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 1,
+      "condition": "clahe",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:59:44Z"
+    },
+    {
+      "tooth_id": 1,
+      "condition": "he",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 1,
+      "condition": "he",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:54:17Z"
+    },
+    {
+      "tooth_id": 1,
+      "condition": "raw",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 1,
+      "condition": "raw",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:47:59Z"
+    },
+    {
+      "tooth_id": 2,
+      "condition": "clahe",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 2,
+      "condition": "clahe",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:59:13Z"
+    },
+    {
+      "tooth_id": 2,
+      "condition": "he",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 2,
+      "condition": "he",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:55:05Z"
+    },
+    {
+      "tooth_id": 2,
+      "condition": "raw",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 2,
+      "condition": "raw",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:47:34Z"
+    },
+    {
+      "tooth_id": 3,
+      "condition": "clahe",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 3,
+      "condition": "clahe",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:59:52Z"
+    },
+    {
+      "tooth_id": 3,
+      "condition": "he",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 3,
+      "condition": "he",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:54:46Z"
+    },
+    {
+      "tooth_id": 3,
+      "condition": "raw",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 3,
+      "condition": "raw",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:47:18Z"
+    },
+    {
+      "tooth_id": 4,
+      "condition": "clahe",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 4,
+      "condition": "clahe",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:58:07Z"
+    },
+    {
+      "tooth_id": 4,
+      "condition": "he",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 4,
+      "condition": "he",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:55:56Z"
+    },
+    {
+      "tooth_id": 4,
+      "condition": "raw",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 4,
+      "condition": "raw",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:48:44Z"
+    },
+    {
+      "tooth_id": 5,
+      "condition": "clahe",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 5,
+      "condition": "clahe",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:58:22Z"
+    },
+    {
+      "tooth_id": 5,
+      "condition": "he",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 5,
+      "condition": "he",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:54:56Z"
+    },
+    {
+      "tooth_id": 5,
+      "condition": "raw",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 5,
+      "condition": "raw",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:49:17Z"
+    },
+    {
+      "tooth_id": 6,
+      "condition": "clahe",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 6,
+      "condition": "clahe",
+      "round": 2,
+      "saved_utc": "2026-10-23T18:00:09Z"
+    },
+    {
+      "tooth_id": 6,
+      "condition": "he",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 6,
+      "condition": "he",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:54:36Z"
+    },
+    {
+      "tooth_id": 6,
+      "condition": "raw",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 6,
+      "condition": "raw",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:48:34Z"
+    },
+    {
+      "tooth_id": 7,
+      "condition": "clahe",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 7,
+      "condition": "clahe",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:59:29Z"
+    },
+    {
+      "tooth_id": 7,
+      "condition": "he",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 7,
+      "condition": "he",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:56:21Z"
+    },
+    {
+      "tooth_id": 7,
+      "condition": "raw",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 7,
+      "condition": "raw",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:47:50Z"
+    },
+    {
+      "tooth_id": 8,
+      "condition": "clahe",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 8,
+      "condition": "clahe",
+      "round": 2,
+      "saved_utc": "2026-10-23T18:00:01Z"
+    },
+    {
+      "tooth_id": 8,
+      "condition": "he",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 8,
+      "condition": "he",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:56:05Z"
+    },
+    {
+      "tooth_id": 8,
+      "condition": "raw",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 8,
+      "condition": "raw",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:47:26Z"
+    },
+    {
+      "tooth_id": 9,
+      "condition": "clahe",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 9,
+      "condition": "clahe",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:59:05Z"
+    },
+    {
+      "tooth_id": 9,
+      "condition": "he",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 9,
+      "condition": "he",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:55:14Z"
+    },
+    {
+      "tooth_id": 9,
+      "condition": "raw",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 9,
+      "condition": "raw",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:49:08Z"
+    },
+    {
+      "tooth_id": 10,
+      "condition": "clahe",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 10,
+      "condition": "clahe",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:58:31Z"
+    },
+    {
+      "tooth_id": 10,
+      "condition": "he",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 10,
+      "condition": "he",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:56:31Z"
+    },
+    {
+      "tooth_id": 10,
+      "condition": "raw",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 10,
+      "condition": "raw",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:48:18Z"
+    },
+    {
+      "tooth_id": 11,
+      "condition": "clahe",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 11,
+      "condition": "clahe",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:58:57Z"
+    },
+    {
+      "tooth_id": 11,
+      "condition": "he",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 11,
+      "condition": "he",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:56:13Z"
+    },
+    {
+      "tooth_id": 11,
+      "condition": "raw",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 11,
+      "condition": "raw",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:48:09Z"
+    },
+    {
+      "tooth_id": 12,
+      "condition": "clahe",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 12,
+      "condition": "clahe",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:58:15Z"
+    },
+    {
+      "tooth_id": 12,
+      "condition": "he",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 12,
+      "condition": "he",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:55:25Z"
+    },
+    {
+      "tooth_id": 12,
+      "condition": "raw",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 12,
+      "condition": "raw",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:48:54Z"
+    },
+    {
+      "tooth_id": 13,
+      "condition": "clahe",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 13,
+      "condition": "clahe",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:59:36Z"
+    },
+    {
+      "tooth_id": 13,
+      "condition": "he",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 13,
+      "condition": "he",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:54:25Z"
+    },
+    {
+      "tooth_id": 13,
+      "condition": "raw",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 13,
+      "condition": "raw",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:48:26Z"
+    },
+    {
+      "tooth_id": 14,
+      "condition": "clahe",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 14,
+      "condition": "clahe",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:58:00Z"
+    },
+    {
+      "tooth_id": 14,
+      "condition": "he",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 14,
+      "condition": "he",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:55:34Z"
+    },
+    {
+      "tooth_id": 14,
+      "condition": "raw",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 14,
+      "condition": "raw",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:49:24Z"
+    },
+    {
+      "tooth_id": 15,
+      "condition": "clahe",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 15,
+      "condition": "clahe",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:59:20Z"
+    },
+    {
+      "tooth_id": 15,
+      "condition": "he",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 15,
+      "condition": "he",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:54:08Z"
+    },
+    {
+      "tooth_id": 15,
+      "condition": "raw",
+      "round": 1,
+      "saved_utc": null
+    },
+    {
+      "tooth_id": 15,
+      "condition": "raw",
+      "round": 2,
+      "saved_utc": "2026-10-23T17:47:41Z"
+    }
+  ]
+}

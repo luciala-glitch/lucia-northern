@@ -1,0 +1,22 @@
+✔ image load is acknowledged; marker updates do not reload the image (3.125125ms)
+✔ rapid clicks survive an older server acknowledgement and undo/reset (0.543209ms)
+✔ reloaded iframe requests its missing image and recovers existing points (0.404625ms)
+✔ changing condition loads and acknowledges a new image once (0.381291ms)
+✔ all five landmarks complete without a sixth point; image edges are clamped (1.043917ms)
+✔ fit shows the whole image; zoom preserves the centre and can pan to the right (0.462958ms)
+✔ dragging in mark mode pans without adding a point; clicking after pan uses original pixels (0.421208ms)
+✔ pan mode never marks on click, and Space temporarily pans without changing mode (0.388625ms)
+✔ wheel zoom keeps the cursor target fixed; server acknowledgements retain zoom and pan (0.466833ms)
+✔ registered tooth location is distinct from landmarks; find centres the selected tooth (0.488333ms)
+✔ recorded tooth cannot be marked again, but can still pan and zoom (0.338667ms)
+✔ measurement locations are hidden by default and can be shown without covering the crown (0.342583ms)
+✔ only the selected tooth has a subtle locator by default; switching teeth centres the new location (0.349083ms)
+✔ saving the current tooth retains image, zoom and pan (0.4865ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 48.430833

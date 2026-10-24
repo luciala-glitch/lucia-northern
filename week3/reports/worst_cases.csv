@@ -1,0 +1,6 @@
+rank,tooth_id,mesial_difference_pp,mesial_outside_loa,distal_difference_pp,distal_outside_loa
+1,img1-T2,-11.045987438074718,True,-3.859600191000183,False
+2,img10-T2,5.905871081522328,False,-1.2314505635531106,False
+3,img1-T1,-6.128310243368958,False,2.1726851793544952,False
+4,img42-T1,-1.2365395624951745,False,3.3799969883620165,False
+5,img26-T3,-4.456564285324404,False,2.2361047287987645,False

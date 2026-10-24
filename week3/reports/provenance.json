@@ -1,0 +1,9 @@
+{
+  "source": "week2/measurements.csv",
+  "source_condition": "unknown",
+  "shared_apex": "arithmetic midpoint of two legacy side tips; analytical proxy, not anatomical annotation",
+  "empirical_tooth_pairs": 10,
+  "target_tooth_pairs": 15,
+  "synthetic_exports": "exports/synthetic/ only; do not pool",
+  "limitation": "same-day non-independent legacy repeats; no condition-specific placements"
+}

@@ -1,0 +1,3782 @@
+[
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 1,
+    "condition": "clahe",
+    "round": 1,
+    "long_axis_vector": [
+      0.03387884566575711,
+      0.9994259471398347
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1369,
+          651
+        ],
+        "bc": [
+          1379,
+          680
+        ]
+      },
+      "distal": {
+        "cej": [
+          1455,
+          636
+        ],
+        "bc": [
+          1455,
+          669
+        ]
+      },
+      "apex": [
+        1417,
+        791
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 20.715653422690284,
+      "distal_pbl_pct": 21.468739662586835,
+      "pbl_max_pct": 21.468739662586835,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 1,
+    "condition": "clahe",
+    "round": 2,
+    "long_axis_vector": [
+      0.08001022418189882,
+      0.9967940429328228
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1365,
+          650
+        ],
+        "bc": [
+          1380,
+          691
+        ]
+      },
+      "distal": {
+        "cej": [
+          1455,
+          641
+        ],
+        "bc": [
+          1451,
+          670
+        ]
+      },
+      "apex": [
+        1422,
+        795
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 28.215906804105273,
+      "distal_pbl_pct": 18.948601228620674,
+      "pbl_max_pct": 28.215906804105273,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 1,
+    "condition": "he",
+    "round": 1,
+    "long_axis_vector": [
+      0.05292923668844607,
+      0.9985982655220158
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1369,
+          655
+        ],
+        "bc": [
+          1380,
+          696
+        ]
+      },
+      "distal": {
+        "cej": [
+          1456,
+          642
+        ],
+        "bc": [
+          1453,
+          669
+        ]
+      },
+      "apex": [
+        1420,
+        790
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 30.197587888119067,
+      "distal_pbl_pct": 18.372678018575854,
+      "pbl_max_pct": 30.197587888119067,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 1,
+    "condition": "he",
+    "round": 2,
+    "long_axis_vector": [
+      0.06787035029264327,
+      0.997694149301856
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1366,
+          653
+        ],
+        "bc": [
+          1382,
+          691
+        ]
+      },
+      "distal": {
+        "cej": [
+          1452,
+          639
+        ],
+        "bc": [
+          1455,
+          672
+        ]
+      },
+      "apex": [
+        1419,
+        793
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 27.219327333017524,
+      "distal_pbl_pct": 21.880043033889187,
+      "pbl_max_pct": 27.219327333017524,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 1,
+    "condition": "raw",
+    "round": 1,
+    "long_axis_vector": [
+      0.10902364937958994,
+      0.994039156108026
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1362,
+          645
+        ],
+        "bc": [
+          1381,
+          680
+        ]
+      },
+      "distal": {
+        "cej": [
+          1452,
+          631
+        ],
+        "bc": [
+          1455,
+          669
+        ]
+      },
+      "apex": [
+        1424,
+        793
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 23.95598899724931,
+      "distal_pbl_pct": 24.11707396281562,
+      "pbl_max_pct": 24.11707396281562,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 1,
+    "condition": "raw",
+    "round": 2,
+    "long_axis_vector": [
+      0.07960765386283068,
+      0.9968262744563146
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1370,
+          653
+        ],
+        "bc": [
+          1382,
+          689
+        ]
+      },
+      "distal": {
+        "cej": [
+          1451,
+          635
+        ],
+        "bc": [
+          1452,
+          666
+        ]
+      },
+      "apex": [
+        1422,
+        788
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 26.559536879928135,
+      "distal_pbl_pct": 20.62584971311381,
+      "pbl_max_pct": 26.559536879928135,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 2,
+    "condition": "clahe",
+    "round": 1,
+    "long_axis_vector": [
+      0.10012327444975566,
+      0.9949750398444469
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1219,
+          668
+        ],
+        "bc": [
+          1228,
+          711
+        ]
+      },
+      "distal": {
+        "cej": [
+          1271,
+          668
+        ],
+        "bc": [
+          1273,
+          704
+        ]
+      },
+      "apex": [
+        1261,
+        827
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 26.898624436481327,
+      "distal_pbl_pct": 22.913100593129254,
+      "pbl_max_pct": 26.898624436481327,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 2,
+    "condition": "clahe",
+    "round": 2,
+    "long_axis_vector": [
+      0.09421625444090771,
+      0.9955517552589248
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1221,
+          670
+        ],
+        "bc": [
+          1231,
+          715
+        ]
+      },
+      "distal": {
+        "cej": [
+          1273,
+          669
+        ],
+        "bc": [
+          1267,
+          716
+        ]
+      },
+      "apex": [
+        1262,
+        828
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 28.382960480162133,
+      "distal_pbl_pct": 29.395083178559307,
+      "pbl_max_pct": 29.395083178559307,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 2,
+    "condition": "he",
+    "round": 1,
+    "long_axis_vector": [
+      0.08609884197836302,
+      0.9962866000353436
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1221,
+          664
+        ],
+        "bc": [
+          1229,
+          707
+        ]
+      },
+      "distal": {
+        "cej": [
+          1275,
+          666
+        ],
+        "bc": [
+          1271,
+          702
+        ]
+      },
+      "apex": [
+        1262,
+        827
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 26.234247590808003,
+      "distal_pbl_pct": 22.301158301158306,
+      "pbl_max_pct": 26.234247590808003,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 2,
+    "condition": "he",
+    "round": 2,
+    "long_axis_vector": [
+      0.0851328463699141,
+      0.9963696093664021
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1223,
+          665
+        ],
+        "bc": [
+          1233,
+          710
+        ]
+      },
+      "distal": {
+        "cej": [
+          1272,
+          665
+        ],
+        "bc": [
+          1275,
+          710
+        ]
+      },
+      "apex": [
+        1261,
+        823
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 28.43741413824234,
+      "distal_pbl_pct": 28.81465213273962,
+      "pbl_max_pct": 28.81465213273962,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 2,
+    "condition": "raw",
+    "round": 1,
+    "long_axis_vector": [
+      0.07191363586664538,
+      0.9974108626721687
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1224,
+          669
+        ],
+        "bc": [
+          1229,
+          710
+        ]
+      },
+      "distal": {
+        "cej": [
+          1275,
+          662
+        ],
+        "bc": [
+          1270,
+          705
+        ]
+      },
+      "apex": [
+        1261,
+        825
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 26.067371332608914,
+      "distal_pbl_pct": 26.322206095791,
+      "pbl_max_pct": 26.322206095791,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 2,
+    "condition": "raw",
+    "round": 2,
+    "long_axis_vector": [
+      0.10500631328561127,
+      0.9944715552343185
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1223,
+          666
+        ],
+        "bc": [
+          1232,
+          707
+        ]
+      },
+      "distal": {
+        "cej": [
+          1271,
+          666
+        ],
+        "bc": [
+          1271,
+          703
+        ]
+      },
+      "apex": [
+        1264,
+        827
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 25.3738071981366,
+      "distal_pbl_pct": 23.087357569180686,
+      "pbl_max_pct": 25.3738071981366,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 3,
+    "condition": "clahe",
+    "round": 1,
+    "long_axis_vector": [
+      0.14566872491228958,
+      0.9893334233626334
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1142,
+          669
+        ],
+        "bc": [
+          1149,
+          719
+        ]
+      },
+      "distal": {
+        "cej": [
+          1198,
+          667
+        ],
+        "bc": [
+          1199,
+          707
+        ]
+      },
+      "apex": [
+        1194,
+        831
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 30.078831272148694,
+      "distal_pbl_pct": 24.56825349151524,
+      "pbl_max_pct": 30.078831272148694,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 3,
+    "condition": "clahe",
+    "round": 2,
+    "long_axis_vector": [
+      0.16756835026224168,
+      0.9858604607095219
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1141,
+          669
+        ],
+        "bc": [
+          1149,
+          707
+        ]
+      },
+      "distal": {
+        "cej": [
+          1199,
+          676
+        ],
+        "bc": [
+          1200,
+          718
+        ]
+      },
+      "apex": [
+        1200,
+        849
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 20.712581991651756,
+      "distal_pbl_pct": 24.35178066057027,
+      "pbl_max_pct": 24.35178066057027,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 3,
+    "condition": "he",
+    "round": 1,
+    "long_axis_vector": [
+      0.16657701288620674,
+      0.9860284472457722
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1142,
+          664
+        ],
+        "bc": [
+          1152,
+          714
+        ]
+      },
+      "distal": {
+        "cej": [
+          1198,
+          671
+        ],
+        "bc": [
+          1198,
+          705
+        ]
+      },
+      "apex": [
+        1201,
+        851
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 26.242616238051102,
+      "distal_pbl_pct": 18.835854240256015,
+      "pbl_max_pct": 26.242616238051102,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 3,
+    "condition": "he",
+    "round": 2,
+    "long_axis_vector": [
+      0.13535480767537292,
+      0.9907971921837299
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1142,
+          667
+        ],
+        "bc": [
+          1152,
+          719
+        ]
+      },
+      "distal": {
+        "cej": [
+          1200,
+          661
+        ],
+        "bc": [
+          1201,
+          711
+        ]
+      },
+      "apex": [
+        1196,
+        847
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 28.480606590842818,
+      "distal_pbl_pct": 27.03459249219164,
+      "pbl_max_pct": 28.480606590842818,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 3,
+    "condition": "raw",
+    "round": 1,
+    "long_axis_vector": [
+      0.16303137141247026,
+      0.9866208856168459
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1139,
+          666
+        ],
+        "bc": [
+          1151,
+          721
+        ]
+      },
+      "distal": {
+        "cej": [
+          1199,
+          677
+        ],
+        "bc": [
+          1202,
+          711
+        ]
+      },
+      "apex": [
+        1198,
+        847
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 29.873194629068156,
+      "distal_pbl_pct": 20.311346708716364,
+      "pbl_max_pct": 29.873194629068156,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 3,
+    "condition": "raw",
+    "round": 2,
+    "long_axis_vector": [
+      0.1429912786775741,
+      0.9897239484937972
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1141,
+          670
+        ],
+        "bc": [
+          1150,
+          714
+        ]
+      },
+      "distal": {
+        "cej": [
+          1200,
+          669
+        ],
+        "bc": [
+          1196,
+          704
+        ]
+      },
+      "apex": [
+        1196,
+        846
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 24.626923136155728,
+      "distal_pbl_pct": 19.511216018754922,
+      "pbl_max_pct": 24.626923136155728,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 4,
+    "condition": "clahe",
+    "round": 1,
+    "long_axis_vector": [
+      -0.3465358602175756,
+      0.9380367250717133
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          923,
+          662
+        ],
+        "bc": [
+          904,
+          721
+        ]
+      },
+      "distal": {
+        "cej": [
+          863,
+          662
+        ],
+        "bc": [
+          857,
+          708
+        ]
+      },
+      "apex": [
+        835,
+        819
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 34.83682317749471,
+      "distal_pbl_pct": 28.812849693601798,
+      "pbl_max_pct": 34.83682317749471,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 4,
+    "condition": "clahe",
+    "round": 2,
+    "long_axis_vector": [
+      -0.3906199959759474,
+      0.9205520184887711
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          924,
+          666
+        ],
+        "bc": [
+          907,
+          716
+        ]
+      },
+      "distal": {
+        "cej": [
+          863,
+          665
+        ],
+        "bc": [
+          855,
+          711
+        ]
+      },
+      "apex": [
+        822,
+        834
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 27.07929552540659,
+      "distal_pbl_pct": 26.499617931737134,
+      "pbl_max_pct": 27.07929552540659,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 4,
+    "condition": "he",
+    "round": 1,
+    "long_axis_vector": [
+      -0.3800812961675389,
+      0.924953084379745
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          926,
+          665
+        ],
+        "bc": [
+          903,
+          720
+        ]
+      },
+      "distal": {
+        "cej": [
+          861,
+          665
+        ],
+        "bc": [
+          858,
+          709
+        ]
+      },
+      "apex": [
+        822,
+        839
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 29.737218922358927,
+      "distal_pbl_pct": 23.803475026085373,
+      "pbl_max_pct": 29.737218922358927,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 4,
+    "condition": "he",
+    "round": 2,
+    "long_axis_vector": [
+      -0.35588885522000707,
+      0.934528288887069
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          920,
+          666
+        ],
+        "bc": [
+          907,
+          713
+        ]
+      },
+      "distal": {
+        "cej": [
+          861,
+          661
+        ],
+        "bc": [
+          857,
+          710
+        ]
+      },
+      "apex": [
+        821,
+        846
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 23.863278841192535,
+      "distal_pbl_pct": 25.232263802421834,
+      "pbl_max_pct": 25.232263802421834,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 4,
+    "condition": "raw",
+    "round": 1,
+    "long_axis_vector": [
+      -0.36943000808983856,
+      0.9292585588105938
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          923,
+          671
+        ],
+        "bc": [
+          908,
+          719
+        ]
+      },
+      "distal": {
+        "cej": [
+          863,
+          664
+        ],
+        "bc": [
+          850,
+          709
+        ]
+      },
+      "apex": [
+        828,
+        831
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 27.286222359672184,
+      "distal_pbl_pct": 27.730353792322386,
+      "pbl_max_pct": 27.730353792322386,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 4,
+    "condition": "raw",
+    "round": 2,
+    "long_axis_vector": [
+      -0.360239784913239,
+      0.9328597415290593
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          924,
+          665
+        ],
+        "bc": [
+          907,
+          718
+        ]
+      },
+      "distal": {
+        "cej": [
+          860,
+          660
+        ],
+        "bc": [
+          855,
+          713
+        ]
+      },
+      "apex": [
+        825,
+        836
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 28.468520584548845,
+      "distal_pbl_pct": 28.984824062528514,
+      "pbl_max_pct": 28.984824062528514,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 5,
+    "condition": "clahe",
+    "round": 1,
+    "long_axis_vector": [
+      -0.3347650523527063,
+      0.9423016288446548
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          849,
+          650
+        ],
+        "bc": [
+          827,
+          704
+        ]
+      },
+      "distal": {
+        "cej": [
+          795,
+          644
+        ],
+        "bc": [
+          790,
+          688
+        ]
+      },
+      "apex": [
+        768,
+        799
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 34.77166753016061,
+      "distal_pbl_pct": 27.81197537772804,
+      "pbl_max_pct": 34.77166753016061,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 5,
+    "condition": "clahe",
+    "round": 2,
+    "long_axis_vector": [
+      -0.36169379856448386,
+      0.9322969462998334
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          850,
+          656
+        ],
+        "bc": [
+          830,
+          701
+        ]
+      },
+      "distal": {
+        "cej": [
+          790,
+          645
+        ],
+        "bc": [
+          792,
+          685
+        ]
+      },
+      "apex": [
+        762,
+        800
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 29.616626614598978,
+      "distal_pbl_pct": 23.648498780069765,
+      "pbl_max_pct": 29.616626614598978,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 5,
+    "condition": "he",
+    "round": 1,
+    "long_axis_vector": [
+      -0.35729831026011694,
+      0.9339903198027618
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          847,
+          658
+        ],
+        "bc": [
+          828,
+          699
+        ]
+      },
+      "distal": {
+        "cej": [
+          793,
+          642
+        ],
+        "bc": [
+          792,
+          685
+        ]
+      },
+      "apex": [
+        763,
+        799
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 27.8792107609412,
+      "distal_pbl_pct": 25.749910369278574,
+      "pbl_max_pct": 27.8792107609412,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 5,
+    "condition": "he",
+    "round": 2,
+    "long_axis_vector": [
+      -0.3134057168225128,
+      0.9496193219722138
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          845,
+          657
+        ],
+        "bc": [
+          830,
+          699
+        ]
+      },
+      "distal": {
+        "cej": [
+          791,
+          640
+        ],
+        "bc": [
+          793,
+          685
+        ]
+      },
+      "apex": [
+        768,
+        800
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 27.878265300123456,
+      "distal_pbl_pct": 26.457266640409614,
+      "pbl_max_pct": 27.878265300123456,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 5,
+    "condition": "raw",
+    "round": 1,
+    "long_axis_vector": [
+      -0.3632082040665476,
+      0.9317080017359265
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          850,
+          653
+        ],
+        "bc": [
+          828,
+          696
+        ]
+      },
+      "distal": {
+        "cej": [
+          795,
+          642
+        ],
+        "bc": [
+          793,
+          688
+        ]
+      },
+      "apex": [
+        765,
+        795
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 29.449337075389526,
+      "distal_pbl_pct": 28.40382834208089,
+      "pbl_max_pct": 29.449337075389526,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 5,
+    "condition": "raw",
+    "round": 2,
+    "long_axis_vector": [
+      -0.3486169651898757,
+      0.9372652834613052
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          847,
+          655
+        ],
+        "bc": [
+          829,
+          696
+        ]
+      },
+      "distal": {
+        "cej": [
+          791,
+          641
+        ],
+        "bc": [
+          795,
+          678
+        ]
+      },
+      "apex": [
+        758,
+        812
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 25.08900792250698,
+      "distal_pbl_pct": 19.3765179492298,
+      "pbl_max_pct": 25.08900792250698,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 6,
+    "condition": "clahe",
+    "round": 1,
+    "long_axis_vector": [
+      -0.32249152646605794,
+      0.9465723508309293
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          786,
+          637
+        ],
+        "bc": [
+          765,
+          688
+        ]
+      },
+      "distal": {
+        "cej": [
+          714,
+          620
+        ],
+        "bc": [
+          708,
+          669
+        ]
+      },
+      "apex": [
+        696,
+        787
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 32.189628077527495,
+      "distal_pbl_pct": 29.48271778146239,
+      "pbl_max_pct": 32.189628077527495,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 6,
+    "condition": "clahe",
+    "round": 2,
+    "long_axis_vector": [
+      -0.35743331524511696,
+      0.9339386624146604
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          784,
+          634
+        ],
+        "bc": [
+          760,
+          685
+        ]
+      },
+      "distal": {
+        "cej": [
+          718,
+          620
+        ],
+        "bc": [
+          709,
+          670
+        ]
+      },
+      "apex": [
+        689,
+        789
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 31.451612903225808,
+      "distal_pbl_pct": 29.67507540444201,
+      "pbl_max_pct": 31.451612903225808,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 6,
+    "condition": "he",
+    "round": 1,
+    "long_axis_vector": [
+      -0.34339212135162017,
+      0.9391921267736619
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          785,
+          634
+        ],
+        "bc": [
+          765,
+          685
+        ]
+      },
+      "distal": {
+        "cej": [
+          716,
+          620
+        ],
+        "bc": [
+          710,
+          673
+        ]
+      },
+      "apex": [
+        692,
+        787
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 31.182633980047132,
+      "distal_pbl_pct": 31.40022756364671,
+      "pbl_max_pct": 31.40022756364671,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 6,
+    "condition": "he",
+    "round": 2,
+    "long_axis_vector": [
+      -0.34693129869559,
+      0.9378905447787559
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          781,
+          637
+        ],
+        "bc": [
+          770,
+          680
+        ]
+      },
+      "distal": {
+        "cej": [
+          719,
+          624
+        ],
+        "bc": [
+          709,
+          674
+        ]
+      },
+      "apex": [
+        691,
+        790
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 25.26629309909637,
+      "distal_pbl_pct": 30.44900280848946,
+      "pbl_max_pct": 30.44900280848946,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 6,
+    "condition": "raw",
+    "round": 1,
+    "long_axis_vector": [
+      -0.30657620349758513,
+      0.9518461175258358
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          786,
+          634
+        ],
+        "bc": [
+          765,
+          684
+        ]
+      },
+      "distal": {
+        "cej": [
+          713,
+          620
+        ],
+        "bc": [
+          709,
+          681
+        ]
+      },
+      "apex": [
+        697,
+        790
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 30.738692048304845,
+      "distal_pbl_pct": 35.562171628721536,
+      "pbl_max_pct": 35.562171628721536,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 6,
+    "condition": "raw",
+    "round": 2,
+    "long_axis_vector": [
+      -0.3232074556165909,
+      0.9463281358143428
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          781,
+          636
+        ],
+        "bc": [
+          760,
+          685
+        ]
+      },
+      "distal": {
+        "cej": [
+          714,
+          623
+        ],
+        "bc": [
+          710,
+          670
+        ]
+      },
+      "apex": [
+        692,
+        792
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 30.135855659551993,
+      "distal_pbl_pct": 27.40077047780083,
+      "pbl_max_pct": 30.135855659551993,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 7,
+    "condition": "clahe",
+    "round": 1,
+    "long_axis_vector": [
+      -0.6761170535068821,
+      0.7367942249754484
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          500,
+          621
+        ],
+        "bc": [
+          470,
+          645
+        ]
+      },
+      "distal": {
+        "cej": [
+          434,
+          555
+        ],
+        "bc": [
+          421,
+          568
+        ]
+      },
+      "apex": [
+        389,
+        673
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 33.49135953509711,
+      "distal_pbl_pct": 15.649926144756279,
+      "pbl_max_pct": 33.49135953509711,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 7,
+    "condition": "clahe",
+    "round": 2,
+    "long_axis_vector": [
+      -0.6774757547517903,
+      0.7355451051590867
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          510,
+          610
+        ],
+        "bc": [
+          468,
+          647
+        ]
+      },
+      "distal": {
+        "cej": [
+          433,
+          554
+        ],
+        "bc": [
+          419,
+          570
+        ]
+      },
+      "apex": [
+        384,
+        677
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 41.34560092006901,
+      "distal_pbl_pct": 17.1857880732509,
+      "pbl_max_pct": 41.34560092006901,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 7,
+    "condition": "he",
+    "round": 1,
+    "long_axis_vector": [
+      -0.6367694957865566,
+      0.7710542193878032
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          497,
+          621
+        ],
+        "bc": [
+          468,
+          647
+        ]
+      },
+      "distal": {
+        "cej": [
+          432,
+          557
+        ],
+        "bc": [
+          423,
+          569
+        ]
+      },
+      "apex": [
+        391,
+        678
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 34.55768034825871,
+      "distal_pbl_pct": 12.548521676038455,
+      "pbl_max_pct": 34.55768034825871,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 7,
+    "condition": "he",
+    "round": 2,
+    "long_axis_vector": [
+      -0.6696371217971887,
+      0.7426884441750639
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          515,
+          612
+        ],
+        "bc": [
+          465,
+          646
+        ]
+      },
+      "distal": {
+        "cej": [
+          430,
+          553
+        ],
+        "bc": [
+          421,
+          565
+        ]
+      },
+      "apex": [
+        390,
+        674
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 45.26602233273904,
+      "distal_pbl_pct": 12.806596388685943,
+      "pbl_max_pct": 45.26602233273904,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 7,
+    "condition": "raw",
+    "round": 1,
+    "long_axis_vector": [
+      -0.8068956797188988,
+      0.5906939664927824
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          514,
+          614
+        ],
+        "bc": [
+          472,
+          646
+        ]
+      },
+      "distal": {
+        "cej": [
+          433,
+          555
+        ],
+        "bc": [
+          418,
+          577
+        ]
+      },
+      "apex": [
+        369,
+        661
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 36.46788990825688,
+      "distal_pbl_pct": 21.9672906670271,
+      "pbl_max_pct": 36.46788990825688,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 7,
+    "condition": "raw",
+    "round": 2,
+    "long_axis_vector": [
+      -0.7071067811865475,
+      0.7071067811865475
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          520,
+          612
+        ],
+        "bc": [
+          471,
+          642
+        ]
+      },
+      "distal": {
+        "cej": [
+          435,
+          557
+        ],
+        "bc": [
+          427,
+          564
+        ]
+      },
+      "apex": [
+        390,
+        672
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 41.57894736842106,
+      "distal_pbl_pct": 9.375,
+      "pbl_max_pct": 41.57894736842106,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 8,
+    "condition": "clahe",
+    "round": 1,
+    "long_axis_vector": [
+      0.13142579690109268,
+      -0.9913260109110992
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1514,
+          529
+        ],
+        "bc": [
+          1536,
+          474
+        ]
+      },
+      "distal": {
+        "cej": [
+          1591,
+          523
+        ],
+        "bc": [
+          1592,
+          469
+        ]
+      },
+      "apex": [
+        1570,
+        394
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 40.66489361702128,
+      "distal_pbl_pct": 42.88886888148615,
+      "pbl_max_pct": 42.88886888148615,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 8,
+    "condition": "clahe",
+    "round": 2,
+    "long_axis_vector": [
+      0.11001514284094659,
+      -0.9939299111837243
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1520,
+          522
+        ],
+        "bc": [
+          1530,
+          479
+        ]
+      },
+      "distal": {
+        "cej": [
+          1587,
+          524
+        ],
+        "bc": [
+          1594,
+          474
+        ]
+      },
+      "apex": [
+        1568,
+        392
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 32.59618639286923,
+      "distal_pbl_pct": 39.0885317192137,
+      "pbl_max_pct": 39.0885317192137,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 8,
+    "condition": "he",
+    "round": 1,
+    "long_axis_vector": [
+      0.12105437531103976,
+      -0.992645877550526
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1518,
+          522
+        ],
+        "bc": [
+          1530,
+          478
+        ]
+      },
+      "distal": {
+        "cej": [
+          1590,
+          520
+        ],
+        "bc": [
+          1594,
+          468
+        ]
+      },
+      "apex": [
+        1569,
+        398
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 34.91290503839671,
+      "distal_pbl_pct": 43.945272615887276,
+      "pbl_max_pct": 43.945272615887276,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 8,
+    "condition": "he",
+    "round": 2,
+    "long_axis_vector": [
+      0.15910417437663046,
+      -0.987261799978066
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1515,
+          525
+        ],
+        "bc": [
+          1529,
+          484
+        ]
+      },
+      "distal": {
+        "cej": [
+          1590,
+          523
+        ],
+        "bc": [
+          1596,
+          473
+        ]
+      },
+      "apex": [
+        1572,
+        403
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 32.973194317573316,
+      "distal_pbl_pct": 43.52459594890254,
+      "pbl_max_pct": 43.52459594890254,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 8,
+    "condition": "raw",
+    "round": 1,
+    "long_axis_vector": [
+      0.11707547794434356,
+      -0.993123019803742
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1521,
+          517
+        ],
+        "bc": [
+          1535,
+          479
+        ]
+      },
+      "distal": {
+        "cej": [
+          1590,
+          523
+        ],
+        "bc": [
+          1586,
+          476
+        ]
+      },
+      "apex": [
+        1570,
+        397
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 31.52451439837109,
+      "distal_pbl_pct": 37.63150973172015,
+      "pbl_max_pct": 37.63150973172015,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 8,
+    "condition": "raw",
+    "round": 2,
+    "long_axis_vector": [
+      0.16820375675687302,
+      -0.9857522489007442
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1519,
+          523
+        ],
+        "bc": [
+          1531,
+          475
+        ]
+      },
+      "distal": {
+        "cej": [
+          1590,
+          525
+        ],
+        "bc": [
+          1590,
+          475
+        ]
+      },
+      "apex": [
+        1576,
+        398
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 37.14765397190068,
+      "distal_pbl_pct": 40.12483281319661,
+      "pbl_max_pct": 40.12483281319661,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 9,
+    "condition": "clahe",
+    "round": 1,
+    "long_axis_vector": [
+      0.3532495841156191,
+      -0.9355291183721339
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1433,
+          509
+        ],
+        "bc": [
+          1453,
+          473
+        ]
+      },
+      "distal": {
+        "cej": [
+          1512,
+          524
+        ],
+        "bc": [
+          1521,
+          470
+        ]
+      },
+      "apex": [
+        1518,
+        396
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 30.016014641958368,
+      "distal_pbl_pct": 44.06255972478818,
+      "pbl_max_pct": 44.06255972478818,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 9,
+    "condition": "clahe",
+    "round": 2,
+    "long_axis_vector": [
+      0.3687939129016465,
+      -0.929511188639864
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1429,
+          511
+        ],
+        "bc": [
+          1452,
+          475
+        ]
+      },
+      "distal": {
+        "cej": [
+          1509,
+          530
+        ],
+        "bc": [
+          1524,
+          477
+        ]
+      },
+      "apex": [
+        1518,
+        397
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 30.222342733188718,
+      "distal_pbl_pct": 43.165446298876475,
+      "pbl_max_pct": 43.165446298876475,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 9,
+    "condition": "he",
+    "round": 1,
+    "long_axis_vector": [
+      0.3541743324473777,
+      -0.9351794171363346
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1431,
+          510
+        ],
+        "bc": [
+          1458,
+          468
+        ]
+      },
+      "distal": {
+        "cej": [
+          1510,
+          525
+        ],
+        "bc": [
+          1521,
+          472
+        ]
+      },
+      "apex": [
+        1515,
+        400
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 36.82710196243173,
+      "distal_pbl_pct": 45.05030181086519,
+      "pbl_max_pct": 45.05030181086519,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 9,
+    "condition": "he",
+    "round": 2,
+    "long_axis_vector": [
+      0.3502607142612118,
+      -0.9366522471254877
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1440,
+          505
+        ],
+        "bc": [
+          1457,
+          475
+        ]
+      },
+      "distal": {
+        "cej": [
+          1505,
+          521
+        ],
+        "bc": [
+          1524,
+          482
+        ]
+      },
+      "apex": [
+        1517,
+        394
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 26.007634276096304,
+      "distal_pbl_pct": 35.0642295647728,
+      "pbl_max_pct": 35.0642295647728,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 9,
+    "condition": "raw",
+    "round": 1,
+    "long_axis_vector": [
+      0.28586998849157824,
+      -0.958268412126699
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1439,
+          508
+        ],
+        "bc": [
+          1452,
+          477
+        ]
+      },
+      "distal": {
+        "cej": [
+          1512,
+          528
+        ],
+        "bc": [
+          1522,
+          479
+        ]
+      },
+      "apex": [
+        1511,
+        399
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 26.73085592838282,
+      "distal_pbl_pct": 40.39045411511214,
+      "pbl_max_pct": 40.39045411511214,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 9,
+    "condition": "raw",
+    "round": 2,
+    "long_axis_vector": [
+      0.30347302346388705,
+      -0.9528400306608067
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1433,
+          509
+        ],
+        "bc": [
+          1456,
+          476
+        ]
+      },
+      "distal": {
+        "cej": [
+          1510,
+          527
+        ],
+        "bc": [
+          1523,
+          487
+        ]
+      },
+      "apex": [
+        1518,
+        372
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 24.577845498758062,
+      "distal_pbl_pct": 28.0171289453091,
+      "pbl_max_pct": 28.0171289453091,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 10,
+    "condition": "clahe",
+    "round": 1,
+    "long_axis_vector": [
+      0.212756775482746,
+      -0.9771051911059445
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1199,
+          543
+        ],
+        "bc": [
+          1213,
+          513
+        ]
+      },
+      "distal": {
+        "cej": [
+          1259,
+          543
+        ],
+        "bc": [
+          1266,
+          503
+        ]
+      },
+      "apex": [
+        1256,
+        419
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 24.227017440141882,
+      "distal_pbl_pct": 33.66459627329193,
+      "pbl_max_pct": 33.66459627329193,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 10,
+    "condition": "clahe",
+    "round": 2,
+    "long_axis_vector": [
+      0.10065354070598029,
+      -0.9949215369783435
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1204,
+          552
+        ],
+        "bc": [
+          1209,
+          513
+        ]
+      },
+      "distal": {
+        "cej": [
+          1256,
+          547
+        ],
+        "bc": [
+          1266,
+          498
+        ]
+      },
+      "apex": [
+        1243,
+        421
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 29.275395749834203,
+      "distal_pbl_pct": 40.1104730994882,
+      "pbl_max_pct": 40.1104730994882,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 10,
+    "condition": "he",
+    "round": 1,
+    "long_axis_vector": [
+      0.14537773107333346,
+      -0.989376225360186
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1204,
+          546
+        ],
+        "bc": [
+          1211,
+          511
+        ]
+      },
+      "distal": {
+        "cej": [
+          1256,
+          543
+        ],
+        "bc": [
+          1266,
+          504
+        ]
+      },
+      "apex": [
+        1248,
+        422
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 27.615442372669254,
+      "distal_pbl_pct": 33.773886977552195,
+      "pbl_max_pct": 33.773886977552195,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 10,
+    "condition": "he",
+    "round": 2,
+    "long_axis_vector": [
+      0.16379528837954044,
+      -0.9864943504676867
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1200,
+          552
+        ],
+        "bc": [
+          1211,
+          509
+        ]
+      },
+      "distal": {
+        "cej": [
+          1258,
+          547
+        ],
+        "bc": [
+          1265,
+          504
+        ]
+      },
+      "apex": [
+        1251,
+        417
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 31.244903863857544,
+      "distal_pbl_pct": 34.27742955890106,
+      "pbl_max_pct": 34.27742955890106,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 10,
+    "condition": "raw",
+    "round": 1,
+    "long_axis_vector": [
+      0.1365054186901445,
+      -0.9906393242084771
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1204,
+          549
+        ],
+        "bc": [
+          1213,
+          517
+        ]
+      },
+      "distal": {
+        "cej": [
+          1261,
+          549
+        ],
+        "bc": [
+          1262,
+          509
+        ]
+      },
+      "apex": [
+        1250,
+        422
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 24.92913664816346,
+      "distal_pbl_pct": 31.986320710319077,
+      "pbl_max_pct": 31.986320710319077,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 10,
+    "condition": "raw",
+    "round": 2,
+    "long_axis_vector": [
+      0.17118063610020892,
+      -0.9852396611100914
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1198,
+          553
+        ],
+        "bc": [
+          1206,
+          517
+        ]
+      },
+      "distal": {
+        "cej": [
+          1259,
+          536
+        ],
+        "bc": [
+          1262,
+          499
+        ]
+      },
+      "apex": [
+        1251,
+        415
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 25.399323314186802,
+      "distal_pbl_pct": 31.3696374963685,
+      "pbl_max_pct": 31.3696374963685,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 11,
+    "condition": "clahe",
+    "round": 1,
+    "long_axis_vector": [
+      0.10159919121721309,
+      -0.9948254140018781
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1148,
+          547
+        ],
+        "bc": [
+          1154,
+          515
+        ]
+      },
+      "distal": {
+        "cej": [
+          1190,
+          548
+        ],
+        "bc": [
+          1197,
+          509
+        ]
+      },
+      "apex": [
+        1181,
+        430
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 27.093717962314845,
+      "distal_pbl_pct": 33.920912989750676,
+      "pbl_max_pct": 33.920912989750676,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 11,
+    "condition": "clahe",
+    "round": 2,
+    "long_axis_vector": [
+      0.08629109946080098,
+      -0.9962699665019749
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1147,
+          542
+        ],
+        "bc": [
+          1150,
+          521
+        ]
+      },
+      "distal": {
+        "cej": [
+          1191,
+          550
+        ],
+        "bc": [
+          1192,
+          510
+        ]
+      },
+      "apex": [
+        1180,
+        419
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 16.891891891891895,
+      "distal_pbl_pct": 30.82465488011625,
+      "pbl_max_pct": 30.82465488011625,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 11,
+    "condition": "he",
+    "round": 1,
+    "long_axis_vector": [
+      0.11732747615138164,
+      -0.9930932802813375
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1144,
+          548
+        ],
+        "bc": [
+          1150,
+          520
+        ]
+      },
+      "distal": {
+        "cej": [
+          1188,
+          547
+        ],
+        "bc": [
+          1192,
+          513
+        ]
+      },
+      "apex": [
+        1180,
+        429
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 23.292595255212074,
+      "distal_pbl_pct": 29.449931511787174,
+      "pbl_max_pct": 29.449931511787174,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 11,
+    "condition": "he",
+    "round": 2,
+    "long_axis_vector": [
+      0.10578605459352258,
+      -0.9943889131791123
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1144,
+          552
+        ],
+        "bc": [
+          1153,
+          519
+        ]
+      },
+      "distal": {
+        "cej": [
+          1188,
+          550
+        ],
+        "bc": [
+          1194,
+          510
+        ]
+      },
+      "apex": [
+        1181,
+        410
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 23.268698060941826,
+      "distal_pbl_pct": 29.182582123758593,
+      "pbl_max_pct": 29.182582123758593,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 11,
+    "condition": "raw",
+    "round": 1,
+    "long_axis_vector": [
+      0.1032907026392436,
+      -0.9946512106001235
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1145,
+          549
+        ],
+        "bc": [
+          1152,
+          520
+        ]
+      },
+      "distal": {
+        "cej": [
+          1188,
+          547
+        ],
+        "bc": [
+          1190,
+          514
+        ]
+      },
+      "apex": [
+        1180,
+        418
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 22.079702899585772,
+      "distal_pbl_pct": 25.909254591285556,
+      "pbl_max_pct": 25.909254591285556,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 11,
+    "condition": "raw",
+    "round": 2,
+    "long_axis_vector": [
+      0.10174201540995988,
+      -0.99481081734183
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          1145,
+          553
+        ],
+        "bc": [
+          1149,
+          519
+        ]
+      },
+      "distal": {
+        "cej": [
+          1188,
+          559
+        ],
+        "bc": [
+          1192,
+          515
+        ]
+      },
+      "apex": [
+        1180,
+        424
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 25.95354418445187,
+      "distal_pbl_pct": 33.09620596205963,
+      "pbl_max_pct": 33.09620596205963,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 12,
+    "condition": "clahe",
+    "round": 1,
+    "long_axis_vector": [
+      -0.08744994293169846,
+      -0.9961689151349998
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          949,
+          544
+        ],
+        "bc": [
+          943,
+          515
+        ]
+      },
+      "distal": {
+        "cej": [
+          900,
+          544
+        ],
+        "bc": [
+          896,
+          509
+        ]
+      },
+      "apex": [
+        913,
+        413
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 22.008534850640117,
+      "distal_pbl_pct": 27.22276107339153,
+      "pbl_max_pct": 27.22276107339153,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 12,
+    "condition": "clahe",
+    "round": 2,
+    "long_axis_vector": [
+      -0.16385668990890304,
+      -0.9864841535331916
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          951,
+          543
+        ],
+        "bc": [
+          942,
+          510
+        ]
+      },
+      "distal": {
+        "cej": [
+          900,
+          542
+        ],
+        "bc": [
+          901,
+          499
+        ]
+      },
+      "apex": [
+        901,
+        395
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 22.06896551724138,
+      "distal_pbl_pct": 29.17166866746699,
+      "pbl_max_pct": 29.17166866746699,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 12,
+    "condition": "he",
+    "round": 1,
+    "long_axis_vector": [
+      -0.0849378444076667,
+      -0.9963862517053209
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          948,
+          546
+        ],
+        "bc": [
+          943,
+          511
+        ]
+      },
+      "distal": {
+        "cej": [
+          898,
+          549
+        ],
+        "bc": [
+          899,
+          504
+        ]
+      },
+      "apex": [
+        910,
+        395
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 22.968348107050996,
+      "distal_pbl_pct": 29.36045265549316,
+      "pbl_max_pct": 29.36045265549316,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 12,
+    "condition": "he",
+    "round": 2,
+    "long_axis_vector": [
+      -0.07452527270416685,
+      -0.9972191252319469
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          947,
+          546
+        ],
+        "bc": [
+          940,
+          504
+        ]
+      },
+      "distal": {
+        "cej": [
+          900,
+          549
+        ],
+        "bc": [
+          899,
+          504
+        ]
+      },
+      "apex": [
+        913,
+        407
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 30.04299399089835,
+      "distal_pbl_pct": 31.961442378056475,
+      "pbl_max_pct": 31.961442378056475,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 12,
+    "condition": "raw",
+    "round": 1,
+    "long_axis_vector": [
+      -0.1073756009642051,
+      -0.9942185274463435
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          948,
+          541
+        ],
+        "bc": [
+          942,
+          511
+        ]
+      },
+      "distal": {
+        "cej": [
+          901,
+          543
+        ],
+        "bc": [
+          901,
+          509
+        ]
+      },
+      "apex": [
+        911,
+        417
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 23.9444982655708,
+      "distal_pbl_pct": 27.217419148254884,
+      "pbl_max_pct": 27.217419148254884,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 12,
+    "condition": "raw",
+    "round": 2,
+    "long_axis_vector": [
+      -0.10151368801339448,
+      -0.994834142531266
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          951,
+          546
+        ],
+        "bc": [
+          942,
+          503
+        ]
+      },
+      "distal": {
+        "cej": [
+          901,
+          542
+        ],
+        "bc": [
+          898,
+          503
+        ]
+      },
+      "apex": [
+        911,
+        397
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 28.68950806559126,
+      "distal_pbl_pct": 27.299787384833458,
+      "pbl_max_pct": 28.68950806559126,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 13,
+    "condition": "clahe",
+    "round": 1,
+    "long_axis_vector": [
+      -0.10210288719957832,
+      -0.9947738438587487
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          886,
+          533
+        ],
+        "bc": [
+          877,
+          495
+        ]
+      },
+      "distal": {
+        "cej": [
+          827,
+          532
+        ],
+        "bc": [
+          823,
+          475
+        ]
+      },
+      "apex": [
+        839,
+        362
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 22.1379011274935,
+      "distal_pbl_pct": 34.01737619461338,
+      "pbl_max_pct": 34.01737619461338,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 13,
+    "condition": "clahe",
+    "round": 2,
+    "long_axis_vector": [
+      -0.09428561674432803,
+      -0.9955451885651107
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          886,
+          542
+        ],
+        "bc": [
+          872,
+          486
+        ]
+      },
+      "distal": {
+        "cej": [
+          826,
+          535
+        ],
+        "bc": [
+          823,
+          467
+        ]
+      },
+      "apex": [
+        839,
+        359
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 30.581766847462667,
+      "distal_pbl_pct": 39.07111663638393,
+      "pbl_max_pct": 39.07111663638393,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 13,
+    "condition": "he",
+    "round": 1,
+    "long_axis_vector": [
+      -0.10289915108550529,
+      -0.9946917938265512
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          883,
+          537
+        ],
+        "bc": [
+          879,
+          493
+        ]
+      },
+      "distal": {
+        "cej": [
+          825,
+          533
+        ],
+        "bc": [
+          820,
+          472
+        ]
+      },
+      "apex": [
+        836,
+        361
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 24.55672068636797,
+      "distal_pbl_pct": 36.004036326942476,
+      "pbl_max_pct": 36.004036326942476,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 13,
+    "condition": "he",
+    "round": 2,
+    "long_axis_vector": [
+      -0.10610494751231096,
+      -0.9943549366868
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          883,
+          522
+        ],
+        "bc": [
+          874,
+          481
+        ]
+      },
+      "distal": {
+        "cej": [
+          830,
+          522
+        ],
+        "bc": [
+          821,
+          478
+        ]
+      },
+      "apex": [
+        839,
+        358
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 24.873490927492227,
+      "distal_pbl_pct": 27.576341230809508,
+      "pbl_max_pct": 27.576341230809508,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 13,
+    "condition": "raw",
+    "round": 1,
+    "long_axis_vector": [
+      -0.07311754618319398,
+      -0.9973233299387658
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          885,
+          533
+        ],
+        "bc": [
+          875,
+          492
+        ]
+      },
+      "distal": {
+        "cej": [
+          826,
+          524
+        ],
+        "bc": [
+          822,
+          472
+        ]
+      },
+      "apex": [
+        843,
+        358
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 23.43515850144092,
+      "distal_pbl_pct": 31.74026806215625,
+      "pbl_max_pct": 31.74026806215625,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 13,
+    "condition": "raw",
+    "round": 2,
+    "long_axis_vector": [
+      -0.096687720191426,
+      -0.9953147666764441
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          885,
+          537
+        ],
+        "bc": [
+          874,
+          490
+        ]
+      },
+      "distal": {
+        "cej": [
+          827,
+          531
+        ],
+        "bc": [
+          823,
+          475
+        ]
+      },
+      "apex": [
+        839,
+        359
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 26.3434798947764,
+      "distal_pbl_pct": 33.007760235483005,
+      "pbl_max_pct": 33.007760235483005,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 14,
+    "condition": "clahe",
+    "round": 1,
+    "long_axis_vector": [
+      0.2727194468682853,
+      -0.9620936042297842
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          730,
+          505
+        ],
+        "bc": [
+          748,
+          442
+        ]
+      },
+      "distal": {
+        "cej": [
+          664,
+          491
+        ],
+        "bc": [
+          689,
+          434
+        ]
+      },
+      "apex": [
+        733,
+        371
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 50.502160457783475,
+      "distal_pbl_pct": 45.920785375761675,
+      "pbl_max_pct": 50.502160457783475,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 14,
+    "condition": "clahe",
+    "round": 2,
+    "long_axis_vector": [
+      0.29072227368964915,
+      -0.956807483029225
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          729,
+          508
+        ],
+        "bc": [
+          746,
+          426
+        ]
+      },
+      "distal": {
+        "cej": [
+          658,
+          500
+        ],
+        "bc": [
+          683,
+          435
+        ]
+      },
+      "apex": [
+        733,
+        374
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 64.46410285584254,
+      "distal_pbl_pct": 48.79152126147085,
+      "pbl_max_pct": 64.46410285584254,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 14,
+    "condition": "he",
+    "round": 1,
+    "long_axis_vector": [
+      0.2910168592541535,
+      -0.9567179247980295
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          726,
+          511
+        ],
+        "bc": [
+          743,
+          459
+        ]
+      },
+      "distal": {
+        "cej": [
+          662,
+          496
+        ],
+        "bc": [
+          685,
+          435
+        ]
+      },
+      "apex": [
+        734,
+        372
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 40.42261472699411,
+      "distal_pbl_pct": 46.60429479829041,
+      "pbl_max_pct": 46.60429479829041,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 14,
+    "condition": "he",
+    "round": 2,
+    "long_axis_vector": [
+      0.28433655268306024,
+      -0.958724530200575
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          730,
+          516
+        ],
+        "bc": [
+          746,
+          464
+        ]
+      },
+      "distal": {
+        "cej": [
+          658,
+          503
+        ],
+        "bc": [
+          683,
+          443
+        ]
+      },
+      "apex": [
+        733,
+        378
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 40.85632939115199,
+      "distal_pbl_pct": 45.7843770174306,
+      "pbl_max_pct": 45.7843770174306,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 14,
+    "condition": "raw",
+    "round": 1,
+    "long_axis_vector": [
+      0.29461664427962136,
+      -0.9556155256762078
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          727,
+          507
+        ],
+        "bc": [
+          745,
+          463
+        ]
+      },
+      "distal": {
+        "cej": [
+          661,
+          498
+        ],
+        "bc": [
+          674,
+          448
+        ]
+      },
+      "apex": [
+        733,
+        376
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 37.297313379548356,
+      "distal_pbl_pct": 37.45408694698756,
+      "pbl_max_pct": 37.45408694698756,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 14,
+    "condition": "raw",
+    "round": 2,
+    "long_axis_vector": [
+      0.23901904712240393,
+      -0.9710148789347659
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          726,
+          512
+        ],
+        "bc": [
+          748,
+          459
+        ]
+      },
+      "distal": {
+        "cej": [
+          664,
+          496
+        ],
+        "bc": [
+          679,
+          451
+        ]
+      },
+      "apex": [
+        727,
+        374
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 42.254618295125745,
+      "distal_pbl_pct": 35.41060639964198,
+      "pbl_max_pct": 42.254618295125745,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 15,
+    "condition": "clahe",
+    "round": 1,
+    "long_axis_vector": [
+      -0.20429416555366828,
+      -0.9789095432779937
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          614,
+          481
+        ],
+        "bc": [
+          597,
+          434
+        ]
+      },
+      "distal": {
+        "cej": [
+          532,
+          483
+        ],
+        "bc": [
+          524,
+          431
+        ]
+      },
+      "apex": [
+        549,
+        367
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 39.62508520790729,
+      "distal_pbl_pct": 47.72656974945871,
+      "pbl_max_pct": 47.72656974945871,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 15,
+    "condition": "clahe",
+    "round": 2,
+    "long_axis_vector": [
+      -0.17521306208429924,
+      -0.9845305393308242
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          612,
+          485
+        ],
+        "bc": [
+          595,
+          441
+        ]
+      },
+      "distal": {
+        "cej": [
+          530,
+          483
+        ],
+        "bc": [
+          521,
+          432
+        ]
+      },
+      "apex": [
+        550,
+        366
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 36.16397288842544,
+      "distal_pbl_pct": 46.369341102644555,
+      "pbl_max_pct": 46.369341102644555,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 15,
+    "condition": "he",
+    "round": 1,
+    "long_axis_vector": [
+      -0.23951534955157494,
+      -0.9708925776465627
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          612,
+          480
+        ],
+        "bc": [
+          593,
+          424
+        ]
+      },
+      "distal": {
+        "cej": [
+          530,
+          485
+        ],
+        "bc": [
+          522,
+          429
+        ]
+      },
+      "apex": [
+        543,
+        369
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 47.40373696706927,
+      "distal_pbl_pct": 51.398219028276834,
+      "pbl_max_pct": 51.398219028276834,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 15,
+    "condition": "he",
+    "round": 2,
+    "long_axis_vector": [
+      -0.22612970719934952,
+      -0.9740972002433518
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          613,
+          484
+        ],
+        "bc": [
+          593,
+          440
+        ]
+      },
+      "distal": {
+        "cej": [
+          531,
+          478
+        ],
+        "bc": [
+          522,
+          437
+        ]
+      },
+      "apex": [
+        546,
+        369
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 37.25892490767337,
+      "distal_pbl_pct": 40.83601286173633,
+      "pbl_max_pct": 40.83601286173633,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 15,
+    "condition": "raw",
+    "round": 1,
+    "long_axis_vector": [
+      -0.2473832452658204,
+      -0.9689177106244632
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          609,
+          479
+        ],
+        "bc": [
+          593,
+          438
+        ]
+      },
+      "distal": {
+        "cej": [
+          535,
+          476
+        ],
+        "bc": [
+          522,
+          431
+        ]
+      },
+      "apex": [
+        542,
+        360
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 33.12490229795216,
+      "distal_pbl_pct": 42.306259314456035,
+      "pbl_max_pct": 42.306259314456035,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "kaggle_dental_xray_1.jpg",
+    "tooth_id": 15,
+    "condition": "raw",
+    "round": 2,
+    "long_axis_vector": [
+      -0.2683244075628878,
+      -0.9633286107585642
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          618,
+          481
+        ],
+        "bc": [
+          596,
+          436
+        ]
+      },
+      "distal": {
+        "cej": [
+          531,
+          480
+        ],
+        "bc": [
+          521,
+          430
+        ]
+      },
+      "apex": [
+        544,
+        371
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 39.14487484267934,
+      "distal_pbl_pct": 50.090995753531494,
+      "pbl_max_pct": 50.090995753531494,
+      "stage": "III/IV"
+    }
+  }
+]

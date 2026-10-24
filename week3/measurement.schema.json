@@ -1,0 +1,153 @@
+{
+  "type": "object",
+  "properties": {
+    "image_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tooth_id": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "condition": {
+      "enum": [
+        "raw",
+        "clahe",
+        "he"
+      ]
+    },
+    "round": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "long_axis_vector": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "landmarks": {
+      "type": "object",
+      "properties": {
+        "mesial": {
+          "type": "object",
+          "properties": {
+            "cej": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "bc": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "minItems": 2,
+              "maxItems": 2
+            }
+          },
+          "required": [
+            "cej",
+            "bc"
+          ],
+          "additionalProperties": false
+        },
+        "distal": {
+          "type": "object",
+          "properties": {
+            "cej": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "bc": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "minItems": 2,
+              "maxItems": 2
+            }
+          },
+          "required": [
+            "cej",
+            "bc"
+          ],
+          "additionalProperties": false
+        },
+        "apex": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "minItems": 2,
+          "maxItems": 2
+        }
+      },
+      "required": [
+        "mesial",
+        "distal",
+        "apex"
+      ],
+      "additionalProperties": false
+    },
+    "metrics": {
+      "type": "object",
+      "properties": {
+        "mesial_pbl_pct": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "distal_pbl_pct": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "pbl_max_pct": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "stage": {
+          "enum": [
+            "I",
+            "II",
+            "III/IV"
+          ]
+        }
+      },
+      "required": [
+        "mesial_pbl_pct",
+        "distal_pbl_pct",
+        "pbl_max_pct",
+        "stage"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "image_id",
+    "tooth_id",
+    "condition",
+    "round",
+    "long_axis_vector",
+    "landmarks",
+    "metrics"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

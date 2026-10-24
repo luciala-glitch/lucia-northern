@@ -1,0 +1,17 @@
+case,source,tooth,image,landmark,round1_x,round1_y,round2_x,round2_y,dx_px,dy_px,displacement_px
+restoration,legacy_six_point,Week 2 img10-T3,kaggle_dental_xray_10.jpg,mesial.cej,818,434,813,438,-5.0,4.0,6.4031242374328485
+restoration,legacy_six_point,Week 2 img10-T3,kaggle_dental_xray_10.jpg,mesial.bc,811,315,811,319,0.0,4.0,4.0
+restoration,legacy_six_point,Week 2 img10-T3,kaggle_dental_xray_10.jpg,mesial.tip,783,212,790,221,7.0,9.0,11.40175425099138
+restoration,legacy_six_point,Week 2 img10-T3,kaggle_dental_xray_10.jpg,distal.cej,731,421,738,410,7.0,-11.0,13.038404810405298
+restoration,legacy_six_point,Week 2 img10-T3,kaggle_dental_xray_10.jpg,distal.bc,744,325,759,323,15.0,-2.0,15.132745950421556
+restoration,legacy_six_point,Week 2 img10-T3,kaggle_dental_xray_10.jpg,distal.tip,750,225,763,217,13.0,-8.0,15.264337522473747
+root_overlap,current_shared_apex,Week 3 T9,kaggle_dental_xray_1.jpg,mesial.cej,1439,508,1433,509,-6.0,1.0,6.082762530298219
+root_overlap,current_shared_apex,Week 3 T9,kaggle_dental_xray_1.jpg,mesial.bc,1452,477,1456,476,4.0,-1.0,4.123105625617661
+root_overlap,current_shared_apex,Week 3 T9,kaggle_dental_xray_1.jpg,distal.cej,1512,528,1510,527,-2.0,-1.0,2.23606797749979
+root_overlap,current_shared_apex,Week 3 T9,kaggle_dental_xray_1.jpg,distal.bc,1522,479,1523,487,1.0,8.0,8.06225774829855
+root_overlap,current_shared_apex,Week 3 T9,kaggle_dental_xray_1.jpg,apex,1511,399,1518,372,7.0,-27.0,27.892651361962706
+tilted,current_shared_apex,Week 3 T7,kaggle_dental_xray_1.jpg,mesial.cej,514,614,520,612,6.0,-2.0,6.324555320336759
+tilted,current_shared_apex,Week 3 T7,kaggle_dental_xray_1.jpg,mesial.bc,472,646,471,642,-1.0,-4.0,4.123105625617661
+tilted,current_shared_apex,Week 3 T7,kaggle_dental_xray_1.jpg,distal.cej,433,555,435,557,2.0,2.0,2.8284271247461903
+tilted,current_shared_apex,Week 3 T7,kaggle_dental_xray_1.jpg,distal.bc,418,577,427,564,9.0,-13.0,15.811388300841896
+tilted,current_shared_apex,Week 3 T7,kaggle_dental_xray_1.jpg,apex,369,661,390,672,21.0,11.0,23.706539182259394

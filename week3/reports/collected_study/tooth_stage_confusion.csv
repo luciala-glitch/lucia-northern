@@ -1,0 +1,10 @@
+condition,round1_stage,round2_I,round2_II,round2_III_IV
+raw,I,0,0,0
+raw,II,0,7,2
+raw,III/IV,0,2,4
+he,I,0,0,0
+he,II,0,8,0
+he,III/IV,0,1,6
+clahe,I,0,0,0
+clahe,II,0,5,0
+clahe,III/IV,0,3,7

@@ -1,0 +1,48 @@
+{
+  "checked_utc": "2026-10-24T01:05:21.000068Z",
+  "timezone": "America/Detroit",
+  "counts": {
+    "week3": 142,
+    "project": 217,
+    "frontend": 14
+  },
+  "source_digests": {
+    "week3/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "week3/analyze.py": "d471837b8d3cea80d64060efd75f546e16e7185e25a76d9fae51f5ce58e42e37",
+    "week3/app.py": "eee27b93ea34421e1b0becb8000ff7eb6988a04daeec18746c2158ccbb0d0fe7",
+    "week3/canvas.py": "e9234d136e29e816bf6ba263dffb0b0e7133ad421702fe64798cb5a854f673cb",
+    "week3/comparison.py": "64d7a6ab6cf07ff45eea261e6115c1b0909330009946368344c0987923d104fb",
+    "week3/errors.py": "5d4ec4af2cfbda090272d869491054a62818bc1849c105d7b02d660ac073066c",
+    "week3/exports.py": "60e257de087266f78f840b0a4d72578221dd94cf16d150cda6de74175b32821b",
+    "week3/image_processing.py": "f609c7e08d6eb10d64af4d6e3ab1d68f5712e127685ca05ae9cbac67fa3ee519",
+    "week3/orientation.py": "c969af82f3c5345a4c96c68f7fb8e0c5c2f16c3581dff7cb8b3369d96630a62e",
+    "week3/pbl_calculator.py": "64c327e354b5f8e0e7ddd1d0885cd1917412dd384aab1b168e09a9c608fb902a",
+    "week3/reports/collected_study/build_report.py": "1193ff47267950039cece8c683baec86f0d1676c280a7560abb0292c73e46d82",
+    "week3/reports/collected_study/paired_analysis.py": "996d270f8395f857c0b3758e5385918550bde9159d98f8bc2b8bbb5eb3a0fc16",
+    "week3/reports/collected_study/radiographic_cases.py": "62e4a4954c00fa5757f519db7b49a46a33f801ebe22eaf7ff587dd15670ec50c",
+    "week3/reports/collected_study/report_template.md": "85cbe05bfeb019cd37590ed336b957e819f915f2266e3c1c47aff793734ba706",
+    "week3/reports/collected_study/run_checks.py": "3488c3da717235a21283f7f11db358e4bace9a5926a75e86447acf5979563647",
+    "week3/reports/collected_study/verification.py": "3e9eab6924f1a6703dfdf5481b9e660060540f691bcc59b8f513d50d7b425456",
+    "week3/sensitivity.py": "70b68fe488eb2e01ff4da4f45f4199c3e6008d9829f1b3d03325d2017cd6d709",
+    "week3/statistics.py": "2552232725890c0f3730bc011b271ebda2c5831ee89e07b88ea9521b61d82e5e",
+    "week3/study.py": "41875117b89bc2f933c6c09615734c32c50a1592633ef1195dc65b2da854ab10",
+    "week3/tests/test_analysis.py": "0288b270d9c795c5101d1ff7defd4d898c7100ce49fcc794546a694ed49f1100",
+    "week3/tests/test_app.py": "d2822612c7d5a4efbb1ae3ad62d73f4d729044e4064a1c44d65f4550093c789e",
+    "week3/tests/test_canvas.py": "7deef0ae6aaf16f98af3358cf87e5afbf2d4c3070a7cf7071a3e1865fbc065f5",
+    "week3/tests/test_engine.py": "5eab990c6619ece1cc22af3406c8b373189111d7d8c67b77b016f228f8fefc72",
+    "week3/tests/test_exports.py": "cc84db3e8f1f23aefc408a082f325af9a538b15a6cf769242ccafa3a458ea871",
+    "week3/tests/test_legacy_report.py": "674b36a236c05659f4f171af8c5c63472fd4e86da08e6e4a92342a6627024064",
+    "week3/tests/test_report_supplement.py": "0ac2af54bf34ca3ac82469d6954fa13ecca8e8c11af6d4fa72712a88544e6ecf",
+    "week3/tests/test_study.py": "53d75f9ee3cd2451950a208d141ef7e6785fcaf2eb0430f7a206b5edde81ce15"
+  },
+  "artifact_digests": {
+    "week3/reports/collected_study/frontend_test_results.txt": "b4300a2fc75f94133d4263da14659f9cb1e072fe82019450bff04b55f1735374",
+    "week3/reports/collected_study/full_coverage.json": "13829a45f0a7c1676476e9b0f3851ff02a05204aabcddc46f3d2dd21980ba79e",
+    "week3/reports/collected_study/project_test_results.txt": "e6a9a3cb59ab9b0a6915d8753949137a14ed827e27054e89bbf75d77db39668c",
+    "week3/reports/collected_study/protocol_history/excluded_raw_round1.json": "8f2e62dc29fd72983e6f82d5169eae9220bce0f3ff293b73f70446876510ba31",
+    "week3/reports/collected_study/protocol_history/history_evidence.json": "b3b56b5ca34fcf8c90629f7c5752c4f28f0a69d7d29a98544c2d955e478064e9",
+    "week3/reports/collected_study/week3_test_results.txt": "ee80318b06acde4173937d355ec73124a6ee1d77e70b8c8db66ba120a0939637"
+  },
+  "note": "Saved execution evidence; report generation verifies hashes but does not execute tests. Clinical accuracy is not inferred from software checks.",
+  "checked_local_date": "2026-10-23"
+}

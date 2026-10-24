@@ -1,0 +1,185 @@
+{
+  "study_id": "afb9efae0e0f4389907765ba6adc2cdd",
+  "study_created_utc": "2026-10-23T04:26:07Z",
+  "backups": [
+    {
+      "name": "raw_round1_complete_1792728998",
+      "backup_time_utc": "2026-10-23T04:16:38Z",
+      "evidence": "Epoch in backup directory name agrees with measurement-file modification time to within two seconds; backup time is an upper bound, not a per-reading timestamp.",
+      "count": 15,
+      "sha256": "8f2e62dc29fd72983e6f82d5169eae9220bce0f3ff293b73f70446876510ba31"
+    },
+    {
+      "name": "restarted_raw1_complete_1792729902",
+      "backup_time_utc": "2026-10-23T04:31:42Z",
+      "evidence": "Epoch in backup directory name agrees with measurement-file modification time to within two seconds; backup time is an upper bound, not a per-reading timestamp.",
+      "count": 15,
+      "sha256": "df1fdcbacbc7da673ed4065f31c15fc4d2045c74501ea2b725c20243748323cf"
+    },
+    {
+      "name": "raw_he_round1_complete_1792730510",
+      "backup_time_utc": "2026-10-23T04:41:50Z",
+      "evidence": "Epoch in backup directory name agrees with measurement-file modification time to within two seconds; backup time is an upper bound, not a per-reading timestamp.",
+      "count": 30,
+      "sha256": "a4036ced01d004de7f74eb30d8caef91a20e5d43c794a5ea1b45fff98b32fde9"
+    },
+    {
+      "name": "round1_all_conditions_complete_1792730970",
+      "backup_time_utc": "2026-10-23T04:49:30Z",
+      "evidence": "Epoch in backup directory name agrees with measurement-file modification time to within two seconds; backup time is an upper bound, not a per-reading timestamp.",
+      "count": 45,
+      "sha256": "0de27a492025d009e08be2b4f9837439638a4f6d5c47b19af6d02c19df29483a"
+    }
+  ],
+  "round2_groups": [
+    {
+      "condition": "raw",
+      "first_save_utc": "2026-10-23T17:47:18Z",
+      "last_save_utc": "2026-10-23T17:49:24Z",
+      "first_to_last_save_seconds": 126.0,
+      "median_inter_save_seconds": 9.0,
+      "save_order": [
+        3,
+        8,
+        2,
+        15,
+        7,
+        1,
+        11,
+        10,
+        13,
+        6,
+        4,
+        12,
+        9,
+        5,
+        14
+      ],
+      "seeded_order": [
+        3,
+        8,
+        2,
+        15,
+        7,
+        1,
+        11,
+        10,
+        13,
+        6,
+        4,
+        12,
+        9,
+        5,
+        14
+      ],
+      "order_verified": true
+    },
+    {
+      "condition": "he",
+      "first_save_utc": "2026-10-23T17:54:08Z",
+      "last_save_utc": "2026-10-23T17:56:31Z",
+      "first_to_last_save_seconds": 143.0,
+      "median_inter_save_seconds": 9.0,
+      "save_order": [
+        15,
+        1,
+        13,
+        6,
+        3,
+        5,
+        2,
+        9,
+        12,
+        14,
+        4,
+        8,
+        11,
+        7,
+        10
+      ],
+      "seeded_order": [
+        15,
+        1,
+        13,
+        6,
+        3,
+        5,
+        2,
+        9,
+        12,
+        14,
+        4,
+        8,
+        11,
+        7,
+        10
+      ],
+      "order_verified": true
+    },
+    {
+      "condition": "clahe",
+      "first_save_utc": "2026-10-23T17:58:00Z",
+      "last_save_utc": "2026-10-23T18:00:09Z",
+      "first_to_last_save_seconds": 129.0,
+      "median_inter_save_seconds": 8.0,
+      "save_order": [
+        14,
+        4,
+        12,
+        5,
+        10,
+        11,
+        9,
+        2,
+        15,
+        7,
+        13,
+        1,
+        3,
+        8,
+        6
+      ],
+      "seeded_order": [
+        14,
+        4,
+        12,
+        5,
+        10,
+        11,
+        9,
+        2,
+        15,
+        7,
+        13,
+        1,
+        3,
+        8,
+        6
+      ],
+      "order_verified": true
+    }
+  ],
+  "condition_order": [
+    "raw",
+    "he",
+    "clahe"
+  ],
+  "excluded_study_id": "317d1b4946c8482abb42088c41dd36a7",
+  "excluded_records": 15,
+  "same_registered_locations": true,
+  "restart_reason": "RAW Round 1 was restarted after mesial/distal sides had been reversed for eight teeth on the image-left side of the midline: T4\u2013T7 and T12\u2013T15. The previous readings were archived and excluded.",
+  "final_raw1_minus_excluded_raw1_mean_pp": 3.853578973075908,
+  "final_raw1_minus_excluded_raw1_sample_sd_pp": 2.2886084859092577,
+  "excluded_json_sha256": "8f2e62dc29fd72983e6f82d5169eae9220bce0f3ff293b73f70446876510ba31",
+  "reversed_side_tooth_ids": [
+    4,
+    5,
+    6,
+    7,
+    12,
+    13,
+    14,
+    15
+  ],
+  "restart_reason_evidence": "Contemporaneous saved-landmark review named study 317d1b49 and flagged these side assignments (T7 separately because of tilt). Comparing archived and final RAW Round 1 CEJ ordering confirms the eight changed side assignments. This does not certify precise anatomical landmark positions."
+}

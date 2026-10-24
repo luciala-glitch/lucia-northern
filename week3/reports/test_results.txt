@@ -1,0 +1,13 @@
+........................................................................ [ 52%]
+.................................................................        [100%]
+================================ tests coverage ================================
+_______________ coverage: platform darwin, python 3.13.9-final-0 _______________
+
+Name                      Stmts   Miss Branch BrPart  Cover   Missing
+---------------------------------------------------------------------
+week3/pbl_calculator.py     105      0     28      0   100%
+---------------------------------------------------------------------
+TOTAL                       105      0     28      0   100%
+Coverage JSON written to file week3/reports/coverage.json
+Required test coverage of 90% reached. Total coverage: 100.00%
+137 passed in 31.77s

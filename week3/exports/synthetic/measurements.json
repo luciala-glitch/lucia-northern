@@ -1,0 +1,3782 @@
+[
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 1,
+    "condition": "raw",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          68
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          70
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 8.0,
+      "distal_pbl_pct": 10.0,
+      "pbl_max_pct": 10.0,
+      "stage": "I"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 1,
+    "condition": "he",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          68
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          70
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 8.0,
+      "distal_pbl_pct": 10.0,
+      "pbl_max_pct": 10.0,
+      "stage": "I"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 1,
+    "condition": "clahe",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          68
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          70
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 8.0,
+      "distal_pbl_pct": 10.0,
+      "pbl_max_pct": 10.0,
+      "stage": "I"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 1,
+    "condition": "raw",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          69
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          71
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 9.0,
+      "distal_pbl_pct": 11.0,
+      "pbl_max_pct": 11.0,
+      "stage": "I"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 1,
+    "condition": "he",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          69
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          71
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 9.0,
+      "distal_pbl_pct": 11.0,
+      "pbl_max_pct": 11.0,
+      "stage": "I"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 1,
+    "condition": "clahe",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          69
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          71
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 9.0,
+      "distal_pbl_pct": 11.0,
+      "pbl_max_pct": 11.0,
+      "stage": "I"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 2,
+    "condition": "raw",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          82
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          84
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 22.0,
+      "distal_pbl_pct": 24.0,
+      "pbl_max_pct": 24.0,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 2,
+    "condition": "he",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          82
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          84
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 22.0,
+      "distal_pbl_pct": 24.0,
+      "pbl_max_pct": 24.0,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 2,
+    "condition": "clahe",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          82
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          84
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 22.0,
+      "distal_pbl_pct": 24.0,
+      "pbl_max_pct": 24.0,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 2,
+    "condition": "raw",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          83
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          85
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 23.0,
+      "distal_pbl_pct": 25.0,
+      "pbl_max_pct": 25.0,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 2,
+    "condition": "he",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          83
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          85
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 23.0,
+      "distal_pbl_pct": 25.0,
+      "pbl_max_pct": 25.0,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 2,
+    "condition": "clahe",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          83
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          85
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 23.0,
+      "distal_pbl_pct": 25.0,
+      "pbl_max_pct": 25.0,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 3,
+    "condition": "raw",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          100
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          102
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 40.0,
+      "distal_pbl_pct": 42.0,
+      "pbl_max_pct": 42.0,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 3,
+    "condition": "he",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          100
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          102
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 40.0,
+      "distal_pbl_pct": 42.0,
+      "pbl_max_pct": 42.0,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 3,
+    "condition": "clahe",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          100
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          102
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 40.0,
+      "distal_pbl_pct": 42.0,
+      "pbl_max_pct": 42.0,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 3,
+    "condition": "raw",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          101
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          103
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 41.0,
+      "distal_pbl_pct": 43.0,
+      "pbl_max_pct": 43.0,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 3,
+    "condition": "he",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          101
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          103
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 41.0,
+      "distal_pbl_pct": 43.0,
+      "pbl_max_pct": 43.0,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 3,
+    "condition": "clahe",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          101
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          103
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 41.0,
+      "distal_pbl_pct": 43.0,
+      "pbl_max_pct": 43.0,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 4,
+    "condition": "raw",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          68
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          70
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 8.0,
+      "distal_pbl_pct": 10.0,
+      "pbl_max_pct": 10.0,
+      "stage": "I"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 4,
+    "condition": "he",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          68
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          70
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 8.0,
+      "distal_pbl_pct": 10.0,
+      "pbl_max_pct": 10.0,
+      "stage": "I"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 4,
+    "condition": "clahe",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          68
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          70
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 8.0,
+      "distal_pbl_pct": 10.0,
+      "pbl_max_pct": 10.0,
+      "stage": "I"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 4,
+    "condition": "raw",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          69
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          71
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 9.0,
+      "distal_pbl_pct": 11.0,
+      "pbl_max_pct": 11.0,
+      "stage": "I"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 4,
+    "condition": "he",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          69
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          71
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 9.0,
+      "distal_pbl_pct": 11.0,
+      "pbl_max_pct": 11.0,
+      "stage": "I"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 4,
+    "condition": "clahe",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          69
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          71
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 9.0,
+      "distal_pbl_pct": 11.0,
+      "pbl_max_pct": 11.0,
+      "stage": "I"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 5,
+    "condition": "raw",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          82
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          84
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 22.0,
+      "distal_pbl_pct": 24.0,
+      "pbl_max_pct": 24.0,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 5,
+    "condition": "he",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          82
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          84
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 22.0,
+      "distal_pbl_pct": 24.0,
+      "pbl_max_pct": 24.0,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 5,
+    "condition": "clahe",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          82
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          84
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 22.0,
+      "distal_pbl_pct": 24.0,
+      "pbl_max_pct": 24.0,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 5,
+    "condition": "raw",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          83
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          85
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 23.0,
+      "distal_pbl_pct": 25.0,
+      "pbl_max_pct": 25.0,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 5,
+    "condition": "he",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          83
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          85
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 23.0,
+      "distal_pbl_pct": 25.0,
+      "pbl_max_pct": 25.0,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 5,
+    "condition": "clahe",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          83
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          85
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 23.0,
+      "distal_pbl_pct": 25.0,
+      "pbl_max_pct": 25.0,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 6,
+    "condition": "raw",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          100
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          102
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 40.0,
+      "distal_pbl_pct": 42.0,
+      "pbl_max_pct": 42.0,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 6,
+    "condition": "he",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          100
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          102
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 40.0,
+      "distal_pbl_pct": 42.0,
+      "pbl_max_pct": 42.0,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 6,
+    "condition": "clahe",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          100
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          102
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 40.0,
+      "distal_pbl_pct": 42.0,
+      "pbl_max_pct": 42.0,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 6,
+    "condition": "raw",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          101
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          103
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 41.0,
+      "distal_pbl_pct": 43.0,
+      "pbl_max_pct": 43.0,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 6,
+    "condition": "he",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          101
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          103
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 41.0,
+      "distal_pbl_pct": 43.0,
+      "pbl_max_pct": 43.0,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 6,
+    "condition": "clahe",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          101
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          103
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 41.0,
+      "distal_pbl_pct": 43.0,
+      "pbl_max_pct": 43.0,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 7,
+    "condition": "raw",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          68
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          70
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 8.0,
+      "distal_pbl_pct": 10.0,
+      "pbl_max_pct": 10.0,
+      "stage": "I"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 7,
+    "condition": "he",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          68
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          70
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 8.0,
+      "distal_pbl_pct": 10.0,
+      "pbl_max_pct": 10.0,
+      "stage": "I"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 7,
+    "condition": "clahe",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          68
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          70
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 8.0,
+      "distal_pbl_pct": 10.0,
+      "pbl_max_pct": 10.0,
+      "stage": "I"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 7,
+    "condition": "raw",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          69
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          71
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 9.0,
+      "distal_pbl_pct": 11.0,
+      "pbl_max_pct": 11.0,
+      "stage": "I"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 7,
+    "condition": "he",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          69
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          71
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 9.0,
+      "distal_pbl_pct": 11.0,
+      "pbl_max_pct": 11.0,
+      "stage": "I"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 7,
+    "condition": "clahe",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          69
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          71
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 9.0,
+      "distal_pbl_pct": 11.0,
+      "pbl_max_pct": 11.0,
+      "stage": "I"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 8,
+    "condition": "raw",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          82
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          84
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 22.0,
+      "distal_pbl_pct": 24.0,
+      "pbl_max_pct": 24.0,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 8,
+    "condition": "he",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          82
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          84
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 22.0,
+      "distal_pbl_pct": 24.0,
+      "pbl_max_pct": 24.0,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 8,
+    "condition": "clahe",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          82
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          84
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 22.0,
+      "distal_pbl_pct": 24.0,
+      "pbl_max_pct": 24.0,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 8,
+    "condition": "raw",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          83
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          85
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 23.0,
+      "distal_pbl_pct": 25.0,
+      "pbl_max_pct": 25.0,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 8,
+    "condition": "he",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          83
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          85
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 23.0,
+      "distal_pbl_pct": 25.0,
+      "pbl_max_pct": 25.0,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 8,
+    "condition": "clahe",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          83
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          85
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 23.0,
+      "distal_pbl_pct": 25.0,
+      "pbl_max_pct": 25.0,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 9,
+    "condition": "raw",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          100
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          102
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 40.0,
+      "distal_pbl_pct": 42.0,
+      "pbl_max_pct": 42.0,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 9,
+    "condition": "he",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          100
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          102
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 40.0,
+      "distal_pbl_pct": 42.0,
+      "pbl_max_pct": 42.0,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 9,
+    "condition": "clahe",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          100
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          102
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 40.0,
+      "distal_pbl_pct": 42.0,
+      "pbl_max_pct": 42.0,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 9,
+    "condition": "raw",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          101
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          103
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 41.0,
+      "distal_pbl_pct": 43.0,
+      "pbl_max_pct": 43.0,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 9,
+    "condition": "he",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          101
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          103
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 41.0,
+      "distal_pbl_pct": 43.0,
+      "pbl_max_pct": 43.0,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 9,
+    "condition": "clahe",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          101
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          103
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 41.0,
+      "distal_pbl_pct": 43.0,
+      "pbl_max_pct": 43.0,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 10,
+    "condition": "raw",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          68
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          70
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 8.0,
+      "distal_pbl_pct": 10.0,
+      "pbl_max_pct": 10.0,
+      "stage": "I"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 10,
+    "condition": "he",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          68
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          70
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 8.0,
+      "distal_pbl_pct": 10.0,
+      "pbl_max_pct": 10.0,
+      "stage": "I"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 10,
+    "condition": "clahe",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          68
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          70
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 8.0,
+      "distal_pbl_pct": 10.0,
+      "pbl_max_pct": 10.0,
+      "stage": "I"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 10,
+    "condition": "raw",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          69
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          71
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 9.0,
+      "distal_pbl_pct": 11.0,
+      "pbl_max_pct": 11.0,
+      "stage": "I"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 10,
+    "condition": "he",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          69
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          71
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 9.0,
+      "distal_pbl_pct": 11.0,
+      "pbl_max_pct": 11.0,
+      "stage": "I"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 10,
+    "condition": "clahe",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          69
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          71
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 9.0,
+      "distal_pbl_pct": 11.0,
+      "pbl_max_pct": 11.0,
+      "stage": "I"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 11,
+    "condition": "raw",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          82
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          84
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 22.0,
+      "distal_pbl_pct": 24.0,
+      "pbl_max_pct": 24.0,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 11,
+    "condition": "he",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          82
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          84
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 22.0,
+      "distal_pbl_pct": 24.0,
+      "pbl_max_pct": 24.0,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 11,
+    "condition": "clahe",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          82
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          84
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 22.0,
+      "distal_pbl_pct": 24.0,
+      "pbl_max_pct": 24.0,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 11,
+    "condition": "raw",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          83
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          85
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 23.0,
+      "distal_pbl_pct": 25.0,
+      "pbl_max_pct": 25.0,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 11,
+    "condition": "he",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          83
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          85
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 23.0,
+      "distal_pbl_pct": 25.0,
+      "pbl_max_pct": 25.0,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 11,
+    "condition": "clahe",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          83
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          85
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 23.0,
+      "distal_pbl_pct": 25.0,
+      "pbl_max_pct": 25.0,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 12,
+    "condition": "raw",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          100
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          102
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 40.0,
+      "distal_pbl_pct": 42.0,
+      "pbl_max_pct": 42.0,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 12,
+    "condition": "he",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          100
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          102
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 40.0,
+      "distal_pbl_pct": 42.0,
+      "pbl_max_pct": 42.0,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 12,
+    "condition": "clahe",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          100
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          102
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 40.0,
+      "distal_pbl_pct": 42.0,
+      "pbl_max_pct": 42.0,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 12,
+    "condition": "raw",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          101
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          103
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 41.0,
+      "distal_pbl_pct": 43.0,
+      "pbl_max_pct": 43.0,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 12,
+    "condition": "he",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          101
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          103
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 41.0,
+      "distal_pbl_pct": 43.0,
+      "pbl_max_pct": 43.0,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 12,
+    "condition": "clahe",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          101
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          103
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 41.0,
+      "distal_pbl_pct": 43.0,
+      "pbl_max_pct": 43.0,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 13,
+    "condition": "raw",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          68
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          70
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 8.0,
+      "distal_pbl_pct": 10.0,
+      "pbl_max_pct": 10.0,
+      "stage": "I"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 13,
+    "condition": "he",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          68
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          70
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 8.0,
+      "distal_pbl_pct": 10.0,
+      "pbl_max_pct": 10.0,
+      "stage": "I"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 13,
+    "condition": "clahe",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          68
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          70
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 8.0,
+      "distal_pbl_pct": 10.0,
+      "pbl_max_pct": 10.0,
+      "stage": "I"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 13,
+    "condition": "raw",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          69
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          71
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 9.0,
+      "distal_pbl_pct": 11.0,
+      "pbl_max_pct": 11.0,
+      "stage": "I"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 13,
+    "condition": "he",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          69
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          71
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 9.0,
+      "distal_pbl_pct": 11.0,
+      "pbl_max_pct": 11.0,
+      "stage": "I"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 13,
+    "condition": "clahe",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          69
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          71
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 9.0,
+      "distal_pbl_pct": 11.0,
+      "pbl_max_pct": 11.0,
+      "stage": "I"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 14,
+    "condition": "raw",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          82
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          84
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 22.0,
+      "distal_pbl_pct": 24.0,
+      "pbl_max_pct": 24.0,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 14,
+    "condition": "he",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          82
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          84
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 22.0,
+      "distal_pbl_pct": 24.0,
+      "pbl_max_pct": 24.0,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 14,
+    "condition": "clahe",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          82
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          84
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 22.0,
+      "distal_pbl_pct": 24.0,
+      "pbl_max_pct": 24.0,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 14,
+    "condition": "raw",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          83
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          85
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 23.0,
+      "distal_pbl_pct": 25.0,
+      "pbl_max_pct": 25.0,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 14,
+    "condition": "he",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          83
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          85
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 23.0,
+      "distal_pbl_pct": 25.0,
+      "pbl_max_pct": 25.0,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 14,
+    "condition": "clahe",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          83
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          85
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 23.0,
+      "distal_pbl_pct": 25.0,
+      "pbl_max_pct": 25.0,
+      "stage": "II"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 15,
+    "condition": "raw",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          100
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          102
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 40.0,
+      "distal_pbl_pct": 42.0,
+      "pbl_max_pct": 42.0,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 15,
+    "condition": "he",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          100
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          102
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 40.0,
+      "distal_pbl_pct": 42.0,
+      "pbl_max_pct": 42.0,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 15,
+    "condition": "clahe",
+    "round": 1,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          100
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          102
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 40.0,
+      "distal_pbl_pct": 42.0,
+      "pbl_max_pct": 42.0,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 15,
+    "condition": "raw",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          101
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          103
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 41.0,
+      "distal_pbl_pct": 43.0,
+      "pbl_max_pct": 43.0,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 15,
+    "condition": "he",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          101
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          103
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 41.0,
+      "distal_pbl_pct": 43.0,
+      "pbl_max_pct": 43.0,
+      "stage": "III/IV"
+    }
+  },
+  {
+    "image_id": "SYNTHETIC_geometry_fixture",
+    "tooth_id": 15,
+    "condition": "clahe",
+    "round": 2,
+    "long_axis_vector": [
+      0.0,
+      1.0
+    ],
+    "landmarks": {
+      "mesial": {
+        "cej": [
+          60,
+          60
+        ],
+        "bc": [
+          60,
+          101
+        ]
+      },
+      "distal": {
+        "cej": [
+          100,
+          60
+        ],
+        "bc": [
+          100,
+          103
+        ]
+      },
+      "apex": [
+        80,
+        160
+      ]
+    },
+    "metrics": {
+      "mesial_pbl_pct": 41.0,
+      "distal_pbl_pct": 43.0,
+      "pbl_max_pct": 43.0,
+      "stage": "III/IV"
+    }
+  }
+]

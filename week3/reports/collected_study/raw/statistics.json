@@ -1,0 +1,19 @@
+{
+  "n": 30,
+  "icc_2_1": 0.7215691322701584,
+  "weighted_kappa": 0.5631067961165048,
+  "bias": -0.26108949631932993,
+  "difference_sd": 5.35684786934536,
+  "loa_lower": -10.760511320236237,
+  "loa_upper": 10.238332327597575,
+  "bias_se": 0.9780221383879802,
+  "difference_mean_slope": 0.3762853518654299,
+  "outside_indices": [
+    13,
+    17
+  ],
+  "icc_ci_lower": 0.49100096937765536,
+  "icc_ci_upper": 0.85734125284516,
+  "tooth_pairs": 15,
+  "tooth_stage_quadratic_kappa": 0.4444444444444444
+}

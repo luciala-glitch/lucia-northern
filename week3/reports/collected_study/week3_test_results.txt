@@ -1,0 +1,34 @@
+........................................................................ [ 50%]
+......................................................................   [100%]
+================================ tests coverage ================================
+_______________ coverage: platform darwin, python 3.13.9-final-0 _______________
+
+Name                                               Stmts   Miss Branch BrPart  Cover   Missing
+----------------------------------------------------------------------------------------------
+week3/__init__.py                                      0      0      0      0   100%
+week3/analyze.py                                     306      6     90      7    97%   90-91, 138, 160->165, 388, 395, 418->404, 755
+week3/app.py                                         402     37    122     14    88%   52->exit, 77-78, 114-116, 142-143, 182-191, 248, 270, 343-345, 349, 433-434, 436-439, 575->588, 582-584, 625, 766-771, 797, 820-825, 831, 842->exit, 848
+week3/canvas.py                                       54      0     22      0   100%
+week3/comparison.py                                   31      0      8      0   100%
+week3/errors.py                                       27      0      8      0   100%
+week3/exports.py                                     106      0     46      0   100%
+week3/image_processing.py                             36      0     14      0   100%
+week3/orientation.py                                  38      0     10      0   100%
+week3/pbl_calculator.py                              105      0     28      0   100%
+week3/reports/collected_study/paired_analysis.py      69     26     10      0    59%   71-99
+week3/reports/collected_study/verification.py         11      0      6      0   100%
+week3/sensitivity.py                                  28      0     10      0   100%
+week3/statistics.py                                  120      2     34      3    97%   78->90, 96, 98
+week3/study.py                                       208      5     54      3    97%   60-61, 162, 325, 385
+week3/tests/test_analysis.py                         139      0     14      0   100%
+week3/tests/test_app.py                              228      0      2      0   100%
+week3/tests/test_canvas.py                            85      0      2      0   100%
+week3/tests/test_engine.py                            81      0      0      0   100%
+week3/tests/test_exports.py                           94      0      6      0   100%
+week3/tests/test_legacy_report.py                     84      0      6      0   100%
+week3/tests/test_report_supplement.py                 47      0      2      0   100%
+week3/tests/test_study.py                            196      0     10      0   100%
+----------------------------------------------------------------------------------------------
+TOTAL                                               2495     76    504     27    96%
+Coverage JSON written to file week3/reports/collected_study/full_coverage.json
+142 passed in 34.02s

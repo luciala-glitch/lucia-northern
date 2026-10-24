@@ -1,0 +1,9 @@
+{
+  "scope": "Serialized outgoing component arguments, not total WebSocket traffic or a timing benchmark",
+  "sample": "kaggle_dental_xray_1.jpg / raw",
+  "initial_image_bytes": 1071480,
+  "five_point_update_bytes": 487,
+  "reduction_pct": 99.95454884832195,
+  "image_data_in_update": false,
+  "retransfer_expected": "image/condition change or iframe requesting a missing image"
+}
