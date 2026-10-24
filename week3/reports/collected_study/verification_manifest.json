@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-10-24T01:05:21.000068Z",
+  "checked_utc": "2026-10-24T04:41:06.346048Z",
   "timezone": "America/Detroit",
   "counts": {
     "week3": 142,
@@ -17,10 +17,10 @@
     "week3/image_processing.py": "f609c7e08d6eb10d64af4d6e3ab1d68f5712e127685ca05ae9cbac67fa3ee519",
     "week3/orientation.py": "c969af82f3c5345a4c96c68f7fb8e0c5c2f16c3581dff7cb8b3369d96630a62e",
     "week3/pbl_calculator.py": "64c327e354b5f8e0e7ddd1d0885cd1917412dd384aab1b168e09a9c608fb902a",
-    "week3/reports/collected_study/build_report.py": "1193ff47267950039cece8c683baec86f0d1676c280a7560abb0292c73e46d82",
+    "week3/reports/collected_study/build_report.py": "28b096928faede083aa9bf566a3210b8e6f7c611f77327ab2bbf2bae4c20de92",
     "week3/reports/collected_study/paired_analysis.py": "996d270f8395f857c0b3758e5385918550bde9159d98f8bc2b8bbb5eb3a0fc16",
     "week3/reports/collected_study/radiographic_cases.py": "62e4a4954c00fa5757f519db7b49a46a33f801ebe22eaf7ff587dd15670ec50c",
-    "week3/reports/collected_study/report_template.md": "85cbe05bfeb019cd37590ed336b957e819f915f2266e3c1c47aff793734ba706",
+    "week3/reports/collected_study/report_template.md": "55f47d8a1c1fcaa827b83cd73415212b7c6af76b45756df5b054591230340ee6",
     "week3/reports/collected_study/run_checks.py": "3488c3da717235a21283f7f11db358e4bace9a5926a75e86447acf5979563647",
     "week3/reports/collected_study/verification.py": "3e9eab6924f1a6703dfdf5481b9e660060540f691bcc59b8f513d50d7b425456",
     "week3/sensitivity.py": "70b68fe488eb2e01ff4da4f45f4199c3e6008d9829f1b3d03325d2017cd6d709",
@@ -36,13 +36,13 @@
     "week3/tests/test_study.py": "53d75f9ee3cd2451950a208d141ef7e6785fcaf2eb0430f7a206b5edde81ce15"
   },
   "artifact_digests": {
-    "week3/reports/collected_study/frontend_test_results.txt": "b4300a2fc75f94133d4263da14659f9cb1e072fe82019450bff04b55f1735374",
-    "week3/reports/collected_study/full_coverage.json": "13829a45f0a7c1676476e9b0f3851ff02a05204aabcddc46f3d2dd21980ba79e",
-    "week3/reports/collected_study/project_test_results.txt": "e6a9a3cb59ab9b0a6915d8753949137a14ed827e27054e89bbf75d77db39668c",
+    "week3/reports/collected_study/frontend_test_results.txt": "2131ac6755bafd8a12ee3d4b9f8b1a6edef38b140bc2fb2bfb38391f76d13474",
+    "week3/reports/collected_study/full_coverage.json": "f310de7a695f8fa8d66f80caf9f56275eff89dec0989549fc635fa875195c93e",
+    "week3/reports/collected_study/project_test_results.txt": "78d772d02a308e1f39db2d293a1c86200a5e87a2c38c95370e2262bee4b22ca0",
     "week3/reports/collected_study/protocol_history/excluded_raw_round1.json": "8f2e62dc29fd72983e6f82d5169eae9220bce0f3ff293b73f70446876510ba31",
     "week3/reports/collected_study/protocol_history/history_evidence.json": "b3b56b5ca34fcf8c90629f7c5752c4f28f0a69d7d29a98544c2d955e478064e9",
-    "week3/reports/collected_study/week3_test_results.txt": "ee80318b06acde4173937d355ec73124a6ee1d77e70b8c8db66ba120a0939637"
+    "week3/reports/collected_study/week3_test_results.txt": "36d322d39925ecf44bd46960289d5fad88cd1273f6bf7ac319ab29ef3c394a16"
   },
   "note": "Saved execution evidence; report generation verifies hashes but does not execute tests. Clinical accuracy is not inferred from software checks.",
-  "checked_local_date": "2026-10-23"
+  "checked_local_date": "2026-10-24"
 }

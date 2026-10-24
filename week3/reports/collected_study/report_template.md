@@ -61,7 +61,7 @@ No tooth was Stage I in either round, so the observed tooth comparisons only dis
 
 {{confusion}}
 
-The differences between conditions involved only a few teeth. Eleven of the 180 surface observations, covering eight distinct tooth surfaces, were within 1 pp of a stage boundary. Small changes near 15% or 33% could therefore change a category. The engine's furcation/vertical-defect review flag was raised for 42/90 readings above 33%.
+The differences between conditions involved only a few teeth. Eleven of the 180 surface observations, covering eight distinct tooth surfaces, were within 1 pp of a stage boundary. Small changes near 15% or 33% could therefore change a category. Forty-two of the 90 readings were above 33%, so the engine raised the furcation/vertical-defect review flag for them.
 
 ### Landmark placement across conditions
 
@@ -91,6 +91,8 @@ The combined table shows the maximum absolute change in PBLmax, in pp, across fi
 
 {{case_sensitivity}}
 
+Some shifts are asymmetric because a large change can make the other surface the worse side.
+
 {{case_figures}}
 
 T7's ranked figure uses Raw. Its HE mesial reading was also outside LoA, so I included [that condition's overlay](he_t7_flag.png) separately.
@@ -115,7 +117,7 @@ I also used separate synthetic examples to show the effects of a shifted CEJ, a 
 
 ## Discussion and Limitations
 
-The tooth-cluster bootstrap intervals for mean surface bias included zero in all conditions, so I did not find clear evidence of an overall directional PBL shift in this sample. Mean landmark drift was smaller than the centered residual variation. This suggests that much of the change varied from tooth to tooth, but it does not establish that the error was purely random; the CLAHE apex drift still needed attention.
+The 95% tooth-cluster bootstrap intervals for mean surface bias were {{bias_intervals}}. All included zero, so I did not find clear evidence of an overall directional PBL shift in this sample. Mean landmark drift was smaller than the centered residual variation. This suggests that much of the change varied from tooth to tooth, but it does not establish that the error was purely random; the CLAHE apex drift still needed attention.
 
 This was a small study with one reader and one image. The earlier RAW attempt, short interval and fixed condition order could introduce practice or recall effects, so the condition differences cannot be attributed to enhancement alone. The two surfaces also share a tooth and apex. No acceptable difference was set in advance, and expert reference landmarks were unavailable. The image-case labels are visual interpretations. These results are not clinical validation.
 
@@ -129,7 +131,7 @@ Saved evidence: [Week 3 tests](week3_test_results.txt), [project tests](project_
 
 ## Conclusion
 
-I completed the two-round, three-condition measurements and used them to examine agreement, landmark displacement and sensitivity to small placement changes. CLAHE had the highest observed ICC, while HE had the highest stage agreement and lowest coordinate variation. Individual differences remained larger than the small mean bias suggested. The study helped identify areas for improving the measurement process, but did not establish which enhancement was most accurate or provide clinical validation.
+I completed the two-round, three-condition measurements and used them to examine agreement, landmark displacement and sensitivity to small placement changes. CLAHE had the highest observed ICC, while HE had the highest stage agreement and lowest observed coordinate variation. Individual differences remained larger than the small mean bias suggested. The study helped identify areas for improving the measurement process, but did not establish which enhancement was most accurate or provide clinical validation.
 
 GitHub and the current PR: [my submission links](SUBMISSION.md).
 
