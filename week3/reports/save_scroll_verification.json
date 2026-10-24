@@ -1,0 +1,6 @@
+{
+  "method": "isolated browser test using native mouse click",
+  "page_scroll_before_px": 324,
+  "page_scroll_after_px": 324,
+  "scope": "Synthetic UI interaction test; no test records added to user study"
+}

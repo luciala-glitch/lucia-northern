@@ -1,0 +1,150 @@
+Hi Lucia,
+
+Thanks for your Week 2 work. You've extended the PBL calculator to measure both sides of a tooth, integrated real X-rays, and started evaluating manual repeatability. This week, we are raising the technical bar: manual point-clicking is too subjective to scale, so we need formal statistical validation, geometric rigor, and automated error handling to prepare the calculator for production pipelines.
+
+Geometric Definitions, Units, and Mathematical Formulation
+Discard simple Euclidean pixel distance between arbitrary points. Dental radiographs frequently show tilt, crown inclination, and foreshortening. All distances must be projected along the tooth's anatomical long axis.
+
+Tooth Long Axis Vector (u): Define the unit vector running from the midpoint of the crowns/CEJ line down to the anatomical apex:
+
+u=xapex-xmid-CEJxapex-xmid-CEJ
+
+Landmarks per side (k{mesial,distal}):
+
+xCEJ,k=(x,y): Cementoenamel Junction
+
+xBC,k=(x,y): Alveolar Bone Crest
+
+xApex=(x,y): Anatomical Root Apex
+
+Projected Distances (px):
+
+$\text{Defect Distance } (d_{\text{defect}, k}) = \vert{}(\mathbf{x}_{\text{BC}, k} - \mathbf{x}_{\text{CEJ}, k}) \cdot \vec{u}\vert{}$
+
+$\text{Root Length } (L_{\text{root}, k}) = \vert{}(\mathbf{x}_{\text{Apex}} - \mathbf{x}_{\text{CEJ}, k}) \cdot \vec{u}\vert{}$
+
+PBL Percentage Formula:
+$$\text{PBL}_k \,(\%) = \left( \frac{d_{\text{defect}, k}}{L_{\text{root}, k}} \right) \times 100$$
+
+Stage Assignment: Final stage classification must be determined dynamically from the worse side: PBLmax=(PBLmesial,PBLdistal).
+
+Stage I: $< 15\%$
+
+Stage II: $15\% - 33\%$
+
+Stage III/IV: $> 33\%$ (Flag for furcation/vertical defect check)
+
+What to do this week:
+Rigorous Statistical Repeatability Analysis
+
+Move beyond simple mean absolute difference. For your two independent measurement rounds across 15 teeth (30 root surfaces), compute:
+
+Intraclass Correlation Coefficient (ICC(2,1)): Two-way random effects, single rater, absolute agreement for continuous PBL $\%$.
+
+Cohen's Weighted Kappa (w): Quadratic weighting to quantify agreement on ordinal stage classifications (Stage I, II, III/IV).
+
+Bland-Altman Analysis: Plot the difference between rounds against their mean. Calculate the Mean Bias (d) and the $95\%$ Limits of Agreement (LoA): d1.96SD.
+
+Identify whether the measurement variance is systemic (e.g., consistent landmark drift) or random noise.
+
+Error Decomposition & Edge-Case Stress Testing
+
+Identify the 5 cases exhibiting the highest residuals outside your $95\%$ LoA.
+
+Quantify coordinate sensitivity: run a synthetic perturbation analysis where landmarks are shifted by 2, 5, and 10 pixels along normal and parallel axes to assess how sensitive your PBL $\%$ is to manual placement error.
+
+Provide visual overlays displaying the error vectors for:
+
+Restorations with obscured CEJs (amalgams/crown margins)
+
+Multi-rooted molars where roots overlap
+
+Angulated/tilted teeth where raw Euclidean distance fails compared to projected axis distance.
+
+Controlled Image Degradation & Contrast Impact (CLAHE)
+
+Test 15 paired teeth under three image conditions: Raw, Global Histogram Equalization, and CLAHE (using clip limit = 2.0, tile grid = 88).
+
+Calculate root mean square deviation (RMSD) of landmark coordinates across conditions to evaluate whether contrast enhancement increases landmark localization stability or shifts the perceived bone boundary.
+
+Quantify edge sharpness at the alveolar bone crest using a local gradient magnitude profile perpendicular to the bone crest.
+
+Production Architecture, Validation & Algorithmic Guardrails
+
+Refactor pbl_calculator.py into a strictly typed module (pydantic or dataclass-backed) with comprehensive exception handling:
+
+Geometric bounds assertion: Raise specific validation errors if xBC falls outside the vector space between xCEJ and xApex (e.g., negative defect or bone crest placed beyond the apex).
+
+Zero-division and collinearity guards: Prevent crashes on overlapping or degenerate point placements.
+
+Anatomical plausibility check: Flag warnings if root-to-crown ratio exceeds clinically viable bounds (<1.0 or >2.5).
+
+Expand your test suite to achieve $> 90\%$ branch coverage on pbl_calculator.py using pytest, including parametrized synthetic test fixtures for pathological edge cases.
+
+Schema Standardization and Export Pipeline
+
+Implement automated JSON and CSV export functionality directly into app.py.
+
+Ensure exports adhere strictly to this schema:
+
+JSON
+
+{
+
+  "image_id": "str",
+
+  "tooth_id": "int",
+
+  "condition": "raw | clahe | he",
+
+  "round": "int",
+
+  "long_axis_vector": [float, float],
+
+  "landmarks": {
+
+    "mesial": {"cej": [int, int], "bc": [int, int]},
+
+    "distal": {"cej": [int, int], "bc": [int, int]},
+
+    "apex": [int, int]
+
+  },
+
+  "metrics": {
+
+    "mesial_pbl_pct": float,
+
+    "distal_pbl_pct": float,
+
+    "pbl_max_pct": float,
+
+    "stage": "I | II | III/IV"
+
+  }
+
+}
+
+
+
+Week 3 Submission Checklist
+Due Sunday, October 25
+
+Ensure your PR and public repository contain:
+
+[ ] Statistical Verification Report: Markdown summary including ICC(2,1), Weighted Kappa (w), and a generated Bland-Altman plot with computed $95\%$ Limits of Agreement.
+
+[ ] Sensitivity & Failure Case Study: Visual breakdown of the 5 worst outlier teeth with pixel perturbation analysis and root long-axis projections.
+
+[ ] Preprocessing Comparison Table: Metrics table comparing landmark placement variance across Raw vs. Global HE vs. CLAHE.
+
+[ ] Refactored Engine & Guardrails: Typed pbl_calculator.py implementing projected axis mathematics, anatomical bounds validation, and custom domain exceptions.
+
+[ ] Passing Pytest Suite: Test file demonstrating $\ge 90\%$ branch coverage with parametrized corner cases and synthetic coordinates.
+
+[ ] Structured Exports: Repository folder containing validated .json and .csv files matching the specification across all evaluated conditions.
+
+[ ] Public GitHub Link: Updated repo with reproducible setup instructions in README.md.
+
+If you run into math edge cases with multi-rooted molar projections or Bland-Altman outliers, discuss them in the Northern Interns Community on Discord.
+

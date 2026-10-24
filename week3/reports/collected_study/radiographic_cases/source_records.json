@@ -1,0 +1,258 @@
+[
+  {
+    "case": "restoration",
+    "image": "kaggle_dental_xray_10.jpg",
+    "image_sha256": "bfc9f636e6e92c4a5a61c08bdc31caa066e03fe86cfdd84b0807ab7df867575f",
+    "tooth": "Week 2 img10-T3",
+    "source": "legacy_six_point",
+    "screening_observation": "Radiopaque restoration occupies the crown/cervical region. The natural CEJ is difficult to separate from its outline. Material and restoration type are not identified from this image.",
+    "records": [
+      {
+        "timestamp_utc": "2026-10-16T20:11:40+00:00",
+        "observer": "Lucia",
+        "round": "Round 1",
+        "image_id": "kaggle_dental_xray_10.jpg",
+        "image_width": "2041",
+        "image_height": "1024",
+        "tooth_id": "img10-T3",
+        "clahe_enabled": "unknown",
+        "app_version": "unknown",
+        "supersedes_timestamp_utc": "",
+        "mesial_cej_x": "818",
+        "mesial_cej_y": "434",
+        "mesial_bone_crest_x": "811",
+        "mesial_bone_crest_y": "315",
+        "mesial_root_tip_x": "783",
+        "mesial_root_tip_y": "212",
+        "distal_cej_x": "731",
+        "distal_cej_y": "421",
+        "distal_bone_crest_x": "744",
+        "distal_bone_crest_y": "325",
+        "distal_root_tip_x": "750",
+        "distal_root_tip_y": "225",
+        "mesial_pbl": "53.041",
+        "distal_pbl": "49.196",
+        "worst_side": "Mesial",
+        "worst_pbl": "53.041",
+        "stage": "Stage III/IV"
+      },
+      {
+        "timestamp_utc": "2026-10-16T20:24:52+00:00",
+        "observer": "Lucia",
+        "round": "Round 2",
+        "image_id": "kaggle_dental_xray_10.jpg",
+        "image_width": "2041",
+        "image_height": "1024",
+        "tooth_id": "img10-T3",
+        "clahe_enabled": "unknown",
+        "app_version": "unknown",
+        "supersedes_timestamp_utc": "",
+        "mesial_cej_x": "813",
+        "mesial_cej_y": "438",
+        "mesial_bone_crest_x": "811",
+        "mesial_bone_crest_y": "319",
+        "mesial_root_tip_x": "790",
+        "mesial_root_tip_y": "221",
+        "distal_cej_x": "738",
+        "distal_cej_y": "410",
+        "distal_bone_crest_x": "759",
+        "distal_bone_crest_y": "323",
+        "distal_root_tip_x": "763",
+        "distal_root_tip_y": "217",
+        "mesial_pbl": "54.541",
+        "distal_pbl": "45.988",
+        "worst_side": "Mesial",
+        "worst_pbl": "54.541",
+        "stage": "Stage III/IV"
+      }
+    ]
+  },
+  {
+    "case": "root_overlap",
+    "image": "kaggle_dental_xray_1.jpg",
+    "image_sha256": "98d6809037a4337758598e686c222e8058ae7d88f9ed98615627a7fa1b2fa229",
+    "tooth": "Week 3 T9",
+    "source": "current_shared_apex",
+    "screening_observation": "The upper molar shows multiple root shadows with indistinct and partly superimposed projected boundaries. This is a visual screening example, not confirmation of the number or 3D relationship of the roots.",
+    "records": [
+      {
+        "image_id": "kaggle_dental_xray_1.jpg",
+        "tooth_id": 9,
+        "condition": "raw",
+        "round": 1,
+        "long_axis_vector": [
+          0.28586998849157824,
+          -0.958268412126699
+        ],
+        "landmarks": {
+          "mesial": {
+            "cej": [
+              1439,
+              508
+            ],
+            "bc": [
+              1452,
+              477
+            ]
+          },
+          "distal": {
+            "cej": [
+              1512,
+              528
+            ],
+            "bc": [
+              1522,
+              479
+            ]
+          },
+          "apex": [
+            1511,
+            399
+          ]
+        },
+        "metrics": {
+          "mesial_pbl_pct": 26.73085592838282,
+          "distal_pbl_pct": 40.39045411511214,
+          "pbl_max_pct": 40.39045411511214,
+          "stage": "III/IV"
+        }
+      },
+      {
+        "image_id": "kaggle_dental_xray_1.jpg",
+        "tooth_id": 9,
+        "condition": "raw",
+        "round": 2,
+        "long_axis_vector": [
+          0.30347302346388705,
+          -0.9528400306608067
+        ],
+        "landmarks": {
+          "mesial": {
+            "cej": [
+              1433,
+              509
+            ],
+            "bc": [
+              1456,
+              476
+            ]
+          },
+          "distal": {
+            "cej": [
+              1510,
+              527
+            ],
+            "bc": [
+              1523,
+              487
+            ]
+          },
+          "apex": [
+            1518,
+            372
+          ]
+        },
+        "metrics": {
+          "mesial_pbl_pct": 24.577845498758062,
+          "distal_pbl_pct": 28.0171289453091,
+          "pbl_max_pct": 28.0171289453091,
+          "stage": "II"
+        }
+      }
+    ]
+  },
+  {
+    "case": "tilted",
+    "image": "kaggle_dental_xray_1.jpg",
+    "image_sha256": "98d6809037a4337758598e686c222e8058ae7d88f9ed98615627a7fa1b2fa229",
+    "tooth": "Week 3 T7",
+    "source": "current_shared_apex",
+    "screening_observation": "The saved CEJ-to-apex axis is markedly oblique to the image vertical. The diagram compares direct segments and axial projections without claiming an ideal anatomical reference.",
+    "records": [
+      {
+        "image_id": "kaggle_dental_xray_1.jpg",
+        "tooth_id": 7,
+        "condition": "raw",
+        "round": 1,
+        "long_axis_vector": [
+          -0.8068956797188988,
+          0.5906939664927824
+        ],
+        "landmarks": {
+          "mesial": {
+            "cej": [
+              514,
+              614
+            ],
+            "bc": [
+              472,
+              646
+            ]
+          },
+          "distal": {
+            "cej": [
+              433,
+              555
+            ],
+            "bc": [
+              418,
+              577
+            ]
+          },
+          "apex": [
+            369,
+            661
+          ]
+        },
+        "metrics": {
+          "mesial_pbl_pct": 36.46788990825688,
+          "distal_pbl_pct": 21.9672906670271,
+          "pbl_max_pct": 36.46788990825688,
+          "stage": "III/IV"
+        }
+      },
+      {
+        "image_id": "kaggle_dental_xray_1.jpg",
+        "tooth_id": 7,
+        "condition": "raw",
+        "round": 2,
+        "long_axis_vector": [
+          -0.7071067811865475,
+          0.7071067811865475
+        ],
+        "landmarks": {
+          "mesial": {
+            "cej": [
+              520,
+              612
+            ],
+            "bc": [
+              471,
+              642
+            ]
+          },
+          "distal": {
+            "cej": [
+              435,
+              557
+            ],
+            "bc": [
+              427,
+              564
+            ]
+          },
+          "apex": [
+            390,
+            672
+          ]
+        },
+        "metrics": {
+          "mesial_pbl_pct": 41.57894736842106,
+          "distal_pbl_pct": 9.375,
+          "pbl_max_pct": 41.57894736842106,
+          "stage": "III/IV"
+        }
+      }
+    ]
+  }
+]

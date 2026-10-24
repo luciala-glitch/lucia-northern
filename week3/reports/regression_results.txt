@@ -1,0 +1,29 @@
+........................................................................ [ 39%]
+........................................................................ [ 79%]
+.....................................                                    [100%]
+================================ tests coverage ================================
+_______________ coverage: platform darwin, python 3.13.9-final-0 _______________
+
+Name                                Stmts   Miss Branch BrPart  Cover   Missing
+-------------------------------------------------------------------------------
+week3/__init__.py                       0      0      0      0   100%
+week3/analyze.py                      296      6     84      7    97%   79-80, 127, 149->154, 375, 382, 405->391, 726
+week3/app.py                          138     18     36      9    83%   49->exit, 99-101, 121, 124-133, 181, 205, 209-213, 249-250, 251->exit, 257->exit
+week3/canvas.py                        52      0     20      0   100%
+week3/comparison.py                    31      0      8      0   100%
+week3/errors.py                        27      0      8      0   100%
+week3/exports.py                      106      0     46      0   100%
+week3/image_processing.py              36      0     14      0   100%
+week3/pbl_calculator.py               105      0     28      0   100%
+week3/sensitivity.py                   28      0     10      0   100%
+week3/statistics.py                    60      0     12      0   100%
+week3/tests/test_analysis.py          115      0     10      0   100%
+week3/tests/test_app.py                54      0      0      0   100%
+week3/tests/test_canvas.py             76      0      2      0   100%
+week3/tests/test_engine.py             81      0      0      0   100%
+week3/tests/test_exports.py            94      0      6      0   100%
+week3/tests/test_legacy_report.py      84      0      6      0   100%
+-------------------------------------------------------------------------------
+TOTAL                                1383     24    290     16    97%
+Coverage JSON written to file week3/reports/full_coverage.json
+181 passed in 24.55s

@@ -1,0 +1,4 @@
+condition,fixed_coordinate_profiles,mean_peak_gradient_gray_per_px,independent_landmark_rmsd_px,within_condition_coordinate_variance_px2
+raw,20,3.866796875,N/A - no condition-specific annotations,N/A - no condition-specific annotations
+he,20,6.1820068359375,N/A - no condition-specific annotations,N/A - no condition-specific annotations
+clahe,20,7.36083984375,N/A - no condition-specific annotations,N/A - no condition-specific annotations

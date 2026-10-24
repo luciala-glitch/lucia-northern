@@ -2,3 +2,20 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .DS_Store
+
+.venv/
+.coverage
+htmlcov/
+
+# Local measurement studies and recovery copies
+week3/data/
+
+# Local review handoff includes machine-specific paths
+week3/reports/collected_study/CLAUDE_REVIEW_INSTRUCTIONS.md
+
+# Keep my local drafts, exports and duplicate files out of the submission
+/tmp/
+/output/
+/PBL_Demo_Script_Bilingual.docx
+/week2/REPEATABILITY 2.md
+/week2/test_app_state 2.py

@@ -1,0 +1,24 @@
+{
+  "matched_triplets": 30,
+  "incomplete_triplets": 0,
+  "conditions": {
+    "raw": {
+      "coordinate_rmsd_vs_raw_px": null,
+      "repeat_tooth_pairs": 15,
+      "round_coordinate_rmsd_px": 8.153526844255804,
+      "mean_within_landmark_coordinate_variance_px2": 33.24
+    },
+    "he": {
+      "coordinate_rmsd_vs_raw_px": 7.46234994265658,
+      "repeat_tooth_pairs": 15,
+      "round_coordinate_rmsd_px": 7.019021774198073,
+      "mean_within_landmark_coordinate_variance_px2": 24.633333333333333
+    },
+    "clahe": {
+      "coordinate_rmsd_vs_raw_px": 7.972452571197899,
+      "repeat_tooth_pairs": 15,
+      "round_coordinate_rmsd_px": 7.721830525637471,
+      "mean_within_landmark_coordinate_variance_px2": 29.813333333333333
+    }
+  }
+}
