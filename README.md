@@ -1,4 +1,4 @@
-# Periodontal Bone Loss Calculator
+# Lucia · Northern Internship
 
 I keep my internship work in separate weekly folders so the code, measurements
 and reports can be reviewed from one GitHub link.
@@ -14,8 +14,8 @@ and reports can be reviewed from one GitHub link.
 Python 3.10 or newer is required.
 
 ```bash
-git clone https://github.com/luciala-glitch/pbl-calculator.git
-cd pbl-calculator
+git clone https://github.com/luciala-glitch/lucia-northern.git
+cd lucia-northern
 python3 -m venv .venv
 source .venv/bin/activate
 ```
@@ -71,7 +71,7 @@ code .
 ```
 
 If the `code` command is unavailable, open VS Code, choose **File → Open
-Folder…**, and select the cloned `pbl-calculator` folder.
+Folder…**, and select the cloned `lucia-northern` folder.
 
 In VS Code, run **Python: Select Interpreter** from the Command Palette and
 choose the interpreter inside `.venv` before running tests or the apps.
