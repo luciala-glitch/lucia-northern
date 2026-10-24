@@ -17,7 +17,7 @@ def hashes(paths):
 
 
 def source_files():
-    return [*Path('week3').glob('*.py'),*Path('week3/tests').glob('*.py'),*ROOT.glob('*.py')]
+    return [*Path('week3').glob('*.py'),*Path('week3/tests').glob('*.py'),*ROOT.glob('*.py'),ROOT/'report_template.md']
 
 
 def record_evidence(checked_utc, source_before=None):

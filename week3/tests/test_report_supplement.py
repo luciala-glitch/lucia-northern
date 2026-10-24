@@ -5,7 +5,7 @@ import numpy as np
 import pytest
 import matplotlib.axes
 from week3.analyze import synthetic_cases
-from week3.reports.collected_study.review_supplement import batch_icc, paired_statistics
+from week3.reports.collected_study.paired_analysis import batch_icc, paired_statistics
 
 
 def test_batch_icc_hand_derived_and_undefined():

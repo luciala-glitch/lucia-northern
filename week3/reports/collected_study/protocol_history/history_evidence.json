@@ -167,8 +167,19 @@
   "excluded_study_id": "317d1b4946c8482abb42088c41dd36a7",
   "excluded_records": 15,
   "same_registered_locations": true,
-  "restart_reason": "Workflow restarted at user request. The specific reason was not recorded in the structured study log; no claim is made about an anatomical correction or a statistical selection criterion.",
+  "restart_reason": "RAW Round 1 was restarted after mesial/distal sides had been reversed for eight teeth on the image-left side of the midline: T4\u2013T7 and T12\u2013T15. The previous readings were archived and excluded.",
   "final_raw1_minus_excluded_raw1_mean_pp": 3.853578973075908,
   "final_raw1_minus_excluded_raw1_sample_sd_pp": 2.2886084859092577,
-  "excluded_json_sha256": "8f2e62dc29fd72983e6f82d5169eae9220bce0f3ff293b73f70446876510ba31"
+  "excluded_json_sha256": "8f2e62dc29fd72983e6f82d5169eae9220bce0f3ff293b73f70446876510ba31",
+  "reversed_side_tooth_ids": [
+    4,
+    5,
+    6,
+    7,
+    12,
+    13,
+    14,
+    15
+  ],
+  "restart_reason_evidence": "Contemporaneous saved-landmark review named study 317d1b49 and flagged these side assignments (T7 separately because of tilt). Comparing archived and final RAW Round 1 CEJ ordering confirms the eight changed side assignments. This does not certify precise anatomical landmark positions."
 }
