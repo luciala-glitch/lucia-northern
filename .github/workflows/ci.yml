@@ -1,0 +1,22 @@
+name: tests-and-types
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: python -m pip install -r week4/requirements.txt
+      - run: python -m ruff check week4 week3/pbl_calculator.py
+      - run: python -m mypy --strict week3/pbl_calculator.py
+      - run: python -m pytest week3/tests --cov=week3.pbl_calculator --cov-branch --cov-fail-under=90
+      - run: python -m pytest week4/tests --cov=week4.predict --cov=week4.dataset --cov=week4.split --cov=week4.uncertainty --cov=week4.training --cov=week4.denpar --cov-branch --cov-fail-under=80
+      - run: node --test week3/tests/canvas_frontend.test.cjs

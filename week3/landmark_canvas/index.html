@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <style>
   html,body{margin:0;padding:0;background:transparent;font-family:system-ui,sans-serif;color:#263344}
-  #instruction{box-sizing:border-box;min-height:40px;padding:9px 12px;margin-bottom:8px;background:#eaf4ff;border-radius:6px;font-size:14px}
-  #viewport{width:100%;height:460px;overflow:auto;overscroll-behavior:contain;background:#121820;border-radius:6px}
+  #instruction{box-sizing:border-box;min-height:36px;padding:8px 12px;margin-bottom:6px;background:#eaf4ff;border-radius:6px;font-size:14px}
+  #viewport{width:100%;height:430px;overflow:auto;overscroll-behavior:contain;background:#121820;border-radius:6px}
   #toolbar{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-bottom:6px}
   #toolbar button{padding:7px 10px;border:1px solid #9aa8b7;border-radius:6px;background:#fff;color:#243244;cursor:pointer;font-size:13px}
   #toolbar button[aria-pressed="true"]{background:#d9efff;border-color:#1684c2;color:#075986}
   #zoom-level{min-width:45px;text-align:center;color:#72869c;font-size:13px}
-  #navigation-help{font-size:12px;line-height:1.5;color:#7f91a5;margin-bottom:8px}
+  #navigation-help{font-size:12px;line-height:1.5;color:#7f91a5;margin-bottom:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   @media(max-width:520px){#viewport{height:380px}}
   #stage{position:relative;line-height:0;cursor:crosshair;user-select:none;touch-action:none}
   #xray{display:block;width:100%;height:auto;pointer-events:none}
@@ -28,10 +28,10 @@
   <span id="zoom-level" aria-live="polite"></span>
   <button id="zoom-in" type="button" aria-label="Zoom in">＋</button>
   <button id="fit-view" type="button">Fit image</button>
-  <button id="focus-tooth" type="button">Find selected tooth</button>
+  <button id="focus-tooth" type="button">Fit selected tooth</button>
   <button id="toggle-locations" type="button" aria-pressed="false">Show tooth locations</button>
 </div>
-<div id="navigation-help">Drag the image to pan; click to place a landmark. Select Pan image to prevent marking. Ctrl/Command + scroll zooms around the cursor.</div>
+<div id="navigation-help" title="Drag the image to pan; click to place a landmark. Select Pan image to prevent marking. Ctrl/Command + scroll zooms around the cursor.">Click to mark · drag to pan · Ctrl/⌘ + scroll to zoom</div>
 <div id="viewport"><div id="stage" role="img" aria-label="Dental X-ray landmark placement"><img id="xray" alt="Dental X-ray"><svg id="overlay" xmlns="http://www.w3.org/2000/svg"></svg></div></div>
 <script>
 'use strict';
@@ -47,6 +47,13 @@ const ns='http://www.w3.org/2000/svg';
 let args=null, points={}, epoch=null, revision=0, imageId=null, loadedImageId=null, requestedImageId=null;
 let locationsVisible=false, selectedTooth=null;
 let mode='mark', spacePressed=false, drag=null, ignoreNextClick=false, fitted=true, lastServerWidth=null;
+function imageCoordinates(event){
+  const rect=stage.getBoundingClientRect();
+  return [
+    Math.min(args.image_width-1,Math.max(0,Math.floor((event.clientX-rect.left)*args.image_width/rect.width))),
+    Math.min(args.image_height-1,Math.max(0,Math.floor((event.clientY-rect.top)*args.image_height/rect.height)))
+  ];
+}
 function navigationUI(){
   markButton.setAttribute('aria-pressed',String(mode==='mark'));
   panButton.setAttribute('aria-pressed',String(mode==='pan'));
@@ -87,16 +94,26 @@ document.getElementById('zoom-out').addEventListener('click',()=>changeZoom(1/1.
 document.getElementById('fit-view').addEventListener('click',fitImage);
 document.getElementById('toggle-locations').addEventListener('click',()=>{locationsVisible=!locationsVisible;draw();});
 function centreSelected(){
-  if(!args?.focus)return;
+  if(!args?.focus&&!args?.focus_box)return;
   const vr=viewport.getBoundingClientRect();
   const vh=viewport.clientHeight||vr.height;
   const vw=viewport.clientWidth||vr.width;
-  // Show a generous crown-to-root region; locations are reminders, not detected tooth bounds.
-  const scaleForArea=Math.min(vh/(args.image_height*0.55),vw/(args.image_width*0.28),1.15);
+  let center=args.focus;
+  let scaleForArea;
+  if(Array.isArray(args.focus_box)&&args.focus_box.length===4){
+    const [left,top,right,bottom]=args.focus_box;
+    const boxWidth=Math.max(20,right-left),boxHeight=Math.max(30,bottom-top);
+    // Fit the full tooth box with breathing room for landmark labels and uncertainty circles.
+    scaleForArea=Math.min((vw-24)/(boxWidth*1.35),(vh-24)/(boxHeight*1.20),1.15);
+    center=[(left+right)/2,(top+bottom)/2];
+  }else{
+    // Registration views have only a crown-centre location, not a tooth box.
+    scaleForArea=Math.min(vh/(args.image_height*0.55),vw/(args.image_width*0.28),1.15);
+  }
   fitted=false;zoomTo(args.image_width*scaleForArea);
   const scale=stage.getBoundingClientRect().width/args.image_width;
-  viewport.scrollLeft=args.focus[0]*scale-viewport.clientWidth/2;
-  viewport.scrollTop=args.focus[1]*scale-viewport.clientHeight/2;draw();
+  viewport.scrollLeft=center[0]*scale-viewport.clientWidth/2;
+  viewport.scrollTop=center[1]*scale-viewport.clientHeight/2;draw();
 }
 document.getElementById('focus-tooth').addEventListener('click',centreSelected);
 viewport.addEventListener('wheel',event=>{
@@ -109,14 +126,23 @@ viewport.addEventListener('wheel',event=>{
 stage.addEventListener('pointerdown',event=>{
   if(event.button!==0&&event.button!==1)return;
   ignoreNextClick=false;
+  let point=null;
+  if(args&&!args.locked&&mode==='mark'&&!spacePressed&&event.button===0){
+    const [x,y]=imageCoordinates(event);
+    const scale=stage.getBoundingClientRect().width/args.image_width||1;
+    point=Object.entries(points).find(([,xy])=>Math.hypot(x-xy[0],y-xy[1])<=12/scale)?.[0]??null;
+  }
   drag={id:event.pointerId,x:event.clientX,y:event.clientY,left:viewport.scrollLeft,top:viewport.scrollTop,
-    pan:mode==='pan'||spacePressed||event.button===1,moved:false};
+    pan:mode==='pan'||spacePressed||event.button===1,point,moved:false};
   stage.setPointerCapture(event.pointerId);
 });
 stage.addEventListener('pointermove',event=>{
   if(!drag||event.pointerId!==drag.id)return;
   const dx=event.clientX-drag.x,dy=event.clientY-drag.y;
   if(Math.hypot(dx,dy)>4)drag.moved=true;
+  if(drag.point&&drag.moved){
+    points[drag.point]=imageCoordinates(event);draw();event.preventDefault();return;
+  }
   if(drag.moved){
     viewport.scrollLeft=drag.left-dx;viewport.scrollTop=drag.top-dy;
     fitted=false;event.preventDefault();navigationUI();
@@ -124,7 +150,11 @@ stage.addEventListener('pointermove',event=>{
 });
 stage.addEventListener('pointerup',event=>{
   if(!drag||event.pointerId!==drag.id)return;
-  ignoreNextClick=drag.moved||drag.pan;
+  ignoreNextClick=drag.moved||drag.pan||Boolean(drag.point);
+  if(drag.point&&drag.moved){
+    revision+=1;
+    send('streamlit:setComponentValue',{value:{type:"points",image_id:args.image_id,epoch,revision,points},dataType:'json'});
+  }
   drag=null;
   if(stage.hasPointerCapture(event.pointerId))stage.releasePointerCapture(event.pointerId);
   navigationUI();
@@ -148,8 +178,8 @@ function draw(){
   const done=args.names.every(name=>Object.hasOwn(points,name));
   const count=Object.keys(points).length;
   markButton.textContent=args.names[0]==='locator'?'Select tooth location':'Mark landmarks';
-  document.getElementById('focus-tooth').disabled=!args.focus;
-  instruction.textContent=args.locked?'Recorded · locked for this condition and round':done?(args.names[0]==='locator'?'Location selected · click Register tooth':'All landmarks placed · review and record'):`Click ${count+1}/${args.names.length}: ${args.labels[count]}`;
+  document.getElementById('focus-tooth').disabled=!args.focus&&!args.focus_box;
+  instruction.textContent=args.locked?(args.locked_message||'Recorded · locked for this condition and round'):done?(args.names[0]==='locator'?'Location selected · click Register tooth':'All landmarks placed · drag any marker to correct it, then record'):`Click ${count+1}/${args.names.length}: ${args.labels[count]}`;
   stage.classList.toggle('complete',done);
   // Integer coordinate i names pixel i, which spans [i, i+1) in the viewBox: draw at its centre.
   const c=v=>v+0.5;
@@ -157,6 +187,12 @@ function draw(){
     overlay.append(svg('line',{x1:c((points['mesial.cej'][0]+points['distal.cej'][0])/2),
       y1:c((points['mesial.cej'][1]+points['distal.cej'][1])/2),x2:c(points.apex[0]),y2:c(points.apex[1]),
       stroke:'#6aff6a','stroke-width':2/scale}));
+  }
+  // Tooth box drawn from two clicked corners (selecting a tooth on an uploaded image).
+  if(points['box.a']&&points['box.b']){
+    const [ax,ay]=points['box.a'],[bx,by]=points['box.b'];
+    overlay.append(svg('rect',{x:c(Math.min(ax,bx)),y:c(Math.min(ay,by)),width:Math.abs(bx-ax),height:Math.abs(by-ay),
+      fill:'none',stroke:'#38c9ff','stroke-width':2/scale,'stroke-dasharray':`${6/scale} ${4/scale}`,'data-tooth-box':'1'}));
   }
   // Dental midline: mesial surfaces face it. Drawn only when it lies inside the image.
   if(Number.isInteger(args.midline)&&args.midline>=0&&args.midline<args.image_width){
@@ -178,9 +214,25 @@ function draw(){
     const badge=svg('text',{x:m.x+(registration?-10:18)/scale,y:m.y+(registration?3:-20)/scale,fill:color,'font-size':12/scale,opacity:registration?1:0.7,'font-family':'system-ui','font-weight':'700'});
     badge.textContent=String(m.id);overlay.append(badge);
   }
-  const short={locator:'Location','mesial.cej':'M-CEJ','mesial.bc':'M-BC','distal.cej':'D-CEJ','distal.bc':'D-BC',apex:'Apex',crown:'Crown'};
+  const short={locator:'Location','mesial.cej':'M-CEJ','mesial.bc':'M-BC','distal.cej':'D-CEJ','distal.bc':'D-BC',apex:'Apex',crown:'Crown','box.a':'Corner 1','box.b':'Corner 2'};
+  const landmarkColor=name=>name.startsWith('mesial')?'#00d5ff':name==='apex'?'#b78aff':'#ffb000';
+  // Practice feedback only: expert reference rings, each joined to the reader's own point.
+  // DenPAR coordinates are continuous, so they are drawn as given (no pixel-centre offset).
+  for(const [name,[x,y]] of Object.entries(args.reference||{})){
+    const color=landmarkColor(name), mine=points[name];
+    if(mine)overlay.append(svg('line',{x1:c(mine[0]),y1:c(mine[1]),x2:x,y2:y,stroke:color,'stroke-width':1.5/scale,
+      'stroke-dasharray':`${5/scale} ${4/scale}`}));
+    overlay.append(svg('circle',{cx:x,cy:y,r:8/scale,fill:'none',stroke:'#ffffff','stroke-width':3/scale}));
+    overlay.append(svg('circle',{cx:x,cy:y,r:8/scale,fill:'none',stroke:color,'stroke-width':1.5/scale,'data-reference':name}));
+    const tag=svg('text',{x:x+10/scale,y:y+18/scale,fill:'#ffffff','font-size':11/scale,'font-family':'system-ui,sans-serif',
+      'font-weight':'600',stroke:'#111','stroke-width':2.5/scale,'paint-order':'stroke'});
+    tag.textContent=`Expert ${short[name]||name}`;overlay.append(tag);
+  }
   for(const [name,[x,y]] of Object.entries(points)){
-    const color=name.startsWith('mesial')?'#00d5ff':name==='apex'?'#b78aff':'#ffb000';
+    const color=landmarkColor(name);
+    const radius=Number(args.confidence?.[name]??0);
+    if(radius>0)overlay.append(svg('circle',{cx:c(x),cy:c(y),r:radius,fill:color,'fill-opacity':0.10,
+      stroke:color,'stroke-width':1/scale,'stroke-dasharray':`${4/scale} ${3/scale}`}));
     overlay.append(svg('circle',{cx:c(x),cy:c(y),r:4/scale,fill:color,stroke:'#17202a','stroke-width':1/scale}));
     const label=svg('text',{x:c(x)+8/scale,y:c(y)-8/scale,fill:color,'font-size':12/scale,
       'font-family':'system-ui,sans-serif','font-weight':'600',stroke:'#111','stroke-width':2.5/scale,'paint-order':'stroke'});
@@ -197,8 +249,7 @@ stage.addEventListener('click',event=>{
   const rect=stage.getBoundingClientRect();
   if(!rect.width||!rect.height)return;
   // floor, not round: a click anywhere inside pixel i records i.
-  const x=Math.min(args.image_width-1,Math.max(0,Math.floor((event.clientX-rect.left)*args.image_width/rect.width)));
-  const y=Math.min(args.image_height-1,Math.max(0,Math.floor((event.clientY-rect.top)*args.image_height/rect.height)));
+  const [x,y]=imageCoordinates(event);
   points[next]=[x,y];revision+=1;draw();
   send('streamlit:setComponentValue',{value:{type:"points",image_id:args.image_id,epoch,revision,points},dataType:'json'});
 });
@@ -229,6 +280,8 @@ window.addEventListener('message',event=>{
     fitted=false;zoomTo(args.display_width);
   } else draw();
   if(args.focus&&selected!==null&&(changedTooth||changedImage))centreSelected();
+  // Leaving a tooth to pick another one: show the whole image again.
+  else if(!args.focus&&changedTooth&&!changedImage&&loadedImageId===imageId)fitImage();
   lastServerWidth=args.display_width;
 });
 function requestImage(){

@@ -194,6 +194,22 @@ test('registered tooth location is distinct from landmarks; find centres the sel
   assert.equal(b.values().filter(v=>v.type==='points').length,1,'one location per registration');
 });
 
+test('selected tooth box is fitted completely with margin on first render',()=>{
+  const b=browser();
+  const box=[800,100,1100,900];
+  b.render({...initial,markers:[{id:1,x:950,y:500,selected:true}],focus:[950,500],focus_box:box});b.load();
+  const r=b.ids.stage.getBoundingClientRect();
+  const scale=r.width/2041;
+  const visibleLeft=box[0]*scale-b.ids.viewport.scrollLeft;
+  const visibleRight=box[2]*scale-b.ids.viewport.scrollLeft;
+  const visibleTop=box[1]*scale-b.ids.viewport.scrollTop;
+  const visibleBottom=box[3]*scale-b.ids.viewport.scrollTop;
+  assert.ok(visibleLeft>=0&&visibleRight<=640,'whole tooth width is visible');
+  assert.ok(visibleTop>=0&&visibleBottom<=460,'whole tooth height is visible');
+  assert.ok(visibleLeft>12&&640-visibleRight>12,'horizontal breathing room');
+  assert.ok(visibleTop>12&&460-visibleBottom>12,'vertical breathing room');
+});
+
 test('recorded tooth cannot be marked again, but can still pan and zoom',()=>{
   const b=browser();b.render({...initial,locked:true});b.load();
   b.click(100,100);
@@ -201,6 +217,28 @@ test('recorded tooth cannot be marked again, but can still pan and zoom',()=>{
   assert.match(b.ids.instruction.textContent,/Recorded.*locked/);
   b.button('zoom-in');b.drag(-100,0);
   assert.ok(b.ids.viewport.scrollLeft>0);
+});
+
+test('practice feedback draws expert rings joined to the locked reader points',()=>{
+  const points={'mesial.cej':[100,100],'mesial.bc':[100,200],'distal.cej':[300,100],'distal.bc':[300,200],apex:[200,500]};
+  const b=browser();
+  b.render({...initial,points,revision:1,locked:true,locked_message:'Practice submitted',reference:{'mesial.cej':[110.5,104.25]}});b.load();
+  assert.match(b.ids.instruction.textContent,/Practice submitted/);
+  const ring=b.ids.overlay.children.find(node=>node.attrs['data-reference']==='mesial.cej');
+  assert.equal(ring.attrs.cx,110.5);assert.equal(ring.attrs.cy,104.25);
+  const link=b.ids.overlay.children.find(node=>node.attrs.x2===110.5);
+  assert.equal(link.attrs.x1,100.5);assert.equal(link.attrs.y1,100.5);
+  assert.ok(b.ids.overlay.children.some(node=>node.textContent==='Expert M-CEJ'));
+  b.click(50,50);assert.equal(b.values().filter(v=>v.type==='points').length,0);
+});
+
+test('two clicked corners draw the tooth box in either order',()=>{
+  const b=browser();
+  b.render({...initial,names:['box.a','box.b'],labels:['First corner','Opposite corner'],points:{'box.a':[300,400],'box.b':[200,100]},revision:2});b.load();
+  const box=b.ids.overlay.children.find(node=>node.attrs['data-tooth-box']);
+  assert.equal(box.attrs.x,200.5);assert.equal(box.attrs.y,100.5);
+  assert.equal(box.attrs.width,100);assert.equal(box.attrs.height,300);
+  assert.ok(b.ids.overlay.children.some(node=>node.textContent==='Corner 2'));
 });
 
 test('measurement locations are hidden by default and can be shown without covering the crown',()=>{
