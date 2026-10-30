@@ -397,7 +397,7 @@ def measurement_workspace(store, sid, config, blind, zoom, crown):
         ("Pending IDs in reading order: " if research else "Pending IDs: ")
         + (", ".join(map(str, pending)) or "None among registered teeth")
         + (
-            f" · Target remaining to register: {max(0,(config["target"] or 0)-len(teeth))}"
+            f" · Target remaining to register: {max(0, (config['target'] or 0) - len(teeth))}"
             if config["target"]
             else ""
         )
