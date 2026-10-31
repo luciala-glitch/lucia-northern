@@ -11,7 +11,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 _canvas = components.declare_component(
-    "pbl_landmark_canvas_v5", path=str(Path(__file__).with_name("landmark_canvas"))
+    "pbl_landmark_canvas_v6", path=str(Path(__file__).with_name("landmark_canvas"))
 )
 
 
@@ -98,10 +98,14 @@ def landmark_canvas(
     markers: list | None = None,
     locked: bool = False,
     focus: list | None = None,
+    focus_box: list | None = None,
     midline: int | None = None,
     midline_confirmed: bool = True,
+    confidence: dict[str, float] | None = None,
+    reference: dict[str, list[float]] | None = None,
+    locked_message: str | None = None,
 ) -> None:
-    key = "landmark-canvas-v5"
+    key = "landmark-canvas-v6"
     image_id = hashlib.sha256(json.dumps(source_key).encode()).hexdigest()
     # Once the browser confirms decoding this image, subsequent updates carry only
     # the small geometry payload. A new/reloaded iframe can explicitly request it.
@@ -114,8 +118,12 @@ def landmark_canvas(
         markers=markers or [],
         locked=locked,
         focus=focus,
+        focus_box=focus_box,
         midline=midline,
         midline_confirmed=midline_confirmed,
+        confidence=confidence or {},
+        reference=reference or {},
+        locked_message=locked_message,
         src=src,
         image_id=image_id,
         image_width=image.width,

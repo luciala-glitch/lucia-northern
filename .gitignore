@@ -9,6 +9,7 @@ htmlcov/
 
 # Local measurement studies and recovery copies
 week3/data/
+week4/data/corrections.json
 
 # Keep my local drafts, exports and duplicate files out of the submission
 /tmp/
@@ -16,3 +17,8 @@ week3/data/
 /PBL_Demo_Script_Bilingual.docx
 /week2/REPEATABILITY 2.md
 /week2/test_app_state 2.py
+
+# Full DenPAR archive (141 MB) and trained checkpoints are downloaded/regenerated
+week4/data/denpar_full/
+week4/weights/*.pt
+week4/data/practice.json

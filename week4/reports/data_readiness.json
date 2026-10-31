@@ -1,0 +1,31 @@
+{
+  "week3_source_records": 90,
+  "round_mean_annotation_instances": 45,
+  "unique_manually_measured_teeth": 15,
+  "unique_image_groups": 1,
+  "complete_saved_review_records": 0,
+  "incomplete_saved_review_pairs": 0,
+  "complete_development_review_records": 0,
+  "complete_external_test_review_records": 0,
+  "denpar_development_images": 20,
+  "denpar_development_tooth_boxes": 90,
+  "denpar_external_test_images": 20,
+  "denpar_external_test_tooth_boxes": 92,
+  "five_fold_split": "blocked safely: At least 60 distinct teeth are required before model evaluation; found 15",
+  "denpar_ground_truth": {
+    "teeth_kept": 1657,
+    "tooth_masks": 4402,
+    "excluded_by_reason": {
+      "crest_outside_cej_apex_on_left_side": 51,
+      "crest_outside_cej_apex_on_right_side": 23,
+      "fewer_than_two_cej": 2119,
+      "missing_mask": 1,
+      "no_apex": 156,
+      "no_crest_on_left_side": 221,
+      "no_crest_on_right_side": 174
+    },
+    "split_saved": true
+  },
+  "learned_metrics_released": true,
+  "reason": "Own readings stay a 15-tooth, one-image repeatability reference. The detector is trained and evaluated on DenPAR's official annotations with radiograph-level folds."
+}

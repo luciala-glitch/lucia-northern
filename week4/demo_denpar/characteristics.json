@@ -1,0 +1,202 @@
+{
+ "development/10.jpg": {
+  "arch": "Lower",
+  "site": "Anterior",
+  "fdi_visible": "43,42,41,31,32"
+ },
+ "development/101.jpg": {
+  "arch": "Upper",
+  "site": "Left",
+  "fdi_visible": "24,26,27"
+ },
+ "development/1001.jpg": {
+  "arch": "Lower",
+  "site": "Right",
+  "fdi_visible": "44,45,46,47"
+ },
+ "development/1003.jpg": {
+  "arch": "Upper",
+  "site": "Anterior",
+  "fdi_visible": "13,12,11,21,22"
+ },
+ "development/1005.jpg": {
+  "arch": "Upper",
+  "site": "Anterior",
+  "fdi_visible": "12,11,21,22,23"
+ },
+ "development/1008.jpg": {
+  "arch": "Lower",
+  "site": "Right",
+  "fdi_visible": "46,47,48"
+ },
+ "development/1009.jpg": {
+  "arch": "Lower",
+  "site": "Left",
+  "fdi_visible": "31,32,33,34,36"
+ },
+ "development/1010.jpg": {
+  "arch": "Lower",
+  "site": "Right",
+  "fdi_visible": "44,45,46,47,48"
+ },
+ "development/1011.jpg": {
+  "arch": "Upper",
+  "site": "Left",
+  "fdi_visible": "24,25,26,27,28"
+ },
+ "development/1012.jpg": {
+  "arch": "Lower",
+  "site": "Left",
+  "fdi_visible": "34,35,36,37,38"
+ },
+ "development/1014.jpg": {
+  "arch": "Upper",
+  "site": "Left",
+  "fdi_visible": "24,25,26,27,28"
+ },
+ "development/1015.jpg": {
+  "arch": "Upper",
+  "site": "Right",
+  "fdi_visible": "14,15,16,17"
+ },
+ "development/1016.jpg": {
+  "arch": "Lower",
+  "site": "Left",
+  "fdi_visible": "33,34,35,36,38"
+ },
+ "development/1017.jpg": {
+  "arch": "Upper",
+  "site": "Left",
+  "fdi_visible": "25,26,27"
+ },
+ "development/1018.jpg": {
+  "arch": "Lower",
+  "site": "Left",
+  "fdi_visible": "35,36,37"
+ },
+ "development/1019.jpg": {
+  "arch": "Lower",
+  "site": "Left",
+  "fdi_visible": "34,35,36,37"
+ },
+ "development/1020.jpg": {
+  "arch": "Lower",
+  "site": "Right",
+  "fdi_visible": "46,47,48"
+ },
+ "development/1023.jpg": {
+  "arch": "Lower",
+  "site": "Right",
+  "fdi_visible": "45,46,47,48"
+ },
+ "development/1024.jpg": {
+  "arch": "Lower",
+  "site": "Anterior",
+  "fdi_visible": "44,43,42,41,31,32,33"
+ },
+ "development/1025.jpg": {
+  "arch": "Upper",
+  "site": "Left",
+  "fdi_visible": "24,25,26,27,28"
+ },
+ "external_test/1.jpg": {
+  "arch": "Lower",
+  "site": "Right",
+  "fdi_visible": "44,45,46,47,48"
+ },
+ "external_test/5.jpg": {
+  "arch": "Upper",
+  "site": "Anterior",
+  "fdi_visible": "12,11,21,22,23"
+ },
+ "external_test/22.jpg": {
+  "arch": "Lower",
+  "site": "Left",
+  "fdi_visible": "36,37,38"
+ },
+ "external_test/44.jpg": {
+  "arch": "Upper",
+  "site": "Anterior",
+  "fdi_visible": "11,21,22,23,24"
+ },
+ "external_test/51.jpg": {
+  "arch": "Upper",
+  "site": "Right",
+  "fdi_visible": "13,15,16"
+ },
+ "external_test/68.jpg": {
+  "arch": "Lower",
+  "site": "Anterior",
+  "fdi_visible": "33,32,31,41,42,43,44"
+ },
+ "external_test/100.jpg": {
+  "arch": "Upper",
+  "site": "Right",
+  "fdi_visible": "13,14,15,16,17,18"
+ },
+ "external_test/103.jpg": {
+  "arch": "Upper",
+  "site": "Left",
+  "fdi_visible": "24,25,26,27"
+ },
+ "external_test/298.jpg": {
+  "arch": "Lower",
+  "site": "Right",
+  "fdi_visible": "45,46,47,48"
+ },
+ "external_test/431.jpg": {
+  "arch": "Upper",
+  "site": "Anterior",
+  "fdi_visible": "13,12,11,21,22"
+ },
+ "external_test/495.jpg": {
+  "arch": "Upper",
+  "site": "Right",
+  "fdi_visible": "12,13"
+ },
+ "external_test/736.jpg": {
+  "arch": "Upper",
+  "site": "Anterior",
+  "fdi_visible": "13,12,11,21"
+ },
+ "external_test/810.jpg": {
+  "arch": "Lower",
+  "site": "Anterior",
+  "fdi_visible": "43,42,41,31,32"
+ },
+ "external_test/811.jpg": {
+  "arch": "Lower",
+  "site": "Right",
+  "fdi_visible": "41,24,43,44,45"
+ },
+ "external_test/938.jpg": {
+  "arch": "Upper",
+  "site": "Right",
+  "fdi_visible": "23,24,25,26,27"
+ },
+ "external_test/1000.jpg": {
+  "arch": "Upper",
+  "site": "Anterior",
+  "fdi_visible": "12,11,21"
+ },
+ "external_test/1042.jpg": {
+  "arch": "Lower",
+  "site": "Left",
+  "fdi_visible": "35,36,37,38"
+ },
+ "external_test/1079.jpg": {
+  "arch": "Upper",
+  "site": "Left",
+  "fdi_visible": "27,28"
+ },
+ "external_test/1177.jpg": {
+  "arch": "Upper",
+  "site": "Left",
+  "fdi_visible": "24,25,27,28"
+ },
+ "external_test/1227.jpg": {
+  "arch": "Upper",
+  "site": "Right",
+  "fdi_visible": "11,12,13,14,15"
+ }
+}

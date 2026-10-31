@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "image_id": {"type": "string", "minLength": 1},
+    "tooth_id": {"type": "integer", "minimum": 1},
+    "condition": {"enum": ["raw", "clahe", "he"]},
+    "round": {"type": "integer", "minimum": 1},
+    "long_axis_vector": {
+      "type": "array", "items": {"type": "number"}, "minItems": 2, "maxItems": 2
+    },
+    "landmarks": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "mesial": {"$ref": "#/$defs/side"},
+        "distal": {"$ref": "#/$defs/side"},
+        "apex": {"$ref": "#/$defs/point"}
+      },
+      "required": ["mesial", "distal", "apex"]
+    },
+    "metrics": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "mesial_pbl_pct": {"type": "number", "minimum": 0, "maximum": 100},
+        "distal_pbl_pct": {"type": "number", "minimum": 0, "maximum": 100},
+        "pbl_max_pct": {"type": "number", "minimum": 0, "maximum": 100},
+        "stage": {"enum": ["I", "II", "III/IV"]}
+      },
+      "required": ["mesial_pbl_pct", "distal_pbl_pct", "pbl_max_pct", "stage"]
+    },
+    "source": {"enum": ["manual", "auto"]},
+    "uncertainty": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "landmark_px": {
+          "type": "object", "additionalProperties": false,
+          "properties": {
+            "mesial_cej": {"type": "number", "minimum": 0},
+            "distal_cej": {"type": "number", "minimum": 0},
+            "mesial_bc": {"type": "number", "minimum": 0},
+            "distal_bc": {"type": "number", "minimum": 0},
+            "apex": {"type": "number", "minimum": 0}
+          },
+          "required": ["mesial_cej", "distal_cej", "mesial_bc", "distal_bc", "apex"]
+        },
+        "pbl_ci95": {
+          "type": "array", "items": {"type": "number", "minimum": 0, "maximum": 100},
+          "minItems": 2, "maxItems": 2
+        }
+      },
+      "required": ["landmark_px", "pbl_ci95"]
+    }
+  },
+  "required": ["image_id", "tooth_id", "condition", "round", "long_axis_vector", "landmarks", "metrics", "source", "uncertainty"],
+  "$defs": {
+    "point": {
+      "type": "array", "items": {"type": "number", "minimum": 0}, "minItems": 2, "maxItems": 2
+    },
+    "side": {
+      "type": "object", "additionalProperties": false,
+      "properties": {"cej": {"$ref": "#/$defs/point"}, "bc": {"$ref": "#/$defs/point"}},
+      "required": ["cej", "bc"]
+    }
+  }
+}

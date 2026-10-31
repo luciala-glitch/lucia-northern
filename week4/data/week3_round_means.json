@@ -1,0 +1,4589 @@
+{
+  "info": {
+    "description": "Two-round PBL landmark means with observed inter-round differences",
+    "ground_truth": "coordinate-wise mean of rounds 1 and 2",
+    "noise": "Euclidean round-1-vs-round-2 distance in original pixels",
+    "unique_physical_teeth": 15,
+    "annotation_instances": 45
+  },
+  "images": [
+    {
+      "id": 1,
+      "file_name": "kaggle_dental_xray_1.jpg",
+      "condition": "clahe",
+      "group_id": "kaggle_dental_xray_1.jpg"
+    },
+    {
+      "id": 2,
+      "file_name": "kaggle_dental_xray_1.jpg",
+      "condition": "he",
+      "group_id": "kaggle_dental_xray_1.jpg"
+    },
+    {
+      "id": 3,
+      "file_name": "kaggle_dental_xray_1.jpg",
+      "condition": "raw",
+      "group_id": "kaggle_dental_xray_1.jpg"
+    }
+  ],
+  "annotations": [
+    {
+      "id": 1,
+      "image_id": 1,
+      "tooth_id": 1,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        1367.0,
+        650.5,
+        1455.0,
+        638.5,
+        1379.5,
+        685.5,
+        1453.0,
+        669.5,
+        1419.5,
+        793.0
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          1367.0,
+          650.5
+        ],
+        "distal_cej": [
+          1455.0,
+          638.5
+        ],
+        "mesial_bc": [
+          1379.5,
+          685.5
+        ],
+        "distal_bc": [
+          1453.0,
+          669.5
+        ],
+        "apex": [
+          1419.5,
+          793.0
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            1369.0,
+            651.0
+          ],
+          "distal_cej": [
+            1455.0,
+            636.0
+          ],
+          "mesial_bc": [
+            1379.0,
+            680.0
+          ],
+          "distal_bc": [
+            1455.0,
+            669.0
+          ],
+          "apex": [
+            1417.0,
+            791.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            1365.0,
+            650.0
+          ],
+          "distal_cej": [
+            1455.0,
+            641.0
+          ],
+          "mesial_bc": [
+            1380.0,
+            691.0
+          ],
+          "distal_bc": [
+            1451.0,
+            670.0
+          ],
+          "apex": [
+            1422.0,
+            795.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 4.123105625617661,
+        "distal_cej": 5.0,
+        "mesial_bc": 11.045361017187261,
+        "distal_bc": 4.123105625617661,
+        "apex": 6.4031242374328485
+      }
+    },
+    {
+      "id": 2,
+      "image_id": 2,
+      "tooth_id": 1,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        1367.5,
+        654.0,
+        1454.0,
+        640.5,
+        1381.0,
+        693.5,
+        1454.0,
+        670.5,
+        1419.5,
+        791.5
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          1367.5,
+          654.0
+        ],
+        "distal_cej": [
+          1454.0,
+          640.5
+        ],
+        "mesial_bc": [
+          1381.0,
+          693.5
+        ],
+        "distal_bc": [
+          1454.0,
+          670.5
+        ],
+        "apex": [
+          1419.5,
+          791.5
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            1369.0,
+            655.0
+          ],
+          "distal_cej": [
+            1456.0,
+            642.0
+          ],
+          "mesial_bc": [
+            1380.0,
+            696.0
+          ],
+          "distal_bc": [
+            1453.0,
+            669.0
+          ],
+          "apex": [
+            1420.0,
+            790.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            1366.0,
+            653.0
+          ],
+          "distal_cej": [
+            1452.0,
+            639.0
+          ],
+          "mesial_bc": [
+            1382.0,
+            691.0
+          ],
+          "distal_bc": [
+            1455.0,
+            672.0
+          ],
+          "apex": [
+            1419.0,
+            793.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 3.605551275463989,
+        "distal_cej": 5.0,
+        "mesial_bc": 5.385164807134504,
+        "distal_bc": 3.605551275463989,
+        "apex": 3.1622776601683795
+      }
+    },
+    {
+      "id": 3,
+      "image_id": 3,
+      "tooth_id": 1,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        1366.0,
+        649.0,
+        1451.5,
+        633.0,
+        1381.5,
+        684.5,
+        1453.5,
+        667.5,
+        1423.0,
+        790.5
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          1366.0,
+          649.0
+        ],
+        "distal_cej": [
+          1451.5,
+          633.0
+        ],
+        "mesial_bc": [
+          1381.5,
+          684.5
+        ],
+        "distal_bc": [
+          1453.5,
+          667.5
+        ],
+        "apex": [
+          1423.0,
+          790.5
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            1362.0,
+            645.0
+          ],
+          "distal_cej": [
+            1452.0,
+            631.0
+          ],
+          "mesial_bc": [
+            1381.0,
+            680.0
+          ],
+          "distal_bc": [
+            1455.0,
+            669.0
+          ],
+          "apex": [
+            1424.0,
+            793.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            1370.0,
+            653.0
+          ],
+          "distal_cej": [
+            1451.0,
+            635.0
+          ],
+          "mesial_bc": [
+            1382.0,
+            689.0
+          ],
+          "distal_bc": [
+            1452.0,
+            666.0
+          ],
+          "apex": [
+            1422.0,
+            788.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 11.313708498984761,
+        "distal_cej": 4.123105625617661,
+        "mesial_bc": 9.055385138137417,
+        "distal_bc": 4.242640687119285,
+        "apex": 5.385164807134504
+      }
+    },
+    {
+      "id": 4,
+      "image_id": 1,
+      "tooth_id": 2,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        1220.0,
+        669.0,
+        1272.0,
+        668.5,
+        1229.5,
+        713.0,
+        1270.0,
+        710.0,
+        1261.5,
+        827.5
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          1220.0,
+          669.0
+        ],
+        "distal_cej": [
+          1272.0,
+          668.5
+        ],
+        "mesial_bc": [
+          1229.5,
+          713.0
+        ],
+        "distal_bc": [
+          1270.0,
+          710.0
+        ],
+        "apex": [
+          1261.5,
+          827.5
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            1219.0,
+            668.0
+          ],
+          "distal_cej": [
+            1271.0,
+            668.0
+          ],
+          "mesial_bc": [
+            1228.0,
+            711.0
+          ],
+          "distal_bc": [
+            1273.0,
+            704.0
+          ],
+          "apex": [
+            1261.0,
+            827.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            1221.0,
+            670.0
+          ],
+          "distal_cej": [
+            1273.0,
+            669.0
+          ],
+          "mesial_bc": [
+            1231.0,
+            715.0
+          ],
+          "distal_bc": [
+            1267.0,
+            716.0
+          ],
+          "apex": [
+            1262.0,
+            828.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 2.8284271247461903,
+        "distal_cej": 2.23606797749979,
+        "mesial_bc": 5.0,
+        "distal_bc": 13.416407864998739,
+        "apex": 1.4142135623730951
+      }
+    },
+    {
+      "id": 5,
+      "image_id": 2,
+      "tooth_id": 2,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        1222.0,
+        664.5,
+        1273.5,
+        665.5,
+        1231.0,
+        708.5,
+        1273.0,
+        706.0,
+        1261.5,
+        825.0
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          1222.0,
+          664.5
+        ],
+        "distal_cej": [
+          1273.5,
+          665.5
+        ],
+        "mesial_bc": [
+          1231.0,
+          708.5
+        ],
+        "distal_bc": [
+          1273.0,
+          706.0
+        ],
+        "apex": [
+          1261.5,
+          825.0
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            1221.0,
+            664.0
+          ],
+          "distal_cej": [
+            1275.0,
+            666.0
+          ],
+          "mesial_bc": [
+            1229.0,
+            707.0
+          ],
+          "distal_bc": [
+            1271.0,
+            702.0
+          ],
+          "apex": [
+            1262.0,
+            827.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            1223.0,
+            665.0
+          ],
+          "distal_cej": [
+            1272.0,
+            665.0
+          ],
+          "mesial_bc": [
+            1233.0,
+            710.0
+          ],
+          "distal_bc": [
+            1275.0,
+            710.0
+          ],
+          "apex": [
+            1261.0,
+            823.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 2.23606797749979,
+        "distal_cej": 3.1622776601683795,
+        "mesial_bc": 5.0,
+        "distal_bc": 8.94427190999916,
+        "apex": 4.123105625617661
+      }
+    },
+    {
+      "id": 6,
+      "image_id": 3,
+      "tooth_id": 2,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        1223.5,
+        667.5,
+        1273.0,
+        664.0,
+        1230.5,
+        708.5,
+        1270.5,
+        704.0,
+        1262.5,
+        826.0
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          1223.5,
+          667.5
+        ],
+        "distal_cej": [
+          1273.0,
+          664.0
+        ],
+        "mesial_bc": [
+          1230.5,
+          708.5
+        ],
+        "distal_bc": [
+          1270.5,
+          704.0
+        ],
+        "apex": [
+          1262.5,
+          826.0
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            1224.0,
+            669.0
+          ],
+          "distal_cej": [
+            1275.0,
+            662.0
+          ],
+          "mesial_bc": [
+            1229.0,
+            710.0
+          ],
+          "distal_bc": [
+            1270.0,
+            705.0
+          ],
+          "apex": [
+            1261.0,
+            825.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            1223.0,
+            666.0
+          ],
+          "distal_cej": [
+            1271.0,
+            666.0
+          ],
+          "mesial_bc": [
+            1232.0,
+            707.0
+          ],
+          "distal_bc": [
+            1271.0,
+            703.0
+          ],
+          "apex": [
+            1264.0,
+            827.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 3.1622776601683795,
+        "distal_cej": 5.656854249492381,
+        "mesial_bc": 4.242640687119285,
+        "distal_bc": 2.23606797749979,
+        "apex": 3.605551275463989
+      }
+    },
+    {
+      "id": 7,
+      "image_id": 1,
+      "tooth_id": 3,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        1141.5,
+        669.0,
+        1198.5,
+        671.5,
+        1149.0,
+        713.0,
+        1199.5,
+        712.5,
+        1197.0,
+        840.0
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          1141.5,
+          669.0
+        ],
+        "distal_cej": [
+          1198.5,
+          671.5
+        ],
+        "mesial_bc": [
+          1149.0,
+          713.0
+        ],
+        "distal_bc": [
+          1199.5,
+          712.5
+        ],
+        "apex": [
+          1197.0,
+          840.0
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            1142.0,
+            669.0
+          ],
+          "distal_cej": [
+            1198.0,
+            667.0
+          ],
+          "mesial_bc": [
+            1149.0,
+            719.0
+          ],
+          "distal_bc": [
+            1199.0,
+            707.0
+          ],
+          "apex": [
+            1194.0,
+            831.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            1141.0,
+            669.0
+          ],
+          "distal_cej": [
+            1199.0,
+            676.0
+          ],
+          "mesial_bc": [
+            1149.0,
+            707.0
+          ],
+          "distal_bc": [
+            1200.0,
+            718.0
+          ],
+          "apex": [
+            1200.0,
+            849.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 1.0,
+        "distal_cej": 9.055385138137417,
+        "mesial_bc": 12.0,
+        "distal_bc": 11.045361017187261,
+        "apex": 18.973665961010276
+      }
+    },
+    {
+      "id": 8,
+      "image_id": 2,
+      "tooth_id": 3,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        1142.0,
+        665.5,
+        1199.0,
+        666.0,
+        1152.0,
+        716.5,
+        1199.5,
+        708.0,
+        1198.5,
+        849.0
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          1142.0,
+          665.5
+        ],
+        "distal_cej": [
+          1199.0,
+          666.0
+        ],
+        "mesial_bc": [
+          1152.0,
+          716.5
+        ],
+        "distal_bc": [
+          1199.5,
+          708.0
+        ],
+        "apex": [
+          1198.5,
+          849.0
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            1142.0,
+            664.0
+          ],
+          "distal_cej": [
+            1198.0,
+            671.0
+          ],
+          "mesial_bc": [
+            1152.0,
+            714.0
+          ],
+          "distal_bc": [
+            1198.0,
+            705.0
+          ],
+          "apex": [
+            1201.0,
+            851.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            1142.0,
+            667.0
+          ],
+          "distal_cej": [
+            1200.0,
+            661.0
+          ],
+          "mesial_bc": [
+            1152.0,
+            719.0
+          ],
+          "distal_bc": [
+            1201.0,
+            711.0
+          ],
+          "apex": [
+            1196.0,
+            847.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 3.0,
+        "distal_cej": 10.198039027185569,
+        "mesial_bc": 5.0,
+        "distal_bc": 6.708203932499369,
+        "apex": 6.4031242374328485
+      }
+    },
+    {
+      "id": 9,
+      "image_id": 3,
+      "tooth_id": 3,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        1140.0,
+        668.0,
+        1199.5,
+        673.0,
+        1150.5,
+        717.5,
+        1199.0,
+        707.5,
+        1197.0,
+        846.5
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          1140.0,
+          668.0
+        ],
+        "distal_cej": [
+          1199.5,
+          673.0
+        ],
+        "mesial_bc": [
+          1150.5,
+          717.5
+        ],
+        "distal_bc": [
+          1199.0,
+          707.5
+        ],
+        "apex": [
+          1197.0,
+          846.5
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            1139.0,
+            666.0
+          ],
+          "distal_cej": [
+            1199.0,
+            677.0
+          ],
+          "mesial_bc": [
+            1151.0,
+            721.0
+          ],
+          "distal_bc": [
+            1202.0,
+            711.0
+          ],
+          "apex": [
+            1198.0,
+            847.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            1141.0,
+            670.0
+          ],
+          "distal_cej": [
+            1200.0,
+            669.0
+          ],
+          "mesial_bc": [
+            1150.0,
+            714.0
+          ],
+          "distal_bc": [
+            1196.0,
+            704.0
+          ],
+          "apex": [
+            1196.0,
+            846.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 4.47213595499958,
+        "distal_cej": 8.06225774829855,
+        "mesial_bc": 7.0710678118654755,
+        "distal_bc": 9.219544457292887,
+        "apex": 2.23606797749979
+      }
+    },
+    {
+      "id": 10,
+      "image_id": 1,
+      "tooth_id": 4,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        923.5,
+        664.0,
+        863.0,
+        663.5,
+        905.5,
+        718.5,
+        856.0,
+        709.5,
+        828.5,
+        826.5
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          923.5,
+          664.0
+        ],
+        "distal_cej": [
+          863.0,
+          663.5
+        ],
+        "mesial_bc": [
+          905.5,
+          718.5
+        ],
+        "distal_bc": [
+          856.0,
+          709.5
+        ],
+        "apex": [
+          828.5,
+          826.5
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            923.0,
+            662.0
+          ],
+          "distal_cej": [
+            863.0,
+            662.0
+          ],
+          "mesial_bc": [
+            904.0,
+            721.0
+          ],
+          "distal_bc": [
+            857.0,
+            708.0
+          ],
+          "apex": [
+            835.0,
+            819.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            924.0,
+            666.0
+          ],
+          "distal_cej": [
+            863.0,
+            665.0
+          ],
+          "mesial_bc": [
+            907.0,
+            716.0
+          ],
+          "distal_bc": [
+            855.0,
+            711.0
+          ],
+          "apex": [
+            822.0,
+            834.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 4.123105625617661,
+        "distal_cej": 3.0,
+        "mesial_bc": 5.830951894845301,
+        "distal_bc": 3.605551275463989,
+        "apex": 19.849433241279208
+      }
+    },
+    {
+      "id": 11,
+      "image_id": 2,
+      "tooth_id": 4,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        923.0,
+        665.5,
+        861.0,
+        663.0,
+        905.0,
+        716.5,
+        857.5,
+        709.5,
+        821.5,
+        842.5
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          923.0,
+          665.5
+        ],
+        "distal_cej": [
+          861.0,
+          663.0
+        ],
+        "mesial_bc": [
+          905.0,
+          716.5
+        ],
+        "distal_bc": [
+          857.5,
+          709.5
+        ],
+        "apex": [
+          821.5,
+          842.5
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            926.0,
+            665.0
+          ],
+          "distal_cej": [
+            861.0,
+            665.0
+          ],
+          "mesial_bc": [
+            903.0,
+            720.0
+          ],
+          "distal_bc": [
+            858.0,
+            709.0
+          ],
+          "apex": [
+            822.0,
+            839.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            920.0,
+            666.0
+          ],
+          "distal_cej": [
+            861.0,
+            661.0
+          ],
+          "mesial_bc": [
+            907.0,
+            713.0
+          ],
+          "distal_bc": [
+            857.0,
+            710.0
+          ],
+          "apex": [
+            821.0,
+            846.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 6.082762530298219,
+        "distal_cej": 4.0,
+        "mesial_bc": 8.06225774829855,
+        "distal_bc": 1.4142135623730951,
+        "apex": 7.0710678118654755
+      }
+    },
+    {
+      "id": 12,
+      "image_id": 3,
+      "tooth_id": 4,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        923.5,
+        668.0,
+        861.5,
+        662.0,
+        907.5,
+        718.5,
+        852.5,
+        711.0,
+        826.5,
+        833.5
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          923.5,
+          668.0
+        ],
+        "distal_cej": [
+          861.5,
+          662.0
+        ],
+        "mesial_bc": [
+          907.5,
+          718.5
+        ],
+        "distal_bc": [
+          852.5,
+          711.0
+        ],
+        "apex": [
+          826.5,
+          833.5
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            923.0,
+            671.0
+          ],
+          "distal_cej": [
+            863.0,
+            664.0
+          ],
+          "mesial_bc": [
+            908.0,
+            719.0
+          ],
+          "distal_bc": [
+            850.0,
+            709.0
+          ],
+          "apex": [
+            828.0,
+            831.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            924.0,
+            665.0
+          ],
+          "distal_cej": [
+            860.0,
+            660.0
+          ],
+          "mesial_bc": [
+            907.0,
+            718.0
+          ],
+          "distal_bc": [
+            855.0,
+            713.0
+          ],
+          "apex": [
+            825.0,
+            836.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 6.082762530298219,
+        "distal_cej": 5.0,
+        "mesial_bc": 1.4142135623730951,
+        "distal_bc": 6.4031242374328485,
+        "apex": 5.830951894845301
+      }
+    },
+    {
+      "id": 13,
+      "image_id": 1,
+      "tooth_id": 5,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        849.5,
+        653.0,
+        792.5,
+        644.5,
+        828.5,
+        702.5,
+        791.0,
+        686.5,
+        765.0,
+        799.5
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          849.5,
+          653.0
+        ],
+        "distal_cej": [
+          792.5,
+          644.5
+        ],
+        "mesial_bc": [
+          828.5,
+          702.5
+        ],
+        "distal_bc": [
+          791.0,
+          686.5
+        ],
+        "apex": [
+          765.0,
+          799.5
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            849.0,
+            650.0
+          ],
+          "distal_cej": [
+            795.0,
+            644.0
+          ],
+          "mesial_bc": [
+            827.0,
+            704.0
+          ],
+          "distal_bc": [
+            790.0,
+            688.0
+          ],
+          "apex": [
+            768.0,
+            799.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            850.0,
+            656.0
+          ],
+          "distal_cej": [
+            790.0,
+            645.0
+          ],
+          "mesial_bc": [
+            830.0,
+            701.0
+          ],
+          "distal_bc": [
+            792.0,
+            685.0
+          ],
+          "apex": [
+            762.0,
+            800.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 6.082762530298219,
+        "distal_cej": 5.0990195135927845,
+        "mesial_bc": 4.242640687119285,
+        "distal_bc": 3.605551275463989,
+        "apex": 6.082762530298219
+      }
+    },
+    {
+      "id": 14,
+      "image_id": 2,
+      "tooth_id": 5,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        846.0,
+        657.5,
+        792.0,
+        641.0,
+        829.0,
+        699.0,
+        792.5,
+        685.0,
+        765.5,
+        799.5
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          846.0,
+          657.5
+        ],
+        "distal_cej": [
+          792.0,
+          641.0
+        ],
+        "mesial_bc": [
+          829.0,
+          699.0
+        ],
+        "distal_bc": [
+          792.5,
+          685.0
+        ],
+        "apex": [
+          765.5,
+          799.5
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            847.0,
+            658.0
+          ],
+          "distal_cej": [
+            793.0,
+            642.0
+          ],
+          "mesial_bc": [
+            828.0,
+            699.0
+          ],
+          "distal_bc": [
+            792.0,
+            685.0
+          ],
+          "apex": [
+            763.0,
+            799.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            845.0,
+            657.0
+          ],
+          "distal_cej": [
+            791.0,
+            640.0
+          ],
+          "mesial_bc": [
+            830.0,
+            699.0
+          ],
+          "distal_bc": [
+            793.0,
+            685.0
+          ],
+          "apex": [
+            768.0,
+            800.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 2.23606797749979,
+        "distal_cej": 2.8284271247461903,
+        "mesial_bc": 2.0,
+        "distal_bc": 1.0,
+        "apex": 5.0990195135927845
+      }
+    },
+    {
+      "id": 15,
+      "image_id": 3,
+      "tooth_id": 5,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        848.5,
+        654.0,
+        793.0,
+        641.5,
+        828.5,
+        696.0,
+        794.0,
+        683.0,
+        761.5,
+        803.5
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          848.5,
+          654.0
+        ],
+        "distal_cej": [
+          793.0,
+          641.5
+        ],
+        "mesial_bc": [
+          828.5,
+          696.0
+        ],
+        "distal_bc": [
+          794.0,
+          683.0
+        ],
+        "apex": [
+          761.5,
+          803.5
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            850.0,
+            653.0
+          ],
+          "distal_cej": [
+            795.0,
+            642.0
+          ],
+          "mesial_bc": [
+            828.0,
+            696.0
+          ],
+          "distal_bc": [
+            793.0,
+            688.0
+          ],
+          "apex": [
+            765.0,
+            795.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            847.0,
+            655.0
+          ],
+          "distal_cej": [
+            791.0,
+            641.0
+          ],
+          "mesial_bc": [
+            829.0,
+            696.0
+          ],
+          "distal_bc": [
+            795.0,
+            678.0
+          ],
+          "apex": [
+            758.0,
+            812.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 3.605551275463989,
+        "distal_cej": 4.123105625617661,
+        "mesial_bc": 1.0,
+        "distal_bc": 10.198039027185569,
+        "apex": 18.384776310850235
+      }
+    },
+    {
+      "id": 16,
+      "image_id": 1,
+      "tooth_id": 6,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        785.0,
+        635.5,
+        716.0,
+        620.0,
+        762.5,
+        686.5,
+        708.5,
+        669.5,
+        692.5,
+        788.0
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          785.0,
+          635.5
+        ],
+        "distal_cej": [
+          716.0,
+          620.0
+        ],
+        "mesial_bc": [
+          762.5,
+          686.5
+        ],
+        "distal_bc": [
+          708.5,
+          669.5
+        ],
+        "apex": [
+          692.5,
+          788.0
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            786.0,
+            637.0
+          ],
+          "distal_cej": [
+            714.0,
+            620.0
+          ],
+          "mesial_bc": [
+            765.0,
+            688.0
+          ],
+          "distal_bc": [
+            708.0,
+            669.0
+          ],
+          "apex": [
+            696.0,
+            787.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            784.0,
+            634.0
+          ],
+          "distal_cej": [
+            718.0,
+            620.0
+          ],
+          "mesial_bc": [
+            760.0,
+            685.0
+          ],
+          "distal_bc": [
+            709.0,
+            670.0
+          ],
+          "apex": [
+            689.0,
+            789.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 3.605551275463989,
+        "distal_cej": 4.0,
+        "mesial_bc": 5.830951894845301,
+        "distal_bc": 1.4142135623730951,
+        "apex": 7.280109889280518
+      }
+    },
+    {
+      "id": 17,
+      "image_id": 2,
+      "tooth_id": 6,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        783.0,
+        635.5,
+        717.5,
+        622.0,
+        767.5,
+        682.5,
+        709.5,
+        673.5,
+        691.5,
+        788.5
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          783.0,
+          635.5
+        ],
+        "distal_cej": [
+          717.5,
+          622.0
+        ],
+        "mesial_bc": [
+          767.5,
+          682.5
+        ],
+        "distal_bc": [
+          709.5,
+          673.5
+        ],
+        "apex": [
+          691.5,
+          788.5
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            785.0,
+            634.0
+          ],
+          "distal_cej": [
+            716.0,
+            620.0
+          ],
+          "mesial_bc": [
+            765.0,
+            685.0
+          ],
+          "distal_bc": [
+            710.0,
+            673.0
+          ],
+          "apex": [
+            692.0,
+            787.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            781.0,
+            637.0
+          ],
+          "distal_cej": [
+            719.0,
+            624.0
+          ],
+          "mesial_bc": [
+            770.0,
+            680.0
+          ],
+          "distal_bc": [
+            709.0,
+            674.0
+          ],
+          "apex": [
+            691.0,
+            790.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 5.0,
+        "distal_cej": 5.0,
+        "mesial_bc": 7.0710678118654755,
+        "distal_bc": 1.4142135623730951,
+        "apex": 3.1622776601683795
+      }
+    },
+    {
+      "id": 18,
+      "image_id": 3,
+      "tooth_id": 6,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        783.5,
+        635.0,
+        713.5,
+        621.5,
+        762.5,
+        684.5,
+        709.5,
+        675.5,
+        694.5,
+        791.0
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          783.5,
+          635.0
+        ],
+        "distal_cej": [
+          713.5,
+          621.5
+        ],
+        "mesial_bc": [
+          762.5,
+          684.5
+        ],
+        "distal_bc": [
+          709.5,
+          675.5
+        ],
+        "apex": [
+          694.5,
+          791.0
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            786.0,
+            634.0
+          ],
+          "distal_cej": [
+            713.0,
+            620.0
+          ],
+          "mesial_bc": [
+            765.0,
+            684.0
+          ],
+          "distal_bc": [
+            709.0,
+            681.0
+          ],
+          "apex": [
+            697.0,
+            790.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            781.0,
+            636.0
+          ],
+          "distal_cej": [
+            714.0,
+            623.0
+          ],
+          "mesial_bc": [
+            760.0,
+            685.0
+          ],
+          "distal_bc": [
+            710.0,
+            670.0
+          ],
+          "apex": [
+            692.0,
+            792.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 5.385164807134504,
+        "distal_cej": 3.1622776601683795,
+        "mesial_bc": 5.0990195135927845,
+        "distal_bc": 11.045361017187261,
+        "apex": 5.385164807134504
+      }
+    },
+    {
+      "id": 19,
+      "image_id": 1,
+      "tooth_id": 7,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        505.0,
+        615.5,
+        433.5,
+        554.5,
+        469.0,
+        646.0,
+        420.0,
+        569.0,
+        386.5,
+        675.0
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          505.0,
+          615.5
+        ],
+        "distal_cej": [
+          433.5,
+          554.5
+        ],
+        "mesial_bc": [
+          469.0,
+          646.0
+        ],
+        "distal_bc": [
+          420.0,
+          569.0
+        ],
+        "apex": [
+          386.5,
+          675.0
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            500.0,
+            621.0
+          ],
+          "distal_cej": [
+            434.0,
+            555.0
+          ],
+          "mesial_bc": [
+            470.0,
+            645.0
+          ],
+          "distal_bc": [
+            421.0,
+            568.0
+          ],
+          "apex": [
+            389.0,
+            673.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            510.0,
+            610.0
+          ],
+          "distal_cej": [
+            433.0,
+            554.0
+          ],
+          "mesial_bc": [
+            468.0,
+            647.0
+          ],
+          "distal_bc": [
+            419.0,
+            570.0
+          ],
+          "apex": [
+            384.0,
+            677.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 14.866068747318506,
+        "distal_cej": 1.4142135623730951,
+        "mesial_bc": 2.8284271247461903,
+        "distal_bc": 2.8284271247461903,
+        "apex": 6.4031242374328485
+      }
+    },
+    {
+      "id": 20,
+      "image_id": 2,
+      "tooth_id": 7,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        506.0,
+        616.5,
+        431.0,
+        555.0,
+        466.5,
+        646.5,
+        422.0,
+        567.0,
+        390.5,
+        676.0
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          506.0,
+          616.5
+        ],
+        "distal_cej": [
+          431.0,
+          555.0
+        ],
+        "mesial_bc": [
+          466.5,
+          646.5
+        ],
+        "distal_bc": [
+          422.0,
+          567.0
+        ],
+        "apex": [
+          390.5,
+          676.0
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            497.0,
+            621.0
+          ],
+          "distal_cej": [
+            432.0,
+            557.0
+          ],
+          "mesial_bc": [
+            468.0,
+            647.0
+          ],
+          "distal_bc": [
+            423.0,
+            569.0
+          ],
+          "apex": [
+            391.0,
+            678.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            515.0,
+            612.0
+          ],
+          "distal_cej": [
+            430.0,
+            553.0
+          ],
+          "mesial_bc": [
+            465.0,
+            646.0
+          ],
+          "distal_bc": [
+            421.0,
+            565.0
+          ],
+          "apex": [
+            390.0,
+            674.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 20.12461179749811,
+        "distal_cej": 4.47213595499958,
+        "mesial_bc": 3.1622776601683795,
+        "distal_bc": 4.47213595499958,
+        "apex": 4.123105625617661
+      }
+    },
+    {
+      "id": 21,
+      "image_id": 3,
+      "tooth_id": 7,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        517.0,
+        613.0,
+        434.0,
+        556.0,
+        471.5,
+        644.0,
+        422.5,
+        570.5,
+        379.5,
+        666.5
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          517.0,
+          613.0
+        ],
+        "distal_cej": [
+          434.0,
+          556.0
+        ],
+        "mesial_bc": [
+          471.5,
+          644.0
+        ],
+        "distal_bc": [
+          422.5,
+          570.5
+        ],
+        "apex": [
+          379.5,
+          666.5
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            514.0,
+            614.0
+          ],
+          "distal_cej": [
+            433.0,
+            555.0
+          ],
+          "mesial_bc": [
+            472.0,
+            646.0
+          ],
+          "distal_bc": [
+            418.0,
+            577.0
+          ],
+          "apex": [
+            369.0,
+            661.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            520.0,
+            612.0
+          ],
+          "distal_cej": [
+            435.0,
+            557.0
+          ],
+          "mesial_bc": [
+            471.0,
+            642.0
+          ],
+          "distal_bc": [
+            427.0,
+            564.0
+          ],
+          "apex": [
+            390.0,
+            672.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 6.324555320336759,
+        "distal_cej": 2.8284271247461903,
+        "mesial_bc": 4.123105625617661,
+        "distal_bc": 15.811388300841896,
+        "apex": 23.706539182259394
+      }
+    },
+    {
+      "id": 22,
+      "image_id": 1,
+      "tooth_id": 8,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        1517.0,
+        525.5,
+        1589.0,
+        523.5,
+        1533.0,
+        476.5,
+        1593.0,
+        471.5,
+        1569.0,
+        393.0
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          1517.0,
+          525.5
+        ],
+        "distal_cej": [
+          1589.0,
+          523.5
+        ],
+        "mesial_bc": [
+          1533.0,
+          476.5
+        ],
+        "distal_bc": [
+          1593.0,
+          471.5
+        ],
+        "apex": [
+          1569.0,
+          393.0
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            1514.0,
+            529.0
+          ],
+          "distal_cej": [
+            1591.0,
+            523.0
+          ],
+          "mesial_bc": [
+            1536.0,
+            474.0
+          ],
+          "distal_bc": [
+            1592.0,
+            469.0
+          ],
+          "apex": [
+            1570.0,
+            394.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            1520.0,
+            522.0
+          ],
+          "distal_cej": [
+            1587.0,
+            524.0
+          ],
+          "mesial_bc": [
+            1530.0,
+            479.0
+          ],
+          "distal_bc": [
+            1594.0,
+            474.0
+          ],
+          "apex": [
+            1568.0,
+            392.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 9.219544457292887,
+        "distal_cej": 4.123105625617661,
+        "mesial_bc": 7.810249675906654,
+        "distal_bc": 5.385164807134504,
+        "apex": 2.8284271247461903
+      }
+    },
+    {
+      "id": 23,
+      "image_id": 2,
+      "tooth_id": 8,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        1516.5,
+        523.5,
+        1590.0,
+        521.5,
+        1529.5,
+        481.0,
+        1595.0,
+        470.5,
+        1570.5,
+        400.5
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          1516.5,
+          523.5
+        ],
+        "distal_cej": [
+          1590.0,
+          521.5
+        ],
+        "mesial_bc": [
+          1529.5,
+          481.0
+        ],
+        "distal_bc": [
+          1595.0,
+          470.5
+        ],
+        "apex": [
+          1570.5,
+          400.5
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            1518.0,
+            522.0
+          ],
+          "distal_cej": [
+            1590.0,
+            520.0
+          ],
+          "mesial_bc": [
+            1530.0,
+            478.0
+          ],
+          "distal_bc": [
+            1594.0,
+            468.0
+          ],
+          "apex": [
+            1569.0,
+            398.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            1515.0,
+            525.0
+          ],
+          "distal_cej": [
+            1590.0,
+            523.0
+          ],
+          "mesial_bc": [
+            1529.0,
+            484.0
+          ],
+          "distal_bc": [
+            1596.0,
+            473.0
+          ],
+          "apex": [
+            1572.0,
+            403.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 4.242640687119285,
+        "distal_cej": 3.0,
+        "mesial_bc": 6.082762530298219,
+        "distal_bc": 5.385164807134504,
+        "apex": 5.830951894845301
+      }
+    },
+    {
+      "id": 24,
+      "image_id": 3,
+      "tooth_id": 8,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        1520.0,
+        520.0,
+        1590.0,
+        524.0,
+        1533.0,
+        477.0,
+        1588.0,
+        475.5,
+        1573.0,
+        397.5
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          1520.0,
+          520.0
+        ],
+        "distal_cej": [
+          1590.0,
+          524.0
+        ],
+        "mesial_bc": [
+          1533.0,
+          477.0
+        ],
+        "distal_bc": [
+          1588.0,
+          475.5
+        ],
+        "apex": [
+          1573.0,
+          397.5
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            1521.0,
+            517.0
+          ],
+          "distal_cej": [
+            1590.0,
+            523.0
+          ],
+          "mesial_bc": [
+            1535.0,
+            479.0
+          ],
+          "distal_bc": [
+            1586.0,
+            476.0
+          ],
+          "apex": [
+            1570.0,
+            397.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            1519.0,
+            523.0
+          ],
+          "distal_cej": [
+            1590.0,
+            525.0
+          ],
+          "mesial_bc": [
+            1531.0,
+            475.0
+          ],
+          "distal_bc": [
+            1590.0,
+            475.0
+          ],
+          "apex": [
+            1576.0,
+            398.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 6.324555320336759,
+        "distal_cej": 2.0,
+        "mesial_bc": 5.656854249492381,
+        "distal_bc": 4.123105625617661,
+        "apex": 6.082762530298219
+      }
+    },
+    {
+      "id": 25,
+      "image_id": 1,
+      "tooth_id": 9,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        1431.0,
+        510.0,
+        1510.5,
+        527.0,
+        1452.5,
+        474.0,
+        1522.5,
+        473.5,
+        1518.0,
+        396.5
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          1431.0,
+          510.0
+        ],
+        "distal_cej": [
+          1510.5,
+          527.0
+        ],
+        "mesial_bc": [
+          1452.5,
+          474.0
+        ],
+        "distal_bc": [
+          1522.5,
+          473.5
+        ],
+        "apex": [
+          1518.0,
+          396.5
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            1433.0,
+            509.0
+          ],
+          "distal_cej": [
+            1512.0,
+            524.0
+          ],
+          "mesial_bc": [
+            1453.0,
+            473.0
+          ],
+          "distal_bc": [
+            1521.0,
+            470.0
+          ],
+          "apex": [
+            1518.0,
+            396.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            1429.0,
+            511.0
+          ],
+          "distal_cej": [
+            1509.0,
+            530.0
+          ],
+          "mesial_bc": [
+            1452.0,
+            475.0
+          ],
+          "distal_bc": [
+            1524.0,
+            477.0
+          ],
+          "apex": [
+            1518.0,
+            397.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 4.47213595499958,
+        "distal_cej": 6.708203932499369,
+        "mesial_bc": 2.23606797749979,
+        "distal_bc": 7.615773105863909,
+        "apex": 1.0
+      }
+    },
+    {
+      "id": 26,
+      "image_id": 2,
+      "tooth_id": 9,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        1435.5,
+        507.5,
+        1507.5,
+        523.0,
+        1457.5,
+        471.5,
+        1522.5,
+        477.0,
+        1516.0,
+        397.0
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          1435.5,
+          507.5
+        ],
+        "distal_cej": [
+          1507.5,
+          523.0
+        ],
+        "mesial_bc": [
+          1457.5,
+          471.5
+        ],
+        "distal_bc": [
+          1522.5,
+          477.0
+        ],
+        "apex": [
+          1516.0,
+          397.0
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            1431.0,
+            510.0
+          ],
+          "distal_cej": [
+            1510.0,
+            525.0
+          ],
+          "mesial_bc": [
+            1458.0,
+            468.0
+          ],
+          "distal_bc": [
+            1521.0,
+            472.0
+          ],
+          "apex": [
+            1515.0,
+            400.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            1440.0,
+            505.0
+          ],
+          "distal_cej": [
+            1505.0,
+            521.0
+          ],
+          "mesial_bc": [
+            1457.0,
+            475.0
+          ],
+          "distal_bc": [
+            1524.0,
+            482.0
+          ],
+          "apex": [
+            1517.0,
+            394.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 10.295630140987,
+        "distal_cej": 6.4031242374328485,
+        "mesial_bc": 7.0710678118654755,
+        "distal_bc": 10.44030650891055,
+        "apex": 6.324555320336759
+      }
+    },
+    {
+      "id": 27,
+      "image_id": 3,
+      "tooth_id": 9,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        1436.0,
+        508.5,
+        1511.0,
+        527.5,
+        1454.0,
+        476.5,
+        1522.5,
+        483.0,
+        1514.5,
+        385.5
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          1436.0,
+          508.5
+        ],
+        "distal_cej": [
+          1511.0,
+          527.5
+        ],
+        "mesial_bc": [
+          1454.0,
+          476.5
+        ],
+        "distal_bc": [
+          1522.5,
+          483.0
+        ],
+        "apex": [
+          1514.5,
+          385.5
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            1439.0,
+            508.0
+          ],
+          "distal_cej": [
+            1512.0,
+            528.0
+          ],
+          "mesial_bc": [
+            1452.0,
+            477.0
+          ],
+          "distal_bc": [
+            1522.0,
+            479.0
+          ],
+          "apex": [
+            1511.0,
+            399.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            1433.0,
+            509.0
+          ],
+          "distal_cej": [
+            1510.0,
+            527.0
+          ],
+          "mesial_bc": [
+            1456.0,
+            476.0
+          ],
+          "distal_bc": [
+            1523.0,
+            487.0
+          ],
+          "apex": [
+            1518.0,
+            372.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 6.082762530298219,
+        "distal_cej": 2.23606797749979,
+        "mesial_bc": 4.123105625617661,
+        "distal_bc": 8.06225774829855,
+        "apex": 27.892651361962706
+      }
+    },
+    {
+      "id": 28,
+      "image_id": 1,
+      "tooth_id": 10,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        1201.5,
+        547.5,
+        1257.5,
+        545.0,
+        1211.0,
+        513.0,
+        1266.0,
+        500.5,
+        1249.5,
+        420.0
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          1201.5,
+          547.5
+        ],
+        "distal_cej": [
+          1257.5,
+          545.0
+        ],
+        "mesial_bc": [
+          1211.0,
+          513.0
+        ],
+        "distal_bc": [
+          1266.0,
+          500.5
+        ],
+        "apex": [
+          1249.5,
+          420.0
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            1199.0,
+            543.0
+          ],
+          "distal_cej": [
+            1259.0,
+            543.0
+          ],
+          "mesial_bc": [
+            1213.0,
+            513.0
+          ],
+          "distal_bc": [
+            1266.0,
+            503.0
+          ],
+          "apex": [
+            1256.0,
+            419.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            1204.0,
+            552.0
+          ],
+          "distal_cej": [
+            1256.0,
+            547.0
+          ],
+          "mesial_bc": [
+            1209.0,
+            513.0
+          ],
+          "distal_bc": [
+            1266.0,
+            498.0
+          ],
+          "apex": [
+            1243.0,
+            421.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 10.295630140987,
+        "distal_cej": 5.0,
+        "mesial_bc": 4.0,
+        "distal_bc": 5.0,
+        "apex": 13.152946437965905
+      }
+    },
+    {
+      "id": 29,
+      "image_id": 2,
+      "tooth_id": 10,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        1202.0,
+        549.0,
+        1257.0,
+        545.0,
+        1211.0,
+        510.0,
+        1265.5,
+        504.0,
+        1249.5,
+        419.5
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          1202.0,
+          549.0
+        ],
+        "distal_cej": [
+          1257.0,
+          545.0
+        ],
+        "mesial_bc": [
+          1211.0,
+          510.0
+        ],
+        "distal_bc": [
+          1265.5,
+          504.0
+        ],
+        "apex": [
+          1249.5,
+          419.5
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            1204.0,
+            546.0
+          ],
+          "distal_cej": [
+            1256.0,
+            543.0
+          ],
+          "mesial_bc": [
+            1211.0,
+            511.0
+          ],
+          "distal_bc": [
+            1266.0,
+            504.0
+          ],
+          "apex": [
+            1248.0,
+            422.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            1200.0,
+            552.0
+          ],
+          "distal_cej": [
+            1258.0,
+            547.0
+          ],
+          "mesial_bc": [
+            1211.0,
+            509.0
+          ],
+          "distal_bc": [
+            1265.0,
+            504.0
+          ],
+          "apex": [
+            1251.0,
+            417.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 7.211102550927978,
+        "distal_cej": 4.47213595499958,
+        "mesial_bc": 2.0,
+        "distal_bc": 1.0,
+        "apex": 5.830951894845301
+      }
+    },
+    {
+      "id": 30,
+      "image_id": 3,
+      "tooth_id": 10,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        1201.0,
+        551.0,
+        1260.0,
+        542.5,
+        1209.5,
+        517.0,
+        1262.0,
+        504.0,
+        1250.5,
+        418.5
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          1201.0,
+          551.0
+        ],
+        "distal_cej": [
+          1260.0,
+          542.5
+        ],
+        "mesial_bc": [
+          1209.5,
+          517.0
+        ],
+        "distal_bc": [
+          1262.0,
+          504.0
+        ],
+        "apex": [
+          1250.5,
+          418.5
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            1204.0,
+            549.0
+          ],
+          "distal_cej": [
+            1261.0,
+            549.0
+          ],
+          "mesial_bc": [
+            1213.0,
+            517.0
+          ],
+          "distal_bc": [
+            1262.0,
+            509.0
+          ],
+          "apex": [
+            1250.0,
+            422.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            1198.0,
+            553.0
+          ],
+          "distal_cej": [
+            1259.0,
+            536.0
+          ],
+          "mesial_bc": [
+            1206.0,
+            517.0
+          ],
+          "distal_bc": [
+            1262.0,
+            499.0
+          ],
+          "apex": [
+            1251.0,
+            415.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 7.211102550927978,
+        "distal_cej": 13.152946437965905,
+        "mesial_bc": 7.0,
+        "distal_bc": 10.0,
+        "apex": 7.0710678118654755
+      }
+    },
+    {
+      "id": 31,
+      "image_id": 1,
+      "tooth_id": 11,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        1147.5,
+        544.5,
+        1190.5,
+        549.0,
+        1152.0,
+        518.0,
+        1194.5,
+        509.5,
+        1180.5,
+        424.5
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          1147.5,
+          544.5
+        ],
+        "distal_cej": [
+          1190.5,
+          549.0
+        ],
+        "mesial_bc": [
+          1152.0,
+          518.0
+        ],
+        "distal_bc": [
+          1194.5,
+          509.5
+        ],
+        "apex": [
+          1180.5,
+          424.5
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            1148.0,
+            547.0
+          ],
+          "distal_cej": [
+            1190.0,
+            548.0
+          ],
+          "mesial_bc": [
+            1154.0,
+            515.0
+          ],
+          "distal_bc": [
+            1197.0,
+            509.0
+          ],
+          "apex": [
+            1181.0,
+            430.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            1147.0,
+            542.0
+          ],
+          "distal_cej": [
+            1191.0,
+            550.0
+          ],
+          "mesial_bc": [
+            1150.0,
+            521.0
+          ],
+          "distal_bc": [
+            1192.0,
+            510.0
+          ],
+          "apex": [
+            1180.0,
+            419.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 5.0990195135927845,
+        "distal_cej": 2.23606797749979,
+        "mesial_bc": 7.211102550927978,
+        "distal_bc": 5.0990195135927845,
+        "apex": 11.045361017187261
+      }
+    },
+    {
+      "id": 32,
+      "image_id": 2,
+      "tooth_id": 11,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        1144.0,
+        550.0,
+        1188.0,
+        548.5,
+        1151.5,
+        519.5,
+        1193.0,
+        511.5,
+        1180.5,
+        419.5
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          1144.0,
+          550.0
+        ],
+        "distal_cej": [
+          1188.0,
+          548.5
+        ],
+        "mesial_bc": [
+          1151.5,
+          519.5
+        ],
+        "distal_bc": [
+          1193.0,
+          511.5
+        ],
+        "apex": [
+          1180.5,
+          419.5
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            1144.0,
+            548.0
+          ],
+          "distal_cej": [
+            1188.0,
+            547.0
+          ],
+          "mesial_bc": [
+            1150.0,
+            520.0
+          ],
+          "distal_bc": [
+            1192.0,
+            513.0
+          ],
+          "apex": [
+            1180.0,
+            429.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            1144.0,
+            552.0
+          ],
+          "distal_cej": [
+            1188.0,
+            550.0
+          ],
+          "mesial_bc": [
+            1153.0,
+            519.0
+          ],
+          "distal_bc": [
+            1194.0,
+            510.0
+          ],
+          "apex": [
+            1181.0,
+            410.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 4.0,
+        "distal_cej": 3.0,
+        "mesial_bc": 3.1622776601683795,
+        "distal_bc": 3.605551275463989,
+        "apex": 19.026297590440446
+      }
+    },
+    {
+      "id": 33,
+      "image_id": 3,
+      "tooth_id": 11,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        1145.0,
+        551.0,
+        1188.0,
+        553.0,
+        1150.5,
+        519.5,
+        1191.0,
+        514.5,
+        1180.0,
+        421.0
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          1145.0,
+          551.0
+        ],
+        "distal_cej": [
+          1188.0,
+          553.0
+        ],
+        "mesial_bc": [
+          1150.5,
+          519.5
+        ],
+        "distal_bc": [
+          1191.0,
+          514.5
+        ],
+        "apex": [
+          1180.0,
+          421.0
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            1145.0,
+            549.0
+          ],
+          "distal_cej": [
+            1188.0,
+            547.0
+          ],
+          "mesial_bc": [
+            1152.0,
+            520.0
+          ],
+          "distal_bc": [
+            1190.0,
+            514.0
+          ],
+          "apex": [
+            1180.0,
+            418.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            1145.0,
+            553.0
+          ],
+          "distal_cej": [
+            1188.0,
+            559.0
+          ],
+          "mesial_bc": [
+            1149.0,
+            519.0
+          ],
+          "distal_bc": [
+            1192.0,
+            515.0
+          ],
+          "apex": [
+            1180.0,
+            424.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 4.0,
+        "distal_cej": 12.0,
+        "mesial_bc": 3.1622776601683795,
+        "distal_bc": 2.23606797749979,
+        "apex": 6.0
+      }
+    },
+    {
+      "id": 34,
+      "image_id": 1,
+      "tooth_id": 12,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        950.0,
+        543.5,
+        900.0,
+        543.0,
+        942.5,
+        512.5,
+        898.5,
+        504.0,
+        907.0,
+        404.0
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          950.0,
+          543.5
+        ],
+        "distal_cej": [
+          900.0,
+          543.0
+        ],
+        "mesial_bc": [
+          942.5,
+          512.5
+        ],
+        "distal_bc": [
+          898.5,
+          504.0
+        ],
+        "apex": [
+          907.0,
+          404.0
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            949.0,
+            544.0
+          ],
+          "distal_cej": [
+            900.0,
+            544.0
+          ],
+          "mesial_bc": [
+            943.0,
+            515.0
+          ],
+          "distal_bc": [
+            896.0,
+            509.0
+          ],
+          "apex": [
+            913.0,
+            413.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            951.0,
+            543.0
+          ],
+          "distal_cej": [
+            900.0,
+            542.0
+          ],
+          "mesial_bc": [
+            942.0,
+            510.0
+          ],
+          "distal_bc": [
+            901.0,
+            499.0
+          ],
+          "apex": [
+            901.0,
+            395.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 2.23606797749979,
+        "distal_cej": 2.0,
+        "mesial_bc": 5.0990195135927845,
+        "distal_bc": 11.180339887498949,
+        "apex": 21.633307652783937
+      }
+    },
+    {
+      "id": 35,
+      "image_id": 2,
+      "tooth_id": 12,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        947.5,
+        546.0,
+        899.0,
+        549.0,
+        941.5,
+        507.5,
+        899.0,
+        504.0,
+        911.5,
+        401.0
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          947.5,
+          546.0
+        ],
+        "distal_cej": [
+          899.0,
+          549.0
+        ],
+        "mesial_bc": [
+          941.5,
+          507.5
+        ],
+        "distal_bc": [
+          899.0,
+          504.0
+        ],
+        "apex": [
+          911.5,
+          401.0
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            948.0,
+            546.0
+          ],
+          "distal_cej": [
+            898.0,
+            549.0
+          ],
+          "mesial_bc": [
+            943.0,
+            511.0
+          ],
+          "distal_bc": [
+            899.0,
+            504.0
+          ],
+          "apex": [
+            910.0,
+            395.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            947.0,
+            546.0
+          ],
+          "distal_cej": [
+            900.0,
+            549.0
+          ],
+          "mesial_bc": [
+            940.0,
+            504.0
+          ],
+          "distal_bc": [
+            899.0,
+            504.0
+          ],
+          "apex": [
+            913.0,
+            407.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 1.0,
+        "distal_cej": 2.0,
+        "mesial_bc": 7.615773105863909,
+        "distal_bc": 0.0,
+        "apex": 12.36931687685298
+      }
+    },
+    {
+      "id": 36,
+      "image_id": 3,
+      "tooth_id": 12,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        949.5,
+        543.5,
+        901.0,
+        542.5,
+        942.0,
+        507.0,
+        899.5,
+        506.0,
+        911.0,
+        407.0
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          949.5,
+          543.5
+        ],
+        "distal_cej": [
+          901.0,
+          542.5
+        ],
+        "mesial_bc": [
+          942.0,
+          507.0
+        ],
+        "distal_bc": [
+          899.5,
+          506.0
+        ],
+        "apex": [
+          911.0,
+          407.0
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            948.0,
+            541.0
+          ],
+          "distal_cej": [
+            901.0,
+            543.0
+          ],
+          "mesial_bc": [
+            942.0,
+            511.0
+          ],
+          "distal_bc": [
+            901.0,
+            509.0
+          ],
+          "apex": [
+            911.0,
+            417.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            951.0,
+            546.0
+          ],
+          "distal_cej": [
+            901.0,
+            542.0
+          ],
+          "mesial_bc": [
+            942.0,
+            503.0
+          ],
+          "distal_bc": [
+            898.0,
+            503.0
+          ],
+          "apex": [
+            911.0,
+            397.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 5.830951894845301,
+        "distal_cej": 1.0,
+        "mesial_bc": 8.0,
+        "distal_bc": 6.708203932499369,
+        "apex": 20.0
+      }
+    },
+    {
+      "id": 37,
+      "image_id": 1,
+      "tooth_id": 13,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        886.0,
+        537.5,
+        826.5,
+        533.5,
+        874.5,
+        490.5,
+        823.0,
+        471.0,
+        839.0,
+        360.5
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          886.0,
+          537.5
+        ],
+        "distal_cej": [
+          826.5,
+          533.5
+        ],
+        "mesial_bc": [
+          874.5,
+          490.5
+        ],
+        "distal_bc": [
+          823.0,
+          471.0
+        ],
+        "apex": [
+          839.0,
+          360.5
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            886.0,
+            533.0
+          ],
+          "distal_cej": [
+            827.0,
+            532.0
+          ],
+          "mesial_bc": [
+            877.0,
+            495.0
+          ],
+          "distal_bc": [
+            823.0,
+            475.0
+          ],
+          "apex": [
+            839.0,
+            362.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            886.0,
+            542.0
+          ],
+          "distal_cej": [
+            826.0,
+            535.0
+          ],
+          "mesial_bc": [
+            872.0,
+            486.0
+          ],
+          "distal_bc": [
+            823.0,
+            467.0
+          ],
+          "apex": [
+            839.0,
+            359.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 9.0,
+        "distal_cej": 3.1622776601683795,
+        "mesial_bc": 10.295630140987,
+        "distal_bc": 8.0,
+        "apex": 3.0
+      }
+    },
+    {
+      "id": 38,
+      "image_id": 2,
+      "tooth_id": 13,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        883.0,
+        529.5,
+        827.5,
+        527.5,
+        876.5,
+        487.0,
+        820.5,
+        475.0,
+        837.5,
+        359.5
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          883.0,
+          529.5
+        ],
+        "distal_cej": [
+          827.5,
+          527.5
+        ],
+        "mesial_bc": [
+          876.5,
+          487.0
+        ],
+        "distal_bc": [
+          820.5,
+          475.0
+        ],
+        "apex": [
+          837.5,
+          359.5
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            883.0,
+            537.0
+          ],
+          "distal_cej": [
+            825.0,
+            533.0
+          ],
+          "mesial_bc": [
+            879.0,
+            493.0
+          ],
+          "distal_bc": [
+            820.0,
+            472.0
+          ],
+          "apex": [
+            836.0,
+            361.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            883.0,
+            522.0
+          ],
+          "distal_cej": [
+            830.0,
+            522.0
+          ],
+          "mesial_bc": [
+            874.0,
+            481.0
+          ],
+          "distal_bc": [
+            821.0,
+            478.0
+          ],
+          "apex": [
+            839.0,
+            358.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 15.0,
+        "distal_cej": 12.083045973594572,
+        "mesial_bc": 13.0,
+        "distal_bc": 6.082762530298219,
+        "apex": 4.242640687119285
+      }
+    },
+    {
+      "id": 39,
+      "image_id": 3,
+      "tooth_id": 13,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        885.0,
+        535.0,
+        826.5,
+        527.5,
+        874.5,
+        491.0,
+        822.5,
+        473.5,
+        841.0,
+        358.5
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          885.0,
+          535.0
+        ],
+        "distal_cej": [
+          826.5,
+          527.5
+        ],
+        "mesial_bc": [
+          874.5,
+          491.0
+        ],
+        "distal_bc": [
+          822.5,
+          473.5
+        ],
+        "apex": [
+          841.0,
+          358.5
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            885.0,
+            533.0
+          ],
+          "distal_cej": [
+            826.0,
+            524.0
+          ],
+          "mesial_bc": [
+            875.0,
+            492.0
+          ],
+          "distal_bc": [
+            822.0,
+            472.0
+          ],
+          "apex": [
+            843.0,
+            358.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            885.0,
+            537.0
+          ],
+          "distal_cej": [
+            827.0,
+            531.0
+          ],
+          "mesial_bc": [
+            874.0,
+            490.0
+          ],
+          "distal_bc": [
+            823.0,
+            475.0
+          ],
+          "apex": [
+            839.0,
+            359.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 4.0,
+        "distal_cej": 7.0710678118654755,
+        "mesial_bc": 2.23606797749979,
+        "distal_bc": 3.1622776601683795,
+        "apex": 4.123105625617661
+      }
+    },
+    {
+      "id": 40,
+      "image_id": 1,
+      "tooth_id": 14,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        729.5,
+        506.5,
+        661.0,
+        495.5,
+        747.0,
+        434.0,
+        686.0,
+        434.5,
+        733.0,
+        372.5
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          729.5,
+          506.5
+        ],
+        "distal_cej": [
+          661.0,
+          495.5
+        ],
+        "mesial_bc": [
+          747.0,
+          434.0
+        ],
+        "distal_bc": [
+          686.0,
+          434.5
+        ],
+        "apex": [
+          733.0,
+          372.5
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            730.0,
+            505.0
+          ],
+          "distal_cej": [
+            664.0,
+            491.0
+          ],
+          "mesial_bc": [
+            748.0,
+            442.0
+          ],
+          "distal_bc": [
+            689.0,
+            434.0
+          ],
+          "apex": [
+            733.0,
+            371.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            729.0,
+            508.0
+          ],
+          "distal_cej": [
+            658.0,
+            500.0
+          ],
+          "mesial_bc": [
+            746.0,
+            426.0
+          ],
+          "distal_bc": [
+            683.0,
+            435.0
+          ],
+          "apex": [
+            733.0,
+            374.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 3.1622776601683795,
+        "distal_cej": 10.816653826391969,
+        "mesial_bc": 16.1245154965971,
+        "distal_bc": 6.082762530298219,
+        "apex": 3.0
+      }
+    },
+    {
+      "id": 41,
+      "image_id": 2,
+      "tooth_id": 14,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        728.0,
+        513.5,
+        660.0,
+        499.5,
+        744.5,
+        461.5,
+        684.0,
+        439.0,
+        733.5,
+        375.0
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          728.0,
+          513.5
+        ],
+        "distal_cej": [
+          660.0,
+          499.5
+        ],
+        "mesial_bc": [
+          744.5,
+          461.5
+        ],
+        "distal_bc": [
+          684.0,
+          439.0
+        ],
+        "apex": [
+          733.5,
+          375.0
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            726.0,
+            511.0
+          ],
+          "distal_cej": [
+            662.0,
+            496.0
+          ],
+          "mesial_bc": [
+            743.0,
+            459.0
+          ],
+          "distal_bc": [
+            685.0,
+            435.0
+          ],
+          "apex": [
+            734.0,
+            372.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            730.0,
+            516.0
+          ],
+          "distal_cej": [
+            658.0,
+            503.0
+          ],
+          "mesial_bc": [
+            746.0,
+            464.0
+          ],
+          "distal_bc": [
+            683.0,
+            443.0
+          ],
+          "apex": [
+            733.0,
+            378.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 6.4031242374328485,
+        "distal_cej": 8.06225774829855,
+        "mesial_bc": 5.830951894845301,
+        "distal_bc": 8.246211251235321,
+        "apex": 6.082762530298219
+      }
+    },
+    {
+      "id": 42,
+      "image_id": 3,
+      "tooth_id": 14,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        726.5,
+        509.5,
+        662.5,
+        497.0,
+        746.5,
+        461.0,
+        676.5,
+        449.5,
+        730.0,
+        375.0
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          726.5,
+          509.5
+        ],
+        "distal_cej": [
+          662.5,
+          497.0
+        ],
+        "mesial_bc": [
+          746.5,
+          461.0
+        ],
+        "distal_bc": [
+          676.5,
+          449.5
+        ],
+        "apex": [
+          730.0,
+          375.0
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            727.0,
+            507.0
+          ],
+          "distal_cej": [
+            661.0,
+            498.0
+          ],
+          "mesial_bc": [
+            745.0,
+            463.0
+          ],
+          "distal_bc": [
+            674.0,
+            448.0
+          ],
+          "apex": [
+            733.0,
+            376.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            726.0,
+            512.0
+          ],
+          "distal_cej": [
+            664.0,
+            496.0
+          ],
+          "mesial_bc": [
+            748.0,
+            459.0
+          ],
+          "distal_bc": [
+            679.0,
+            451.0
+          ],
+          "apex": [
+            727.0,
+            374.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 5.0990195135927845,
+        "distal_cej": 3.605551275463989,
+        "mesial_bc": 5.0,
+        "distal_bc": 5.830951894845301,
+        "apex": 6.324555320336759
+      }
+    },
+    {
+      "id": 43,
+      "image_id": 1,
+      "tooth_id": 15,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        613.0,
+        483.0,
+        531.0,
+        483.0,
+        596.0,
+        437.5,
+        522.5,
+        431.5,
+        549.5,
+        366.5
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          613.0,
+          483.0
+        ],
+        "distal_cej": [
+          531.0,
+          483.0
+        ],
+        "mesial_bc": [
+          596.0,
+          437.5
+        ],
+        "distal_bc": [
+          522.5,
+          431.5
+        ],
+        "apex": [
+          549.5,
+          366.5
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            614.0,
+            481.0
+          ],
+          "distal_cej": [
+            532.0,
+            483.0
+          ],
+          "mesial_bc": [
+            597.0,
+            434.0
+          ],
+          "distal_bc": [
+            524.0,
+            431.0
+          ],
+          "apex": [
+            549.0,
+            367.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            612.0,
+            485.0
+          ],
+          "distal_cej": [
+            530.0,
+            483.0
+          ],
+          "mesial_bc": [
+            595.0,
+            441.0
+          ],
+          "distal_bc": [
+            521.0,
+            432.0
+          ],
+          "apex": [
+            550.0,
+            366.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 4.47213595499958,
+        "distal_cej": 2.0,
+        "mesial_bc": 7.280109889280518,
+        "distal_bc": 3.1622776601683795,
+        "apex": 1.4142135623730951
+      }
+    },
+    {
+      "id": 44,
+      "image_id": 2,
+      "tooth_id": 15,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        612.5,
+        482.0,
+        530.5,
+        481.5,
+        593.0,
+        432.0,
+        522.0,
+        433.0,
+        544.5,
+        369.0
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          612.5,
+          482.0
+        ],
+        "distal_cej": [
+          530.5,
+          481.5
+        ],
+        "mesial_bc": [
+          593.0,
+          432.0
+        ],
+        "distal_bc": [
+          522.0,
+          433.0
+        ],
+        "apex": [
+          544.5,
+          369.0
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            612.0,
+            480.0
+          ],
+          "distal_cej": [
+            530.0,
+            485.0
+          ],
+          "mesial_bc": [
+            593.0,
+            424.0
+          ],
+          "distal_bc": [
+            522.0,
+            429.0
+          ],
+          "apex": [
+            543.0,
+            369.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            613.0,
+            484.0
+          ],
+          "distal_cej": [
+            531.0,
+            478.0
+          ],
+          "mesial_bc": [
+            593.0,
+            440.0
+          ],
+          "distal_bc": [
+            522.0,
+            437.0
+          ],
+          "apex": [
+            546.0,
+            369.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 4.123105625617661,
+        "distal_cej": 7.0710678118654755,
+        "mesial_bc": 16.0,
+        "distal_bc": 8.0,
+        "apex": 3.0
+      }
+    },
+    {
+      "id": 45,
+      "image_id": 3,
+      "tooth_id": 15,
+      "category_id": 1,
+      "num_keypoints": 5,
+      "keypoints": [
+        613.5,
+        480.0,
+        533.0,
+        478.0,
+        594.5,
+        437.0,
+        521.5,
+        430.5,
+        543.0,
+        365.5
+      ],
+      "keypoint_names": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ],
+      "mean": {
+        "mesial_cej": [
+          613.5,
+          480.0
+        ],
+        "distal_cej": [
+          533.0,
+          478.0
+        ],
+        "mesial_bc": [
+          594.5,
+          437.0
+        ],
+        "distal_bc": [
+          521.5,
+          430.5
+        ],
+        "apex": [
+          543.0,
+          365.5
+        ]
+      },
+      "rounds": {
+        "1": {
+          "mesial_cej": [
+            609.0,
+            479.0
+          ],
+          "distal_cej": [
+            535.0,
+            476.0
+          ],
+          "mesial_bc": [
+            593.0,
+            438.0
+          ],
+          "distal_bc": [
+            522.0,
+            431.0
+          ],
+          "apex": [
+            542.0,
+            360.0
+          ]
+        },
+        "2": {
+          "mesial_cej": [
+            618.0,
+            481.0
+          ],
+          "distal_cej": [
+            531.0,
+            480.0
+          ],
+          "mesial_bc": [
+            596.0,
+            436.0
+          ],
+          "distal_bc": [
+            521.0,
+            430.0
+          ],
+          "apex": [
+            544.0,
+            371.0
+          ]
+        }
+      },
+      "noise_px": {
+        "mesial_cej": 9.219544457292887,
+        "distal_cej": 5.656854249492381,
+        "mesial_bc": 3.605551275463989,
+        "distal_bc": 1.4142135623730951,
+        "apex": 11.180339887498949
+      }
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "tooth",
+      "keypoints": [
+        "mesial_cej",
+        "distal_cej",
+        "mesial_bc",
+        "distal_bc",
+        "apex"
+      ]
+    }
+  ]
+}

@@ -8,6 +8,7 @@ and reports can be reviewed from one GitHub link.
 | Week 1 | [`week1/`](week1/) | Calculates PBL from sliders for one tooth surface. |
 | Week 2 | [`week2/`](week2/) | Places six landmarks on a real X-ray, reports mesial/distal PBL, stages from the worse surface, and records repeatability measurements. |
 | Week 3 | [`week3/`](week3/) | Typed long-axis projection, statistical agreement, sensitivity and contrast analysis, validated JSON/CSV exports. |
+| Week 4 | [`week4/`](week4/) | Pretrained heatmap landmark detector vs classical baseline on 1,657 DenPAR teeth (radiograph-level 5-fold CV + external test), uncertainty-based rejection, failure analysis, and an auto-detect → correct → export review App. |
 
 ## Quick start
 
@@ -80,6 +81,17 @@ Each week's folder has its own detailed README. Week 2 includes four small
 CC0 sample X-rays, or a reviewer can upload a JPG, PNG, or TIFF image in the
 app. No millimetre calibration is required because PBL is calculated as a
 ratio.
+
+### Run Week 4
+
+```bash
+python -m pip install -r week4/requirements.txt -r week4/requirements-model.txt
+python -m streamlit run week4/app.py
+make reproduce PYTHON=python   # data → split → (missing) weights → all reports
+```
+
+See [`week4/README.md`](week4/README.md) for weights download, the review
+workflow, and links to every Week 4 report and the [model card](week4/MODEL_CARD.md).
 
 ## Repository history
 
