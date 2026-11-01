@@ -1,13 +1,14 @@
-# Two-sided PBL X-ray Calculator — Week 2
+# Week 2: Two-sided PBL X-ray Calculator
 
-This Streamlit app measures radiographic periodontal bone loss (PBL) directly
-on a dental X-ray. It records CEJ, bone crest, and root tip points on both the
-mesial and distal surfaces, reports each surface separately, and stages the
-tooth from the surface with greater loss.
+For Week 2, I extended the calculator into a Streamlit app that measures
+radiographic periodontal bone loss (PBL) directly on a dental X-ray. It records
+CEJ, bone crest, and root tip points on both the mesial and distal surfaces,
+reports each surface separately, and stages the tooth from the surface with
+greater loss.
 
 Week 1 and Week 2 both live in this repository. The Week 1 slider version is
 in [`../week1/`](../week1/), and its original submission is also preserved in
-the [`week1`](https://github.com/luciala-glitch/pbl-calculator/tree/week1) tag.
+the [`week1`](https://github.com/luciala-glitch/lucia-northern/tree/week1) tag.
 
 ## Features
 
@@ -37,13 +38,13 @@ the [`week1`](https://github.com/luciala-glitch/pbl-calculator/tree/week1) tag.
 Python 3.10 or newer is required.
 
 ```bash
-git clone https://github.com/luciala-glitch/pbl-calculator.git
-cd pbl-calculator
+git clone https://github.com/luciala-glitch/lucia-northern.git
+cd lucia-northern
 code .
 ```
 
 If `code` is unavailable, open VS Code, choose **File → Open Folder…**, and
-select the `pbl-calculator` folder.
+select the `lucia-northern` folder.
 
 In VS Code, run **Python: Select Interpreter** from the Command Palette and
 choose the interpreter inside `.venv`.

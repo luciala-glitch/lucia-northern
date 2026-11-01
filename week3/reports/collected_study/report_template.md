@@ -133,7 +133,7 @@ Saved evidence: [Week 3 tests](week3_test_results.txt), [project tests](project_
 
 I completed the two-round, three-condition measurements and used them to examine agreement, landmark displacement and sensitivity to small placement changes. CLAHE had the highest observed ICC, while HE had the highest stage agreement and lowest observed coordinate variation. Individual differences remained larger than the small mean bias suggested. The study helped identify areas for improving the measurement process, but did not establish which enhancement was most accurate or provide clinical validation.
 
-GitHub and the current PR: [my submission links](SUBMISSION.md).
+GitHub and the merged PR record: [my submission links](SUBMISSION.md).
 
 ## References
 

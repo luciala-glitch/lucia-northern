@@ -56,8 +56,20 @@ See the [current Week 3 report](week3/reports/collected_study/WEEK3_COLLECTED_RE
 and [detailed instructions](week3/README.md). For Week 3, I measured
 15 teeth on one image under three separately marked conditions in two rounds:
 90 tooth readings / 180 surface observations. I included the saved measurements
-and figures with the current report, along with the limits of this small study. Older Week 2 exploratory reports and
-synthetic examples remain separate; they are not pooled with this collection.
+and figures with the current report, along with the limits of this small study.
+Older Week 2 exploratory reports and synthetic examples remain separate; they
+are not pooled with this collection.
+
+### Run Week 4
+
+```bash
+python -m pip install -r week4/requirements.txt -r week4/requirements-model.txt
+python -m streamlit run week4/app.py
+make reproduce PYTHON=python   # data → split → (missing) weights → all reports
+```
+
+See [`week4/README.md`](week4/README.md) for weights download, the review
+workflow, links to every Week 4 report, and the [model card](week4/MODEL_CARD.md).
 
 Streamlit normally opens the app automatically. Otherwise visit
 <http://localhost:8501>. Stop the server with `Ctrl+C` before switching
@@ -82,22 +94,14 @@ CC0 sample X-rays, or a reviewer can upload a JPG, PNG, or TIFF image in the
 app. No millimetre calibration is required because PBL is calculated as a
 ratio.
 
-### Run Week 4
-
-```bash
-python -m pip install -r week4/requirements.txt -r week4/requirements-model.txt
-python -m streamlit run week4/app.py
-make reproduce PYTHON=python   # data → split → (missing) weights → all reports
-```
-
-See [`week4/README.md`](week4/README.md) for weights download, the review
-workflow, and links to every Week 4 report and the [model card](week4/MODEL_CARD.md).
-
 ## Repository history
 
-- `main`: the base branch for the weekly work;
-- `week2`: the Week 2 development branch; and
-- `week1` tag: the original Week 1 submission snapshot.
+- `main`: the current combined submission;
+- `week1` tag: the original Week 1 submission snapshot;
+- `week2`, `week3`, and `week4`: the development branches retained for the
+  weekly history; and
+- `week4-weights` release: the ten Week 4 model checkpoints and checksum
+  manifest.
 
 I developed this project as an educational measurement tool. The measurements
 and tests do not establish clinical diagnostic accuracy.

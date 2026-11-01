@@ -1,9 +1,9 @@
-# Week 4: landmark detection with rejection, not blind automation
+# Week 4: Landmark Detection with Rejection, Not Blind Automation
 
-A pretrained heatmap detector predicts five landmarks per tooth (mesial/distal
-CEJ, mesial/distal bone crest, apex) and feeds them to the Week 3
-`pbl_calculator.py`. It is compared with a classical baseline on DenPAR
-(1,657 teeth, CC BY 4.0) using radiograph-level 5-fold cross-validation and an
+For Week 4, I trained a heatmap detector to predict five landmarks per tooth
+(mesial/distal CEJ, mesial/distal bone crest, apex) and feed them to the Week 3
+`pbl_calculator.py`. I compared it with a classical baseline on DenPAR (1,657
+teeth, CC BY 4.0) using radiograph-level 5-fold cross-validation and an
 untouched external test set. My own Week 3 two-round readings are the human
 reference.
 
