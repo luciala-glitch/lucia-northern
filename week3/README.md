@@ -3,8 +3,8 @@
 For Week 3, I continued working on the PBL calculator and compared two readings
 of the same 15 teeth under Raw, HE and CLAHE. I included the 90 saved readings,
 figures and [report](reports/collected_study/WEEK3_COLLECTED_REPORT.md).
-The [submission page](reports/collected_study/SUBMISSION.md) has the repository
-and current pull request links.
+The [submission page](reports/collected_study/SUBMISSION.md) records the final
+repository location and merged pull request.
 
 ## 1. Install
 

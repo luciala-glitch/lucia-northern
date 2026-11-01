@@ -1,8 +1,9 @@
-# Periodontal Bone Loss Calculator
+# Week 1: Periodontal Bone Loss Calculator
 
-This small Python project calculates periodontal bone loss (PBL) from three 2D
-points on one side of a tooth: the CEJ (or crown margin), bone crest, and root
-tip. It uses Euclidean distance, so it also works for tilted teeth.
+For Week 1, I built a small Python project that calculates periodontal bone
+loss (PBL) from three 2D points on one side of a tooth: the CEJ (or crown
+margin), bone crest, and root tip. It uses Euclidean distance, so it also works
+for tilted teeth.
 
 The bone crest must be on the root side of the CEJ and must not project beyond
 the root tip. The calculator shows an error for either invalid arrangement.
@@ -26,13 +27,13 @@ PBL (%) = distance(CEJ, bone crest) / distance(CEJ, root tip) × 100
 Clone the project and enter its folder:
 
 ```bash
-git clone https://github.com/luciala-glitch/pbl-calculator.git
-cd pbl-calculator
+git clone https://github.com/luciala-glitch/lucia-northern.git
+cd lucia-northern
 code .
 ```
 
 If the `code` command is unavailable, open VS Code, choose **File → Open
-Folder…**, and select the cloned `pbl-calculator` folder.
+Folder…**, and select the cloned `lucia-northern` folder.
 
 ## Install
 
