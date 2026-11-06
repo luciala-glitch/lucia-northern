@@ -9,6 +9,7 @@ and reports can be reviewed from one GitHub link.
 | Week 2 | [`week2/`](week2/) | Places six landmarks on a real X-ray, reports mesial/distal PBL, stages from the worse surface, and records repeatability measurements. |
 | Week 3 | [`week3/`](week3/) | Typed long-axis projection, statistical agreement, sensitivity and contrast analysis, validated JSON/CSV exports. |
 | Week 4 | [`week4/`](week4/) | Pretrained heatmap landmark detector vs classical baseline on 1,657 DenPAR teeth (radiograph-level 5-fold CV + external test), uncertainty-based rejection, failure analysis, and an auto-detect → correct → export review App. |
+| Week 5 | [`week5/`](week5/) | Six-way re-training screen, Raw/CLAHE + TTA ensemble with an orientation self-check (dev MRE 15.4 → 14.0 px), calibrated stage probabilities and conformal PBL intervals, a stage-aware review rule, a noisy-reviewer correction study, 12 annotated clinical cases, and the review → correct → recalculate → compare → export App. |
 
 ## Quick start
 
@@ -71,6 +72,18 @@ make reproduce PYTHON=python   # data → split → (missing) weights → all re
 See [`week4/README.md`](week4/README.md) for weights download, the review
 workflow, links to every Week 4 report, and the [model card](week4/MODEL_CARD.md).
 
+### Run Week 5
+
+```bash
+python -m pip install -r week5/requirements.txt -r week4/requirements-model.txt
+make reproduce-week5 PYTHON=.venv/bin/python
+python -m streamlit run week5/app.py
+```
+
+See [`week5/README.md`](week5/README.md) for the paired Week 4 vs Week 5 results,
+uncertainty calibration, the 12 annotated clinical examples, the weights download,
+known limitations, and links to every Week 5 deliverable.
+
 Streamlit normally opens the app automatically. Otherwise visit
 <http://localhost:8501>. Stop the server with `Ctrl+C` before switching
 between versions.
@@ -98,7 +111,7 @@ ratio.
 
 - `main`: the current combined submission;
 - `week1` tag: the original Week 1 submission snapshot;
-- `week2`, `week3`, and `week4`: the development branches retained for the
+- `week2`, `week3`, and `week4`: earlier development branches retained for the
   weekly history; and
 - `week4-weights` release: the ten Week 4 model checkpoints and checksum
   manifest.

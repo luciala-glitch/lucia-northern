@@ -15,6 +15,7 @@ APP = Path(__file__).resolve().parents[1] / "app.py"
 def no_checkpoints(tmp_path, monkeypatch):
     # CI has no weights; the review flow must still work with the baseline.
     monkeypatch.setenv("PBL_WEIGHTS", str(tmp_path))
+    monkeypatch.setenv("PBL_REFINED_CALIBRATION", str(tmp_path / "no_calibration.json"))
     monkeypatch.setenv("PBL_CORRECTIONS", str(tmp_path / "corrections.json"))
     monkeypatch.setenv("PBL_PRACTICE", str(tmp_path / "practice.json"))
 
