@@ -22,3 +22,7 @@ week4/data/corrections.json
 week4/data/denpar_full/
 week4/weights/*.pt
 week4/data/practice.json
+
+# Week 5 re-trained checkpoints are published as a release, not committed
+week5/weights/*.pt
+week5/weights/screen/*.pt

@@ -1,0 +1,366 @@
+[
+  {
+    "case": 1,
+    "kind": "successful",
+    "why": "typical accepted Stage I (median error)",
+    "split": "external",
+    "tooth_id": 1389,
+    "image": "Testing/Images/167.jpg",
+    "truth_stage": "I",
+    "auto_stage": "I",
+    "truth_pbl": 7.6024954827520625,
+    "auto_pbl": 5.463952057004116,
+    "auto_ci95": [
+      0.42044780176535124,
+      20.20954434835402
+    ],
+    "stage_probabilities": {
+      "I": 0.9728506787330317,
+      "II": 0.027149321266968326,
+      "III/IV": 0.0
+    },
+    "flagged": false,
+    "review_reasons": [],
+    "stage_after_simulated_review": null,
+    "mean_landmark_error_px": 8.393171427670733,
+    "max_sigma_px": 27.393392770467013,
+    "multirooted": false,
+    "tilted": true,
+    "figure": "case_01_successful.png"
+  },
+  {
+    "case": 2,
+    "kind": "successful",
+    "why": "typical accepted Stage II (median error)",
+    "split": "external",
+    "tooth_id": 1475,
+    "image": "Testing/Images/545.jpg",
+    "truth_stage": "II",
+    "auto_stage": "II",
+    "truth_pbl": 20.92684913132268,
+    "auto_pbl": 22.434237846272392,
+    "auto_ci95": [
+      14.80959415304978,
+      32.66379495189418
+    ],
+    "stage_probabilities": {
+      "I": 0.004,
+      "II": 0.996,
+      "III/IV": 0.0
+    },
+    "flagged": false,
+    "review_reasons": [],
+    "stage_after_simulated_review": null,
+    "mean_landmark_error_px": 7.653744729623415,
+    "max_sigma_px": 12.195365081180194,
+    "multirooted": false,
+    "tilted": false,
+    "figure": "case_02_successful.png"
+  },
+  {
+    "case": 3,
+    "kind": "successful",
+    "why": "typical accepted Stage III/IV (median error)",
+    "split": "external",
+    "tooth_id": 1517,
+    "image": "Testing/Images/736.jpg",
+    "truth_stage": "III/IV",
+    "auto_stage": "III/IV",
+    "truth_pbl": 70.45195811545774,
+    "auto_pbl": 69.00705242314913,
+    "auto_ci95": [
+      52.90194736182616,
+      89.33503706756626
+    ],
+    "stage_probabilities": {
+      "I": 0.0,
+      "II": 0.0,
+      "III/IV": 1.0
+    },
+    "flagged": false,
+    "review_reasons": [],
+    "stage_after_simulated_review": null,
+    "mean_landmark_error_px": 14.474858298240255,
+    "max_sigma_px": 37.887311441921746,
+    "multirooted": false,
+    "tilted": false,
+    "figure": "case_03_successful.png"
+  },
+  {
+    "case": 4,
+    "kind": "successful",
+    "why": "typical accepted multi-rooted tooth",
+    "split": "external",
+    "tooth_id": 1481,
+    "image": "Testing/Images/567.jpg",
+    "truth_stage": "III/IV",
+    "auto_stage": "III/IV",
+    "truth_pbl": 84.41393514113554,
+    "auto_pbl": 78.18207248922516,
+    "auto_ci95": [
+      31.745929723108773,
+      100.0
+    ],
+    "stage_probabilities": {
+      "I": 0.0,
+      "II": 0.0,
+      "III/IV": 1.0
+    },
+    "flagged": false,
+    "review_reasons": [],
+    "stage_after_simulated_review": null,
+    "mean_landmark_error_px": 9.353673720010212,
+    "max_sigma_px": 57.7975009962809,
+    "multirooted": true,
+    "tilted": true,
+    "figure": "case_04_successful.png"
+  },
+  {
+    "case": 5,
+    "kind": "corrected",
+    "why": "flagged Stage III/IV undercall, resolved by review",
+    "split": "external",
+    "tooth_id": 1353,
+    "image": "Testing/Images/74.jpg",
+    "truth_stage": "III/IV",
+    "auto_stage": "II",
+    "truth_pbl": 42.081850589103645,
+    "auto_pbl": 18.774032268985824,
+    "auto_ci95": [
+      6.258493483350238,
+      67.91206590500198
+    ],
+    "stage_probabilities": {
+      "I": 0.1346153846153846,
+      "II": 0.6583710407239819,
+      "III/IV": 0.20701357466063347
+    },
+    "flagged": true,
+    "review_reasons": [
+      "P(auto stage) 0.66"
+    ],
+    "stage_after_simulated_review": "III/IV",
+    "mean_landmark_error_px": 38.06462731597042,
+    "max_sigma_px": 66.73204246150549,
+    "multirooted": true,
+    "tilted": true,
+    "figure": "case_05_corrected.png"
+  },
+  {
+    "case": 6,
+    "kind": "corrected",
+    "why": "flagged Stage III/IV undercall, resolved by review",
+    "split": "development_oof",
+    "tooth_id": 1311,
+    "image": "Validation/Images/1226.jpg",
+    "truth_stage": "III/IV",
+    "auto_stage": "I",
+    "truth_pbl": 92.1606609357702,
+    "auto_pbl": 10.230283097372151,
+    "auto_ci95": [
+      7.080573768211718,
+      100.0
+    ],
+    "stage_probabilities": {
+      "I": 0.10473815461346633,
+      "II": 0.3316708229426434,
+      "III/IV": 0.5635910224438903
+    },
+    "flagged": true,
+    "review_reasons": [
+      "orientation self-check reversed the apex",
+      "P(auto stage) 0.10"
+    ],
+    "stage_after_simulated_review": "III/IV",
+    "mean_landmark_error_px": 148.1030910744396,
+    "max_sigma_px": 154.86157995884133,
+    "multirooted": false,
+    "tilted": true,
+    "figure": "case_06_corrected.png"
+  },
+  {
+    "case": 7,
+    "kind": "corrected",
+    "why": "flagged boundary stage error, resolved by review",
+    "split": "external",
+    "tooth_id": 1561,
+    "image": "Testing/Images/904.jpg",
+    "truth_stage": "II",
+    "auto_stage": "I",
+    "truth_pbl": 29.545510025450255,
+    "auto_pbl": 10.23323634655088,
+    "auto_ci95": [
+      3.3983868323318775,
+      100.0
+    ],
+    "stage_probabilities": {
+      "I": 0.20437956204379562,
+      "II": 0.43795620437956206,
+      "III/IV": 0.35766423357664234
+    },
+    "flagged": true,
+    "review_reasons": [
+      "P(auto stage) 0.20"
+    ],
+    "stage_after_simulated_review": "II",
+    "mean_landmark_error_px": 27.012215664930732,
+    "max_sigma_px": 66.53613983959325,
+    "multirooted": false,
+    "tilted": true,
+    "figure": "case_07_corrected.png"
+  },
+  {
+    "case": 8,
+    "kind": "corrected",
+    "why": "flagged overcall, resolved by review",
+    "split": "external",
+    "tooth_id": 1567,
+    "image": "Testing/Images/915.jpg",
+    "truth_stage": "II",
+    "auto_stage": "III/IV",
+    "truth_pbl": 20.052785286223052,
+    "auto_pbl": 37.42617345751605,
+    "auto_ci95": [
+      6.734763203650612,
+      100.0
+    ],
+    "stage_probabilities": {
+      "I": 0.015424164524421594,
+      "II": 0.1953727506426735,
+      "III/IV": 0.7892030848329049
+    },
+    "flagged": true,
+    "review_reasons": [
+      "P(auto stage) 0.79"
+    ],
+    "stage_after_simulated_review": "II",
+    "mean_landmark_error_px": 28.709123728260643,
+    "max_sigma_px": 85.26232692440885,
+    "multirooted": false,
+    "tilted": true,
+    "figure": "case_08_corrected.png"
+  },
+  {
+    "case": 9,
+    "kind": "challenging",
+    "why": "wrong stage NOT flagged (accepted error)",
+    "split": "external",
+    "tooth_id": 1359,
+    "image": "Testing/Images/100.jpg",
+    "truth_stage": "I",
+    "auto_stage": "III/IV",
+    "truth_pbl": 13.599204422508057,
+    "auto_pbl": 43.50266519522793,
+    "auto_ci95": [
+      31.20815681417499,
+      55.4937265876057
+    ],
+    "stage_probabilities": {
+      "I": 0.0,
+      "II": 0.005733944954128441,
+      "III/IV": 0.9942660550458715
+    },
+    "flagged": false,
+    "review_reasons": [],
+    "stage_after_simulated_review": null,
+    "mean_landmark_error_px": 35.74410272498833,
+    "max_sigma_px": 40.509294439988125,
+    "multirooted": false,
+    "tilted": true,
+    "figure": "case_09_challenging.png"
+  },
+  {
+    "case": 10,
+    "kind": "challenging",
+    "why": "orientation self-check reversed the apex (typical case)",
+    "split": "development_oof",
+    "tooth_id": 542,
+    "image": "Training/Images/733.jpg",
+    "truth_stage": "I",
+    "auto_stage": "I",
+    "truth_pbl": 4.860150973619853,
+    "auto_pbl": 7.133848363278091,
+    "auto_ci95": [
+      1.9125576457460394,
+      15.872727287536556
+    ],
+    "stage_probabilities": {
+      "I": 0.997907949790795,
+      "II": 0.0020920502092050207,
+      "III/IV": 0.0
+    },
+    "flagged": true,
+    "review_reasons": [
+      "orientation self-check reversed the apex"
+    ],
+    "stage_after_simulated_review": "I",
+    "mean_landmark_error_px": 12.112242012647577,
+    "max_sigma_px": 9.50730479449701,
+    "multirooted": false,
+    "tilted": false,
+    "figure": "case_10_challenging.png"
+  },
+  {
+    "case": 11,
+    "kind": "challenging",
+    "why": "high confidence, large landmark error",
+    "split": "external",
+    "tooth_id": 1400,
+    "image": "Testing/Images/233.jpg",
+    "truth_stage": "I",
+    "auto_stage": "I",
+    "truth_pbl": 14.84343774173893,
+    "auto_pbl": 12.226840558626472,
+    "auto_ci95": [
+      3.299117104252794,
+      21.680179775655454
+    ],
+    "stage_probabilities": {
+      "I": 0.8148148148148148,
+      "II": 0.18518518518518517,
+      "III/IV": 0.0
+    },
+    "flagged": true,
+    "review_reasons": [
+      "P(auto stage) 0.81"
+    ],
+    "stage_after_simulated_review": "II",
+    "mean_landmark_error_px": 75.90536043426833,
+    "max_sigma_px": 16.07818164415281,
+    "multirooted": false,
+    "tilted": false,
+    "figure": "case_11_challenging.png"
+  },
+  {
+    "case": 12,
+    "kind": "challenging",
+    "why": "largest external landmark error",
+    "split": "external",
+    "tooth_id": 1566,
+    "image": "Testing/Images/915.jpg",
+    "truth_stage": "III/IV",
+    "auto_stage": "III/IV",
+    "truth_pbl": 89.51701688517801,
+    "auto_pbl": 97.31584025589983,
+    "auto_ci95": [
+      0.0,
+      97.31584025589983
+    ],
+    "stage_probabilities": {
+      "I": 0.013953488372093023,
+      "II": 0.09069767441860466,
+      "III/IV": 0.8953488372093024
+    },
+    "flagged": true,
+    "review_reasons": [
+      "orientation self-check reversed the apex",
+      "P(auto stage) 0.90"
+    ],
+    "stage_after_simulated_review": "III/IV",
+    "mean_landmark_error_px": 86.73376113784843,
+    "max_sigma_px": 121.12763378630612,
+    "multirooted": false,
+    "tilted": true,
+    "figure": "case_12_challenging.png"
+  }
+]
