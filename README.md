@@ -9,7 +9,7 @@ and reports can be reviewed from one GitHub link.
 | Week 2 | [`week2/`](week2/) | Places six landmarks on a real X-ray, reports mesial/distal PBL, stages from the worse surface, and records repeatability measurements. |
 | Week 3 | [`week3/`](week3/) | Typed long-axis projection, statistical agreement, sensitivity and contrast analysis, validated JSON/CSV exports. |
 | Week 4 | [`week4/`](week4/) | Pretrained heatmap landmark detector vs classical baseline on 1,657 DenPAR teeth (radiograph-level 5-fold CV + external test), uncertainty-based rejection, failure analysis, and an auto-detect → correct → export review App. |
-| Week 5 | [`week5/`](week5/) | Six-way re-training screen, Raw/CLAHE + TTA ensemble with an orientation self-check (dev MRE 15.4 → 14.0 px), calibrated stage probabilities and conformal PBL intervals, a stage-aware review rule, a noisy-reviewer correction study, 12 annotated clinical cases, and the review → correct → recalculate → compare → export App. |
+| Week 5 | [`week5/`](week5/) | Refines the Week 4 model, checks its uncertainty, improves the review rule, and adds 12 annotated clinical examples. |
 
 ## Quick start
 
@@ -80,9 +80,9 @@ make reproduce-week5 PYTHON=.venv/bin/python
 python -m streamlit run week5/app.py
 ```
 
-See [`week5/README.md`](week5/README.md) for the paired Week 4 vs Week 5 results,
-uncertainty calibration, the 12 annotated clinical examples, the weights download,
-known limitations, and links to every Week 5 deliverable.
+See [`week5/README.md`](week5/README.md) for the Week 4 vs Week 5 comparison,
+uncertainty results, annotated examples, model weights, limitations, and links
+to the Week 5 reports.
 
 Streamlit normally opens the app automatically. Otherwise visit
 <http://localhost:8501>. Stop the server with `Ctrl+C` before switching

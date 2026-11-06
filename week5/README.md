@@ -1,10 +1,11 @@
-# Week 5: a system that knows when it is unsure
+# Week 5: Model Refinement and Clinical Review
 
-Week 5 refines the Week 4 five-landmark PBL pipeline and validates it. It keeps the same radiograph-level
-split; every parameter is fitted on development out-of-fold predictions, and the 327-tooth external test is
-used once, for the final numbers. The goal is not a model that claims to be right every time. It is a
-system that improves measurably, says how sure it is, sends the right teeth to a clinician, and lets
-the clinician correct it without losing the original.
+For Week 5, I refined the five-landmark model from Week 4 and tested where it
+still fails. I kept the same radiograph-level split. I fitted all settings on
+development out-of-fold predictions and used the 327-tooth external set only
+for the final evaluation. I also improved the review workflow so a clinician
+can see the uncertainty, correct the landmarks, and keep both the original and
+corrected results.
 
 ## Headline (external test, 327 teeth, paired against Week 4)
 
@@ -22,13 +23,15 @@ the clinician correct it without losing the original.
 ¹ Over all landmarks of all teeth the external MRE is 13.45 → 13.02 px (per-landmark table in the
 [model comparison](reports/MODEL_COMPARISON.md)). The paired test uses only teeth that both models measured validly.
 
-On development data the improvement is clear and significant, including with screening fold 1 excluded.
-On the smaller external test the direction is the same, but the MRE interval just touches zero, and the
-stage accuracy is unchanged. The uncertainty is now honest: the intervals cover what they claim, and the
-stage probabilities are calibrated (ECE 0.04). The review rule refers about twice as many teeth as Week 4.
-On held-out data it meets its accuracy target but narrowly misses its severe-miss target (2/315 = 0.63%
-against 0.5%). At equal review burden it is no better than Week 4's rule. Full
-evidence: [model comparison](reports/MODEL_COMPARISON.md), [uncertainty](reports/UNCERTAINTY_ANALYSIS.md).
+The Week 5 model improved clearly on development data. The external result also
+moved in the right direction, but the change was not statistically significant
+and stage accuracy did not improve. The new intervals had 97.9% coverage on the
+external set, close to the intended 95%. The review rule accepted fewer teeth
+than Week 4, but the accepted results were more accurate. It met the accuracy
+target on held-out data and narrowly missed the severe-miss target: 2/315
+(0.63%) instead of 0.5%. The full results are in the
+[model comparison](reports/MODEL_COMPARISON.md) and
+[uncertainty report](reports/UNCERTAINTY_ANALYSIS.md).
 
 ## Deliverables
 
@@ -42,9 +45,10 @@ evidence: [model comparison](reports/MODEL_COMPARISON.md), [uncertainty](reports
 | Expanded tests, CI and reproducibility | [reports/TESTING.md](reports/TESTING.md) |
 | Machine-readable results | [`metrics.json`](reports/metrics.json), [`refined_predictions.json`](reports/refined_predictions.json), [`results/`](reports/results/) |
 
-## What changed and why
+## What I changed
 
-Every step was fitted on development data only and **kept only if cross-fitted development MRE fell**:
+I tested each change on development data and kept it only when the cross-fitted
+development MRE decreased.
 
 | Step | Dev MRE px | Addresses |
 |---|---:|---|
@@ -54,22 +58,24 @@ Every step was fitted on development data only and **kept only if cross-fitted d
 | + **orientation self-check** (run both apex directions; switch and flag) | 14.23 | gross failures from wrong apex direction, Week 4's worst cases |
 | + re-trained `strong_aug` weights (rotation ±25°, scale ±15%, gamma/blur/noise) | **13.99** | tilted and poor-quality films |
 
-`strong_aug` won a six-way screen on development fold 1: learning rate 1e-3 and 2.5e-4, coordinate-loss
-weight 0.1, sharper heatmap targets, stronger augmentation, and a same-seed rerun of Week 4 to measure GPU
-noise (0.44 px). The lower learning rate and the sharper targets were significantly worse.
+I screened six settings on development fold 1. These included two learning
+rates, a coordinate-loss term, sharper heatmaps, stronger augmentation, and a
+same-seed Week 4 rerun to estimate GPU variation. Stronger augmentation gave
+the best result. The lower learning rate and sharper heatmaps were worse.
 
-On top of the detector:
-- **Calibrated uncertainty.** Landmark σ is rescaled per landmark to an empirical 95% radius. Monte Carlo
-  stage probabilities come from 1,000 draws. The reported PBL interval gets a split-conformal stretch
-  (×1.54) so that its 95% means 95%.
-- **Stage-aware review rule.** Flag when P(auto stage) < 0.94, when the orientation self-check fired, or when
-  no valid measurement exists. The threshold was fitted on development to keep auto-accepted stage
-  accuracy ≥ 95% and unflagged Stage III/IV misses ≤ 0.5% of III/IV teeth. Both targets hold on the data
-  it was fitted to. On held-out folds, accuracy is 95.1% (met) but misses are 2/315 = 0.63% (not met);
-  on the external test they are 98.8% (met) and 1/84 = 1.2% (not met). See the
-  [uncertainty report](reports/UNCERTAINTY_ANALYSIS.md#revised-review-rule).
-- **App.** Stage probabilities, an AI-vs-corrected comparison table, a boundary-case warning, and schema
-  validation of every export.
+I also made three changes after prediction:
+
+- **Uncertainty calibration:** I rescaled the landmark uncertainty and used
+  1,000 Monte Carlo draws for the stage probabilities. I also calibrated the
+  PBL interval against held-out development predictions.
+- **Review rule:** The app flags a result when the automatic stage probability
+  is below 0.94, the orientation check changes the direction, or no valid
+  measurement is available. On held-out folds, accepted-stage accuracy was
+  95.1%, while the severe-miss rate was 0.63%. On the external set, these were
+  98.8% and 1.2%. The accuracy target was met, but the 0.5% severe-miss target
+  was not. See the [uncertainty report](reports/UNCERTAINTY_ANALYSIS.md#revised-review-rule).
+- **Review app:** I added stage probabilities, a comparison of automatic and
+  corrected results, a warning near stage boundaries, and export validation.
 
 ## Setup
 
@@ -80,7 +86,7 @@ python -m pip install -r week4/requirements-model.txt  # + PyTorch, for live inf
 python -m week4.download && python -m week4.denpar     # DenPAR images (141 MB) for figures and examples
 ```
 
-**Weights.** The refined system loads ten re-trained checkpoints, about 56 MB each and 560 MB in total:
+**Weights.** The refined model uses ten checkpoints, about 53 MB each:
 `week5/weights/strong_aug_{raw,clahe}_fold_{1..5}.pt`, except fold-1 Raw, which lives in
 `week5/weights/screen/`. They are too large for git. Either:
 
@@ -89,17 +95,19 @@ python -m week4.download && python -m week4.denpar     # DenPAR images (141 MB) 
 - re-train them with `./week5/screen.sh` and `CONFIG=strong_aug ./week5/train_all.sh` (about 3 h on an M4).
   Re-training on other hardware is not bit-identical.
 
-`python -m week5.reproduce --from-weights` checks every checkpoint against `week5/weights/MANIFEST.json`
-and against the split hash stored inside it. It stops if a checkpoint is missing, differs, or has no
-manifest entry.
+`python -m week5.reproduce --from-weights` checks every checkpoint against
+`week5/weights/MANIFEST.json` and the saved split hash. It stops if a file is
+missing or does not match.
 
-**What runs without the weights.** The reports, figures, examples and all tests need only the saved
-per-tooth predictions in `reports/results/`, which are in git. Live inference needs the weights: the App's
-refined detector and `--from-weights`. Without them, the App falls back to the Week 4 detector, if its weights are present, and to the classical baseline.
+**Without the weights.** The reports, figures, examples, and tests use the
+saved predictions in `reports/results/`. Live Week 5 inference needs the model
+weights. If they are missing, the app can use the Week 4 detector or the
+classical baseline.
 
-The training logs for all 15 runs are committed in `week5/weights/logs/`: the six fold-1 screen runs and the
-nine further `strong_aug` folds, each with per-epoch loss and run time. Inference writes no log. Its record is the
-per-tooth prediction files in `reports/results/`.
+The 15 training logs are in `week5/weights/logs/`: six screening runs and nine
+additional `strong_aug` runs. Each log includes the loss for every epoch and
+the run time. Inference does not print a log; its outputs are the per-tooth
+prediction files in `reports/results/`.
 
 ## Reproduce
 
@@ -125,8 +133,8 @@ python -m week5.reproduce
 python -m streamlit run week5/app.py
 ```
 
-Choose **Week 5 refined Raw + CLAHE ensemble** in the sidebar (the default whenever its checkpoints and
-`calibration.json` are present). Then:
+Choose **Week 5 refined Raw + CLAHE ensemble** in the sidebar. It is the default
+when the checkpoints and `calibration.json` are available.
 
 1. **Upload** a radiograph (JPG/PNG/TIFF) or pick a DenPAR image, and draw or click the tooth box. Check
    the orientation preview: crown up, mesial left.
@@ -144,8 +152,8 @@ Choose **Week 5 refined Raw + CLAHE ensemble** in the sidebar (the default whene
    [`review_bundle.schema.json`](review_bundle.schema.json) and the Week 4 measurement schema before
    it can be saved or exported.
 
-The App is a research prototype, not a diagnostic device. The Week 4 reader-role separation still applies:
-practice reads by non-specialists never mix with qualified-reviewer data.
+The app is a research prototype, not a diagnostic device. As in Week 4,
+practice readings are kept separate from qualified-reviewer data.
 
 ## Known limitations
 
