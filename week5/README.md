@@ -97,7 +97,9 @@ manifest entry.
 per-tooth predictions in `reports/results/`, which are in git. Live inference needs the weights: the App's
 refined detector and `--from-weights`. Without them, the App falls back to the Week 4 detector, if its weights are present, and to the classical baseline.
 
-The training and inference logs for every run are committed in `week5/weights/logs/` (per-epoch loss and run time).
+The training logs for all 15 runs are committed in `week5/weights/logs/`: the six fold-1 screen runs and the
+nine further `strong_aug` folds, each with per-epoch loss and run time. Inference writes no log. Its record is the
+per-tooth prediction files in `reports/results/`.
 
 ## Reproduce
 
