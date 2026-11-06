@@ -92,3 +92,35 @@ def test_reproduce_refuses_to_run_without_prerequisites(monkeypatch, tmp_path):
     monkeypatch.setattr(reproduce, "REQUIRED_INPUTS", (tmp_path / "absent.json",))
     with pytest.raises(SystemExit, match="absent.json"):
         reproduce.main(["--skip-tests"])
+
+
+def test_weight_check_refuses_a_manifest_that_omits_a_checkpoint(monkeypatch, tmp_path):
+    calibration = load("calibration.json")
+    manifest = dict(json.loads(reproduce.MANIFEST.read_text()))
+    dropped = calibration["model"]["clahe_checkpoints"][0]
+    del manifest[dropped]
+    (tmp_path / "reports").mkdir()
+    (tmp_path / "reports" / "calibration.json").write_text(json.dumps(calibration))
+    (tmp_path / "MANIFEST.json").write_text(json.dumps(manifest))
+    monkeypatch.setattr(reproduce, "REPORTS", tmp_path / "reports")
+    monkeypatch.setattr(reproduce, "MANIFEST", tmp_path / "MANIFEST.json")
+    with pytest.raises(SystemExit, match="no digest for " + re.escape(dropped)):
+        reproduce.check_weights()
+
+
+def test_review_rule_report_separates_in_sample_from_held_out_targets():
+    from week5.report import uncertainty_report
+
+    metrics = load("metrics.json")
+    text = uncertainty_report(metrics)
+    assert "≥ **none**" not in text
+    assert ("P(Stage III/IV) ≥" in text) == (metrics["uncertainty"]["policy"]["severe_guard"] is not None)
+    assert "targets met:" not in text
+    assert "held-out folds (cross-fitted)" in text
+    held_out = metrics["uncertainty"]["policy"]["target_check"]["development_cross_fitted"]
+    if not held_out["accepted_severe_miss_rate_met"]:
+        assert "**not met**" in text
+
+    policy = dict(metrics["uncertainty"]["policy"], severe_guard=0.05)
+    guarded = uncertainty_report({**metrics, "uncertainty": {**metrics["uncertainty"], "policy": policy}})
+    assert "P(Stage III/IV) ≥ **5%**" in guarded

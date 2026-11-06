@@ -57,16 +57,20 @@ def sha256(path: Path) -> str:
 
 def check_weights() -> None:
     """Every checkpoint the calibration names must match the manifest and the split."""
-    import torch
-
     calibration = json.loads((REPORTS / "calibration.json").read_text())
     expected = json.loads(MANIFEST.read_text())
     split_hash = json.loads(SPLIT.read_text())["dataset_sha256"]
-    for relative in calibration["model"]["raw_checkpoints"] + calibration["model"]["clahe_checkpoints"]:
+    names = calibration["model"]["raw_checkpoints"] + calibration["model"]["clahe_checkpoints"]
+    unlisted = [name for name in names if name not in expected]
+    if unlisted:
+        raise SystemExit(f"week5/weights/MANIFEST.json has no digest for {', '.join(unlisted)}")
+    import torch
+
+    for relative in names:
         path = ROOT / relative
         if not path.is_file():
             raise SystemExit(f"Missing checkpoint {relative}; see week5/README.md for the download")
-        if relative in expected and expected[relative] != sha256(path):
+        if expected[relative] != sha256(path):
             raise SystemExit(f"{relative} does not match week5/weights/MANIFEST.json")
         saved = torch.load(path, map_location="cpu", weights_only=True)
         if saved.get("split_sha256") != split_hash:

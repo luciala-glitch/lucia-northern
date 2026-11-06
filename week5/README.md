@@ -10,7 +10,7 @@ the clinician correct it without losing the original.
 
 | Metric | Week 4 | Week 5 | Paired Δ [95% CI] |
 |---|---:|---:|---|
-| MRE (px), external | 13.33 | **12.95** | −0.38 [−0.79, +0.01], not significant |
+| MRE (px), external, teeth valid under both models¹ | 13.33 | **12.95** | −0.38 [−0.79, +0.01], not significant |
 | MRE (px), development OOF (1,330 teeth) | 14.31 | **13.11** | **−1.20 [−1.62, −0.84]**, significant |
 | ICC(2,1) PBL% / weighted κ, external | 0.939 / 0.886 | **0.948 / 0.892** | CIs include 0 |
 | Weighted κ / stage accuracy, development | 0.852 / 83.2% | **0.873 / 85.5%** | both significant |
@@ -19,11 +19,15 @@ the clinician correct it without losing the original.
 | AUROC for detecting a wrong stage, dev | 0.60 (max σ) | **0.80** (1 − P(stage)); external 0.83 | |
 | Stage accuracy among auto-accepted teeth, external | 94.3% at 25% review | **98.8% at 51% review** | safer, not cheaper |
 
+¹ Over all landmarks of all teeth the external MRE is 13.45 → 13.02 px (per-landmark table in the
+[model comparison](reports/MODEL_COMPARISON.md)). The paired test uses only teeth that both models measured validly.
+
 On development data the improvement is clear and significant, including with screening fold 1 excluded.
 On the smaller external test the direction is the same, but the MRE interval just touches zero, and the
 stage accuracy is unchanged. The uncertainty is now honest: the intervals cover what they claim, and the
-stage probabilities are calibrated (ECE 0.04). The review rule meets its clinical targets by referring
-about twice as many teeth as Week 4; at equal review burden it is no better than Week 4's rule. Full
+stage probabilities are calibrated (ECE 0.04). The review rule refers about twice as many teeth as Week 4.
+On held-out data it meets its accuracy target but narrowly misses its severe-miss target (2/315 = 0.63%
+against 0.5%). At equal review burden it is no better than Week 4's rule. Full
 evidence: [model comparison](reports/MODEL_COMPARISON.md), [uncertainty](reports/UNCERTAINTY_ANALYSIS.md).
 
 ## Deliverables
@@ -60,7 +64,10 @@ On top of the detector:
   (×1.54) so that its 95% means 95%.
 - **Stage-aware review rule.** Flag when P(auto stage) < 0.94, when the orientation self-check fired, or when
   no valid measurement exists. The threshold was fitted on development to keep auto-accepted stage
-  accuracy ≥ 95% and unflagged Stage III/IV misses ≤ 0.5% of III/IV teeth.
+  accuracy ≥ 95% and unflagged Stage III/IV misses ≤ 0.5% of III/IV teeth. Both targets hold on the data
+  it was fitted to. On held-out folds, accuracy is 95.1% (met) but misses are 2/315 = 0.63% (not met);
+  on the external test they are 98.8% (met) and 1/84 = 1.2% (not met). See the
+  [uncertainty report](reports/UNCERTAINTY_ANALYSIS.md#revised-review-rule).
 - **App.** Stage probabilities, an AI-vs-corrected comparison table, a boundary-case warning, and schema
   validation of every export.
 
@@ -73,12 +80,24 @@ python -m pip install -r week4/requirements-model.txt  # + PyTorch, for live inf
 python -m week4.download && python -m week4.denpar     # DenPAR images (141 MB) for figures and examples
 ```
 
-**Weights.** The refined system loads the ten re-trained checkpoints `week5/weights/strong_aug_{raw,clahe}_fold_{1..5}.pt`
-(fold-1 Raw lives in `week5/weights/screen/`). They are not stored in git. Download them from the
-`week5-weights` release, or re-train with `./week5/screen.sh` and `CONFIG=strong_aug ./week5/train_all.sh`
-(about 3 h on an M4). `python -m week5.reproduce --from-weights` checks them against
-`week5/weights/MANIFEST.json` and the split hash stored in each checkpoint. The reports themselves only need
-the saved per-tooth predictions in `reports/results/`.
+**Weights.** The refined system loads ten re-trained checkpoints, about 56 MB each and 560 MB in total:
+`week5/weights/strong_aug_{raw,clahe}_fold_{1..5}.pt`, except fold-1 Raw, which lives in
+`week5/weights/screen/`. They are too large for git. Either:
+
+- download them from the [`week5-weights` release](https://github.com/luciala-glitch/lucia-northern/releases/tag/week5-weights),
+  putting `strong_aug_raw_fold_1.pt` in `week5/weights/screen/` and the other nine in `week5/weights/`; or
+- re-train them with `./week5/screen.sh` and `CONFIG=strong_aug ./week5/train_all.sh` (about 3 h on an M4).
+  Re-training on other hardware is not bit-identical.
+
+`python -m week5.reproduce --from-weights` checks every checkpoint against `week5/weights/MANIFEST.json`
+and against the split hash stored inside it. It stops if a checkpoint is missing, differs, or has no
+manifest entry.
+
+**What runs without the weights.** The reports, figures, examples and all tests need only the saved
+per-tooth predictions in `reports/results/`, which are in git. Live inference needs the weights: the App's
+refined detector and `--from-weights`. Without them, the App falls back to the Week 4 detector, if its weights are present, and to the classical baseline.
+
+The training and inference logs for every run are committed in `week5/weights/logs/` (per-epoch loss and run time).
 
 ## Reproduce
 
@@ -134,7 +153,11 @@ practice reads by non-specialists never mix with qualified-reviewer data.
   touches zero, and external stage accuracy did not improve. The external set (327 teeth, 180 images) is
   too small to confirm a gain of this size.
 - **More review.** The review rule refers about half of all teeth. That is the price of ≥ 95% accepted accuracy and
-  near-zero unflagged severe misses. It is not more efficient than Week 4's rule at equal burden.
+  few unflagged severe misses. It is not more efficient than Week 4's rule at equal burden.
+- **The severe-miss target is not met on held-out data.** It was ≤ 0.5% of Stage III/IV teeth. Held-out
+  development gives 0.63% (2/315) and external gives 1.2% (1/84). With so few events, one tooth moves the
+  rate by 0.3 pp on development and 1.2 pp on the external test, so the target is a fitting criterion, not
+  a guarantee.
 - **Confident failures remain.** Some teeth are confidently wrong (see the uncertainty report), so every
   automatic result is still shown to the clinician.
 - **Orientation self-check.** It switched 84 development teeth, 70 of them truly mis-oriented; 14 were false

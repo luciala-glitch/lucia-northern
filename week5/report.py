@@ -317,7 +317,41 @@ def uncertainty_report(m: Mapping[str, Any]) -> str:
     folds = u["policy_cross_fitted_folds"]
     pi = u["pbl_interval"]
     hc_dev, hc_ext = dev["high_confidence_failures"], ext["high_confidence_failures"]
-    guard = "none" if policy["severe_guard"] is None else pct(policy["severe_guard"], 0)
+    criteria = [f"the Monte Carlo probability of the automatic stage is below **{pct(policy['min_stage_probability'], 0)}**"]
+    if policy["severe_guard"] is not None:
+        criteria.append(f"the automatic stage is I or II and P(Stage III/IV) ≥ **{pct(policy['severe_guard'], 0)}**: a possible missed severe case")
+    criteria += ["the orientation self-check reversed the apex direction", "no valid automatic measurement or interval could be produced"]
+    rule_list = "\n".join(f"{i}. {c}{'; or' if i == len(criteria) - 1 else '.' if i == len(criteria) else ';'}"
+                           for i, c in enumerate(criteria, 1))
+    targets = policy["targets"]
+    accuracy_target, miss_target = pct(targets["accepted_stage_accuracy"], 0), pct(targets["accepted_severe_misses_per_severe"], 1)
+    check_rows = []
+    for label, key, point_set in (("Development, fitted on all folds (in-sample)", None, None),
+                                  ("Development, held-out folds (cross-fitted)", "development_cross_fitted", "development"),
+                                  ("External test", "external", "external")):
+        if key is None:
+            met = "yes" if policy["targets_met_in_sample"] else "no"
+            check_rows.append([label, met, met])
+            continue
+        c, point = policy["target_check"][key], u["operating_points"][point_set]["Week 5 policy"]
+        check_rows.append([
+            label,
+            f"{pct(c['accepted_stage_accuracy'])} — {'met' if c['accepted_stage_accuracy_met'] else '**not met**'}",
+            f"{point['accepted_severe_misses']}/{point['severe_n']} = {pct(c['accepted_severe_miss_rate'], 2)} — "
+            f"{'met' if c['accepted_severe_miss_rate_met'] else '**not met**'}",
+        ])
+    held_out = policy["target_check"]["development_cross_fitted"]
+    all_met = all(policy["target_check"][k][f] for k in ("development_cross_fitted", "external")
+                  for f in ("accepted_stage_accuracy_met", "accepted_severe_miss_rate_met"))
+    target_verdict = (
+        "Both targets also hold on held-out data." if all_met else
+        "The targets are met only on the data the thresholds were fitted to. On held-out data the accuracy "
+        "target " + ("holds" if held_out["accepted_stage_accuracy_met"] else "fails") + " but the severe-miss target "
+        + ("holds" if held_out["accepted_severe_miss_rate_met"] else f"does not: {miss_target} is a fitting target, not a guarantee")
+        + ". With only a handful of Stage III/IV misses at stake, one tooth more or less moves the rate by "
+        f"about {100 / u['operating_points']['development']['Week 5 policy']['severe_n']:.1f} pp on development and "
+        f"{100 / u['operating_points']['external']['Week 5 policy']['severe_n']:.1f} pp on the external test, so the held-out estimate is imprecise."
+    )
     w5 = u["operating_points"]["external"]["Week 5 policy"]
     same_dev = next(v for k, v in u["operating_points"]["development"].items() if k.startswith("Week 5 at Week 4's review burden"))
     shipped_dev = u["operating_points"]["development"]["Week 4 system as shipped (Week 4 Raw + k=0.45)"]
@@ -385,17 +419,20 @@ every automatic result is still shown to a clinician.
 
 Recommend clinician review when **any** of the following holds:
 
-1. the Monte Carlo probability of the automatic stage is below **{pct(policy['min_stage_probability'], 0)}**;
-2. the automatic stage is I or II and P(Stage III/IV) ≥ **{guard}**: a possible missed severe case;
-3. the orientation self-check reversed the apex direction; or
-4. no valid automatic measurement or interval could be produced.
+{rule_list}
 
 The thresholds are the lowest review burden on development data that keeps accepted-tooth stage accuracy
-≥ {pct(policy['targets']['accepted_stage_accuracy'], 0)} and accepted Stage III/IV misses ≤
-{pct(policy['targets']['accepted_severe_misses_per_severe'], 0)} of all III/IV teeth (targets met:
-{policy['targets_met_on_development']}). Refitting on each set of four folds gave thresholds
+≥ {accuracy_target} and accepted Stage III/IV misses ≤ {miss_target} of all III/IV teeth. Whether the
+targets are met depends on which data you check:
+
+{table(["Data", f"Accepted stage accuracy ≥ {accuracy_target}", f"Accepted III/IV misses ≤ {miss_target}"], check_rows)}
+
+{target_verdict}
+
+Refitting on each set of four folds gave thresholds
 {', '.join(pct(f['min_stage_probability'], 0) for f in folds)} with guards
-{', '.join('none' if f['severe_guard'] is None else pct(f['severe_guard'], 0) for f in folds)}, so the rule is stable.
+{', '.join('none' if f['severe_guard'] is None else pct(f['severe_guard'], 0) for f in folds)}. The threshold
+moves between folds, which is one reason the in-sample targets do not carry over exactly.
 Development numbers below use these held-out-fold rules.
 
 {table(["Rule", "Dev review", "Dev accepted acc.", "Dev accepted III/IV misses", "Ext review", "Ext accepted acc.", "Ext accepted III/IV misses", "Ext stage-error recall"], op_rows)}
@@ -407,8 +444,8 @@ stage accuracy among auto-accepted teeth, and leaves {w5['accepted_severe_misses
 Week 4 system as shipped referred {pct(shipped['review_rate'])}, with {pct(shipped['accepted_stage_accuracy'])} accepted accuracy
 and {shipped['accepted_severe_misses']} unflagged severe miss(es).
 
-**Trade-off, stated plainly.** The Week 5 rule is *safer*, not *cheaper*. It meets the clinical targets
-by referring roughly twice as many teeth. At Week 4's review burden, the Week 5 stage-probability rule
+**Trade-off, stated plainly.** The Week 5 rule is *safer*, not *cheaper*. It reaches its accuracy target,
+and comes close to its severe-miss target, by referring roughly twice as many teeth. At Week 4's review burden, the Week 5 stage-probability rule
 gives {pct(same_dev['accepted_stage_accuracy'])} accepted accuracy on development, against
 {pct(shipped_dev['accepted_stage_accuracy'])} for Week 4. That is no better at equal burden. The real gains in uncertainty are that
 the intervals and stage probabilities now mean what they say (coverage and calibration above), and that

@@ -1954,7 +1954,21 @@
       "min_stage_probability": 0.94,
       "severe_guard": null,
       "max_sigma_px": null,
-      "targets_met_on_development": true,
+      "targets_met_in_sample": true,
+      "target_check": {
+        "development_cross_fitted": {
+          "accepted_stage_accuracy": 0.9511173184357542,
+          "accepted_stage_accuracy_met": true,
+          "accepted_severe_miss_rate": 0.006349206349206349,
+          "accepted_severe_miss_rate_met": false
+        },
+        "external": {
+          "accepted_stage_accuracy": 0.9875776397515528,
+          "accepted_stage_accuracy_met": true,
+          "accepted_severe_miss_rate": 0.011904761904761904,
+          "accepted_severe_miss_rate_met": false
+        }
+      },
       "targets": {
         "accepted_stage_accuracy": 0.95,
         "accepted_severe_misses_per_severe": 0.005

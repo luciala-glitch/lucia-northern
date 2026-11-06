@@ -319,6 +319,18 @@ def operating_point(rows: Rows, flag: np.ndarray) -> dict[str, Any]:
     }
 
 
+def target_check(point: Mapping[str, Any], severe_target: float = SEVERE_MISS_TARGET) -> dict[str, Any]:
+    """Whether one operating point meets each clinical target, reported separately."""
+    accuracy = point["accepted_stage_accuracy"]
+    miss_rate = point["accepted_severe_misses"] / point["severe_n"] if point["severe_n"] else 0.0
+    return {
+        "accepted_stage_accuracy": accuracy,
+        "accepted_stage_accuracy_met": accuracy is not None and accuracy >= ACCEPTED_ACCURACY_TARGET,
+        "accepted_severe_miss_rate": miss_rate,
+        "accepted_severe_miss_rate_met": miss_rate <= severe_target,
+    }
+
+
 def fit_policy(rows: Rows, severe_target: float = SEVERE_MISS_TARGET) -> tuple[ReviewPolicy, bool]:
     """Smallest review rate meeting both clinical targets on the given (development) rows."""
     a = _policy_arrays(rows)
@@ -1037,7 +1049,9 @@ def main() -> None:
                 np.asarray([r["pred_stage"] != r["truth_stage"] for r in shipped_dev if r["valid"]]),
             ),
         },
-        "policy": {**policy.to_json(), "targets_met_on_development": feasible,
+        "policy": {**policy.to_json(), "targets_met_in_sample": feasible,
+                   "target_check": {"development_cross_fitted": target_check(points["development"]["Week 5 policy"]),
+                                    "external": target_check(points["external"]["Week 5 policy"])},
                    "targets": {"accepted_stage_accuracy": ACCEPTED_ACCURACY_TARGET, "accepted_severe_misses_per_severe": SEVERE_MISS_TARGET}},
         "policy_cross_fitted_folds": fold_policies,
         "pbl_interval": {

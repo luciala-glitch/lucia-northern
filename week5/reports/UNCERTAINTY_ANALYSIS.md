@@ -74,16 +74,25 @@ every automatic result is still shown to a clinician.
 Recommend clinician review when **any** of the following holds:
 
 1. the Monte Carlo probability of the automatic stage is below **94%**;
-2. the automatic stage is I or II and P(Stage III/IV) ≥ **none**: a possible missed severe case;
-3. the orientation self-check reversed the apex direction; or
-4. no valid automatic measurement or interval could be produced.
+2. the orientation self-check reversed the apex direction; or
+3. no valid automatic measurement or interval could be produced.
 
 The thresholds are the lowest review burden on development data that keeps accepted-tooth stage accuracy
-≥ 95% and accepted Stage III/IV misses ≤
-0% of all III/IV teeth (targets met:
-True). Refitting on each set of four folds gave thresholds
+≥ 95% and accepted Stage III/IV misses ≤ 0.5% of all III/IV teeth. Whether the
+targets are met depends on which data you check:
+
+| Data | Accepted stage accuracy ≥ 95% | Accepted III/IV misses ≤ 0.5% |
+|---|---:|---:|
+| Development, fitted on all folds (in-sample) | yes | yes |
+| Development, held-out folds (cross-fitted) | 95.1% — met | 2/315 = 0.63% — **not met** |
+| External test | 98.8% — met | 1/84 = 1.19% — **not met** |
+
+The targets are met only on the data the thresholds were fitted to. On held-out data the accuracy target holds but the severe-miss target does not: 0.5% is a fitting target, not a guarantee. With only a handful of Stage III/IV misses at stake, one tooth more or less moves the rate by about 0.3 pp on development and 1.2 pp on the external test, so the held-out estimate is imprecise.
+
+Refitting on each set of four folds gave thresholds
 94%, 87%, 94%, 84%, 94% with guards
-none, 5%, none, 2%, none, so the rule is stable.
+none, 5%, none, 2%, none. The threshold
+moves between folds, which is one reason the in-sample targets do not carry over exactly.
 Development numbers below use these held-out-fold rules.
 
 | Rule | Dev review | Dev accepted acc. | Dev accepted III/IV misses | Ext review | Ext accepted acc. | Ext accepted III/IV misses | Ext stage-error recall |
@@ -103,8 +112,8 @@ stage accuracy among auto-accepted teeth, and leaves 1 Stage III/IV miss(es) unf
 Week 4 system as shipped referred 25.1%, with 94.3% accepted accuracy
 and 1 unflagged severe miss(es).
 
-**Trade-off, stated plainly.** The Week 5 rule is *safer*, not *cheaper*. It meets the clinical targets
-by referring roughly twice as many teeth. At Week 4's review burden, the Week 5 stage-probability rule
+**Trade-off, stated plainly.** The Week 5 rule is *safer*, not *cheaper*. It reaches its accuracy target,
+and comes close to its severe-miss target, by referring roughly twice as many teeth. At Week 4's review burden, the Week 5 stage-probability rule
 gives 90.2% accepted accuracy on development, against
 90.4% for Week 4. That is no better at equal burden. The real gains in uncertainty are that
 the intervals and stage probabilities now mean what they say (coverage and calibration above), and that
