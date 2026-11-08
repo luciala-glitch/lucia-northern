@@ -21,7 +21,7 @@ def load(name: str):
 
 def test_all_required_reports_and_figures_exist_and_link_correctly():
     for name in (
-        "ERROR_ANALYSIS.md", "MODEL_COMPARISON.md", "UNCERTAINTY_ANALYSIS.md", "CLINICAL_VALIDATION.md", "TESTING.md",
+        "WEEK5_REPORT.md", "ERROR_ANALYSIS.md", "MODEL_COMPARISON.md", "UNCERTAINTY_ANALYSIS.md", "CLINICAL_VALIDATION.md", "TESTING.md",
         "confidence_vs_error.png", "risk_coverage.png", "model_comparison.png", "metrics.json", "calibration.json",
         "clinical_examples/overview.png",
     ):

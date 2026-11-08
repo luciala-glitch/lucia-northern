@@ -632,12 +632,138 @@ DenPAR reference, and the dashed circle is the calibrated 95% radius.
 """
 
 
+def week5_summary_report(m: Mapping[str, Any], manifest: Sequence[Mapping[str, Any]]) -> str:
+    """A shorter Week 5 report in the same style as the earlier weekly reports."""
+    comparison = m["paired_comparison_refined_minus_week4"]
+    dev = comparison["development_oof"]
+    ext = comparison["external"]
+    interval = m["uncertainty"]["pbl_interval"]
+    review = m["uncertainty"]["operating_points"]["external"]["Week 5 policy"]
+    correction = m["clinical"]["correction_simulation"]["external"]["policies"]["re-place all five"]
+    counts = {kind: sum(case["kind"] == kind for case in manifest) for kind in ("successful", "corrected", "challenging")}
+
+    ladder_rows = [
+        [step["label"], num(step["dev_mre_px"]), pct(step["dev_stage_accuracy"])]
+        for step in m["ladder"]
+    ]
+    result_rows = [
+        ["Development MRE", num(dev["mre_px"]["baseline"]), num(dev["mre_px"]["candidate"]), delta(dev["mre_px"], lower_is_better=True)],
+        ["Development SDR@10", pct(dev["sdr_10px"]["baseline"]), pct(dev["sdr_10px"]["candidate"]), delta(dev["sdr_10px"], percent=True, digits=1)],
+        ["Development stage accuracy", pct(dev["stage_accuracy"]["baseline"]), pct(dev["stage_accuracy"]["candidate"]), delta(dev["stage_accuracy"], percent=True, digits=1)],
+        ["External MRE", num(ext["mre_px"]["baseline"]), num(ext["mre_px"]["candidate"]), delta(ext["mre_px"], lower_is_better=True)],
+        ["External stage accuracy", pct(ext["stage_accuracy"]["baseline"]), pct(ext["stage_accuracy"]["candidate"]), delta(ext["stage_accuracy"], percent=True, digits=1)],
+    ]
+
+    return f"""# Week 5: Model Refinement and Clinical Review
+
+## Introduction
+
+For Week 5, I continued the automated landmark detector from Week 4. I focused on the cases where the
+model was still unreliable. The main problems were incorrect tooth orientation, bone-crest and CEJ errors
+along the tooth axis, and confidence estimates that were too narrow.
+
+I used the same radiograph-level split as Week 4. Model choices were made with development data only. The
+external test set contains 327 teeth and was used after the settings were fixed.
+
+## What I changed
+
+I screened different learning rates, augmentation settings, heatmap targets and coordinate losses on
+development fold 1. Stronger augmentation had the lowest error, so I trained that configuration on all five
+folds. I also tested a Raw and CLAHE image blend, multi-margin test-time augmentation and an orientation
+self-check. I kept a step only when development error decreased.
+
+{table(["Model step", "Development MRE (px)", "Development stage accuracy"], ladder_rows)}
+
+![Model comparison and refinement steps](model_comparison.png)
+
+The final pipeline uses stronger augmentation, a fixed 50/50 Raw and CLAHE blend, three crop margins at
+test time and the orientation self-check. The orientation check changed 84 development predictions. Of
+those, 70 had incorrect orientation metadata. The remaining 14 changes were false switches and were all
+sent for review.
+
+## Results
+
+The table below uses paired teeth that both Week 4 and Week 5 measured successfully. Confidence intervals
+come from a bootstrap that resamples complete radiographs instead of treating teeth from the same image as
+independent.
+
+{table(["Metric", "Week 4", "Week 5", "Change [95% CI]"], result_rows)}
+
+Development MRE improved by {abs(dev['mre_px']['delta']):.2f} px, and its confidence interval stayed below
+zero. SDR@10 and stage accuracy also improved on development data. On the external test, MRE decreased by
+{abs(ext['mre_px']['delta']):.2f} px, but the confidence interval included zero. External stage accuracy was
+almost unchanged. I therefore found a clear development improvement, but not a confirmed external
+improvement.
+
+## Uncertainty and review rule
+
+I recalibrated the landmark uncertainty and used 1,000 Monte Carlo samples to estimate PBL intervals and
+stage probabilities. The reported 95% PBL interval covered the reference in
+{pct(interval['coverage_calibrated_development'])} of development teeth and
+{pct(interval['coverage_calibrated_external'])} of external teeth.
+
+![Confidence, error and calibration](confidence_vs_error.png)
+
+The review rule flags a tooth when the automatic stage probability is below 94%, the orientation check
+changes the direction, or the measurement fails its geometry checks. On the external test it sent
+{pct(review['review_rate'])} of teeth for review. Accuracy among the accepted teeth was
+{pct(review['accepted_stage_accuracy'])}. One of {review['severe_n']} Stage III/IV teeth was still missed
+and accepted automatically. The rule improved safety, but it also increased the amount of manual review.
+
+![Accuracy at different review rates](risk_coverage.png)
+
+## Clinician correction and examples
+
+The app now keeps the automatic and corrected results as separate records. A reviewer can move any of the
+five landmarks and immediately recalculate PBL and stage. The export includes both results, the review
+reason, uncertainty, timing and landmark movement.
+
+I prepared {len(manifest)} examples: {counts['successful']} successful predictions,
+{counts['corrected']} corrected predictions and {counts['challenging']} challenging cases. In the simulated
+external review, replacing all five landmarks resolved about
+{pct(correction['flagged_errors_resolved']['mean'], 0)} of flagged stage errors. It also changed about
+{pct(correction['flagged_correct_broken']['mean'], 0)} of correctly staged flagged teeth to the wrong stage.
+This simulation shows why the next study needs real clinicians.
+
+![Twelve annotated clinical examples](clinical_examples/overview.png)
+
+## Limitations
+
+- The external MRE change was small and not statistically significant.
+- The review rule sent about half of the external teeth for manual review.
+- One severe external miss was not flagged.
+- The correction study used simulated reviewer noise from my Week 3 readings, not real clinicians.
+- DenPAR is one research dataset, so these results do not establish performance on other image sources or populations.
+- This project is a research prototype and is not a diagnostic device.
+
+## Reproduction
+
+The figures in this report are generated by Python from the saved per-tooth predictions:
+
+```bash
+python -m week5.reproduce
+```
+
+This command rebuilds the metrics, Markdown reports, plots and clinical examples, runs the Week 5 tests and
+checks the saved outputs. Re-running inference from the released weights is available with
+`python -m week5.reproduce --from-weights`.
+
+## Conclusion
+
+Week 5 reduced landmark error on development data and made the confidence intervals more honest. The
+external results moved in the same direction, but they did not show a statistically significant gain. The
+review workflow can identify most stage errors and preserve the original prediction, but it still requires
+substantial clinician review. My next step would be a reader study with real clinicians on new images.
+"""
+
+
 def write_reports(metrics: Mapping[str, Any], calibration: Mapping[str, Any], manifest: Sequence[Mapping[str, Any]]) -> None:
     w4 = json.loads(W4_METRICS.read_text())
     (REPORTS / "ERROR_ANALYSIS.md").write_text(error_analysis(metrics, w4))
     (REPORTS / "MODEL_COMPARISON.md").write_text(model_comparison(metrics))
     (REPORTS / "UNCERTAINTY_ANALYSIS.md").write_text(uncertainty_report(metrics))
     (REPORTS / "CLINICAL_VALIDATION.md").write_text(clinical_report(metrics, manifest))
+    (REPORTS / "WEEK5_REPORT.md").write_text(week5_summary_report(metrics, manifest))
 
 
 def main() -> None:

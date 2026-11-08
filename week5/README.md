@@ -37,6 +37,7 @@ target on held-out data and narrowly missed the severe-miss target: 2/315
 
 | Mentor checklist item | Where |
 |---|---|
+| Week 5 summary: methods, main improvements, figures, limitations and conclusion | [reports/WEEK5_REPORT.md](reports/WEEK5_REPORT.md) |
 | Error analysis: three main Week 4 weaknesses, worst five, landmark-level errors, planned fixes | [reports/ERROR_ANALYSIS.md](reports/ERROR_ANALYSIS.md) |
 | Refined model and configuration, compared with Week 4 on the same split (MRE per landmark, SDR@2/5/10, along/perpendicular, ICC(2,1), weighted κ) | [reports/MODEL_COMPARISON.md](reports/MODEL_COMPARISON.md), [`calibration.json`](reports/calibration.json) |
 | Uncertainty calibration: confidence-vs-error plot, Monte Carlo PBL intervals, revised rejection thresholds | [reports/UNCERTAINTY_ANALYSIS.md](reports/UNCERTAINTY_ANALYSIS.md) |
