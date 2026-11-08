@@ -188,6 +188,7 @@ class AutoPrediction:
     interval: PBLInterval
     review_required: bool
     review_reasons: tuple[str, ...]
+    stage_probabilities: Mapping[str, float] | None = None
 
     @property
     def result(self):
@@ -250,6 +251,11 @@ def predict_landmarks(
             raise EmptyPredictionError("Detector returned a landmark outside the image")
     # The calculator is the single source of truth and enforces geometric bounds.
     pbl = calculate_tooth_pbl(to_tooth_landmarks(points)).pbl_max_pct
+    review = getattr(predictor, "review", None)
+    if callable(review):
+        # Week 5 detectors carry their own development-frozen, stage-aware policy.
+        interval, rejected, reasons, probabilities = review(points, uncertainty, draws=draws)
+        return AutoPrediction(points, uncertainty, interval, rejected, reasons, probabilities)
     interval = pbl_confidence_interval(points, uncertainty, draws=draws)
     # The prespecified rule (needs_manual_review) referred every tooth, since its
     # 5 px limit sits below the model's resolution; the validated margin rule is used.

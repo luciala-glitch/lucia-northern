@@ -1,0 +1,12 @@
+{
+  "week5/weights/screen/strong_aug_raw_fold_1.pt": "f3fc7db04699880051753aec1122a9c83f604f042c57b8efaaba4c3bc38b35c6",
+  "week5/weights/strong_aug_raw_fold_2.pt": "5f77a7698fa86b52198c9ad4590cf8fda44361058bc12c4b55f9272f7f7b9038",
+  "week5/weights/strong_aug_raw_fold_3.pt": "630e354bd0d064ed9654abef345c5f0af2705f720d26871ebb80b16f7346ae28",
+  "week5/weights/strong_aug_raw_fold_4.pt": "b8c36ffbaa1bfc776f6e0cadffa1dc62e43bef42075d9d0e6bbe99d6cdf83801",
+  "week5/weights/strong_aug_raw_fold_5.pt": "13c2cfe34c1a3fc597d4995a6028cf2ca61ea7a777e3dbc44cba179315a11d9a",
+  "week5/weights/strong_aug_clahe_fold_1.pt": "8d457b449fe19e0bc0d97e46160fcbdd566091191bf4333a1654bbb206885c4b",
+  "week5/weights/strong_aug_clahe_fold_2.pt": "da0de457bb1663267777e8d338db47c45b88f0d1e4b09e2c1e70c04fde596510",
+  "week5/weights/strong_aug_clahe_fold_3.pt": "b00aad5341545237b98a245ef5d58298e9fecd2cbc87acaf18683096afee1e7d",
+  "week5/weights/strong_aug_clahe_fold_4.pt": "c135a1018bbad593e913780ea3fa7791f28e2896a8f1a0ea90c580b7d87a9bdf",
+  "week5/weights/strong_aug_clahe_fold_5.pt": "e23611e0fe07bd544a0b3481eeb137a96794ccf6172733079e62c1bc3b7e5de8"
+}

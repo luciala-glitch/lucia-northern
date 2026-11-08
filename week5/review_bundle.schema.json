@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PBL review bundle (automatic prediction + clinician correction)",
+  "description": "Envelope written by the review App. original_prediction and corrected_result are each also validated against week4/measurement.schema.json; the original is always source=auto and the correction always source=manual, so a correction can never overwrite the automatic record.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "saved_at_utc", "annotator_role", "reviewer_id", "detector", "review_flagged", "review_reasons",
+    "moved_px", "seconds_since_suggestion", "blind_first_read", "review_context",
+    "original_prediction", "corrected_result"
+  ],
+  "properties": {
+    "saved_at_utc": {"type": "string", "format": "date-time"},
+    "annotator_role": {"const": "qualified_reviewer"},
+    "reviewer_id": {"type": ["string", "null"]},
+    "detector": {
+      "type": ["object", "null"],
+      "required": ["name", "checkpoints"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "checkpoints": {"type": "array", "items": {"type": "object"}}
+      }
+    },
+    "review_flagged": {"type": "boolean"},
+    "review_reasons": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "auto_stage_probabilities": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["I", "II", "III/IV"],
+      "properties": {
+        "I": {"type": "number", "minimum": 0, "maximum": 1},
+        "II": {"type": "number", "minimum": 0, "maximum": 1},
+        "III/IV": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    },
+    "moved_px": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mesial_cej", "distal_cej", "mesial_bc", "distal_bc", "apex"],
+      "properties": {
+        "mesial_cej": {"type": "number", "minimum": 0},
+        "distal_cej": {"type": "number", "minimum": 0},
+        "mesial_bc": {"type": "number", "minimum": 0},
+        "distal_bc": {"type": "number", "minimum": 0},
+        "apex": {"type": "number", "minimum": 0}
+      }
+    },
+    "seconds_since_suggestion": {"type": ["number", "null"], "minimum": 0},
+    "blind_first_read": {"type": ["object", "null"]},
+    "review_context": {"type": "object"},
+    "original_prediction": {
+      "type": "object",
+      "required": ["source"],
+      "properties": {"source": {"const": "auto"}}
+    },
+    "corrected_result": {
+      "type": "object",
+      "required": ["source"],
+      "properties": {"source": {"const": "manual"}}
+    }
+  }
+}

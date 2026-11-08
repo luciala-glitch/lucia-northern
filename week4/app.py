@@ -60,7 +60,12 @@ TO_CANVAS = {
 FROM_CANVAS = {value: key for key, value in TO_CANVAS.items()}
 CHARACTERISTICS = DEMO_ROOT / "characteristics.json"
 LEARNED = "Learned heatmap (5-fold ensemble)"
+REFINED = "Week 5 refined Raw + CLAHE ensemble"
 BASELINE = "Classical gradient baseline"
+APP_VERSION = os.environ.get("PBL_APP_VERSION", "Week 4")
+# Week 3 test-retest limits of agreement were about ±10 pp, so a corrected PBL this
+# close to 15% or 33% can change stage through reader variability alone.
+BOUNDARY_WARNING_PP = 3.0
 
 
 def _orientation_defaults(
@@ -647,7 +652,7 @@ def _practice_main(
 
 
 def main() -> None:
-    st.set_page_config(page_title="PBL Week 4 · Landmark review", layout="wide")
+    st.set_page_config(page_title=f"PBL {APP_VERSION} · Landmark review", layout="wide")
     # Keep the header short so the image and the buttons under it fit on one screen.
     st.markdown(
         "<style>.block-container,[data-testid='stMainBlockContainer']"
@@ -656,7 +661,7 @@ def main() -> None:
         unsafe_allow_html=True,
     )
     st.markdown(
-        "#### PBL Week 4 · Landmark review &nbsp;<small style='font-weight:400;opacity:.65;font-size:.8rem'>"
+        f"#### PBL {APP_VERSION} · Landmark review &nbsp;<small style='font-weight:400;opacity:.65;font-size:.8rem'>"
         "Research prototype only — not a diagnostic device. Every automatic result requires clinician review."
         "</small>",
         unsafe_allow_html=True,
@@ -829,10 +834,16 @@ def main() -> None:
             tilted = st.checkbox("Tilted >15° from vertical")
             low_contrast = st.checkbox("Low contrast")
         checkpoints = sorted(WEIGHTS.glob("raw_fold_*.pt"))
+        from week5.refinement import calibrated_checkpoints, load_calibration, refined_ready as _refined_ready
+
+        refined_ready = _refined_ready()
+        refined_checkpoints = (
+            sum(calibrated_checkpoints(load_calibration()), []) if refined_ready else []
+        )
         detector_name = st.selectbox(
             "Automatic detector",
-            ([LEARNED] if checkpoints else []) + [BASELINE],
-            help="See week4/MODEL_CARD.md for measured accuracy and known failure modes.",
+            ([REFINED] if refined_ready else []) + ([LEARNED] if checkpoints else []) + [BASELINE],
+            help="See week5/README.md and week4/MODEL_CARD.md for measured accuracy and limitations.",
         )
         if not checkpoints:
             st.caption("No learned checkpoints in week4/weights — see the README to download them.")
@@ -902,7 +913,7 @@ def main() -> None:
         st.subheader("AI suggestion")
         st.pyplot(_orientation_preview(image, bbox, apex_at_bottom, mesial_on_left), clear_figure=True, width="content")
         st.caption("Detector view: crown up, mesial (M) left. If it looks wrong, fix the orientation first.")
-        if partition == "development" and detector_name == LEARNED:
+        if partition == "development" and detector_name in (LEARNED, REFINED):
             st.caption(
                 "Development images were used to train the learned models; judge real accuracy "
                 "on External test or your own image."
@@ -957,7 +968,13 @@ def main() -> None:
         status = st.empty()
         if run_clicked:
             try:
-                if detector_name == LEARNED:
+                if detector_name == REFINED:
+                    from week5.refinement import RefinedLandmarkDetector
+
+                    detector = RefinedLandmarkDetector(
+                        apex_at_bottom=apex_at_bottom, mesial_on_left=mesial_on_left
+                    )
+                elif detector_name == LEARNED:
                     from week4.learned import LearnedHeatmapDetector
 
                     detector: Any = LearnedHeatmapDetector(
@@ -970,14 +987,17 @@ def main() -> None:
                 # The learned models apply their own training-time preprocessing.
                 with st.spinner("Running AI suggestion…"):
                     prediction = predict_landmarks(
-                        original if detector_name == LEARNED else image, bbox, detector=detector
+                        original if detector_name in (LEARNED, REFINED) else image, bbox, detector=detector
                     )
                 st.session_state.blind_read = (
                     dict(st.session_state.points) if blind_first and points_ready else None
                 )
                 st.session_state.detector_info = {
                     "name": detector_name,
-                    "checkpoints": _checkpoint_digest(checkpoints) if detector_name == LEARNED else [],
+                    "checkpoints": (
+                        _checkpoint_digest(refined_checkpoints if detector_name == REFINED else checkpoints)
+                        if detector_name in (LEARNED, REFINED) else []
+                    ),
                 }
                 st.session_state.started_at = datetime.now(timezone.utc).isoformat()
                 _set_prediction(prediction, context)
@@ -1014,13 +1034,10 @@ def main() -> None:
         source="manual",
         round_number=round_number,
     )
-    original_points = {TO_CANVAS[k]: v for k, v in prediction.landmarks.items()}
+    # Measured on the stored records, so an untouched marker reads exactly 0.0.
     moved_px = {
-        FROM_CANVAS[name]: round(
-            ((st.session_state.points[name][0] - original_points[name][0]) ** 2
-             + (st.session_state.points[name][1] - original_points[name][1]) ** 2) ** 0.5, 1
-        )
-        for name in CANVAS_NAMES
+        name: round(math.dist(corrected.landmarks[name], prediction.landmarks[name]), 1)
+        for name in LANDMARK_NAMES
     }
     blind = st.session_state.get("blind_read")
     started = st.session_state.get("started_at")
@@ -1032,6 +1049,9 @@ def main() -> None:
         "detector": st.session_state.get("detector_info"),
         "review_flagged": prediction.review_required,
         "review_reasons": list(prediction.review_reasons),
+        "auto_stage_probabilities": (
+            dict(prediction.stage_probabilities) if prediction.stage_probabilities else None
+        ),
         "moved_px": moved_px,
         "seconds_since_suggestion": (
             round((now - datetime.fromisoformat(started)).total_seconds(), 1) if started else None
@@ -1054,6 +1074,14 @@ def main() -> None:
         "original_prediction": original_record,
         "corrected_result": corrected_record,
     }
+    from week5.review import comparison_rows, validate_bundle
+
+    try:
+        # Every save and export follows the documented review-bundle schema.
+        validate_bundle(bundle)
+        bundle_error = None
+    except Exception as exc:  # jsonschema.ValidationError
+        bundle_error = str(exc).splitlines()[0]
     with summary:
         confirmed = True
         if prediction.review_required:
@@ -1077,9 +1105,20 @@ def main() -> None:
             "Change",
             f"{corrected_result.pbl_max_pct - prediction.result.pbl_max_pct:+.1f} pp",
         )
+        distance = min(abs(corrected_result.pbl_max_pct - b) for b in STAGE_BOUNDARIES)
+        if distance < BOUNDARY_WARNING_PP:
+            st.info(
+                f"Boundary case: the corrected PBL is {distance:.1f} pp from a stage boundary. "
+                "Reader variability alone can change this stage; consider a second reader."
+            )
         st.caption(
             f"AI suggestion: {prediction.result.pbl_max_pct:.1f}% · {prediction.result.stage}"
         )
+        if prediction.stage_probabilities:
+            st.caption(
+                "AI stage probability: "
+                + " · ".join(f"{k} {v:.0%}" for k, v in prediction.stage_probabilities.items())
+            )
         st.pyplot(
             _stage_bar(prediction.result.pbl_max_pct, prediction.interval),
             clear_figure=True,
@@ -1087,8 +1126,16 @@ def main() -> None:
         )
 
     with left_column:
+        with st.expander("Compare AI suggestion with your correction", expanded=prediction.review_required):
+            st.dataframe(comparison_rows(bundle), hide_index=True, width="stretch")
+            st.caption(
+                "The AI record is kept unchanged; your correction is stored beside it as a separate manual record."
+            )
         # Say exactly what is missing instead of silently disabling the buttons.
         missing = []
+        if bundle_error:
+            st.error(f"Export blocked — record does not match the review schema: {bundle_error}")
+            missing.append("fix the schema error above")
         if not confirmed:
             missing.append("tick all 5 landmarks (right panel)")
         if not reviewer_id:
@@ -1107,7 +1154,7 @@ def main() -> None:
             f"{Path(image_name).stem}_tooth_{tooth_index + 1}_review.json",
             "application/json",
             width="stretch",
-            disabled=not confirmed,
+            disabled=not confirmed or bool(bundle_error),
             help="Original prediction + your correction, Week 3 schema with source/uncertainty.",
         )
         export_csv.download_button(
@@ -1116,7 +1163,7 @@ def main() -> None:
             f"{Path(image_name).stem}_tooth_{tooth_index + 1}_review.csv",
             "text/csv",
             width="stretch",
-            disabled=not confirmed,
+            disabled=not confirmed or bool(bundle_error),
         )
         if save_clicked:
             _save_bundle(bundle)
