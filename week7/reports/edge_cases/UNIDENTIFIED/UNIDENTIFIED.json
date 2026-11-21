@@ -1,0 +1,206 @@
+{
+  "report_version": "week7-1.0",
+  "generated_at_utc": "2026-11-19T12:00:00+00:00",
+  "case_id": "UNIDENTIFIED",
+  "image": {},
+  "source": {
+    "edge_case": "no case id, no image, one tooth with no data, duplicate id"
+  },
+  "method": {
+    "pbl_definition": "PBL% = CEJ-to-crest distance / CEJ-to-apex distance × 100, both projected on the long axis (CEJ midpoint → apex); per surface (mesial, distal).",
+    "stage_rule": "From the worse surface: < 15% Stage I; 15–33% Stage II; > 33% Stage III/IV.",
+    "boundary_warning_pp": 3.0,
+    "review_min_stage_probability": 0.94,
+    "calculator": "week3.pbl_calculator.calculate_tooth_pbl"
+  },
+  "disclaimer": "Research prototype. Radiographic bone-loss measurements to support review by a qualified dental professional; not an independent clinical diagnosis. Stage uses radiographic bone loss only (Stage III and IV are not separated; complexity factors, clinical attachment loss, tooth loss and grade are not assessed).",
+  "summary": {
+    "teeth_total": 2,
+    "teeth_staged": 0,
+    "teeth_not_staged": 2,
+    "stage_counts": {
+      "I": 0,
+      "II": 0,
+      "III/IV": 0
+    },
+    "highest_tooth_stage": null,
+    "highest_pbl_tooth": null,
+    "highest_pbl_pct": null,
+    "teeth_flagged": 1,
+    "teeth_manually_corrected": 0,
+    "correction_events": 0,
+    "teeth_reported_from_manual": 0,
+    "teeth_with_high_warnings": 2,
+    "stage_note": "Highest tooth-level radiographic stage among measured teeth on this radiograph; not a patient-level periodontal diagnosis."
+  },
+  "case_warnings": [
+    {
+      "code": "MISSING_CASE_ID",
+      "severity": "high",
+      "message": "Case identifier missing."
+    },
+    {
+      "code": "NO_IMAGE",
+      "severity": "medium",
+      "message": "No radiograph attached; report is tabular only."
+    },
+    {
+      "code": "DUPLICATE_TOOTH_ID",
+      "severity": "high",
+      "message": "Duplicate tooth identifiers in case: 1. Rows are listed in input order; check which tooth each row refers to."
+    }
+  ],
+  "teeth": [
+    {
+      "tooth_id": 1,
+      "label": "T1",
+      "arch": null,
+      "site": null,
+      "bbox": null,
+      "review_flagged": false,
+      "review_reasons": [],
+      "auto": null,
+      "manual": null,
+      "correction_history": [],
+      "final": {
+        "source": "none",
+        "status": "missing",
+        "missing_landmarks": [
+          "mesial_cej",
+          "distal_cej",
+          "mesial_bc",
+          "distal_bc",
+          "apex"
+        ],
+        "error": null,
+        "long_axis_vector": null,
+        "mesial": null,
+        "distal": null,
+        "pbl_max_pct": null,
+        "worse_surface": null,
+        "stage": null,
+        "minimum_stage": null
+      },
+      "interpretation": "No PBL reported: missing Mesial CEJ, Distal CEJ, Mesial bone crest, Distal bone crest, Apex.",
+      "warnings": [
+        {
+          "code": "MISSING_LANDMARKS",
+          "severity": "high",
+          "message": "Missing Mesial CEJ, Distal CEJ, Mesial bone crest, Distal bone crest, Apex; PBL not reported."
+        }
+      ]
+    },
+    {
+      "tooth_id": 1,
+      "label": "T1",
+      "arch": null,
+      "site": null,
+      "bbox": null,
+      "review_flagged": true,
+      "review_reasons": [
+        "no valid automated measurement"
+      ],
+      "auto": {
+        "detector": null,
+        "landmarks": {
+          "mesial_cej": [
+            10.0,
+            10.0
+          ],
+          "distal_cej": null,
+          "mesial_bc": null,
+          "distal_bc": null,
+          "apex": null
+        },
+        "sigma_px": null,
+        "pbl_ci95": null,
+        "stage_probabilities": null,
+        "stage_probability": null,
+        "orientation_switched": false,
+        "measurement": {
+          "status": "missing",
+          "missing_landmarks": [
+            "distal_cej",
+            "mesial_bc",
+            "distal_bc",
+            "apex"
+          ],
+          "error": null,
+          "long_axis_vector": null,
+          "mesial": null,
+          "distal": null,
+          "pbl_max_pct": null,
+          "worse_surface": null,
+          "stage": null,
+          "minimum_stage": null
+        }
+      },
+      "manual": null,
+      "correction_history": [],
+      "final": {
+        "source": "none",
+        "status": "missing",
+        "missing_landmarks": [
+          "distal_cej",
+          "mesial_bc",
+          "distal_bc",
+          "apex"
+        ],
+        "error": null,
+        "long_axis_vector": null,
+        "mesial": null,
+        "distal": null,
+        "pbl_max_pct": null,
+        "worse_surface": null,
+        "stage": null,
+        "minimum_stage": null
+      },
+      "interpretation": "No PBL reported: missing Distal CEJ, Mesial bone crest, Distal bone crest, Apex.",
+      "warnings": [
+        {
+          "code": "MISSING_LANDMARKS",
+          "severity": "high",
+          "message": "Missing Distal CEJ, Mesial bone crest, Distal bone crest, Apex; PBL not reported."
+        },
+        {
+          "code": "FLAGGED_NOT_REVIEWED",
+          "severity": "high",
+          "message": "Flagged for review (no valid automated measurement) but not yet reviewed."
+        }
+      ]
+    }
+  ],
+  "input_case": {
+    "case_id": null,
+    "image": {},
+    "source": {
+      "edge_case": "no case id, no image, one tooth with no data, duplicate id"
+    },
+    "teeth": [
+      {
+        "tooth_id": 1,
+        "label": null,
+        "arch": null,
+        "site": null,
+        "bbox": null,
+        "auto": null,
+        "manual": null
+      },
+      {
+        "tooth_id": 1,
+        "auto": {
+          "landmarks": {
+            "mesial_cej": [
+              10,
+              10
+            ],
+            "distal_cej": [
+              "x",
+              10
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

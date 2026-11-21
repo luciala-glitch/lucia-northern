@@ -10,6 +10,8 @@ and reports can be reviewed from one GitHub link.
 | Week 3 | [`week3/`](week3/) | Typed long-axis projection, statistical agreement, sensitivity and contrast analysis, validated JSON/CSV exports. |
 | Week 4 | [`week4/`](week4/) | Pretrained heatmap landmark detector vs classical baseline on 1,657 DenPAR teeth (radiograph-level 5-fold CV + external test), uncertainty-based rejection, failure analysis, and an auto-detect → correct → export review App. |
 | Week 5 | [`week5/`](week5/) | Refines the Week 4 model, checks its uncertainty, improves the review rule, and adds 12 annotated clinical examples. |
+| Week 6 | — | No new folder. I used this week to revise and tidy the earlier weeks' code and reports. |
+| Week 7 | [`week7/`](week7/) | Turns the measurements into case reports: annotated radiograph, PBL and stage per tooth, warnings, AI vs corrected values, and PDF/CSV/JSON export. Tested on 19 cases. |
 
 ## Quick start
 
@@ -83,6 +85,19 @@ python -m streamlit run week5/app.py
 See [`week5/README.md`](week5/README.md) for the Week 4 vs Week 5 comparison,
 uncertainty results, annotated examples, model weights, limitations, and links
 to the Week 5 reports.
+
+### Run Week 7
+
+```bash
+python -m pip install -r week7/requirements.txt
+python -m pytest -q week7/tests
+python -m week7.build_reports   # regenerate the 19 case reports
+python -m streamlit run week7/app.py
+```
+
+See [`week7/README.md`](week7/README.md) for what I built, the results, the
+problems I fixed and the limitations, and [`week7/DEMO.md`](week7/DEMO.md) for the
+demonstration steps.
 
 Streamlit normally opens the app automatically. Otherwise visit
 <http://localhost:8501>. Stop the server with `Ctrl+C` before switching
