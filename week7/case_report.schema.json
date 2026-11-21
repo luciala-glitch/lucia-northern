@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Week 7 PBL clinical case report",
+  "description": "Written by week7.export.to_json. Each tooth keeps the automated record and the manual correction side by side; 'final' says which one the reported values come from.",
+  "type": "object",
+  "required": ["report_version", "generated_at_utc", "case_id", "image", "method", "disclaimer", "summary", "case_warnings", "teeth"],
+  "properties": {
+    "report_version": {"type": "string"},
+    "generated_at_utc": {"type": "string"},
+    "case_id": {"type": "string", "minLength": 1},
+    "image": {"type": "object"},
+    "source": {"type": ["object", "null"]},
+    "disclaimer": {"type": "string", "minLength": 20},
+    "summary": {
+      "type": "object",
+      "required": ["teeth_total", "teeth_staged", "stage_counts", "highest_tooth_stage", "teeth_flagged", "teeth_manually_corrected"],
+      "properties": {
+        "highest_tooth_stage": {"enum": ["I", "II", "III/IV", null]}
+      }
+    },
+    "case_warnings": {"type": "array", "items": {"$ref": "#/$defs/warning"}},
+    "teeth": {"type": "array", "items": {"$ref": "#/$defs/tooth"}},
+    "input_case": {"type": "object"}
+  },
+  "$defs": {
+    "warning": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code", "severity", "message"],
+      "properties": {
+        "code": {"type": "string", "pattern": "^[A-Z_0-9]+$"},
+        "severity": {"enum": ["high", "medium", "info"]},
+        "message": {"type": "string", "minLength": 1}
+      }
+    },
+    "point": {"type": ["array", "null"], "items": {"type": "number"}, "minItems": 2, "maxItems": 2},
+    "landmarks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mesial_cej", "distal_cej", "mesial_bc", "distal_bc", "apex"],
+      "properties": {
+        "mesial_cej": {"$ref": "#/$defs/point"},
+        "distal_cej": {"$ref": "#/$defs/point"},
+        "mesial_bc": {"$ref": "#/$defs/point"},
+        "distal_bc": {"$ref": "#/$defs/point"},
+        "apex": {"$ref": "#/$defs/point"}
+      }
+    },
+    "surface": {
+      "type": ["object", "null"],
+      "required": ["defect_px", "root_px", "pbl_pct"],
+      "properties": {"pbl_pct": {"type": "number", "minimum": 0, "maximum": 100}}
+    },
+    "measurement": {
+      "type": "object",
+      "required": ["status", "mesial", "distal", "pbl_max_pct", "stage", "minimum_stage", "missing_landmarks"],
+      "properties": {
+        "status": {"enum": ["ok", "partial", "missing", "invalid"]},
+        "mesial": {"$ref": "#/$defs/surface"},
+        "distal": {"$ref": "#/$defs/surface"},
+        "pbl_max_pct": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+        "stage": {"enum": ["I", "II", "III/IV", null]},
+        "minimum_stage": {"enum": ["I", "II", "III/IV", null]}
+      }
+    },
+    "tooth": {
+      "type": "object",
+      "required": ["tooth_id", "label", "review_flagged", "review_reasons", "auto", "manual", "final", "interpretation", "warnings"],
+      "properties": {
+        "auto": {
+          "type": ["object", "null"],
+          "required": ["landmarks", "measurement", "stage_probability", "pbl_ci95"],
+          "properties": {"landmarks": {"$ref": "#/$defs/landmarks"}, "measurement": {"$ref": "#/$defs/measurement"}}
+        },
+        "manual": {
+          "type": ["object", "null"],
+          "required": ["landmarks", "measurement", "reviewer_id", "saved_at_utc", "method", "moved_px", "changed_landmarks"],
+          "properties": {"landmarks": {"$ref": "#/$defs/landmarks"}, "measurement": {"$ref": "#/$defs/measurement"}}
+        },
+        "final": {
+          "allOf": [{"$ref": "#/$defs/measurement"}],
+          "required": ["source"],
+          "properties": {"source": {"enum": ["auto", "manual", "none"]}}
+        },
+        "interpretation": {"type": "string", "minLength": 1},
+        "warnings": {"type": "array", "items": {"$ref": "#/$defs/warning"}}
+      }
+    }
+  }
+}

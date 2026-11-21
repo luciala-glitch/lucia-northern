@@ -1,0 +1,396 @@
+{
+  "report_version": "week7-1.0",
+  "generated_at_utc": "2026-11-19T12:00:00+00:00",
+  "case_id": "DENPAR-TEST-736",
+  "image": {
+    "path": "week4/demo_denpar/external_test/images/736.jpg",
+    "width": 795,
+    "height": 1095
+  },
+  "source": {
+    "dataset": "DenPAR v3 official Testing partition (CC BY 4.0, doi:10.5281/zenodo.16645076)",
+    "patient_identifier": "none published; case = one radiograph",
+    "tooth_numbering": "DenPAR per-image tooth index (FDI number not available)",
+    "predictions": "week5/reports/refined_predictions.json (external)",
+    "manual_corrections": "SIMULATED: two most-uncertain landmarks moved to DenPAR reference annotation"
+  },
+  "method": {
+    "pbl_definition": "PBL% = CEJ-to-crest distance / CEJ-to-apex distance × 100, both projected on the long axis (CEJ midpoint → apex); per surface (mesial, distal).",
+    "stage_rule": "From the worse surface: < 15% Stage I; 15–33% Stage II; > 33% Stage III/IV.",
+    "boundary_warning_pp": 3.0,
+    "review_min_stage_probability": 0.94,
+    "calculator": "week3.pbl_calculator.calculate_tooth_pbl"
+  },
+  "disclaimer": "Research prototype. Radiographic bone-loss measurements to support review by a qualified dental professional; not an independent clinical diagnosis. Stage uses radiographic bone loss only (Stage III and IV are not separated; complexity factors, clinical attachment loss, tooth loss and grade are not assessed).",
+  "summary": {
+    "teeth_total": 2,
+    "teeth_staged": 2,
+    "teeth_not_staged": 0,
+    "stage_counts": {
+      "I": 0,
+      "II": 0,
+      "III/IV": 2
+    },
+    "highest_tooth_stage": "III/IV",
+    "highest_pbl_tooth": "T2",
+    "highest_pbl_pct": 69.00705242314913,
+    "teeth_flagged": 0,
+    "teeth_manually_corrected": 0,
+    "correction_events": 0,
+    "teeth_reported_from_manual": 0,
+    "teeth_with_high_warnings": 0,
+    "stage_note": "Highest tooth-level radiographic stage among measured teeth on this radiograph; not a patient-level periodontal diagnosis."
+  },
+  "case_warnings": [],
+  "teeth": [
+    {
+      "tooth_id": 1,
+      "label": "T1",
+      "arch": "Upper",
+      "site": "Anterior",
+      "bbox": [
+        426,
+        136,
+        667,
+        932
+      ],
+      "review_flagged": false,
+      "review_reasons": [],
+      "auto": {
+        "detector": "Week 5 refined Raw + CLAHE ensemble (strong_aug, TTA), saved predictions",
+        "landmarks": {
+          "mesial_cej": [
+            658.3375161667665,
+            689.634241580963
+          ],
+          "distal_cej": [
+            487.4097026109696,
+            640.5413643836976
+          ],
+          "mesial_bc": [
+            671.474716903766,
+            426.17478799819946
+          ],
+          "distal_bc": [
+            525.9398554166157,
+            423.59956407546997
+          ],
+          "apex": [
+            616.6116870482763,
+            134.35934448242188
+          ]
+        },
+        "sigma_px": {
+          "mesial_cej": 13.998569210313867,
+          "distal_cej": 10.715886808222807,
+          "mesial_bc": 13.72716676089301,
+          "distal_bc": 13.501565869267697,
+          "apex": 12.1241946209102
+        },
+        "pbl_ci95": [
+          40.2850024254057,
+          56.74339548907107
+        ],
+        "stage_probabilities": {
+          "I": 0.0,
+          "II": 0.0,
+          "III/IV": 1.0
+        },
+        "stage_probability": 1.0,
+        "orientation_switched": false,
+        "measurement": {
+          "status": "ok",
+          "missing_landmarks": [],
+          "error": null,
+          "long_axis_vector": [
+            0.08213296767745414,
+            -0.9966213802746228
+          ],
+          "mesial": {
+            "defect_px": 263.6483215595559,
+            "root_px": 549.9717682038932,
+            "pbl_pct": 47.938519175372015
+          },
+          "distal": {
+            "defect_px": 219.37343225744087,
+            "root_px": 515.0835657558581,
+            "pbl_pct": 42.58987217647332
+          },
+          "pbl_max_pct": 47.938519175372015,
+          "worse_surface": "mesial",
+          "stage": "III/IV",
+          "minimum_stage": "III/IV"
+        }
+      },
+      "manual": null,
+      "correction_history": [],
+      "final": {
+        "source": "auto",
+        "status": "ok",
+        "missing_landmarks": [],
+        "error": null,
+        "long_axis_vector": [
+          0.08213296767745414,
+          -0.9966213802746228
+        ],
+        "mesial": {
+          "defect_px": 263.6483215595559,
+          "root_px": 549.9717682038932,
+          "pbl_pct": 47.938519175372015
+        },
+        "distal": {
+          "defect_px": 219.37343225744087,
+          "root_px": 515.0835657558581,
+          "pbl_pct": 42.58987217647332
+        },
+        "pbl_max_pct": 47.938519175372015,
+        "worse_surface": "mesial",
+        "stage": "III/IV",
+        "minimum_stage": "III/IV"
+      },
+      "interpretation": "Calculated from automated landmarks. Mesial: CEJ-to-crest 263.6 px ÷ CEJ-to-apex 550.0 px (both projected on the tooth long axis) = 47.9%. Distal: CEJ-to-crest 219.4 px ÷ CEJ-to-apex 515.1 px (both projected on the tooth long axis) = 42.6%. The stage uses the worse surface (mesial): 47.9% > 33% → Stage III/IV.",
+      "warnings": []
+    },
+    {
+      "tooth_id": 2,
+      "label": "T2",
+      "arch": "Upper",
+      "site": "Anterior",
+      "bbox": [
+        217,
+        171,
+        498,
+        900
+      ],
+      "review_flagged": false,
+      "review_reasons": [],
+      "auto": {
+        "detector": "Week 5 refined Raw + CLAHE ensemble (strong_aug, TTA), saved predictions",
+        "landmarks": {
+          "mesial_cej": [
+            454.0868880192438,
+            596.05910774072
+          ],
+          "distal_cej": [
+            279.93599212964375,
+            602.2077814579011
+          ],
+          "mesial_bc": [
+            497.2745381623506,
+            380.4140405019125
+          ],
+          "distal_bc": [
+            383.62753961881003,
+            296.3181495666504
+          ],
+          "apex": [
+            470.7758804877599,
+            168.7172098795573
+          ]
+        },
+        "sigma_px": {
+          "mesial_cej": 14.424451196086366,
+          "distal_cej": 11.7585283974061,
+          "mesial_bc": 31.104298764383998,
+          "distal_bc": 10.513159221525788,
+          "apex": 37.887311441921746
+        },
+        "pbl_ci95": [
+          52.90194736182616,
+          89.33503706756626
+        ],
+        "stage_probabilities": {
+          "I": 0.0,
+          "II": 0.0,
+          "III/IV": 1.0
+        },
+        "stage_probability": 1.0,
+        "orientation_switched": false,
+        "measurement": {
+          "status": "ok",
+          "missing_landmarks": [],
+          "error": null,
+          "long_axis_vector": [
+            0.2343649175177078,
+            -0.9721486951268915
+          ],
+          "mesial": {
+            "defect_px": 219.76074079033037,
+            "root_px": 419.35118272211616,
+            "pbl_pct": 52.404941215094944
+          },
+          "distal": {
+            "defect_px": 321.67186747050647,
+            "root_px": 466.1434682038357,
+            "pbl_pct": 69.00705242314913
+          },
+          "pbl_max_pct": 69.00705242314913,
+          "worse_surface": "distal",
+          "stage": "III/IV",
+          "minimum_stage": "III/IV"
+        }
+      },
+      "manual": null,
+      "correction_history": [],
+      "final": {
+        "source": "auto",
+        "status": "ok",
+        "missing_landmarks": [],
+        "error": null,
+        "long_axis_vector": [
+          0.2343649175177078,
+          -0.9721486951268915
+        ],
+        "mesial": {
+          "defect_px": 219.76074079033037,
+          "root_px": 419.35118272211616,
+          "pbl_pct": 52.404941215094944
+        },
+        "distal": {
+          "defect_px": 321.67186747050647,
+          "root_px": 466.1434682038357,
+          "pbl_pct": 69.00705242314913
+        },
+        "pbl_max_pct": 69.00705242314913,
+        "worse_surface": "distal",
+        "stage": "III/IV",
+        "minimum_stage": "III/IV"
+      },
+      "interpretation": "Calculated from automated landmarks. Mesial: CEJ-to-crest 219.8 px ÷ CEJ-to-apex 419.4 px (both projected on the tooth long axis) = 52.4%. Distal: CEJ-to-crest 321.7 px ÷ CEJ-to-apex 466.1 px (both projected on the tooth long axis) = 69.0%. The stage uses the worse surface (distal): 69.0% > 33% → Stage III/IV.",
+      "warnings": [
+        {
+          "code": "WIDE_INTERVAL",
+          "severity": "info",
+          "message": "Automated 95% PBL interval is 36.4 pp wide."
+        }
+      ]
+    }
+  ],
+  "input_case": {
+    "case_id": "DENPAR-TEST-736",
+    "image": {
+      "path": "week4/demo_denpar/external_test/images/736.jpg",
+      "width": 795,
+      "height": 1095
+    },
+    "source": {
+      "dataset": "DenPAR v3 official Testing partition (CC BY 4.0, doi:10.5281/zenodo.16645076)",
+      "patient_identifier": "none published; case = one radiograph",
+      "tooth_numbering": "DenPAR per-image tooth index (FDI number not available)",
+      "predictions": "week5/reports/refined_predictions.json (external)",
+      "manual_corrections": "SIMULATED: two most-uncertain landmarks moved to DenPAR reference annotation"
+    },
+    "teeth": [
+      {
+        "tooth_id": 1,
+        "label": "T1",
+        "arch": "Upper",
+        "site": "Anterior",
+        "bbox": [
+          426,
+          136,
+          667,
+          932
+        ],
+        "auto": {
+          "detector": "Week 5 refined Raw + CLAHE ensemble (strong_aug, TTA), saved predictions",
+          "landmarks": {
+            "mesial_cej": [
+              658.3375161667665,
+              689.634241580963
+            ],
+            "distal_cej": [
+              487.4097026109696,
+              640.5413643836976
+            ],
+            "mesial_bc": [
+              671.474716903766,
+              426.17478799819946
+            ],
+            "distal_bc": [
+              525.9398554166157,
+              423.59956407546997
+            ],
+            "apex": [
+              616.6116870482763,
+              134.35934448242188
+            ]
+          },
+          "sigma_px": {
+            "mesial_cej": 13.998569210313867,
+            "distal_cej": 10.715886808222807,
+            "mesial_bc": 13.72716676089301,
+            "distal_bc": 13.501565869267697,
+            "apex": 12.1241946209102
+          },
+          "pbl_ci95": [
+            40.2850024254057,
+            56.74339548907107
+          ],
+          "stage_probabilities": {
+            "I": 0.0,
+            "II": 0.0,
+            "III/IV": 1.0
+          },
+          "orientation_switched": false
+        },
+        "manual": null
+      },
+      {
+        "tooth_id": 2,
+        "label": "T2",
+        "arch": "Upper",
+        "site": "Anterior",
+        "bbox": [
+          217,
+          171,
+          498,
+          900
+        ],
+        "auto": {
+          "detector": "Week 5 refined Raw + CLAHE ensemble (strong_aug, TTA), saved predictions",
+          "landmarks": {
+            "mesial_cej": [
+              454.0868880192438,
+              596.05910774072
+            ],
+            "distal_cej": [
+              279.93599212964375,
+              602.2077814579011
+            ],
+            "mesial_bc": [
+              497.2745381623506,
+              380.4140405019125
+            ],
+            "distal_bc": [
+              383.62753961881003,
+              296.3181495666504
+            ],
+            "apex": [
+              470.7758804877599,
+              168.7172098795573
+            ]
+          },
+          "sigma_px": {
+            "mesial_cej": 14.424451196086366,
+            "distal_cej": 11.7585283974061,
+            "mesial_bc": 31.104298764383998,
+            "distal_bc": 10.513159221525788,
+            "apex": 37.887311441921746
+          },
+          "pbl_ci95": [
+            52.90194736182616,
+            89.33503706756626
+          ],
+          "stage_probabilities": {
+            "I": 0.0,
+            "II": 0.0,
+            "III/IV": 1.0
+          },
+          "orientation_switched": false
+        },
+        "manual": null
+      }
+    ]
+  }
+}

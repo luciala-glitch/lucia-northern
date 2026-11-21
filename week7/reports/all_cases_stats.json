@@ -1,0 +1,9 @@
+{
+  "cases": 19,
+  "teeth": 36,
+  "flagged": 17,
+  "corrected": 17,
+  "auto_stage_agrees_with_reference": 28,
+  "reported_stage_agrees_with_reference": 34,
+  "note": "36 teeth from 19 radiographs: a demonstration sample, too small for accuracy claims. Corrections are simulated from the reference, so agreement after correction is optimistic."
+}

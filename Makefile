@@ -1,6 +1,6 @@
 PYTHON ?= python3
 
-.PHONY: reproduce reproduce-week5 data weights benchmark test lint
+.PHONY: reproduce reproduce-week5 reports-week7 data weights benchmark test lint
 
 # Regenerate every Week 4 table and figure from the saved split and weights.
 # Missing weights are retrained (about 2 h on an Apple M4) rather than faked.
@@ -8,6 +8,10 @@ reproduce: data weights benchmark test
 
 reproduce-week5:
 	$(PYTHON) -m week5.reproduce
+
+reports-week7:
+	$(PYTHON) -m week7.build_reports
+	$(PYTHON) -m pytest -q week7/tests
 
 data:
 	$(PYTHON) -m week4.download

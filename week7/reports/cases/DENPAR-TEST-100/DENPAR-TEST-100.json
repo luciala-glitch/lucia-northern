@@ -1,0 +1,567 @@
+{
+  "report_version": "week7-1.0",
+  "generated_at_utc": "2026-11-19T12:00:00+00:00",
+  "case_id": "DENPAR-TEST-100",
+  "image": {
+    "path": "week4/demo_denpar/external_test/images/100.jpg",
+    "width": 1168,
+    "height": 886
+  },
+  "source": {
+    "dataset": "DenPAR v3 official Testing partition (CC BY 4.0, doi:10.5281/zenodo.16645076)",
+    "patient_identifier": "none published; case = one radiograph",
+    "tooth_numbering": "DenPAR per-image tooth index (FDI number not available)",
+    "predictions": "week5/reports/refined_predictions.json (external)",
+    "manual_corrections": "SIMULATED: two most-uncertain landmarks moved to DenPAR reference annotation"
+  },
+  "method": {
+    "pbl_definition": "PBL% = CEJ-to-crest distance / CEJ-to-apex distance × 100, both projected on the long axis (CEJ midpoint → apex); per surface (mesial, distal).",
+    "stage_rule": "From the worse surface: < 15% Stage I; 15–33% Stage II; > 33% Stage III/IV.",
+    "boundary_warning_pp": 3.0,
+    "review_min_stage_probability": 0.94,
+    "calculator": "week3.pbl_calculator.calculate_tooth_pbl"
+  },
+  "disclaimer": "Research prototype. Radiographic bone-loss measurements to support review by a qualified dental professional; not an independent clinical diagnosis. Stage uses radiographic bone loss only (Stage III and IV are not separated; complexity factors, clinical attachment loss, tooth loss and grade are not assessed).",
+  "summary": {
+    "teeth_total": 2,
+    "teeth_staged": 2,
+    "teeth_not_staged": 0,
+    "stage_counts": {
+      "I": 0,
+      "II": 1,
+      "III/IV": 1
+    },
+    "highest_tooth_stage": "III/IV",
+    "highest_pbl_tooth": "T1",
+    "highest_pbl_pct": 43.50266519522793,
+    "teeth_flagged": 1,
+    "teeth_manually_corrected": 1,
+    "correction_events": 1,
+    "teeth_reported_from_manual": 1,
+    "teeth_with_high_warnings": 0,
+    "stage_note": "Highest tooth-level radiographic stage among measured teeth on this radiograph; not a patient-level periodontal diagnosis."
+  },
+  "case_warnings": [],
+  "teeth": [
+    {
+      "tooth_id": 1,
+      "label": "T1",
+      "arch": "Upper",
+      "site": "Right",
+      "bbox": [
+        132,
+        155,
+        443,
+        722
+      ],
+      "review_flagged": false,
+      "review_reasons": [],
+      "auto": {
+        "detector": "Week 5 refined Raw + CLAHE ensemble (strong_aug, TTA), saved predictions",
+        "landmarks": {
+          "mesial_cej": [
+            385.97350928783413,
+            488.29484002590186
+          ],
+          "distal_cej": [
+            201.19662842750552,
+            542.2751472949982
+          ],
+          "mesial_bc": [
+            370.9749573429425,
+            442.3279131571452
+          ],
+          "distal_bc": [
+            187.7310211976369,
+            378.64277735551195
+          ],
+          "apex": [
+            171.64014445940654,
+            165.64457704226177
+          ]
+        },
+        "sigma_px": {
+          "mesial_cej": 10.946086776628045,
+          "distal_cej": 14.996369411974868,
+          "mesial_bc": 40.509294439988125,
+          "distal_bc": 10.116219942485476,
+          "apex": 14.666217559288341
+        },
+        "pbl_ci95": [
+          31.20815681417499,
+          55.4937265876057
+        ],
+        "stage_probabilities": {
+          "I": 0.0,
+          "II": 0.005733944954128441,
+          "III/IV": 0.9942660550458715
+        },
+        "stage_probability": 0.9942660550458715,
+        "orientation_switched": false,
+        "measurement": {
+          "status": "ok",
+          "missing_landmarks": [],
+          "error": null,
+          "long_axis_vector": [
+            -0.32931759344977873,
+            -0.9442192132362305
+          ],
+          "mesial": {
+            "defect_px": 48.34214255462798,
+            "root_px": 375.23632536616674,
+            "pbl_pct": 12.883119060355973
+          },
+          "distal": {
+            "defect_px": 158.9392889715218,
+            "root_px": 365.3552908959629,
+            "pbl_pct": 43.50266519522793
+          },
+          "pbl_max_pct": 43.50266519522793,
+          "worse_surface": "distal",
+          "stage": "III/IV",
+          "minimum_stage": "III/IV"
+        }
+      },
+      "manual": null,
+      "correction_history": [],
+      "final": {
+        "source": "auto",
+        "status": "ok",
+        "missing_landmarks": [],
+        "error": null,
+        "long_axis_vector": [
+          -0.32931759344977873,
+          -0.9442192132362305
+        ],
+        "mesial": {
+          "defect_px": 48.34214255462798,
+          "root_px": 375.23632536616674,
+          "pbl_pct": 12.883119060355973
+        },
+        "distal": {
+          "defect_px": 158.9392889715218,
+          "root_px": 365.3552908959629,
+          "pbl_pct": 43.50266519522793
+        },
+        "pbl_max_pct": 43.50266519522793,
+        "worse_surface": "distal",
+        "stage": "III/IV",
+        "minimum_stage": "III/IV"
+      },
+      "interpretation": "Calculated from automated landmarks. Mesial: CEJ-to-crest 48.3 px ÷ CEJ-to-apex 375.2 px (both projected on the tooth long axis) = 12.9%. Distal: CEJ-to-crest 158.9 px ÷ CEJ-to-apex 365.4 px (both projected on the tooth long axis) = 43.5%. The stage uses the worse surface (distal): 43.5% > 33% → Stage III/IV.",
+      "warnings": [
+        {
+          "code": "INTERVAL_SPANS_BOUNDARY",
+          "severity": "info",
+          "message": "Automated 95% PBL interval 31.2–55.5% crosses the 33% boundary."
+        },
+        {
+          "code": "WIDE_INTERVAL",
+          "severity": "info",
+          "message": "Automated 95% PBL interval is 24.3 pp wide."
+        }
+      ]
+    },
+    {
+      "tooth_id": 3,
+      "label": "T3",
+      "arch": "Upper",
+      "site": "Right",
+      "bbox": [
+        583,
+        188,
+        885,
+        732
+      ],
+      "review_flagged": true,
+      "review_reasons": [
+        "Stage I has 43% Monte Carlo support (review threshold 94%)"
+      ],
+      "auto": {
+        "detector": "Week 5 refined Raw + CLAHE ensemble (strong_aug, TTA), saved predictions",
+        "landmarks": {
+          "mesial_cej": [
+            852.428697582086,
+            556.6344382206598
+          ],
+          "distal_cej": [
+            717.7000114440917,
+            543.8826330343882
+          ],
+          "mesial_bc": [
+            838.7118577400845,
+            502.90727585156765
+          ],
+          "distal_bc": [
+            706.7519221623738,
+            513.0818581581116
+          ],
+          "apex": [
+            587.2740269025167,
+            188.8939977010091
+          ]
+        },
+        "sigma_px": {
+          "mesial_cej": 28.198154144877062,
+          "distal_cej": 38.893130514596756,
+          "mesial_bc": 9.848911219769027,
+          "distal_bc": 18.080140667670683,
+          "apex": 17.335118872067195
+        },
+        "pbl_ci95": [
+          2.819776423040338,
+          34.498640323429015
+        ],
+        "stage_probabilities": {
+          "I": 0.43443708609271525,
+          "II": 0.5602649006622517,
+          "III/IV": 0.005298013245033113
+        },
+        "stage_probability": 0.43443708609271525,
+        "orientation_switched": false,
+        "measurement": {
+          "status": "ok",
+          "missing_landmarks": [],
+          "error": null,
+          "long_axis_vector": [
+            -0.48012828536754076,
+            -0.8771982840783635
+          ],
+          "mesial": {
+            "defect_px": 53.715217432568636,
+            "root_px": 449.8895408006357,
+            "pbl_pct": 11.939645748815492
+          },
+          "distal": {
+            "defect_px": 32.274874204635765,
+            "root_px": 374.01662610707984,
+            "pbl_pct": 8.629261896875024
+          },
+          "pbl_max_pct": 11.939645748815492,
+          "worse_surface": "mesial",
+          "stage": "I",
+          "minimum_stage": "I"
+        }
+      },
+      "manual": {
+        "reviewer_id": "simulated-reviewer",
+        "saved_at_utc": "2026-11-19T12:00:00+00:00",
+        "method": "SIMULATED: two most-uncertain landmarks moved to DenPAR reference annotation",
+        "note": "moved: distal_cej, mesial_cej",
+        "landmarks": {
+          "mesial_cej": [
+            870.329,
+            600.751
+          ],
+          "distal_cej": [
+            752.556,
+            646.132
+          ],
+          "mesial_bc": [
+            838.7118577400845,
+            502.90727585156765
+          ],
+          "distal_bc": [
+            706.7519221623738,
+            513.0818581581116
+          ],
+          "apex": [
+            587.2740269025167,
+            188.8939977010091
+          ]
+        },
+        "moved_px": {
+          "mesial_cej": 47.60978733289104,
+          "distal_cej": 108.02718631473262,
+          "mesial_bc": 0.0,
+          "distal_bc": 0.0,
+          "apex": 0.0
+        },
+        "changed_landmarks": [
+          "mesial_cej",
+          "distal_cej"
+        ],
+        "added_landmarks": [],
+        "removed_landmarks": [],
+        "outside_ai_95_radius": [
+          "distal_cej"
+        ],
+        "measurement": {
+          "status": "ok",
+          "missing_landmarks": [],
+          "error": null,
+          "long_axis_vector": [
+            -0.45845863028470074,
+            -0.8887157500109223
+          ],
+          "mesial": {
+            "defect_px": 101.45041042443319,
+            "root_px": 495.7927999569428,
+            "pbl_pct": 20.462259724877743
+          },
+          "distal": {
+            "defect_px": 139.24303138296534,
+            "root_px": 482.12956114366847,
+            "pbl_pct": 28.880832582151644
+          },
+          "pbl_max_pct": 28.880832582151644,
+          "worse_surface": "distal",
+          "stage": "II",
+          "minimum_stage": "II"
+        },
+        "traceable": true
+      },
+      "correction_history": [
+        {
+          "action": "save",
+          "reviewer_id": "simulated-reviewer",
+          "saved_at_utc": "2026-11-19T12:00:00+00:00",
+          "method": "SIMULATED: two most-uncertain landmarks moved to DenPAR reference annotation",
+          "note": "moved: distal_cej, mesial_cej",
+          "landmarks": {
+            "mesial_cej": [
+              870.329,
+              600.751
+            ],
+            "distal_cej": [
+              752.556,
+              646.132
+            ],
+            "mesial_bc": [
+              838.7118577400845,
+              502.90727585156765
+            ],
+            "distal_bc": [
+              706.7519221623738,
+              513.0818581581116
+            ],
+            "apex": [
+              587.2740269025167,
+              188.8939977010091
+            ]
+          },
+          "changed_landmarks": [
+            "mesial_cej",
+            "distal_cej"
+          ],
+          "added_landmarks": [],
+          "removed_landmarks": [],
+          "status": "ok",
+          "pbl_max_pct": 28.880832582151644,
+          "stage": "II"
+        }
+      ],
+      "final": {
+        "source": "manual",
+        "status": "ok",
+        "missing_landmarks": [],
+        "error": null,
+        "long_axis_vector": [
+          -0.45845863028470074,
+          -0.8887157500109223
+        ],
+        "mesial": {
+          "defect_px": 101.45041042443319,
+          "root_px": 495.7927999569428,
+          "pbl_pct": 20.462259724877743
+        },
+        "distal": {
+          "defect_px": 139.24303138296534,
+          "root_px": 482.12956114366847,
+          "pbl_pct": 28.880832582151644
+        },
+        "pbl_max_pct": 28.880832582151644,
+        "worse_surface": "distal",
+        "stage": "II",
+        "minimum_stage": "II"
+      },
+      "interpretation": "Calculated from manually corrected landmarks. Mesial: CEJ-to-crest 101.5 px ÷ CEJ-to-apex 495.8 px (both projected on the tooth long axis) = 20.5%. Distal: CEJ-to-crest 139.2 px ÷ CEJ-to-apex 482.1 px (both projected on the tooth long axis) = 28.9%. The stage uses the worse surface (distal): 15% ≤ 28.9% ≤ 33% → Stage II.",
+      "warnings": [
+        {
+          "code": "LOW_STAGE_SUPPORT",
+          "severity": "medium",
+          "message": "Automated Stage I has 43% Monte Carlo support (below 94%)."
+        },
+        {
+          "code": "STAGE_CHANGED_BY_CORRECTION",
+          "severity": "medium",
+          "message": "Manual correction changed the stage from I to II."
+        },
+        {
+          "code": "INTERVAL_SPANS_BOUNDARY",
+          "severity": "info",
+          "message": "Automated 95% PBL interval 2.8–34.5% crosses the 15% and 33% boundary."
+        },
+        {
+          "code": "WIDE_INTERVAL",
+          "severity": "info",
+          "message": "Automated 95% PBL interval is 31.7 pp wide."
+        },
+        {
+          "code": "CORRECTION_OUTSIDE_AI_95",
+          "severity": "info",
+          "message": "Correction moved Distal CEJ beyond the automated 95% radius."
+        },
+        {
+          "code": "MANUAL_NO_MODEL_UNCERTAINTY",
+          "severity": "info",
+          "message": "Corrected values carry no model interval; reader variability in Week 3 was about ±11 pp."
+        }
+      ]
+    }
+  ],
+  "input_case": {
+    "case_id": "DENPAR-TEST-100",
+    "image": {
+      "path": "week4/demo_denpar/external_test/images/100.jpg",
+      "width": 1168,
+      "height": 886
+    },
+    "source": {
+      "dataset": "DenPAR v3 official Testing partition (CC BY 4.0, doi:10.5281/zenodo.16645076)",
+      "patient_identifier": "none published; case = one radiograph",
+      "tooth_numbering": "DenPAR per-image tooth index (FDI number not available)",
+      "predictions": "week5/reports/refined_predictions.json (external)",
+      "manual_corrections": "SIMULATED: two most-uncertain landmarks moved to DenPAR reference annotation"
+    },
+    "teeth": [
+      {
+        "tooth_id": 1,
+        "label": "T1",
+        "arch": "Upper",
+        "site": "Right",
+        "bbox": [
+          132,
+          155,
+          443,
+          722
+        ],
+        "auto": {
+          "detector": "Week 5 refined Raw + CLAHE ensemble (strong_aug, TTA), saved predictions",
+          "landmarks": {
+            "mesial_cej": [
+              385.97350928783413,
+              488.29484002590186
+            ],
+            "distal_cej": [
+              201.19662842750552,
+              542.2751472949982
+            ],
+            "mesial_bc": [
+              370.9749573429425,
+              442.3279131571452
+            ],
+            "distal_bc": [
+              187.7310211976369,
+              378.64277735551195
+            ],
+            "apex": [
+              171.64014445940654,
+              165.64457704226177
+            ]
+          },
+          "sigma_px": {
+            "mesial_cej": 10.946086776628045,
+            "distal_cej": 14.996369411974868,
+            "mesial_bc": 40.509294439988125,
+            "distal_bc": 10.116219942485476,
+            "apex": 14.666217559288341
+          },
+          "pbl_ci95": [
+            31.20815681417499,
+            55.4937265876057
+          ],
+          "stage_probabilities": {
+            "I": 0.0,
+            "II": 0.005733944954128441,
+            "III/IV": 0.9942660550458715
+          },
+          "orientation_switched": false
+        },
+        "manual": null
+      },
+      {
+        "tooth_id": 3,
+        "label": "T3",
+        "arch": "Upper",
+        "site": "Right",
+        "bbox": [
+          583,
+          188,
+          885,
+          732
+        ],
+        "auto": {
+          "detector": "Week 5 refined Raw + CLAHE ensemble (strong_aug, TTA), saved predictions",
+          "landmarks": {
+            "mesial_cej": [
+              852.428697582086,
+              556.6344382206598
+            ],
+            "distal_cej": [
+              717.7000114440917,
+              543.8826330343882
+            ],
+            "mesial_bc": [
+              838.7118577400845,
+              502.90727585156765
+            ],
+            "distal_bc": [
+              706.7519221623738,
+              513.0818581581116
+            ],
+            "apex": [
+              587.2740269025167,
+              188.8939977010091
+            ]
+          },
+          "sigma_px": {
+            "mesial_cej": 28.198154144877062,
+            "distal_cej": 38.893130514596756,
+            "mesial_bc": 9.848911219769027,
+            "distal_bc": 18.080140667670683,
+            "apex": 17.335118872067195
+          },
+          "pbl_ci95": [
+            2.819776423040338,
+            34.498640323429015
+          ],
+          "stage_probabilities": {
+            "I": 0.43443708609271525,
+            "II": 0.5602649006622517,
+            "III/IV": 0.005298013245033113
+          },
+          "orientation_switched": false
+        },
+        "manual": {
+          "landmarks": {
+            "mesial_cej": [
+              870.329,
+              600.751
+            ],
+            "distal_cej": [
+              752.556,
+              646.132
+            ],
+            "mesial_bc": [
+              838.7118577400845,
+              502.90727585156765
+            ],
+            "distal_bc": [
+              706.7519221623738,
+              513.0818581581116
+            ],
+            "apex": [
+              587.2740269025167,
+              188.8939977010091
+            ]
+          },
+          "reviewer_id": "simulated-reviewer",
+          "saved_at_utc": "2026-11-19T12:00:00+00:00",
+          "method": "SIMULATED: two most-uncertain landmarks moved to DenPAR reference annotation",
+          "note": "moved: distal_cej, mesial_cej"
+        }
+      }
+    ]
+  }
+}
