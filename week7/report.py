@@ -1,9 +1,7 @@
 """Week 7 case report: turns tooth landmarks into PBL values, stages and warnings.
 
-I recalculate every number from the landmark points with the Week 3 calculator.
-The App, PDF, CSV and JSON all use the same report dictionary, so they show the
-same values. The AI record and the manual correction are stored next to each
-other. A correction never replaces the AI record.
+The app and exports share one report. Measurements use the Week 3 calculator
+and retain the original landmarks alongside any reviewer edits.
 
 Input case format::
 
@@ -60,13 +58,11 @@ BOUNDARY_WARNING_PP = 3.0
 MIN_STAGE_PROBABILITY = 0.94
 # 95% circle for a 2-D Gaussian point: radius = 2.4477 * sigma.
 RADIUS_95 = 2.4477
-READER_LOA_PP = 11.0
 
 DISCLAIMER = (
-    "Research prototype. Radiographic bone-loss measurements to support review by a "
-    "qualified dental professional; not an independent clinical diagnosis. Stage uses "
-    "radiographic bone loss only (Stage III and IV are not separated; complexity "
-    "factors, clinical attachment loss, tooth loss and grade are not assessed)."
+    "This research report is for review by a dental professional. It is not an independent clinical diagnosis. "
+    "Each tooth stage uses bone loss on the X-ray alone. Stages III and IV are grouped together. "
+    "The report does not assess clinical attachment loss, tooth loss, complexity or grade."
 )
 
 LANDMARK_LABELS = {
@@ -196,13 +192,14 @@ def _boundary_warnings(value: float, prefix: str) -> list[dict[str, str]]:
     for boundary in STAGE_BOUNDARIES:
         gap = value - boundary
         if abs(gap) <= BOUNDARY_WARNING_PP:
-            out.append(_warn(
-                "NEAR_STAGE_BOUNDARY",
-                "medium",
-                f"{prefix} PBL {value:.1f}% is {abs(gap):.1f} pp from the {boundary:.0f}% "
-                f"stage boundary (warning band ±{BOUNDARY_WARNING_PP:.0f} pp; Week 3 reader "
-                f"limits of agreement were about ±{READER_LOA_PP:.0f} pp).",
-            ))
+            if gap == 0:
+                message = f"{prefix} PBL is exactly at the {boundary:g}% cutoff."
+            else:
+                distance = _shown(abs(gap), lambda rounded: rounded > 0)
+                direction = "above" if gap > 0 else "below"
+                unit = "point" if float(distance) == 1 else "points"
+                message = f"{prefix} PBL is {distance} percentage {unit} {direction} the {boundary:g}% cutoff."
+            out.append(_warn("NEAR_STAGE_BOUNDARY", "medium", message))
     return out
 
 
@@ -245,7 +242,7 @@ def explain(final: Mapping[str, Any], source: str) -> str:
              _surface_sentence("distal", final["distal"])]
     if final["status"] == "partial":
         parts.append(
-            f"Only one surface is measurable, so no stage is assigned; the measured surface "
+            f"Only one surface can be measured. The full stage is unknown. This side "
             f"implies at least Stage {final['minimum_stage']}."
         )
     else:
@@ -382,7 +379,7 @@ def build_tooth_report(tooth: Mapping[str, Any]) -> dict[str, Any]:
         if auto["orientation_switched"]:
             warnings.append(_warn(
                 "ORIENTATION_SWITCHED", "medium",
-                "The model's orientation self-check reversed the apex direction; confirm the apex.",
+                "The model reversed the apex direction. Check the apex on the image.",
             ))
         if p_own is not None and p_own < MIN_STAGE_PROBABILITY:
             warnings.append(_warn(
@@ -430,7 +427,7 @@ def build_tooth_report(tooth: Mapping[str, Any]) -> dict[str, Any]:
         source, final = "none", manual["measurement"]
         warnings.append(_warn(
             "CORRECTION_INVALID", "high",
-            "The manual correction could not be measured; no PBL is reported until it is re-reviewed.",
+            "Check the edited points. The report cannot calculate PBL from them.",
         ))
     elif auto is not None:
         source, final = "auto", auto["measurement"]
@@ -466,8 +463,7 @@ def build_tooth_report(tooth: Mapping[str, Any]) -> dict[str, Any]:
             ))
         warnings.append(_warn(
             "MANUAL_NO_MODEL_UNCERTAINTY", "info",
-            "Corrected values carry no model interval; reader variability in Week 3 was about "
-            f"±{READER_LOA_PP:.0f} pp.",
+            "The model interval applies only to the original measurement.",
         ))
     if flagged and (manual is None or not traceable):
         warnings.append(_warn(
@@ -563,8 +559,7 @@ def build_case_report(case: Mapping[str, Any], generated_at: str | None = None) 
         "teeth_reported_from_manual": sum(t["final"]["source"] == "manual" for t in teeth),
         "teeth_with_high_warnings": sum(any(w["severity"] == "high" for w in t["warnings"]) for t in teeth),
         "stage_note": (
-            "Highest tooth-level radiographic stage among measured teeth on this radiograph; "
-            "not a patient-level periodontal diagnosis."
+            "This summary covers the measured teeth on this image only."
         ),
     }
     return {
@@ -574,8 +569,9 @@ def build_case_report(case: Mapping[str, Any], generated_at: str | None = None) 
         "image": image,
         "source": case.get("source"),
         "method": {
-            "pbl_definition": "PBL% = CEJ-to-crest distance / CEJ-to-apex distance × 100, both projected "
-                              "on the long axis (CEJ midpoint → apex); per surface (mesial, distal).",
+            "pbl_definition": "PBL (%) = 100 × CEJ-to-crest distance / CEJ-to-apex distance. "
+                              "Both distances are measured along the axis from the CEJ midpoint to the apex. "
+                              "Each surface has its own PBL.",
             "stage_rule": f"From the worse surface: < {STAGE_BOUNDARIES[0]:.0f}% Stage I; "
                           f"{STAGE_BOUNDARIES[0]:.0f}–{STAGE_BOUNDARIES[1]:.0f}% Stage II; "
                           f"> {STAGE_BOUNDARIES[1]:.0f}% Stage III/IV.",

@@ -1,11 +1,4 @@
-"""Week 7 reporting App.
-
-    python -m streamlit run week7/app.py
-
-Choose a case, look at the report, select a tooth, correct its landmarks if
-needed, and export the PDF, CSV and JSON. Every save or removal is added to the
-tooth's correction history, and the AI record is never changed.
-"""
+"""Review tooth measurements and edit landmarks in Streamlit."""
 
 from __future__ import annotations
 
@@ -27,7 +20,7 @@ from week7.edge_cases import build_edge_cases  # noqa: E402
 from week7.export import safe_slug, to_csv, to_json, to_pdf  # noqa: E402
 from week7.figures import render_case_figure, render_tooth_zoom  # noqa: E402
 from week7.report import (  # noqa: E402
-    DISCLAIMER, LANDMARK_LABELS, build_case_report, clean_landmarks, history_line, resolve_image, upload_key,
+    LANDMARK_LABELS, build_case_report, clean_landmarks, history_line, resolve_image, upload_key,
 )
 
 APP_METHOD = "manual entry in Week 7 reporting app"
@@ -37,19 +30,16 @@ st.set_page_config(page_title="PBL clinical report (Week 7)", layout="wide")
 @st.cache_data
 def _demo_cases() -> dict[str, dict]:
     cases = {c["case_id"]: c for c in build_demo_cases()}
-    # Also list the four edge cases, so they can be opened in the App.
     for c in build_edge_cases():
         cases[f"[edge] {c['case_id'] or 'no case id'}"] = c
     return cases
 
 
 def _pct(value: float | None) -> str:
-    """Show a missing value as "not measurable", not as 0.0%."""
     return "not measurable" if value is None else f"{value:.1f}%"
 
 
 def _workdir() -> Path:
-    # One temporary folder per session.
     if "workdir" not in st.session_state:
         st.session_state["workdir"] = tempfile.mkdtemp(prefix="pbl_week7_")
     return Path(st.session_state["workdir"])
@@ -58,19 +48,22 @@ def _workdir() -> Path:
 def _history(tooth: dict[str, Any]) -> list[dict[str, Any]]:
     """Get the tooth's history. The first time, start it from the existing correction."""
     if "correction_history" not in tooth:
-        tooth["correction_history"] = [] if tooth.get("manual") is None else [{"action": "save", **tooth["manual"]}]
+        history = []
+        if tooth.get("manual") is not None:
+            history.append({"action": "save", **tooth["manual"]})
+        tooth["correction_history"] = history
     return tooth["correction_history"]
 
 
-def source_label(t: dict[str, Any]) -> str:
-    """Where the reported values of this tooth come from."""
-    f, m = t["final"]["source"], t["manual"]
-    if f == "manual":
-        if str(m.get("method") or "").startswith("SIMULATED"):
+def source_label(tooth: dict[str, Any]) -> str:
+    source = tooth["final"]["source"]
+    correction = tooth["manual"]
+    if source == "manual":
+        if str(correction.get("method") or "").startswith("SIMULATED"):
             return "Simulated correction"
-        return f"Reviewer correction ({m.get('reviewer_id')})"
-    if f == "auto":
-        if m is not None and not m.get("traceable", True):
+        return f"Reviewer correction ({correction.get('reviewer_id')})"
+    if source == "auto":
+        if correction is not None and not correction.get("traceable", True):
             return "Automated (unattributed correction not used)"
         return "Automated"
     return "Not reported"
@@ -102,7 +95,7 @@ def _flash_text(t: dict[str, Any], flash: dict[str, Any]) -> tuple[str, str]:
 
 
 st.title("Clinical PBL Report")
-st.warning(DISCLAIMER, icon="⚠️")
+st.caption("Research prototype for dental review.")
 st.session_state.setdefault("cases", {})
 st.session_state.setdefault("form_version", {})
 st.session_state.setdefault("flash", {})
@@ -133,7 +126,6 @@ with st.sidebar:
     if case_key not in st.session_state["cases"]:
         st.session_state["cases"][case_key] = copy.deepcopy(source)
 
-    # Ask for a second click before clearing edits, and say which teeth are affected.
     edited = [f"T{t.get('tooth_id')}" if not t.get("label") else t["label"]
               for t, o in zip(st.session_state["cases"][case_key].get("teeth") or [], source.get("teeth") or [])
               if t != o]
@@ -161,13 +153,12 @@ slug = safe_slug(report["case_id"])
 
 st.subheader(f"Case {report['case_id']}")
 c1, c2, c3, c4, c5 = st.columns(5)
-c1.metric("Teeth", s["teeth_total"])
+c1.metric("Teeth in case", s["teeth_total"])
 c2.metric("Highest tooth stage", s["highest_tooth_stage"] or "—")
 c3.metric("Highest PBL", "—" if s["highest_pbl_pct"] is None else f"{s['highest_pbl_pct']:.1f}% ({s['highest_pbl_tooth']})")
 c4.metric("Flagged for review", s["teeth_flagged"])
-c5.metric("Reported from corrections", s["teeth_reported_from_manual"],
-          help="Teeth whose reported values come from a traceable manual correction.")
-st.caption(s["stage_note"])
+c5.metric("Teeth using corrected values", s["teeth_reported_from_manual"],
+          help="Includes simulated edits in demo cases. Counts only edits used in the final report.")
 for w in report["case_warnings"]:
     st.error(f"{w['code']}: {w['message']}")
 
@@ -195,8 +186,12 @@ for t in report["teeth"]:
         "Warnings": ", ".join(w["code"] for w in t["warnings"] if w["severity"] != "info"),
     })
 st.dataframe(rows, width="stretch", hide_index=True)
+with st.expander("How to read the tooth stage"):
+    st.write("Each stage uses bone loss on this X-ray. The side with more bone loss sets the tooth stage. "
+             "The report groups stages III and IV together.")
+    st.write("A patient diagnosis also needs clinical findings. This report does not assess attachment loss, "
+             "tooth loss, complexity or grade.")
 
-# ---- Tooth review: everything below follows the selected tooth
 st.subheader("Tooth review")
 if report["teeth"]:
     labels = [f"{t['label']} (row {i + 1})" for i, t in enumerate(report["teeth"])]
@@ -247,8 +242,8 @@ if report["teeth"]:
                 st.caption(history_line(k, e))
 
     st.markdown(f"#### Edit landmarks · {tooth_name}")
-    st.caption("Pixel coordinates on the original radiograph. Leave a field empty if the landmark cannot be "
-               "placed. The AI landmarks stay unchanged in the record, and every save is kept in the history.")
+    st.caption("Enter pixel coordinates from the original X-ray. Leave a point blank if you cannot place it. "
+               "Each save appears in the history beside the original prediction.")
     current = tooth.get("manual") or tooth.get("auto") or {}
     base = clean_landmarks(current.get("landmarks"))
     version = st.session_state["form_version"].get(case_key, 0)
@@ -264,7 +259,7 @@ if report["teeth"]:
             y = col.number_input("y", value=None if p is None else p[1], key=f"{prefix}|{name}|y",
                                  step=1.0, format="%.2f", placeholder="not placed")
             new[name] = None if (x is None or y is None) else [float(x), float(y)]
-        reviewer = st.text_input("Reviewer ID", value="", key=f"{prefix}|reviewer")
+        reviewer = st.text_input("Reviewer name or ID", value="", placeholder="e.g. Lucia Liao", key=f"{prefix}|reviewer")
         note = st.text_input("Note (optional)", value="", key=f"{prefix}|note")
         save = st.form_submit_button(f"Save correction for {tooth_name}")
     if save:

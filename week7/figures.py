@@ -94,7 +94,6 @@ def render_case_figure(
                 ax1.annotate("", xy=p, xytext=a,
                              arrowprops={"arrowstyle": "->", "color": MANUAL_COLOR, "lw": 1.2})
                 ax1.plot(*p, marker="X", ms=8, mfc=MANUAL_COLOR, mec="#0b0b0b", mew=0.8)
-        # Label text: tooth, PBL, stage and where the value came from.
         src = {"manual": "corrected", "auto": "AI", "none": "no value"}[final["source"]]
         if final["pbl_max_pct"] is not None:
             line2 = f"{final['pbl_max_pct']:.1f}% · {style['name'].replace('Stage ', '')} · {src}"
@@ -130,7 +129,6 @@ def render_case_figure(
             clash = [p for p in placed if ext.overlaps(p)]
             if not clash:
                 break
-            # move it just below the label it overlaps
             lowest = min(p.y0 for p in clash)
             y = inv.transform((0, lowest))[1] + 3
             art.set_y(y)

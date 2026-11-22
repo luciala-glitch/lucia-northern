@@ -1,13 +1,5 @@
-"""Demo cases from the saved Week 5 predictions on DenPAR test images.
-
-Each case is one radiograph from week4/demo_denpar/external_test, with the Week 5
-model's landmarks, uncertainty and stage probabilities.
-
-The manual corrections here are SIMULATED, because I do not have clinician
-corrections. For each tooth flagged by the Week 5 review rule, I move the two
-landmarks with the largest AI uncertainty to the DenPAR reference points. This was
-the best strategy in my Week 5 correction study. Every export labels these
-corrections as simulated. Real corrections are entered in the App.
+"""Build demo cases from saved predictions. Simulated edits replace the two
+most uncertain landmarks on flagged teeth with DenPAR reference coordinates.
 """
 
 from __future__ import annotations
@@ -72,8 +64,9 @@ def build_demo_cases(simulate_corrections: bool = True) -> list[dict[str, Any]]:
                 },
                 "manual": None,
             }
-            own = pred["p_stage"][pred["pred_stage"]]
-            if simulate_corrections and (own < REVIEW_THRESHOLD or pred["orientation_switched"]):
+            stage_support = pred["p_stage"][pred["pred_stage"]]
+            needs_review = stage_support < REVIEW_THRESHOLD or pred["orientation_switched"]
+            if simulate_corrections and needs_review:
                 worst_two = sorted(LANDMARK_NAMES, key=lambda n: sigma[n], reverse=True)[:2]
                 corrected = {n: list(pred["points"][n]) for n in LANDMARK_NAMES}
                 for n in worst_two:

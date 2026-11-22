@@ -16,13 +16,13 @@
     "edge_case": "T3 correction puts mesial crest above the CEJ"
   },
   "method": {
-    "pbl_definition": "PBL% = CEJ-to-crest distance / CEJ-to-apex distance × 100, both projected on the long axis (CEJ midpoint → apex); per surface (mesial, distal).",
+    "pbl_definition": "PBL (%) = 100 × CEJ-to-crest distance / CEJ-to-apex distance. Both distances are measured along the axis from the CEJ midpoint to the apex. Each surface has its own PBL.",
     "stage_rule": "From the worse surface: < 15% Stage I; 15–33% Stage II; > 33% Stage III/IV.",
     "boundary_warning_pp": 3.0,
     "review_min_stage_probability": 0.94,
     "calculator": "week3.pbl_calculator.calculate_tooth_pbl"
   },
-  "disclaimer": "Research prototype. Radiographic bone-loss measurements to support review by a qualified dental professional; not an independent clinical diagnosis. Stage uses radiographic bone loss only (Stage III and IV are not separated; complexity factors, clinical attachment loss, tooth loss and grade are not assessed).",
+  "disclaimer": "This research report is for review by a dental professional. It is not an independent clinical diagnosis. Each tooth stage uses bone loss on the X-ray alone. Stages III and IV are grouped together. The report does not assess clinical attachment loss, tooth loss, complexity or grade.",
   "summary": {
     "teeth_total": 3,
     "teeth_staged": 2,
@@ -40,7 +40,7 @@
     "correction_events": 2,
     "teeth_reported_from_manual": 1,
     "teeth_with_high_warnings": 1,
-    "stage_note": "Highest tooth-level radiographic stage among measured teeth on this radiograph; not a patient-level periodontal diagnosis."
+    "stage_note": "This summary covers the measured teeth on this image only."
   },
   "case_warnings": [],
   "teeth": [
@@ -384,7 +384,7 @@
         {
           "code": "MANUAL_NO_MODEL_UNCERTAINTY",
           "severity": "info",
-          "message": "Corrected values carry no model interval; reader variability in Week 3 was about ±11 pp."
+          "message": "The model interval applies only to the original measurement."
         }
       ]
     },
@@ -582,7 +582,7 @@
         {
           "code": "CORRECTION_INVALID",
           "severity": "high",
-          "message": "The manual correction could not be measured; no PBL is reported until it is re-reviewed."
+          "message": "Check the edited points. The report cannot calculate PBL from them."
         },
         {
           "code": "INVALID_GEOMETRY",

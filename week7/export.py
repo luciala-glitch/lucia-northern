@@ -10,7 +10,7 @@ from pathlib import Path
 from typing import Any, Mapping
 
 from week4.constants import LANDMARK_NAMES
-from week7.report import history_line
+from week7.report import LANDMARK_LABELS, history_line
 
 CSV_DIGITS = 2
 
@@ -173,8 +173,7 @@ def to_pdf(report: Mapping[str, Any], figure_path: str | Path | None, out_path: 
     s = report["summary"]
     story: list[Any] = [
         Paragraph(f"Periodontal bone loss (PBL) case report — {report['case_id']}", h1),
-        Paragraph(f"<b>RESEARCH PROTOTYPE — FOR PROFESSIONAL REVIEW, NOT A DIAGNOSIS.</b> "
-                  f"{report['disclaimer']}", small),
+        Paragraph(report["disclaimer"], small),
         Spacer(1, 4),
         Paragraph(
             f"Generated {report['generated_at_utc']} · report {report['report_version']} · "
@@ -243,9 +242,8 @@ def to_pdf(report: Mapping[str, Any], figure_path: str | Path | None, out_path: 
     table = Table(rows, colWidths=[c * mm for c in col_w], repeatRows=1)
     table.setStyle(TableStyle(style_cmds))
     story += [table, Spacer(1, 3), Paragraph(
-        "Reported values use the manual correction when one exists; the automated (AI) values are kept "
-        "unchanged beside it. AI P(stage) = Monte Carlo support for the AI stage; AI 95% interval = "
-        "calibrated Week 5 PBL interval. Corrected values carry no model interval.", small)]
+        "The source column shows which measurement was used. AI P(stage) is the share of model samples "
+        "that gave the original stage. The 95% interval comes from Week 5. It applies only to the original PBL.", small)]
 
     story += [Paragraph("Interpretation and warnings", h2)]
     for t in report["teeth"]:
@@ -254,14 +252,18 @@ def to_pdf(report: Mapping[str, Any], figure_path: str | Path | None, out_path: 
         if m is not None and a is not None:
             am = a["measurement"]
             moved = ", ".join(
-                [f"{n} {m['moved_px'][n]:.1f} px" for n in m["changed_landmarks"]]
-                + [f"{n} added" for n in m["added_landmarks"]]
-                + [f"{n} removed" for n in m["removed_landmarks"]]) or "none"
+                [f"{LANDMARK_LABELS[n]} ({m['moved_px'][n]:.1f} px)" for n in m["changed_landmarks"]]
+                + [f"{LANDMARK_LABELS[n]} added" for n in m["added_landmarks"]]
+                + [f"{LANDMARK_LABELS[n]} removed" for n in m["removed_landmarks"]]) or "none"
+            method = m["method"] or ""
+            edit_label = "Simulated edit" if method.startswith("SIMULATED") else "Edited measurement"
             block.append(Paragraph(
-                f"Trace: automated {_pct(am['pbl_max_pct'])} (Stage {am['stage'] or '—'}) → corrected "
-                f"{_pct(m['measurement']['pbl_max_pct'])} (Stage {m['measurement']['stage'] or '—'}) by "
-                f"{m['reviewer_id'] or 'unknown reviewer'} at {m['saved_at_utc'] or '—'}; "
-                f"method: {m['method'] or '—'}; landmarks moved: {moved}.", small))
+                f"Original measurement: {_pct(am['pbl_max_pct'])} (Stage {am['stage'] or '—'}). "
+                f"{edit_label}: {_pct(m['measurement']['pbl_max_pct'])} "
+                f"(Stage {m['measurement']['stage'] or '—'}).<br/>"
+                f"Landmark changes: {moved}.<br/>"
+                f"Recorded by {m['reviewer_id'] or 'unknown reviewer'} at {m['saved_at_utc'] or '—'}. "
+                f"Method: {method or '—'}.", small))
         if len(t["correction_history"]) > 1:
             lines = [history_line(k, e) for k, e in enumerate(t["correction_history"], start=1)]
             block.append(Paragraph("Correction history: " + "; ".join(lines), small))
@@ -279,7 +281,7 @@ def to_pdf(report: Mapping[str, Any], figure_path: str | Path | None, out_path: 
                         f"Calculator: {report['method']['calculator']}.", small)]
     src = report.get("source") or {}
     if src:
-        story.append(Paragraph("Provenance: " + "; ".join(f"{k}: {v}" for k, v in src.items()), small))
+        story.append(Paragraph("Case details<br/>" + "<br/>".join(f"{k}: {v}" for k, v in src.items()), small))
 
     def footer(canvas: Any, _doc: Any) -> None:
         canvas.saveState()
